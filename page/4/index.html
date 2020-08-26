@@ -49,6 +49,8 @@
   
 
   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
 
   
 
@@ -966,6 +968,22 @@ API项目基于php服务器和laravel框架，这个框架听说比较适合做a
         <div class="aplayer-container">
           
 
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='5054430406'
+      list-folded='true'>
+    </meting-js>
+  
+
 
         </div>
       
@@ -1219,6 +1237,24 @@ API项目基于php服务器和laravel框架，这个框架听说比较适合做a
         pjax_initCopyCode()
     });
 </script>
+
+
+
+
+
+
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = '5054430406';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.7';
+</script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
 
 
 
