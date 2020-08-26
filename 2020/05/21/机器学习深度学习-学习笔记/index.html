@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-beta.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>机器学习深度学习李宏毅版-学习笔记 - 🛫起飞了</title>
+  
+    <meta name="keywords" content="机器学习">
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
+
+  
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+</head>
+
+<body>
+  <header class="l_header auto shadow blur" style='opacity: 0' >
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div class="l_body">
+    <div class="l_cover">
+
+  
+  
+      <div class='cover-wrapper post dock' style="display: none;">
+        
+          <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
+        
+        <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">🛫起飞了</p>
+    
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a target="_blank" rel="noopener" href="https://weibo.com/678199722"
+              
+              
+              id="https:weibocom678199722">
+              <i class='fab fa-weibo fa-fw'></i><p>Weibo</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100006770206489"
+              
+              
+              id="https:wwwfacebookcomprofilephp?id=100006770206489">
+              <i class='fab fa-facebook fa-fw'></i><p>Facebook</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://twitter.com/CruelGiF"
+              
+              
+              id="https:twittercomCruelGiF">
+              <i class='fab fa-twitter fa-fw'></i><p>Twitter</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://www.instagram.com/xie_qifei/"
+              
+              
+              id="https:wwwinstagramcomxie_qifei">
+              <i class='fab fa-instagram fa-fw'></i><p>Instagram</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://github.com/xieqifei"
+              
+              
+              id="https:githubcomxieqifei">
+              <i class='fab fa-github fa-fw'></i><p>Github</p>
+            </a>
+          
+            <a href="mailto:im@xieqifei.com"
+              
+              
+              id="mailto:im@xieqifeicom">
+              <i class='fas fa-envelope fa-fw'></i><p>Email</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+  
+
+</div>
+
+    <div class='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">机器学习深度学习李宏毅版-学习笔记</div>
+  <div id="pjax-enable-cover">true</div>
+  <div id="pjax-comment-path"></div>
+  <div id="pjax-comment-placeholder"></div>
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "blog") { // 半屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "docs") { // 全屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+
+        
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  <div class='article-header'>
+    
+    <div class="article-meta" id="top">
+      
+      
+      
+        <h1 class="title">
+          <a href="/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+            机器学习深度学习李宏毅版-学习笔记
+          </a>
+        </h1>
+      
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://ae01.alicdn.com/kf/Hb5b4a24aa25749c38ad1c3af3f15bac4e.jpg">
+    <p>啓飞</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年5月21日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="机器学习深度学习李宏毅版-学习笔记" data-path="/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h1 id="第一章-Regression-回归"><a href="#第一章-Regression-回归" class="headerlink" title="第一章 Regression 回归"></a>第一章 Regression 回归</h1><p>$$<br>f(input)=output<br>$$</p>
+<p>输入一个对象后，有指定的输出结果。</p>
+<p><strong>示例应用：</strong>数码宝贝原始cp值，求进化一次后的cp值</p>
+<p>Step 1: Model</p>
+<p>定义一个函数：确定输入原始cp值和输出进化后的cp值。<br>$$<br>y=b+w*x_{cp}<br>$$</p>
+<blockquote>
+<p>w and b are parameters</p>
+</blockquote>
+<p>Step 2: Goodness of Function方程好坏</p>
+<p>对象1：function input: cp612-&gt;x1      function output:cp979-&gt;y1<br>$$<br>(x^1,y^1)<br>$$</p>
+<p>$$<br>(x^2,y^2)<br>$$</p>
+<p>$$<br>……<br>$$</p>
+<p>$$<br>(x^{10},y^{10})<br>$$</p>
+<p>定义另一个函数：确定第一个函数效果如何。输入一个函数，输出函数好坏程度。</p>
+<p>Loss Function<br>$$<br>\begin{split}<br>L(f) &amp;= L(w,b)<br>\ &amp;=\sum_{n=1}^{10}\left(y^n-\left(b+w*x^n_{cp}\right)\right)^2<br>\end{split}<br>$$<br>Step 3: Best Function最好的函数</p>
+<p>Gradient Descent<br>$$<br>w^*=arg\ min\ L(w)<br>$$<br>枚举w值，找到Loss Function最小的w值。</p>
+<ul>
+<li><p>随机选择一个初始w0,</p>
+</li>
+<li><p>$$<br>\frac{dL}{dw}|w=w^0<br>$$</p>
+</li>
+</ul>
+<p>在w0位置，如果斜率为正，则w向小的位置移动，反之向w增大的位置移动，目的是找到L(w)更小的位置。下一个位置w1。<br>$$<br>w^1=w^0-\eta\frac{\partial L}{\partial w}|w=w^0,b=b^0<br>\b^1=b^0-\eta\frac{\partial L}{\partial b}|w=w^0,b=b^0<br>\\eta表示学习率。<br>$$<br>最终找到一个最佳的w和b，确定一个L(f)最小。</p>
+<p>然而，由于数码宝贝的物种不同，b和w的取值将不同。</p>
+<p><strong>修改模型</strong></p>
+<p>Step 1:选择模型<br>$$<br>y=b_1<em>\delta(x^s=宝贝1)+w_1</em>\delta(x_s=宝贝1)<em>x_{cp}+b_2</em>\delta(x^s=宝贝2)+w_2*\delta(x_s=宝贝2)*x_{cp}+……<br>$$</p>
+<p>$$<br>\delta(x_s=宝贝1)\begin{cases}<br>=1\ if,x_s=宝贝1 \\<br>=0\ else\end{cases}<br>$$</p>
+<p>此时已经很精准了，但是可能还存在其他除了种类以外的影响因素，比如身高，体重，hp。</p>
+<p>回到Step 2:Regularization<br>$$<br>y=b+\sum w_ix_i<br>\L=\sum_n(y^n-(b+\sum w_ix_i))^2+\lambda\sum (w_i)^2<br>$$<br>为了获取一个更光滑的曲线，来减少噪音对输出结果的影响。</p>
+<blockquote>
+<p><strong>采用较小的拟合次数简单的model，通常具有更小的方差，但偏差更大，即结果集中但集中位置偏离真实值；较大的拟合次数复杂的model，方差比较大，但偏差更小。</strong></p>
+</blockquote>
+<p>偏差大：</p>
+<ol>
+<li>更多训练数据</li>
+<li>更复杂的模型</li>
+</ol>
+<p>方差大：</p>
+<ol>
+<li>更多训练数据</li>
+</ol>
+<p>获取模型：Validation</p>
+<p>训练数据-&gt;分三份，两份获取模型，一份验证模型。</p>
+<h1 id="第二章-Gradient-Descent梯度下降法"><a href="#第二章-Gradient-Descent梯度下降法" class="headerlink" title="第二章 Gradient Descent梯度下降法"></a>第二章 Gradient Descent梯度下降法</h1><p>在第一章Step 3中，我们要找到一个最低的loss function<br>$$<br>\theta^*=arg\ max\ L(\theta) \ \ \ \ L:loss\ function\ \ \theta:parameters<br>$$<br>假设$\theta$有两个参数${\theta_1,\theta_2}$</p>
+<p>随机设置一个$\theta^0=\begin{bmatrix}\theta_1^0\\theta_2^0\end{bmatrix}$<br>$$<br>\begin{bmatrix}\theta_1^1\\theta_2^1\end{bmatrix}=\begin{bmatrix}\theta_1^0\\theta^0_2\end{bmatrix}-\eta\begin{bmatrix}\frac{\partial(\theta_1^0)}{\partial\theta_1}\\frac{\partial(\theta_2^0)}{\partial\theta_2}\end{bmatrix}<br>$$</p>
+<p>$$<br>\begin{bmatrix}\theta_1^2\\theta_2^2\end{bmatrix}=\begin{bmatrix}\theta_1^1\\theta^1_2\end{bmatrix}-\eta\begin{bmatrix}\frac{\partial(\theta_1^1)}{\partial\theta_1}\\frac{\partial(\theta_2^1)}{\partial\theta_2}\end{bmatrix}<br>$$</p>
+<p>简化公式：<br>$$<br>\bigtriangledown L(\theta)=\begin{bmatrix}\frac{\partial L(\theta_1)}{\partial\theta_1}\\frac{\partial L(\theta_2)}{\partial\theta_2}\end{bmatrix}<br>\\theta^1=\theta^0-\eta\bigtriangledown L(\theta^0)<br>$$<br>需要调节学习率（步长）$\eta$到合适的值。</p>
+<blockquote>
+<p>不同的$\theta$给不同的$\eta$。</p>
+</blockquote>
+<p>Adagrad:随着参数增加，步长逐渐减小。<br>$$<br>w^1\gets w^1-\frac{\eta^0}{\sigma^0}g^0 \ \ \ \sigma^0=\sqrt{(g^0)^2}<br>\\vdots<br>\\vdots<br>\w^{t+1}\gets w^t-\frac{\eta^t}{\sigma^t}g^t\ \ \ \sigma^t=\sqrt{\frac{1}{t+1}\sum^t_{i=0}(g^i)^2}<br>$$</p>
+<p>$$<br>\eta^t=\frac{\eta}{\sqrt{t+1}}<br>$$</p>
+<p>Feature Scaling:</p>
+<p>将多个x输入的范围统一到一个范围，以保证在计算L(f)时，每个w对L(f)的影响相同。</p>
+<blockquote>
+<p>Gradient Descent会卡在局部最小值的位置</p>
+</blockquote>
+<h1 id="第三章-New-Optimizers-for-Deep-Learning-优化"><a href="#第三章-New-Optimizers-for-Deep-Learning-优化" class="headerlink" title="第三章 New Optimizers for Deep Learning 优化"></a>第三章 New Optimizers for Deep Learning 优化</h1><p>一些记号：</p>
+<p>$\theta_t$:模型参数</p>
+<p>$m_{t+1}$:从step 0到step t 的动量。</p>
+<p><strong>SGD：</strong></p>
+<p>SGDM、Learning rate scheduling、NAG</p>
+<p>走到最低点时，还不会停下来，由于之前的动量影响，存在一个类似的惯性作用，会继续向上爬坡。</p>
+<p><strong>Adam：</strong></p>
+<p>Adagrad、RMSProp、AMSGrad、AdaBound、RAdam、Nadam、AdamW</p>
+<p>SGD+Adam-&gt;SWATS</p>
+<p><strong>Lookahead</strong></p>
+<h1 id="第四章-Classification-分类"><a href="#第四章-Classification-分类" class="headerlink" title="第四章 Classification 分类"></a>第四章 Classification 分类</h1><p>例：投简历</p>
+<ul>
+<li>输入：收入、存款、专业、年纪</li>
+<li>输出：录取或拒绝</li>
+</ul>
+<p>模型：<br>$$<br>x\rightarrow f(x)\begin{cases}g(x)&gt;0\ &amp;Output=class1\else \ \ &amp;Output=class2\end{cases}<br>$$<br>Loss function：<br>$$<br>L(f)=\sum_n\delta(f(x^n)\ne y^n)<br>$$<br>79个水系（C1）宝可梦，61只普通系（C2）的宝可梦</p>
+<p>$P(x|C_1)$的可能性。</p>
+<p>$P(x|C_1)$满足高斯分布（正态分布），找到最合适的高速分布系数$\mu$和$E$</p>
+<p>使用贝叶斯公式，求测试数据$P(C_1|x)$的概率。</p>
+<p>所以：</p>
+<p>模型<br>$$<br>x\rightarrow P(C_1|x)=\frac{P(x|C_1)P(C_1)}{P(x|C_1)P(C_1)+P(x|C_2)P(C_2)}<br>$$<br>函数的好坏：</p>
+<p>平均值$\mu$和$E$。</p>
+<p>一堆数学运算……</p>
+<p>模型：<br>$$<br>P_{w,b}(C_2|x)=\sigma(z)<br>\<br>\sigma(z)=\frac{1}{1+exp(-z)}<br>\<br>z=w*x+b<br>$$</p>
+<h1 id="第五章-Logistic-Regression"><a href="#第五章-Logistic-Regression" class="headerlink" title="第五章 Logistic Regression"></a>第五章 Logistic Regression</h1><p>$$<br>f_{w,b}(x)=\sigma(\sum w_ix+b)<br>$$<br>$x_1$属于$C_1$,$x_2$属于$C_1$,$x_3$属于$C_2$……<br>$$<br>L(w,b)=f_{w,b}(x^1)f_{w,b}(x^2)(1-f_{w,b}(x^3))…<br>$$<br>找到一个$w^*,b^*$满足$arg\ max,L(w,b)$最大。</p>
+<h1 id="第六章-Deep-learning"><a href="#第六章-Deep-learning" class="headerlink" title="第六章 Deep learning"></a>第六章 Deep learning</h1><p>历史：</p>
+<p>1958: Perceptron(linear model)</p>
+<p>1980: Multi-layer perceptron</p>
+<p>1986: Backpropagation</p>
+<p>1989: 1 hidden layer is “good enough”</p>
+<p>2006: RBM initialization</p>
+<p>2009: GPU</p>
+<p>2011: Speech recognizition</p>
+<p>步骤：</p>
+<ol>
+<li>找到一个函数-&gt;Neural Network</li>
+</ol>
+<p><img src="https://ae01.alicdn.com/kf/Hfab376d7115d4542a9bca22bbae41b31b.jpg" class="lazyload" data-srcset="https://ae01.alicdn.com/kf/Hfab376d7115d4542a9bca22bbae41b31b.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>Deep = Many hidden layers</p>
+<h1 id="第七章-Backpropagation-反向传播"><a href="#第七章-Backpropagation-反向传播" class="headerlink" title="第七章 Backpropagation 反向传播"></a>第七章 Backpropagation 反向传播</h1><p>让计算梯度下降法的参数更有效。</p>
+<p>Chain Rule 链式法则：</p>
+<p>Case1：<br>$$<br>y=g(x) \ \ \ \ z=h(y)<br>\\triangle x \rightarrow \triangle y\rightarrow \triangle z<br>\ \frac{dz}{dx}=\frac{dz}{dy}\frac{dy}{dx}<br>$$<br>Case2:<br>$$<br>x=g(s) \ \ y=h(s) \ \ z=k(x,y)<br>\ \frac{dz}{ds}=\frac{\partial z}{\partial x}\frac{dx}{ds}+\frac{\partial z}{\partial y}\frac{dy}{ds}<br>$$</p>
+<p>Loss function是所有输入经神经网络处理后的输出，与理想输出误差之和。<br>$$<br>L(\theta)=\sum_nC(\theta)<br>$$<br>对Loss function求导：<br>$$<br>\frac{\partial L}{\partial w}=\sum_n\frac{\partial C}{\partial w}<br>$$<br>只讨论神经网络的一个节点。</p>
+<p><img src="https://i.loli.net/2020/06/20/o5kCyJMm9NULnFI.png" class="lazyload" data-srcset="https://i.loli.net/2020/06/20/o5kCyJMm9NULnFI.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>$$<br>\frac{\partial C}{\partial w}=\frac{\part C}{\part z}\frac{\part z}{\part w}<br>$$<br>求z对w求导，很简单，对w1求导是x1，对w2求导是x2。</p>
+<p><img src="https://i.loli.net/2020/06/20/gICwHOfq65uS9dj.png" class="lazyload" data-srcset="https://i.loli.net/2020/06/20/gICwHOfq65uS9dj.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>假设第二层神经节点的输入a，是将z通过一个信号函数(signal) $\sigma(z)$得到的现在求$\frac{\part C}{\part z}$<br>$$<br>\frac{\part C}{\part z}=\frac{\part a}{\part z}\frac{\part C}{\part a}<br>$$<br>利用链式法则，求$\frac{\part C}{\part a}$</p>
+<p>公式见上图。此时，通过反向传递法则。假设红色的信号节点就是神经网络的最后一个节点，对应输出就是神经网络输出。那么可以倒推回去。$\frac{\part C}{\part z^,}$就等于最后的sign函数导数。因此能求得$\frac{\part C}{\part a}$，这样依次反推回去。最终求得每个节点的$\frac{\part C}{\part z}$。从而求得Loss function的导数。</p>
+<h1 id="第八章-Tips-for-Deep-Learning"><a href="#第八章-Tips-for-Deep-Learning" class="headerlink" title="第八章 Tips for Deep Learning"></a>第八章 Tips for Deep Learning</h1><ol>
+<li><p>定义一个方程</p>
+</li>
+<li><p>方程好坏</p>
+</li>
+<li><p>选择最好的方程</p>
+</li>
+<li><p>获得一个Neural Network</p>
+</li>
+<li><p>是否获得一个好的结果在Training Data，如果不好重新选择最好的方程</p>
+</li>
+<li><p>在Testing Data获得不好的结果，overfitting，则重新定义一个方程。</p>
+</li>
+</ol>
+<p><strong>ReLU</strong></p>
+<p>Rectified Linear Unit.矫正线性单元</p>
+<p><img src="https://i.loli.net/2020/06/20/YxX9CrsUGl2ot1J.png" class="lazyload" data-srcset="https://i.loli.net/2020/06/20/YxX9CrsUGl2ot1J.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>如果某个节点，输出是零，那么他对最后的结果没有任何影响。所以，输出为零关联的之后节点都可以被拿掉。</p>
+<p><strong>ReLU -variant</strong></p>
+<p>当z小于0时，a=mz。</p>
+<p>Leaky ReLU ：m=0.01</p>
+<p>Parametric: m可变</p>
+<p><strong>Maxout</strong></p>
+<p>最大输出，将不同输入的输出z分组，组内选出最大的值，作为下一个节点输入。</p>
+<p><strong>RMSProp</strong><br>$$<br>w^1 \leftarrow w^0-\frac{\eta}{\sigma^0}g^0 \ \ \ \ \ \sigma^0=g^0<br>\<br>w^2 \leftarrow w^1-\frac{\eta}{\sigma^1}g^1 \ \ \ \ \ \sigma^1=\sqrt{\alpha (\sigma^0)^2+(1-\alpha)(g^1)^2}<br>\……<br>$$<br>$\alpha$可以设置。</p>
+<p><strong>Momentum</strong></p>
+<p>在初始点$\theta^0$处，加速度方向为gradient方向。</p>
+<p>初始移动距离:$v_0=0$</p>
+<p>加速度(第一点处的gradient):$\triangledown L(\theta^0)$</p>
+<p>移动距离:$v^1=\lambda v^0-\eta \triangledown L(\theta^0)$</p>
+<p>移到第二点:$\theta^1=\theta^0+v^1$</p>
+<p>计算第二点的加速度:$\triangledown L(\theta^1)$</p>
+<p>下一次移动距离:$v^2=\lambda v^1-\eta \triangledown L(\theta^1)$</p>
+<p>移动到第三点:$\theta^2=\theta^1+v^2$</p>
+<p><strong>Adam</strong>:RMSProp+Momentum</p>
+<p><strong>过拟合问题</strong></p>
+<ol>
+<li>early stop</li>
+</ol>
+<p>通过情况可能出席，当训练集增加时，测试集的正确率反而下降，因此通过减少训练集的数据来达到防止过拟合。</p>
+<ol start="2">
+<li>Regularization</li>
+</ol>
+<p>$$<br>L^,(\theta)=L(\theta)+\lambda \frac{1}{2}||\theta||_2<br>$$</p>
+<p>$$<br>||\theta||_2=(w_1)^2+(w_2)^2+……<br>$$</p>
+<p>$||\theta||_2$不考虑biases，因为正则化是为了让loss function更加平滑，biases并不会起到作用。</p>
+<p>Loss function求导:<br>$$<br>\frac{\partial L^,}{\partial w}=\frac{\partial L}{\part w}+\lambda w<br>$$<br>在找下一个<br>$$<br>w^{t+1}\rightarrow w^t-\eta\frac{\part L^,}{\part w} =w^t-\eta(\frac{\part L}{\part w}+\lambda w^t)=(1-\eta\lambda)w^t-\eta\frac{\part L}{\part w}<br>$$</p>
+<ol start="3">
+<li>Dropout</li>
+</ol>
+<p>在更新参数之前：</p>
+<ul>
+<li>每个节点有p%几率被丢掉</li>
+<li>使用新的网络去训练</li>
+</ul>
+<p>测试时：</p>
+<p>没有丢弃节点</p>
+<ul>
+<li>如果丢弃率为p%，所有的weights times(1-p)%</li>
+</ul>
+<p>可以理解为，在训练时，腿上绑重物，测试时把重物拿掉。</p>
+<p>为什么要乘(1-p)%</p>
+<p><img src="https://i.loli.net/2020/06/21/dAis9PpjHgMKWy7.png" class="lazyload" data-srcset="https://i.loli.net/2020/06/21/dAis9PpjHgMKWy7.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>假设丢弃率为50%,在训练时一半节点被拿掉，而测试时使用了所有节点，导致节点z相差两倍，在测试时将所有weight乘50%，保证测试时的$z’\approx z$</p>
+<h1 id="第八章-Why-deep"><a href="#第八章-Why-deep" class="headerlink" title="第八章 Why deep"></a>第八章 Why deep</h1><p>矮胖？高瘦？</p>
+<p>实验数据表明，相同参数情况下，deep的错误率更小。</p>
+<p><strong>Modularization</strong></p>
+<ul>
+<li>Deep-&gt;Modularization</li>
+</ul>
+<p>比如辨别男生长发、男生短发、女生长发、女生长发。</p>
+<p>男生长发的训练集是很少的。</p>
+<p>使用模组化，可以先辨别性别，在辨别头发长短。这样性别和长短发的训练集都是差不多的。这样男生长发也有好的正确率。</p>
+<ul>
+<li>Deep-&gt;Modularization-&gt;Less training data</li>
+</ul>
+<p><strong>Modularization-Speech</strong></p>
+<p>人类语言的架构</p>
+<p>Phoneme:人类发音的音节，</p>
+<p>Tri-phone:不同的组合</p>
+<p>State: 不同的节</p>
+<ul>
+<li>语音识别：</li>
+</ul>
+<p>分类：input-&gt;acoustic feature,output-&gt;state</p>
+<blockquote>
+<p>deep的好处是，可以把复杂的问题，使用很多个简单的function连接在一起。</p>
+</blockquote>
+<h1 id="第九章-Pytorch"><a href="#第九章-Pytorch" class="headerlink" title="第九章 Pytorch"></a>第九章 Pytorch</h1><p>指定设备，迁移到某个设备</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cpu = torch.device(<span class="string">&quot;cpu&quot;</span>)</span><br><span class="line">gpu=torch.device(<span class="string">&quot;gpu&quot;</span>)</span><br><span class="line">x= torch.rand(<span class="number">10</span>)</span><br><span class="line">print(x)</span><br><span class="line">x=x.to(gpu)</span><br></pre></td></tr></table></figure>
+
+
+    
+      
+      <div class='footer'>
+        
+        
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href=https://sci.ci/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/>https://sci.ci/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+        
+      </div>
+    
+  </div>
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-21T10:39:24+02:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年6月21日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>机器学习</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=机器学习深度学习李宏毅版-学习笔记 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=机器学习深度学习李宏毅版-学习笔记 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=机器学习深度学习李宏毅版-学习笔记 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2020/05/26/ShopXO%E5%95%86%E5%9F%8E%E4%BC%98%E5%8C%96%E5%95%86%E5%93%81%E4%BB%B7%E6%A0%BC%E4%BF%AE%E6%94%B9/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>ShopXO商城优化-商城后台、小程序、飞鹅订单打印、公众号新订单推送</p>
+          <p class='content'>1：内容梗概ShopXO是款非常优秀的开源商城软件。为了让商城更加适合没有网站管理经验的人使用，我优化了手机和电脑端的商城后台。修复了小程序的一些BUG，并做了一些其他优化。使用飞鹅打印机，接收...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
+          <p class='title'>计算机网络技术学习笔记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1：基础概念
+局域网、城域网、广域网的区别
+
+实训任务：宽带城域网的逻辑结构，“三个平台一个出口”
+
+
+管理平台、业务平台、网络平台（核心层、汇聚层、接入层）、城市宽带出口- 
+核心层：
+
+为汇...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-Regression-%E5%9B%9E%E5%BD%92"><span class="toc-text">第一章 Regression 回归</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-Gradient-Descent%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="toc-text">第二章 Gradient Descent梯度下降法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-New-Optimizers-for-Deep-Learning-%E4%BC%98%E5%8C%96"><span class="toc-text">第三章 New Optimizers for Deep Learning 优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-Classification-%E5%88%86%E7%B1%BB"><span class="toc-text">第四章 Classification 分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-Logistic-Regression"><span class="toc-text">第五章 Logistic Regression</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-Deep-learning"><span class="toc-text">第六章 Deep learning</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-Backpropagation-%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-text">第七章 Backpropagation 反向传播</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-Tips-for-Deep-Learning"><span class="toc-text">第八章 Tips for Deep Learning</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-Why-deep"><span class="toc-text">第八章 Why deep</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-Pytorch"><span class="toc-text">第九章 Pytorch</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+
+
+</aside>
+
+
+
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="mailto:me@xxx.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://github.com/volantis-x/"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-beta.2" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    
+    <!-- internal -->
+
+
+
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".md").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      // 背景层
+      var bgDiv = document.createElement("div");
+      $(bgDiv).addClass("bg");
+      if ($(this).attr('bg')) {
+        $(bgDiv).css('background', $(this).attr('bg'));
+      }
+      $(this).wrap(bgDiv); // 背景层
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+<!-- optional -->
+
+  <script>
+  
+  var SEARCH_SERVICE = "hexo" || "hexo";
+  var ROOT = "/" || "/";
+  if (!ROOT.endsWith('/')) ROOT += '/';
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "快来评论吧~";
+
+    let path = $.trim($('#pjax-comment-path').text());
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+      appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
+    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://sci.ci' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://sci.ci' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://sci.ci' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              if (pv.getAttribute('data-path') == window.location.pathname) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == window.location.pathname) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+<!-- more -->
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+        pjax_fancybox();
+        
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>

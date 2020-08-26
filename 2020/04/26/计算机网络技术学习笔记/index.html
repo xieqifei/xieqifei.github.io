@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-beta.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>计算机网络技术学习笔记 - 🛫起飞了</title>
+  
+    <meta name="keywords" content="网络技术">
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
+
+  
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+</head>
+
+<body>
+  <header class="l_header auto shadow blur" style='opacity: 0' >
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div class="l_body">
+    <div class="l_cover">
+
+  
+  
+      <div class='cover-wrapper post dock' style="display: none;">
+        
+          <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
+        
+        <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">🛫起飞了</p>
+    
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a target="_blank" rel="noopener" href="https://weibo.com/678199722"
+              
+              
+              id="https:weibocom678199722">
+              <i class='fab fa-weibo fa-fw'></i><p>Weibo</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100006770206489"
+              
+              
+              id="https:wwwfacebookcomprofilephp?id=100006770206489">
+              <i class='fab fa-facebook fa-fw'></i><p>Facebook</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://twitter.com/CruelGiF"
+              
+              
+              id="https:twittercomCruelGiF">
+              <i class='fab fa-twitter fa-fw'></i><p>Twitter</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://www.instagram.com/xie_qifei/"
+              
+              
+              id="https:wwwinstagramcomxie_qifei">
+              <i class='fab fa-instagram fa-fw'></i><p>Instagram</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://github.com/xieqifei"
+              
+              
+              id="https:githubcomxieqifei">
+              <i class='fab fa-github fa-fw'></i><p>Github</p>
+            </a>
+          
+            <a href="mailto:im@xieqifei.com"
+              
+              
+              id="mailto:im@xieqifeicom">
+              <i class='fas fa-envelope fa-fw'></i><p>Email</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+  
+
+</div>
+
+    <div class='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">计算机网络技术学习笔记</div>
+  <div id="pjax-enable-cover">true</div>
+  <div id="pjax-comment-path"></div>
+  <div id="pjax-comment-placeholder"></div>
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "blog") { // 半屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "docs") { // 全屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+
+        
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  <div class='article-header'>
+    
+    <div class="article-meta" id="top">
+      
+      
+      
+        <h1 class="title">
+          <a href="/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+            计算机网络技术学习笔记
+          </a>
+        </h1>
+      
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://ae01.alicdn.com/kf/Hb5b4a24aa25749c38ad1c3af3f15bac4e.jpg">
+    <p>啓飞</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年4月26日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="计算机网络技术学习笔记" data-path="/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h1 id="1：基础概念"><a href="#1：基础概念" class="headerlink" title="1：基础概念"></a>1：基础概念</h1><ol>
+<li><p>局域网、城域网、广域网的区别</p>
+</li>
+<li><p>实训任务：宽带城域网的逻辑结构，“三个平台一个出口”</p>
+</li>
+</ol>
+<p>管理平台、业务平台、网络平台（核心层、汇聚层、接入层）、城市宽带出口- </p>
+<p>核心层：</p>
+<ul>
+<li>为汇聚层的网络提供高速分组转发，为城市提供一个高速安全与具有QoS保障能力的数据传输环境</li>
+<li>提供城市的宽带IP出口</li>
+<li>用户访问Internet所需的路由访问</li>
+</ul>
+<p>汇聚层：</p>
+<ul>
+<li>汇聚接入层的用户流量</li>
+<li>进行本地路由，QoS优先级的管理等</li>
+<li>用户流量转发到核心层</li>
+</ul>
+<p>接入层：</p>
+<ul>
+<li>连接最终用户</li>
+</ul>
+<p>三层结构思想：上层负责下层的数据汇聚，核心提供出口和QoS、汇聚本地路由、接入服务用户。</p>
+<ol start="3">
+<li>QoS服务质量的保证：</li>
+</ol>
+<ul>
+<li>资源预留、区分服务、多协议标记交换</li>
+</ul>
+<p>RPR：弹性分组环，工作技术，动态分组传输（DPT），在光以太网上高效传输IP分组的传输技术。顺时针传输的光纤叫做外环，内外环都可以传输数据分组和控制分组</p>
+<h1 id="2：中小型网格系统总体规划"><a href="#2：中小型网格系统总体规划" class="headerlink" title="2：中小型网格系统总体规划"></a>2：中小型网格系统总体规划</h1><p><strong>考点：路由器技术指标、网格系统分层设计、交换机技术指标、网络服务器性能</strong></p>
+<h2 id="2-1-基础知识"><a href="#2-1-基础知识" class="headerlink" title="2.1 基础知识"></a>2.1 基础知识</h2><h3 id="2-1-1-基于网络的信息系统基本结构"><a href="#2-1-1-基于网络的信息系统基本结构" class="headerlink" title="2.1.1 基于网络的信息系统基本结构"></a>2.1.1 基于网络的信息系统基本结构</h3><ul>
+<li>网络运行环境：机房和电源</li>
+<li>网络系统</li>
+<li>网络操作系统</li>
+<li>网络应用软件开发和运行环境</li>
+</ul>
+<h3 id="2-1-2-网络需求调研与系统设计的基本原则"><a href="#2-1-2-网络需求调研与系统设计的基本原则" class="headerlink" title="2.1.2 网络需求调研与系统设计的基本原则"></a>2.1.2 网络需求调研与系统设计的基本原则</h3><h2 id="2-2-实训任务"><a href="#2-2-实训任务" class="headerlink" title="2.2 实训任务"></a>2.2 实训任务</h2><h3 id="2-2-1-网络用户调查与网络工程需求分析"><a href="#2-2-1-网络用户调查与网络工程需求分析" class="headerlink" title="2.2.1 网络用户调查与网络工程需求分析"></a>2.2.1 网络用户调查与网络工程需求分析</h3><p>网络需求分析包括：网络总体需求分析、综合布线需求分析、网络可用性与可靠性分析、网络安全性分析</p>
+<h3 id="2-2-2-路由器选型的依据"><a href="#2-2-2-路由器选型的依据" class="headerlink" title="2.2.2 路由器选型的依据"></a>2.2.2 路由器选型的依据</h3><ol>
+<li>路由器的分类——根据路由器背板交换能力划分</li>
+</ol>
+<p>交换能力大于<strong>40Gbps</strong>的为高端路由器</p>
+<ol start="2">
+<li>路由器的技术指标</li>
+</ol>
+<ul>
+<li><p>吞吐量：包转发能力。能力与<strong>端口数量、端口效率、包长、包类型</strong>有关</p>
+</li>
+<li><p>背板能力：路由器的输入端与输出端之间的物理通道。传统，共享背板，高性能，交换式结构。背板能力决定了吞吐量</p>
+</li>
+<li><p>丢包率：持续负荷下，包丢失的概率。衡量路由器超负荷工作时的指标</p>
+</li>
+<li><p>延时与延时抖动：第一个比特进入路由器，到该帧的最后一个比特离开路由器所经历的时间。高速路由器，1518B的IP包，延时要求小于1ms。延时抖动指延时的变化量，语音、视频对延时抖动要求较高。</p>
+</li>
+<li><p>突发处理能力：最小帧间隔发送数据包而不引起丢失的最大发送速率</p>
+</li>
+<li><p>路由表容量</p>
+</li>
+<li><p>服务质量：主要表现在队列管理机制、端口硬件队列管理和QoS协议上</p>
+</li>
+<li><p>网管能力</p>
+</li>
+<li><p>可靠性和可用性：设备的冗余、热插拔、无故障工作时间、内部钟表精度</p>
+</li>
+</ul>
+<h3 id="2-2-3-交换机分类与主要技术指标"><a href="#2-2-3-交换机分类与主要技术指标" class="headerlink" title="2.2.3 交换机分类与主要技术指标"></a>2.2.3 交换机分类与主要技术指标</h3><ol>
+<li><p>交换机的分类</p>
+</li>
+<li><p>交换机的性能指标</p>
+</li>
+</ol>
+<ul>
+<li>背板带宽</li>
+<li>全双工端口带宽：端口数x端口速率x2</li>
+</ul>
+<h3 id="2-2-4-网络服务器选型"><a href="#2-2-4-网络服务器选型" class="headerlink" title="2.2.4 网络服务器选型"></a>2.2.4 网络服务器选型</h3><ol>
+<li><p>分类</p>
+<p>文件服务器、数据库服务器、Internet通用服务器、应用服务器</p>
+</li>
+</ol>
+<p>应用服务器的主要技术特点：采用浏览器/服务器（B/S）模式。传统的（C/S）客户/服务器</p>
+<ol start="2">
+<li>功能</li>
+</ol>
+<ul>
+<li><p>热插拔</p>
+</li>
+<li><p>RAID磁盘冗余阵列</p>
+</li>
+<li><p>CISC处理器结构</p>
+</li>
+</ul>
+<ol start="3">
+<li>网络服务器性能</li>
+</ol>
+<ul>
+<li>运算处理能力</li>
+<li>磁盘存储能力</li>
+<li>系统的高可靠性=MTBF/（MTBF+MRBR），MTBF，平均无故障时间，MRBR，平均修复时间</li>
+</ul>
+<h1 id="3：IP地址规划设计"><a href="#3：IP地址规划设计" class="headerlink" title="3：IP地址规划设计"></a>3：IP地址规划设计</h1><h2 id="3-1-基础知识"><a href="#3-1-基础知识" class="headerlink" title="3.1 基础知识"></a>3.1 基础知识</h2><h3 id="3-1-1-IP地址的概念和划分地址新技术的研究"><a href="#3-1-1-IP地址的概念和划分地址新技术的研究" class="headerlink" title="3.1.1 IP地址的概念和划分地址新技术的研究"></a>3.1.1 IP地址的概念和划分地址新技术的研究</h3><p>标准分类：A类、B类、C类IP地址采用包括网络号-主机号</p>
+<p>划分子网的三级结构：网络号-子网号-主机号</p>
+<p>无类域间路由（CIDR）：也称超网，将连续小的网络组成一个大的网络</p>
+<p>网络地址转换（NAT）：公司内部每一台主机分配不能再Internet上使用的专用IP地址，访问外网时，专用IP地址转换成全局IP地址。</p>
+<h3 id="3-1-2-标准分类IP地址"><a href="#3-1-2-标准分类IP地址" class="headerlink" title="3.1.2 标准分类IP地址"></a>3.1.2 标准分类IP地址</h3><p>A类：0+7位网络号+24位主机号：1.0.0.0~127.255.255.255</p>
+<p>B类：10+14位网络号+16位主机号：128.0.0.0~191.255.255.255</p>
+<p>C类：110+21位网络号+8位主机号：192.0.0.0~223.255.255.255</p>
+<p>D类：1110+21位组播地址：224.0.0.0~</p>
+<p>E类：11110+保留号</p>
+<ol>
+<li>A类地址，一共127块，第一块和最后一块保留用作特殊用途，另外，网络号=10的，用于专用地址，其余125块可指派给一些机构，可用的主机号为2^24-2.</li>
+<li>B类地址，网络号长度为14位，网络号总数为16384，因此每个B类网络可以有2^16=65536个主机号。全0和全1保留用于特殊目的，因此允许分配的主机号位65534个。</li>
+<li>C类地址，网络号长度21位，主机号长度为8位，允许有2097152个网络位，允许分配的主机号为254个。</li>
+</ol>
+<p>特殊地址形式：</p>
+<ul>
+<li>直接广播地址：在A类B类C类IP地址中，主机号是全1，那么这个主机号为直接广播地址</li>
+<li>受限广播地址：32位全为1的广播地址（255.255.255.255）为受限广播地址，用来将一个分组以广播方式发送给本网络的所有主机。</li>
+<li>这个网络上的特定主机地址：网络号全零，主机号不变</li>
+<li>回送地址：A类地址中的127.0.0.0是回送地址，他是一个保留地址，会送地址用于网络软件测试和本地进程间通信</li>
+</ul>
+<h3 id="3-1-3-划分子网的三级网络结构"><a href="#3-1-3-划分子网的三级网络结构" class="headerlink" title="3.1.3 划分子网的三级网络结构"></a>3.1.3 划分子网的三级网络结构</h3><ol>
+<li><p>子网的基本概念</p>
+</li>
+<li><p>三级层次是IP地址：netID——subnetID——hostID</p>
+</li>
+<li><p>子网掩码的概念：如何从一个IP地址中提取出子网号。</p>
+</li>
+</ol>
+<p>A类地址：8位网络号：全1，24位主机号全0-。255.0.0.0</p>
+<p>B类：255.255.0.0</p>
+<p>C类：255.255.255.0</p>
+<p>计算：</p>
+<p>B类地址，要分出64个子网，从主机位借6位，现在网络号22位，主机位10位，子网掩码是，网络号全1，主机号全0，所以子网掩码为，255.255.252.0或者“网络号/22”.</p>
+<p>分128个子网，则网络号23位，主机号9位，子网掩码：255.255.254.0</p>
+<h2 id="3-2-实训任务"><a href="#3-2-实训任务" class="headerlink" title="3.2 实训任务"></a>3.2 实训任务</h2><p>网络地址转换NAT工作原理</p>
+<ul>
+<li>静态NAT（一对一）</li>
+<li>动态地址NAT（一对多）</li>
+<li>网络地址端口装欢NAPT（端口区分）</li>
+</ul>
+<p>IPv6地址的主要特征</p>
+<ul>
+<li>新的协议格式，巨大的地址空间，有效的分机寻址和路由结构，地址自动配置，支持QoS服务</li>
+<li>IP v6地址长度规定为128位，用16位边界划分，每个16位段转换更4位十六进制数字，用冒号分隔</li>
+<li>压缩零，有一段连续的十六进制段都为0，用双冒号压缩，FE8C::2AA:FF:FE9A:4CA2。段内压缩，只能压缩前面的零，双冒号在一个地址中只能出现一次。</li>
+<li>IPv6不支持子网掩码，FE8C::2AA:FF:FE9A:4CA2/48。用前缀位表示48位前缀。</li>
+</ul>
+<h1 id="4：路由设计技术"><a href="#4：路由设计技术" class="headerlink" title="4：路由设计技术"></a>4：路由设计技术</h1><p>考点：RIP路由协议、OSPF、BGP、IP路由选择和路由汇聚</p>
+<p>内部路由协议：RIP、OSPF</p>
+<p>外部路由协议：BGP</p>
+<h2 id="4-1-路由信息协议（RIP）的工作过程："><a href="#4-1-路由信息协议（RIP）的工作过程：" class="headerlink" title="4.1 路由信息协议（RIP）的工作过程："></a>4.1 路由信息协议（RIP）的工作过程：</h2><ol>
+<li>路由表的建立，初始化的路由只包含所有与该路由器直接相连的网络的路由。距离为0.</li>
+<li>路由表信息的更新</li>
+</ol>
+<ul>
+<li>如果自己的路由表没有该项，增加该项，距离+1</li>
+<li>如果自己的路由表已有该项<ul>
+<li>原距离比对方的距离（跳数）+1还要大，距离设置为对方距离+1。路由为对方</li>
+<li>原距离比对方的距离+1还要小，保持不变。</li>
+<li>相同不变</li>
+</ul>
+</li>
+</ul>
+<p>路由刷新保温主要内容是由若干（V、D）组成的表</p>
+<h2 id="4-2-最短路径优先协议（OSPF）"><a href="#4-2-最短路径优先协议（OSPF）" class="headerlink" title="4.2 最短路径优先协议（OSPF）"></a>4.2 最短路径优先协议（OSPF）</h2><h3 id="4-2-1-和RIP比较，其特点"><a href="#4-2-1-和RIP比较，其特点" class="headerlink" title="4.2.1 和RIP比较，其特点"></a>4.2.1 和RIP比较，其特点</h3><ol>
+<li>OSPF是使用<strong>分布式链路状态协议</strong>；</li>
+<li>链路状态度量主要是指<strong>费用、距离、延时、带宽</strong>。RIP主要看跳数；</li>
+<li>链路状态发生变化时，用<strong>洪泛法</strong>向所有路由器发送此信息；</li>
+<li>所有的OSFPF路由器交换链路状态信息，<strong>最终建立一个链路状态数据库</strong>，这个数据库实际上就是<strong>全网的拓扑结构图</strong>；</li>
+<li>OSPF可以将一个自治系统再划分为若干个更小的范围，即<strong>区域</strong>，每个区域有一个<strong>32位的区域标识符</strong>，一个区域路由器<strong>不超过200个</strong>。</li>
+</ol>
+<p>自治系统内部的区域划分，好处在于利用洪泛法将链路状态信息范围局限再每个区域而不是整个自治系统。<strong>层次结构划分</strong>，将一个自治系统划分成<strong>若干区域与一个主干区域</strong>。主干区域内部的路由器叫主干路由器，连接各个区域的路由器叫做区域边界路由器，区域边界路由器接收从其他区域来的信息。</p>
+<h3 id="4-2-2-OSPF协议的执行过程"><a href="#4-2-2-OSPF协议的执行过程" class="headerlink" title="4.2.2 OSPF协议的执行过程"></a>4.2.2 OSPF协议的执行过程</h3><ol>
+<li>初始化过程：OSPF让每个路由器用数据库描述分组和相邻路由器交换本数据库已有的链路状态摘要信息，摘要信息主要址出哪些路由器的链路状态信息已经写入数据库。</li>
+<li>网络云心过程：只要一个路由器的链路发生变化，该路由器就要使用链路状态发送分组信息。</li>
+</ol>
+<h2 id="4-3-外部网关协议BGP"><a href="#4-3-外部网关协议BGP" class="headerlink" title="4.3 外部网关协议BGP"></a>4.3 外部网关协议BGP</h2><p>基本思想：</p>
+<ul>
+<li>外部网关协议是不同自治系统的路由器之间交换路由信息的协议。</li>
+<li>BGP-4采用了路由向量路由协议，每个自治系统至少选择一个路由器作为自治系统的“发言人”，一个BGP发言人与其他自治系统的发言人交换路由信息要先建立TCP连接。</li>
+</ul>
+<p>BGP路由选择协议的工作过程</p>
+<ol>
+<li>BGP初始化过程：BGP<strong>刚刚运行时，交换整个路由表，以后只需要在发生变化时更新有变化的部分</strong>；</li>
+<li>BGP协议的四种分组：</li>
+</ol>
+<ul>
+<li>打开分组：与另一个BGP发言人建立关系；</li>
+<li>更新分组：发送某一路由信息，以及列出要撤销的多条路由；</li>
+<li>保活分组：确认打开分组，以及周期证实相邻边界路由器存在；</li>
+<li>通知分组：发送检测到的差错。</li>
+</ul>
+<p>BGP发言人周期（30秒）交换“保活分组”。</p>
+<p>“更新分组”是BGP协议的核心。</p>
+<h1 id="5：局域网技术"><a href="#5：局域网技术" class="headerlink" title="5：局域网技术"></a>5：局域网技术</h1><p>考点：以太网组网方法（快速以太网）、局域网组网设备（集线器、交换机）、综合布线子系统设计（水平子系统、建筑群子系统）</p>
+<h2 id="5-1-基础知识"><a href="#5-1-基础知识" class="headerlink" title="5.1 基础知识"></a>5.1 基础知识</h2><h3 id="5-1-1-局域网组网的基础知识"><a href="#5-1-1-局域网组网的基础知识" class="headerlink" title="5.1.1 局域网组网的基础知识"></a>5.1.1 局域网组网的基础知识</h3><p>局域网（LAN）是指分布在相对较小距离范围内的计算机网络。</p>
+<p>局域网标准：IEEE802——&gt;数据链路层分为了两个子层，LLC子层和MAC子层</p>
+<p>交换式局域网的基本概念，交换局域网是相对共享式局域网而言。局域网交换机可以在多个端口之间建立多个并发连接。主要采用<strong>快捷交换方式和存储转发方式</strong></p>
+<p>虚拟局域网的基本概念（VLAN），以<strong>软件</strong>的方法将网络中的节点按工作性质与需要划分成若干“逻辑局域网”。</p>
+<p>方法通常四种：</p>
+<ul>
+<li>基于端口的虚拟局域网</li>
+<li>基于MAC地址的虚拟局域网</li>
+<li>基于网络层地址定义的虚拟局域网</li>
+<li>基于IP广播组的虚拟局域网</li>
+</ul>
+<h3 id="5-1-2-综合布线的概念"><a href="#5-1-2-综合布线的概念" class="headerlink" title="5.1.2 综合布线的概念"></a>5.1.2 综合布线的概念</h3><p>综合布线是一种模块化的、灵活性极高的建筑物内或建筑群之间的信息传输通道。由不同系列和规格的不见组成，包括：传输介质、相关连接硬件以及电气保护设备。</p>
+<p>特点：兼容性、开放性等</p>
+<p>组成：<strong>工作区、配线（水平子系统）、干线（垂直子系统）、设备间、建筑群、管理</strong>六大子系统</p>
+<h2 id="5-2-实训任务"><a href="#5-2-实训任务" class="headerlink" title="5.2 实训任务"></a>5.2 实训任务</h2><ol>
+<li>以太网组网的基本方法</li>
+</ol>
+<p>以太网的物理层标准的命名方法：</p>
+<p>IEEE802.3x(Mb/s) |Type-y|Name(局域网名称)</p>
+<p>10BASE-5，10M网，Base基带传输方式，y为网络的最大长度，单位100m。</p>
+<p>10BASE-T标准以太网组网的设计方法，-T表示非屏蔽双绞线和RJ-45接口</p>
+<p>快速以太网组网的基本设计方法：</p>
+<p>特点：IEEE802.3u、 可工作在10M和100M</p>
+<p>快速以太网介质专用接口MII</p>
+<p>快速以太网的物理标准：</p>
+<ul>
+<li><p>100BASE-TX：使用<strong>5类非屏蔽双绞线或屏蔽双绞线</strong>（抗干扰性更强），两队双绞线，<strong>一对用于发送，一对用于接收</strong>。在传输中使用<strong>4B/5B编码</strong>方式。最大网段长度为100m。支持<strong>全双工</strong></p>
+</li>
+<li><p>100BASE-FX：两条<strong>光纤</strong>。<strong>全双工</strong></p>
+</li>
+<li><p>100BASE-T4：<strong>4对3类</strong>非屏蔽双绞线，3对用于传送数据，1对用于检测冲突信号。传输<strong>8B/6T编码</strong>。<strong>半双工</strong>。</p>
+</li>
+</ul>
+<p>全双工：任意时刻，信号双向传输信号。是一种点到点连接方式，支持全双工的以太网拓扑结构一定是星形。</p>
+<p>10Mbps与100Mpbs速率自动协商功能，只能用于使用双绞线的以太网，需要在500ms内完成。</p>
+<ol start="2">
+<li>中继器</li>
+</ol>
+<p>中继器是网络物理层上面的连接设备。通过对数据信号的重新发送或转发，来扩大网络传输的设备。</p>
+<p>543规则：是以太网标准中规定了以太网只允许出现5个网段，最多使用4个中继器，其中3段可以连接计算机</p>
+<ol start="3">
+<li>集线器</li>
+</ol>
+<p>多端口的中继器，区别仅在于中继器只是连接两个网段，而集线器能够提供更多端口服务，采用<strong>CSMA/CD</strong>介质访问控制方法。连接一个集线器的<strong>所有节点共享一个冲突域</strong>。</p>
+<p><strong>串联一个集线器可以监听</strong>该链路中的数据包。</p>
+<p>连接到一个集线器的节点，<strong>不能同时发送数据帧，但能同时接收</strong></p>
+<ol start="4">
+<li>网桥</li>
+</ol>
+<p>工作在数据链路层的设备。局域网互联，交换数据和共享资源</p>
+<p>特征：能互联两个采用<strong>不同数据链路层协议、不同传输介质、不同传输速率</strong>的网络。网桥以接收、储存、地址过滤和转发实现连接。</p>
+<p>网桥最重要的维护工作是构建和维护MAC地址表。MAC地址表记录了不同的节点的物理地址与网桥转发端口的关系。</p>
+<p>为避免网桥互联时的环状结构，透明网桥使用生成树算法。</p>
+<p>生成树协议：其能够逻辑地阻断网络中存在地冗余链路，以消除路径中地环路，活动链路出现故障时，重新激活冗余链路来恢复网络的连接。</p>
+<ol start="5">
+<li>交换机</li>
+</ol>
+<p>交换机可以在他的多个端口之间建立并发连接，交换式以太网是典型地交换式局域网，它的核心部件是以太网交换机。</p>
+<p>交换机与网桥地主要区别：网桥一般只有一个CPU，通过软件方法完成网桥地接收、存储、地址过滤与转发等。</p>
+<p>交换机使用为帧转发设计地专用集成电路芯片ASIC。或采取多个CPU并发工作地计算机结构</p>
+<ol start="6">
+<li>综合布线系统子系统设计</li>
+</ol>
+<ul>
+<li>工作区子系统设计：指从设备出线到信息插座地整个区域</li>
+</ul>
+<p>确定信息插座地数量和类型：信息插座分为，嵌入式安装插座（暗盒）、表面安装插座（明盒）、多介质信息插座（光纤和铜缆）</p>
+<p>适配器的选用：设备连接处用的不同信息插座，可用专用电缆和适配器。挡在单一信息插座上，进行两项服务，应用“Y”型适配器。选用电缆类型不同与设备所需的电缆类型时，以及在连接使用不同信号的数模转换货数据速率转换，应采用适配器。</p>
+<ul>
+<li>水平子系统设计</li>
+</ul>
+<p>采用5类或超5类4对非屏蔽双绞线，90m以内</p>
+<ul>
+<li><p>管理子系统设计</p>
+</li>
+<li><p>干线子系统设计</p>
+</li>
+</ul>
+<p>建筑物主馈电缆</p>
+<ul>
+<li>建筑群子系统</li>
+</ul>
+<p>两个或以上建筑物之间，由电缆、光缆和入楼处线缆上过流过压的电器保护设备</p>
+<p>最好的是——管道布线法</p>
+<hr>
+<h1 id="6：-局域网交换机"><a href="#6：-局域网交换机" class="headerlink" title="6： 局域网交换机"></a>6： 局域网交换机</h1><h2 id="6-1-基础知识"><a href="#6-1-基础知识" class="headerlink" title="6.1 基础知识"></a>6.1 基础知识</h2><h3 id="6-1-1-局域网交换机的基本功能"><a href="#6-1-1-局域网交换机的基本功能" class="headerlink" title="6.1.1 局域网交换机的基本功能"></a>6.1.1 局域网交换机的基本功能</h3><p>交换机的基本概念：工作在数据链路层的网络设备。交换机根据进入端口数据帧中的MAC地址，过滤、转发数据帧。独占数据通道、独享信道带宽，同时允许多对站点进行通信、系统带宽等于所有端口带宽之和。</p>
+<p>交换机的功能：</p>
+<ol>
+<li><p>建立和维护一个表示<strong>MAC地址与交换机端口</strong>对应关系的交换表。</p>
+</li>
+<li><p>在发送节点和接收节点之间建立一个<strong>虚连接</strong>。</p>
+</li>
+<li><p>完成数据帧的转发和过滤。</p>
+</li>
+</ol>
+<p>交换机分析每一个进来的数据帧，根据帧中的目的MAC地址，通过查询交换表，确定是丢弃还是转发。</p>
+<h3 id="6-1-2-局域网交换机的工作原理"><a href="#6-1-2-局域网交换机的工作原理" class="headerlink" title="6.1.2 局域网交换机的工作原理"></a>6.1.2 局域网交换机的工作原理</h3><p>交换机的工作原理与网桥相似，通过自学习的方式。</p>
+<h3 id="6-1-3-交换表内容的建立和维护"><a href="#6-1-3-交换表内容的建立和维护" class="headerlink" title="6.1.3 交换表内容的建立和维护"></a>6.1.3 交换表内容的建立和维护</h3><p>交换表的内容：<strong>目的MAC地址</strong>、该地址所对应的<strong>交换机端口号</strong>以及所在的<strong>虚拟子网</strong>。</p>
+<p>交换表的建立，初始时是空的，通过学习建立。</p>
+<p>交换表的维护，一定时间后，表项未被更新，则被删除</p>
+<p>交换结构：</p>
+<ul>
+<li>软件交换结构，串/并转换-&gt;RAM-&gt;并/串转换；</li>
+<li>矩阵交换结构，根据源端口与目的端口打开交换矩阵中相应的开关；</li>
+<li>总线交换结构，数据帧都按时隙在总线上传输，</li>
+</ul>
+<p>交换模式：快速转发、碎片丢弃、存储转发</p>
+<ul>
+<li>快速转发模式，一旦检测到<strong>6个字节</strong>，目的地址就立即进行转发操作。无法经过校验、纠错即被直接转发。</li>
+<li>存储转发模式，先存储起来，然后进行循环冗余码校验检查，再对错误帧进行处理，才去除数据帧的目的地址，进行转发操作。延时大，支持不同速度的端口间转发。</li>
+<li>碎片丢弃交换模式，检测数据帧是否冲突碎片，判断数据帧是否为64字节</li>
+</ul>
+<h3 id="6-1-3-虚拟局域网VLAN技术"><a href="#6-1-3-虚拟局域网VLAN技术" class="headerlink" title="6.1.3 虚拟局域网VLAN技术"></a>6.1.3 虚拟局域网VLAN技术</h3><p>以交换式网络为基础，把网络上的用户终端被划分为多个逻辑工作组。逻辑组设立一个独立的逻辑网段和广播域。不受用户所在的物理位置和物理网段的限制。通过软件完成。</p>
+<ul>
+<li>VLAN工作在OSi参考模型的第2层，数据链路层。</li>
+<li>其广播的信息只能发送给该VLAN的节点</li>
+<li>唯一不同的子网号，VLAN只能通过第三层路由才能通信</li>
+</ul>
+<p>VLAN的标识：VLAN ID或VLAN name</p>
+<p>VLAN ID由IEEE 802.1Q标准规定<strong>12位二进制</strong>，1~1000用于以太网。</p>
+<p>VLAN name由32位字符表示，可以是字母或数字</p>
+<p>VLAN Trunk（虚拟中继）：主干线路上传输多个VLAN的信息，连接主干线路的两台交换机端口，应具有Trunk功能</p>
+<h3 id="6-1-4-生成树协议STP"><a href="#6-1-4-生成树协议STP" class="headerlink" title="6.1.4 生成树协议STP"></a>6.1.4 生成树协议STP</h3><p>BPDU报文，每两秒或是再网络发生故障、网络拓扑变化时，发送新的BPDU。</p>
+<p>BPDU两种类型，配置BPDU（不超过35个字节），拓扑变化通知BPDU（不超过4字节）</p>
+<h2 id="6-2-实训任务"><a href="#6-2-实训任务" class="headerlink" title="6.2 实训任务"></a>6.2 实训任务</h2><ol>
+<li>使用console配置交换机，超级端口设置参数9600bps，8位数字</li>
+<li>telnet命令配置，再windows“运行”输入指令<code>telnet x.x.x.x:端口号</code></li>
+<li>使用浏览器配置交换机，计算机已安装TCP/IP协议，计算机和交换机都有IP地址；计算机安装有JAVA的WEB浏览器；交换机有管理权限的用户密码；交换机支持http服务，并启用。</li>
+</ol>
+<hr>
+<h1 id="7：路由器及其配置"><a href="#7：路由器及其配置" class="headerlink" title="7：路由器及其配置"></a>7：路由器及其配置</h1><p>考点：路由器基础与基本命令、接口配置、Pos接口配置、访问控制列表、静态路由、RIP协议、OSPF协议配置</p>
+<h2 id="7-1-基础知识"><a href="#7-1-基础知识" class="headerlink" title="7.1 基础知识"></a>7.1 基础知识</h2><h3 id="7-1-1-路由器概述"><a href="#7-1-1-路由器概述" class="headerlink" title="7.1.1 路由器概述"></a>7.1.1 路由器概述</h3><p>工作在<strong>网络层</strong>的设备，选择<strong>最佳路径</strong>，将数据从源主机传送到目的端主机。路由器具有异构网络、广域网互联、<strong>隔离广播</strong>的能力。</p>
+<h3 id="7-1-2-路由器工作原理"><a href="#7-1-2-路由器工作原理" class="headerlink" title="7.1.2 路由器工作原理"></a>7.1.2 路由器工作原理</h3><ol>
+<li>路由选择，路由器依据目的IP地址的网络地址，通过路由算法，确定一条最佳路径。</li>
+<li>分组转发，根据最佳路径信息，将其转发给下一跳路由器、目的端口或是缺省路由器。</li>
+</ol>
+<p>缺省路由也称缺省网关。<strong>分组转发的思想，目的IP地址不变，目的MAC地址，逐跳修改。</strong></p>
+<ol start="3">
+<li>路由表，目的网络地址及其对应端口，下一跳路由器的名字，缺省路由信息</li>
+</ol>
+<h3 id="7-1-3-路由器的结构"><a href="#7-1-3-路由器的结构" class="headerlink" title="7.1.3 路由器的结构"></a>7.1.3 路由器的结构</h3><ol>
+<li><p>中央处理器</p>
+</li>
+<li><p>非易失性随机存储器NVRAM：存储路由器的启动配置文件</p>
+</li>
+<li><p>闪存FLASH：保存操作系统的映像文件和一些微代码</p>
+</li>
+<li><p>接口：局域网接口、广域网接口</p>
+</li>
+</ol>
+<p>配置接口：console控制接口和AUX辅助接口。AUX通过拨号方式实现远程访问</p>
+<p>路由器接口名字和编号 f 0/5，f：FastEthernet；mod/port，模块号/端口</p>
+<h3 id="7-1-4-路由器的工作模式"><a href="#7-1-4-路由器的工作模式" class="headerlink" title="7.1.4 路由器的工作模式"></a>7.1.4 路由器的工作模式</h3><ol>
+<li>用户模式</li>
+</ol>
+<p>通过控制台或Telnet登陆路由器后，用户可以浏览路由器的某些信息。默认提示符：router&gt;</p>
+<ol start="2">
+<li>特权模式</li>
+</ol>
+<p>用户模式后输入enable。可以管理系统时钟、错误检测、查看和保存配置文件、清除内存、重启。提示符：router#</p>
+<ol start="3">
+<li>全局配置模式</li>
+</ol>
+<p>在特权模式下，输入configure terminal。配置路由器全局性参数（主机名、口令、TFTP服务器、静态路由）。提示符：router（config）#</p>
+<ol start="4">
+<li>其他配置模式</li>
+</ol>
+<p>包括接口配置模式、虚拟终端配置模式、路由配置模式等。</p>
+<ol start="5">
+<li>设置模式</li>
+</ol>
+<p>用户创建第一次的配置文件</p>
+<ol start="6">
+<li>RXBOOT模式</li>
+</ol>
+<p>路由器的维护模式，<strong>恢复密码</strong></p>
+<h2 id="7-2-实训任务"><a href="#7-2-实训任务" class="headerlink" title="7.2 实训任务"></a>7.2 实训任务</h2><ol>
+<li>路由器的操作</li>
+</ol>
+<p>AUX通过远程拨号配置路由器</p>
+<ol start="2">
+<li>路由器的配置</li>
+</ol>
+<p>router(config)#line vty 0 15</p>
+<p>router(config-line)#password zzz ***</p>
+<ol start="3">
+<li>使用TFTP配置路由器</li>
+</ol>
+<p><strong>广域网接口配置：</strong></p>
+<ul>
+<li>配置异步串行口（为用户提供拨号上网服务）</li>
+</ul>
+<p>interface a1。封装格式只能为ppp</p>
+<ul>
+<li>配置同步串行口</li>
+</ul>
+<p>用于DDN专线、帧中继、卫星</p>
+<p>interface s1/1；Bandwidth 2048（带宽2M，单位为kb）；封装hdlc或ppp协议，hdlc为缺省</p>
+<ul>
+<li>配置POS接口</li>
+</ul>
+<p>interface POS3/0；Crc 32（校验位16和32）；Posframing sdh（可选帧格式是SDH和SONET）</p>
+<ul>
+<li>loopback接口配置</li>
+</ul>
+<p>一个虚拟接口，接口号有效值为0~2147483647，主要用为管理地址，永远处于激活状态。子网掩码为255.255.255.255。int loopback 0</p>
+<p><strong>路由器的静态路由配置：</strong></p>
+<ul>
+<li>静态路由的配置方法：</li>
+</ul>
+<p>Router(config)#p route &lt;目的网络地址&gt;&lt;子网掩码&gt;&lt;下一跳路由器的IP地址&gt;</p>
+<ul>
+<li>静态默认路由配置方法</li>
+</ul>
+<p>如果路由表中无匹配表项，且路由表中有默认路由，路由器按默认路由的吓一跳地址妆发数据</p>
+<p>Router(config)#ip route 0.0.0.0 0.0.0.0 212.112.8.6</p>
+<p><strong>动态路由协议的配置</strong></p>
+<ul>
+<li>RIP动态路由协议的配置</li>
+</ul>
+<p>RIP路由协议依据路由器的跳数(hop数)。最大跳数为15。不可带子网掩码</p>
+<ol>
+<li>配置被动接口，只收不发</li>
+<li>配置路由过滤</li>
+<li>配置管理距离</li>
+<li>定义邻居路由器</li>
+</ol>
+<ul>
+<li>OSPF动态路由协议的配置</li>
+</ul>
+<p>OSPF的基本配置</p>
+<ol>
+<li><p>使用network定义参与OSPF的子网地址</p>
+<p>Router(config)# router ospf 63</p>
+<p>Router(config-router)# network 131.107.25.1 0.0.0.0 area 0（0.0.0.0为反掩码或通配符）</p>
+<p>Router(config-router)# area 0 range 131.107.25.1 255.255.255.255</p>
+</li>
+<li><p>参数配置</p>
+</li>
+</ol>
+<p>配置被动接口、配置路由过滤、配置管理地址、配置引入外部路由到OSPF的参数</p>
+<p><strong>路由器的DHCP功能及其配置</strong></p>
+<p>IP地址分配有动态和静态两种方式。</p>
+<p>工作原理：DHCP采用C/S工作模式，一，建立和管理IP地址池，二，接收并处理DHCP客户端提出的请求。</p>
+<ul>
+<li>DHCP服务器配置</li>
+</ul>
+<ol>
+<li><p>配置IP地址池的名称，并进入DHCP Pool配置模式</p>
+<p>Router(config)# ip dhcp pool ttt</p>
+</li>
+<li><p>配置IP地址池</p>
+</li>
+<li><p>配置不用于动态分配的IP地址</p>
+</li>
+<li><p>配置IP地址池的缺省网关</p>
+</li>
+<li><p>配置IP地址池的域名系统</p>
+</li>
+<li><p>配置IP地址池的地址租约时间</p>
+</li>
+<li><p>取消地址冲突记录日志</p>
+</li>
+</ol>
+<ul>
+<li>路由器IP访问控制列表的功能</li>
+</ul>
+<p>主要功能：ACL可以当作一种网络控制工具，用来过滤流入和流出接口的数据包</p>
+
+    
+      
+      <div class='footer'>
+        
+        
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href=https://sci.ci/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/>https://sci.ci/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+        
+      </div>
+    
+  </div>
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-20T08:48:08+02:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年6月20日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>网络技术</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=计算机网络技术学习笔记 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=计算机网络技术学习笔记 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=计算机网络技术学习笔记 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>机器学习深度学习李宏毅版-学习笔记</p>
+          <p class='content'>第一章 Regression 回归$$f(input)=output$$
+输入一个对象后，有指定的输出结果。
+示例应用：数码宝贝原始cp值，求进化一次后的cp值
+Step 1: Model
+定义...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/04/07/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
+          <p class='title'>微信小程序学习笔记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1：简介
+用户扫一扫或搜索一下即可打开应用。
+微信有海量用户，粘性高
+开发适配成本低
+
+2：目录结构小程序结构目录
+
+pages
+
+index
+logs
+
+
+utils
+
+app.js
+
+app...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-text">1：基础概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9A%E4%B8%AD%E5%B0%8F%E5%9E%8B%E7%BD%91%E6%A0%BC%E7%B3%BB%E7%BB%9F%E6%80%BB%E4%BD%93%E8%A7%84%E5%88%92"><span class="toc-text">2：中小型网格系统总体规划</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">2.1 基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%E5%9F%BA%E4%BA%8E%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-text">2.1.1 基于网络的信息系统基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%E7%BD%91%E7%BB%9C%E9%9C%80%E6%B1%82%E8%B0%83%E7%A0%94%E4%B8%8E%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99"><span class="toc-text">2.1.2 网络需求调研与系统设计的基本原则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1"><span class="toc-text">2.2 实训任务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E7%BD%91%E7%BB%9C%E7%94%A8%E6%88%B7%E8%B0%83%E6%9F%A5%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-text">2.2.1 网络用户调查与网络工程需求分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%E8%B7%AF%E7%94%B1%E5%99%A8%E9%80%89%E5%9E%8B%E7%9A%84%E4%BE%9D%E6%8D%AE"><span class="toc-text">2.2.2 路由器选型的依据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%88%86%E7%B1%BB%E4%B8%8E%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF%E6%8C%87%E6%A0%87"><span class="toc-text">2.2.3 交换机分类与主要技术指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%80%89%E5%9E%8B"><span class="toc-text">2.2.4 网络服务器选型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%9AIP%E5%9C%B0%E5%9D%80%E8%A7%84%E5%88%92%E8%AE%BE%E8%AE%A1"><span class="toc-text">3：IP地址规划设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">3.1 基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-IP%E5%9C%B0%E5%9D%80%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E5%88%92%E5%88%86%E5%9C%B0%E5%9D%80%E6%96%B0%E6%8A%80%E6%9C%AF%E7%9A%84%E7%A0%94%E7%A9%B6"><span class="toc-text">3.1.1 IP地址的概念和划分地址新技术的研究</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-%E6%A0%87%E5%87%86%E5%88%86%E7%B1%BBIP%E5%9C%B0%E5%9D%80"><span class="toc-text">3.1.2 标准分类IP地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-3-%E5%88%92%E5%88%86%E5%AD%90%E7%BD%91%E7%9A%84%E4%B8%89%E7%BA%A7%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84"><span class="toc-text">3.1.3 划分子网的三级网络结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1"><span class="toc-text">3.2 实训任务</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%9A%E8%B7%AF%E7%94%B1%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF"><span class="toc-text">4：路由设计技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E8%B7%AF%E7%94%B1%E4%BF%A1%E6%81%AF%E5%8D%8F%E8%AE%AE%EF%BC%88RIP%EF%BC%89%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-text">4.1 路由信息协议（RIP）的工作过程：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E4%BC%98%E5%85%88%E5%8D%8F%E8%AE%AE%EF%BC%88OSPF%EF%BC%89"><span class="toc-text">4.2 最短路径优先协议（OSPF）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-1-%E5%92%8CRIP%E6%AF%94%E8%BE%83%EF%BC%8C%E5%85%B6%E7%89%B9%E7%82%B9"><span class="toc-text">4.2.1 和RIP比较，其特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-2-OSPF%E5%8D%8F%E8%AE%AE%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-text">4.2.2 OSPF协议的执行过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E5%A4%96%E9%83%A8%E7%BD%91%E5%85%B3%E5%8D%8F%E8%AE%AEBGP"><span class="toc-text">4.3 外部网关协议BGP</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%EF%BC%9A%E5%B1%80%E5%9F%9F%E7%BD%91%E6%8A%80%E6%9C%AF"><span class="toc-text">5：局域网技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">5.1 基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-1-%E5%B1%80%E5%9F%9F%E7%BD%91%E7%BB%84%E7%BD%91%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">5.1.1 局域网组网的基础知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-2-%E7%BB%BC%E5%90%88%E5%B8%83%E7%BA%BF%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">5.1.2 综合布线的概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1"><span class="toc-text">5.2 实训任务</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%EF%BC%9A-%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-text">6： 局域网交换机</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">6.1 基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-1-%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="toc-text">6.1.1 局域网交换机的基本功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-2-%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-text">6.1.2 局域网交换机的工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-3-%E4%BA%A4%E6%8D%A2%E8%A1%A8%E5%86%85%E5%AE%B9%E7%9A%84%E5%BB%BA%E7%AB%8B%E5%92%8C%E7%BB%B4%E6%8A%A4"><span class="toc-text">6.1.3 交换表内容的建立和维护</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-3-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91VLAN%E6%8A%80%E6%9C%AF"><span class="toc-text">6.1.3 虚拟局域网VLAN技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-4-%E7%94%9F%E6%88%90%E6%A0%91%E5%8D%8F%E8%AE%AESTP"><span class="toc-text">6.1.4 生成树协议STP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1"><span class="toc-text">6.2 实训任务</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7%EF%BC%9A%E8%B7%AF%E7%94%B1%E5%99%A8%E5%8F%8A%E5%85%B6%E9%85%8D%E7%BD%AE"><span class="toc-text">7：路由器及其配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">7.1 基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-1-%E8%B7%AF%E7%94%B1%E5%99%A8%E6%A6%82%E8%BF%B0"><span class="toc-text">7.1.1 路由器概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-2-%E8%B7%AF%E7%94%B1%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-text">7.1.2 路由器工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-3-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">7.1.3 路由器的结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-4-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F"><span class="toc-text">7.1.4 路由器的工作模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1"><span class="toc-text">7.2 实训任务</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+
+
+</aside>
+
+
+
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="mailto:me@xxx.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://github.com/volantis-x/"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-beta.2" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    
+    <!-- internal -->
+
+
+
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".md").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      // 背景层
+      var bgDiv = document.createElement("div");
+      $(bgDiv).addClass("bg");
+      if ($(this).attr('bg')) {
+        $(bgDiv).css('background', $(this).attr('bg'));
+      }
+      $(this).wrap(bgDiv); // 背景层
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+<!-- optional -->
+
+  <script>
+  
+  var SEARCH_SERVICE = "hexo" || "hexo";
+  var ROOT = "/" || "/";
+  if (!ROOT.endsWith('/')) ROOT += '/';
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "快来评论吧~";
+
+    let path = $.trim($('#pjax-comment-path').text());
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+      appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
+    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://sci.ci' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://sci.ci' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://sci.ci' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              if (pv.getAttribute('data-path') == window.location.pathname) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == window.location.pathname) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+<!-- more -->
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+        pjax_fancybox();
+        
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>

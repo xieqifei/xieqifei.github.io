@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-beta.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>TensorFlow学习笔记 - 🛫起飞了</title>
+  
+    <meta name="keywords" content="TensorFlow">
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
+
+  
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+</head>
+
+<body>
+  <header class="l_header auto shadow blur" style='opacity: 0' >
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div class="l_body">
+    <div class="l_cover">
+
+  
+  
+      <div class='cover-wrapper post dock' style="display: none;">
+        
+          <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
+        
+        <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">🛫起飞了</p>
+    
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a target="_blank" rel="noopener" href="https://weibo.com/678199722"
+              
+              
+              id="https:weibocom678199722">
+              <i class='fab fa-weibo fa-fw'></i><p>Weibo</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100006770206489"
+              
+              
+              id="https:wwwfacebookcomprofilephp?id=100006770206489">
+              <i class='fab fa-facebook fa-fw'></i><p>Facebook</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://twitter.com/CruelGiF"
+              
+              
+              id="https:twittercomCruelGiF">
+              <i class='fab fa-twitter fa-fw'></i><p>Twitter</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://www.instagram.com/xie_qifei/"
+              
+              
+              id="https:wwwinstagramcomxie_qifei">
+              <i class='fab fa-instagram fa-fw'></i><p>Instagram</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://github.com/xieqifei"
+              
+              
+              id="https:githubcomxieqifei">
+              <i class='fab fa-github fa-fw'></i><p>Github</p>
+            </a>
+          
+            <a href="mailto:im@xieqifei.com"
+              
+              
+              id="mailto:im@xieqifeicom">
+              <i class='fas fa-envelope fa-fw'></i><p>Email</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+  
+
+</div>
+
+    <div class='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">TensorFlow学习笔记</div>
+  <div id="pjax-enable-cover">true</div>
+  <div id="pjax-comment-path"></div>
+  <div id="pjax-comment-placeholder"></div>
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "blog") { // 半屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "docs") { // 全屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+
+        
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  <div class='article-header'>
+    
+    <div class="article-meta" id="top">
+      
+      
+      
+        <h1 class="title">
+          <a href="/2020/06/17/TensorFlow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+            TensorFlow学习笔记
+          </a>
+        </h1>
+      
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://ae01.alicdn.com/kf/Hb5b4a24aa25749c38ad1c3af3f15bac4e.jpg">
+    <p>啓飞</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年6月17日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="TensorFlow学习笔记" data-path="/2020/06/17/TensorFlow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h2 id="P1：tensorflow安装"><a href="#P1：tensorflow安装" class="headerlink" title="P1：tensorflow安装"></a>P1：tensorflow安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tensorflow</span><br></pre></td></tr></table></figure>
+
+<h2 id="P2：Hello-World——衣服分类"><a href="#P2：Hello-World——衣服分类" class="headerlink" title="P2：Hello World——衣服分类"></a>P2：Hello World——衣服分类</h2><p>这个例子训练了一个神经网络模型，用于分类衣服图片，比如tshirt和运动鞋。</p>
+<p>需要用到<code>tf.keras</code>，它是个用于建立和训练模型的高层次的API</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># TensorFlow and tf.keras</span></span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tffrom tensorflow </span><br><span class="line"><span class="keyword">import</span> keras</span><br><span class="line"><span class="comment"># Helper libraries</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">print(tf.__version__)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2.2.0</p>
+</blockquote>
+<p><strong>导入Fashion MNIST数据集</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fashion_mnist = keras.datasets.fashion_mnist</span><br><span class="line">(train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()</span><br></pre></td></tr></table></figure>
+
+<p>导入数据集，返回Numpy数组：</p>
+<ul>
+<li><p><code>train_images</code>和<code>train_labels</code> 数组是训练集。</p>
+</li>
+<li><p><code>test_images</code>和 <code>test_labels</code> 数组是测试集。</p>
+</li>
+</ul>
+<p>这些图像是28x28的Numpy数组。可以理解为28x28的像素点，这些像素点在屏幕上显示出来表现为图像。每个像素点的值在0到255之间，表示颜色的深浅。如果你了解颜色的RGB值，那你就明白，所有的颜色都是由不同深浅程度的三种基本色构成，比如白色的RGB为(255.255.255)。标签<code>labels</code>是一个整数数组，范围从0到9。表示10个不同的衣服种类<code>Class</code>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Label</th>
+<th align="left">Class</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0</td>
+<td align="left">T-shirt/top</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">Trouser</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">Pullover</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Dress</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Coat</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">Sandal</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">Shirt</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">Sneaker</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">Bag</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">Ankle boot</td>
+</tr>
+</tbody></table>
+<p>这些种类不包括在数据集中，需要单独定义：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class_names = [<span class="string">&#x27;T-shirt/top&#x27;</span>, <span class="string">&#x27;Trouser&#x27;</span>, <span class="string">&#x27;Pullover&#x27;</span>, <span class="string">&#x27;Dress&#x27;</span>, <span class="string">&#x27;Coat&#x27;</span>, <span class="string">&#x27;Sandal&#x27;</span>, <span class="string">&#x27;Shirt&#x27;</span>, <span class="string">&#x27;Sneaker&#x27;</span>, <span class="string">&#x27;Bag&#x27;</span>, <span class="string">&#x27;Ankle boot&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>研究数据</strong></p>
+<p>在训练模型之前，先研究这些数据格式。比如在训练集中的六万张图片，每张图片由28x28的像素点表示。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train_images.shape</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>(60000, 28, 28)</p>
+</blockquote>
+<p>同时还有六万个与之对应的标签：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">len(train_labels)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>60000</p>
+</blockquote>
+<p>每个标签都是一个0到9之间的整数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">train_labels</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>array([9, 0, 0, …, 3, 0, 5], dtype=uint8)</p>
+</blockquote>
+<p>还有一万张用于测试的图片：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test_images.shape</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>(10000, 28, 28)</p>
+</blockquote>
+<p>一万张训练集的标签：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">len(test_labels)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>10000</p>
+</blockquote>
+<p><strong>数据预处理</strong></p>
+<p>在训练模型之前，必须先对数据进行预处理。观察第一张图，我们可以看到图片的像素值在0到255之间。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plt.figure()</span><br><span class="line">plt.imshow(train_images[<span class="number">0</span>])</span><br><span class="line">plt.colorbar()</span><br><span class="line">plt.grid(<span class="literal">False</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.tensorflow.org/tutorials/keras/classification_files/output_m4VEw8Ud9Quh_0.png?hl=zh_cn" class="lazyload" data-srcset="https://www.tensorflow.org/tutorials/keras/classification_files/output_m4VEw8Ud9Quh_0.png?hl=zh_cn" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>将像素值范围缩小为0到1，所以将像素值都除以255：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">train_images = train_images / <span class="number">255.0</span></span><br><span class="line">test_images = test_images / <span class="number">255.0</span></span><br></pre></td></tr></table></figure>
+
+<p>为了确保数据的正确性，先将训练集的前25个图片显示出来，并且在图片下面展示分类名。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">10</span>,<span class="number">10</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">25</span>):</span><br><span class="line">    plt.subplot(<span class="number">5</span>,<span class="number">5</span>,i+<span class="number">1</span>)</span><br><span class="line">    plt.xticks([])</span><br><span class="line">    plt.yticks([])</span><br><span class="line">    plt.grid(<span class="literal">False</span>)</span><br><span class="line">    plt.imshow(train_images[i], cmap=plt.cm.binary)</span><br><span class="line">    plt.xlabel(class_names[train_labels[i]])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.tensorflow.org/tutorials/keras/classification_files/output_oZTImqg_CaW1_0.png?hl=zh_cn" class="lazyload" data-srcset="https://www.tensorflow.org/tutorials/keras/classification_files/output_oZTImqg_CaW1_0.png?hl=zh_cn" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><strong>建立模型</strong></p>
+<p>建立神经网络需要配置模型层，然后编译模型。</p>
+<p><strong>设置层</strong></p>
+<p>基本的神经网络模块是层。层会从它们获取的数据里提取图像。它们希望从这些图像里获取有用的信息。</p>
+<p>大多数深度学习都是简单层组合在一起。大多数层比如<a target="_blank" rel="noopener" href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense?hl=zh_cn"><code>tf.keras.layers.Dense</code></a>，拥有在训练时学习到的参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model = keras.Sequential([    keras.layers.Flatten(input_shape=(<span class="number">28</span>, <span class="number">28</span>)),    keras.layers.Dense(<span class="number">128</span>, activation=<span class="string">&#x27;relu&#x27;</span>),    keras.layers.Dense(<span class="number">10</span>)])</span><br></pre></td></tr></table></figure>
+
+<p>这个网络的第一层，tf.keras.layers.Flatten，将图像的格式从二维数组(28 * 28像素)转换为一维数组(28 * 28 = 784像素)。可以将这一层看作是将图像中的像素行展开并排列起来。这一层没有参数需要学习;它只是重新格式化数据。</p>
+<p>像素被扁平化后，网络由两个tf.keras.层组成。它们是紧密相连或完全相连的神经层。第一致密层有128个节点(或神经元)。第二个(也是最后一个)层返回长度为10的logits数组。每个节点都包含一个评价值，表示当前图像属于这10个类中的一个。</p>
+<p><strong>编译模型</strong></p>
+<p>在准备训练模型之前，需要进行一些其他设置。 这些是在模型的编译步骤中添加的：</p>
+<ul>
+<li>Loss function——这可以衡量模型在培训期间的准确性。您希望最小化这个函数，以便将模型“引导”到正确的方向。</li>
+<li>Optimizer——这就是模型如何根据它看到的数据和它的损失函数进行更新。</li>
+<li>Metrics——用于监控培训和测试步骤。下面的例子使用了准确率，即正确分类的图像的比例。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.compile(optimizer=<span class="string">&#x27;adam&#x27;</span>,              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=<span class="literal">True</span>),              metrics=[<span class="string">&#x27;accuracy&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+<p><strong>训练模型</strong></p>
+<p>训练神经网络模型需要以下步骤：</p>
+<ol>
+<li>输入训练数据到模型中。</li>
+<li>模型学习关联图像和分类标签。</li>
+<li>让模型预测测试集。</li>
+<li>验证预测结果是否和标签匹配。</li>
+</ol>
+<p><strong>输入数据到模型中</strong></p>
+<p>利用<code>model.fit</code>方法。他能将模型用于拟合训练数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.fit(train_images, train_labels, epochs=<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Epoch 1/10<br>1875/1875 [==============================] - 3s 2ms/step - loss: 0.4978 - accuracy: 0.8248<br>Epoch 2/10<br>1875/1875 [==============================] - 3s 2ms/step - loss: 0.3767 - accuracy: 0.8637<br>Epoch 3/10<br>1875/1875 [==============================] - 3s 2ms/step - loss: 0.3397 - accuracy: 0.8759<br>Epoch 4/10<br>1875/1875 [==============================] - 3s 2ms/step - loss: 0.3138 - accuracy: 0.8854<br>Epoch 5/10<br>1875/1875 [==============================] - 3s 2ms/step - loss: 0.2948 - accuracy: 0.8914<br>Epoch 6/10<br>1875/1875 [==============================] - 3s 2ms/step - loss: 0.2803 - accuracy: 0.8958<br>Epoch 7/10<br>1875/1875 [==============================] - 3s 2ms/step - loss: 0.2678 - accuracy: 0.9006<br>Epoch 8/10<br>1875/1875 [==============================] - 3s 2ms/step - loss: 0.2590 - accuracy: 0.9043<br>Epoch 9/10<br>1875/1875 [==============================] - 3s 2ms/step - loss: 0.2464 - accuracy: 0.9078<br>Epoch 10/10<br>1875/1875 [==============================] - 3s 2ms/step - loss: 0.2402 - accuracy: 0.9099</p>
+<p>&lt;tensorflow.python.keras.callbacks.History at 0x7fe472eff4a8&gt;</p>
+</blockquote>
+<p><strong>评估准确率</strong></p>
+<p>比较模型在测试数据集上的表现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=<span class="number">2</span>)</span><br><span class="line">print(<span class="string">&#x27;\nTest accuracy:&#x27;</span>, test_acc)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>313/313 - 1s - loss: 0.3382 - accuracy: 0.8840 </p>
+<p>Test accuracy: 0.8840000033378601</p>
+</blockquote>
+<p>结果是测试数据集上的准确性比训练数据集上的准确性稍低。训练准确度和测试准确度之间的差距代表过拟合。当机器学习模型在新的、以前没有看到的输入上的表现不如在训练数据上的表现时，就会发生过拟合。过度拟合的模型“记忆”了训练数据集中的噪音和细节，从而对模型在新数据上的性能产生负面影响。有关更多信息，请参见以下内容</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.tensorflow.org/tutorials/keras/overfit_and_underfit?hl=zh_cn#demonstrate_overfitting">证明过度拟合</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.tensorflow.org/tutorials/keras/overfit_and_underfit?hl=zh_cn#strategies_to_prevent_overfitting">防止过度拟合策略</a></li>
+</ul>
+<p><strong>预测结果</strong></p>
+<p>通过训练模型，你可以使用它来预测某些图像。 模型的线性输出，logits。 附加一个softmax层以将logit转换为更容易解释的概率。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">probability_model = tf.keras.Sequential([model,                                          tf.keras.layers.Softmax()])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">predictions = probability_model.predict(test_images)</span><br></pre></td></tr></table></figure>
+
+<p>在这里，模型已经预测了测试集中每个图像的标签。 让我们看一下第一个预测：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">predictions[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>array([1.2275562e-07, 8.9534730e-08, 7.6224147e-09, 1.9726743e-08,<br>       6.1515345e-07, 4.6329503e-03, 4.1164008e-06, 1.5043605e-02,<br>       2.8817641e-07, 9.8031825e-01], dtype=float32)</p>
+</blockquote>
+<p>预测是一个包含10个数字的数组。它们代表了模型的“自信”，即图像对应着10种不同的服装。你可以看到哪个标签的自信度最高：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.argmax(predictions[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>9</p>
+</blockquote>
+<p>因此，模型最自信的认为这是一个踝靴，或<code>class_names[9]</code>。检查测试标签表明这个分类是正确的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test_labels[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>9</p>
+</blockquote>
+<p>绘制图表，看看10个类预测的全部集合。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_image</span>(<span class="params">i, predictions_array, true_label, img</span>):</span></span><br><span class="line">  predictions_array, true_label, img = predictions_array, true_label[i], img[i]</span><br><span class="line">  plt.grid(<span class="literal">False</span>)</span><br><span class="line">  plt.xticks([])</span><br><span class="line">  plt.yticks([])</span><br><span class="line"></span><br><span class="line">  plt.imshow(img, cmap=plt.cm.binary)</span><br><span class="line"></span><br><span class="line">  predicted_label = np.argmax(predictions_array)</span><br><span class="line">  <span class="keyword">if</span> predicted_label == true_label:</span><br><span class="line">    color = <span class="string">&#x27;blue&#x27;</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    color = <span class="string">&#x27;red&#x27;</span></span><br><span class="line"></span><br><span class="line">  plt.xlabel(<span class="string">&quot;&#123;&#125; &#123;:2.0f&#125;% (&#123;&#125;)&quot;</span>.format(class_names[predicted_label],</span><br><span class="line">                                <span class="number">100</span>*np.max(predictions_array),</span><br><span class="line">                                class_names[true_label]),</span><br><span class="line">                                color=color)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_value_array</span>(<span class="params">i, predictions_array, true_label</span>):</span></span><br><span class="line">  predictions_array, true_label = predictions_array, true_label[i]</span><br><span class="line">  plt.grid(<span class="literal">False</span>)</span><br><span class="line">  plt.xticks(range(<span class="number">10</span>))</span><br><span class="line">  plt.yticks([])</span><br><span class="line">  thisplot = plt.bar(range(<span class="number">10</span>), predictions_array, color=<span class="string">&quot;#777777&quot;</span>)</span><br><span class="line">  plt.ylim([<span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line">  predicted_label = np.argmax(predictions_array)</span><br><span class="line"></span><br><span class="line">  thisplot[predicted_label].set_color(<span class="string">&#x27;red&#x27;</span>)</span><br><span class="line">  thisplot[true_label].set_color(<span class="string">&#x27;blue&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>验证预测</strong></p>
+<p>通过训练模型，您可以使用它来预测某些图像。</p>
+<p>让我们看一下第0张图片，预测和预测数组。 正确的预测标签为蓝色，错误的预测标签为红色。 该数字给出了预测标签的百分比（满分为100）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">0</span></span><br><span class="line">plt.figure(figsize=(<span class="number">6</span>,<span class="number">3</span>))</span><br><span class="line">plt.subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">plot_image(i, predictions[i], test_labels, test_images)</span><br><span class="line">plt.subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">plot_value_array(i, predictions[i],  test_labels)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.tensorflow.org/tutorials/keras/classification_files/output_HV5jw-5HwSmO_0.png?hl=zh_cn" class="lazyload" data-srcset="https://www.tensorflow.org/tutorials/keras/classification_files/output_HV5jw-5HwSmO_0.png?hl=zh_cn" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">i = <span class="number">12</span></span><br><span class="line">plt.figure(figsize=(<span class="number">6</span>,<span class="number">3</span>))</span><br><span class="line">plt.subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">plot_image(i, predictions[i], test_labels, test_images)</span><br><span class="line">plt.subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">plot_value_array(i, predictions[i],  test_labels)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.tensorflow.org/tutorials/keras/classification_files/output_Ko-uzOufSCSe_0.png?hl=zh_cn" class="lazyload" data-srcset="https://www.tensorflow.org/tutorials/keras/classification_files/output_Ko-uzOufSCSe_0.png?hl=zh_cn" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>让我们绘制一些带有预测的图像。 请注意，即使非常自信，该模型也可能是错误的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Plot the first X test images, their predicted labels, and the true labels.</span></span><br><span class="line"><span class="comment"># Color correct predictions in blue and incorrect predictions in red.</span></span><br><span class="line">num_rows = <span class="number">5</span></span><br><span class="line">num_cols = <span class="number">3</span></span><br><span class="line">num_images = num_rows*num_cols</span><br><span class="line">plt.figure(figsize=(<span class="number">2</span>*<span class="number">2</span>*num_cols, <span class="number">2</span>*num_rows))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(num_images):</span><br><span class="line">  plt.subplot(num_rows, <span class="number">2</span>*num_cols, <span class="number">2</span>*i+<span class="number">1</span>)</span><br><span class="line">  plot_image(i, predictions[i], test_labels, test_images)</span><br><span class="line">  plt.subplot(num_rows, <span class="number">2</span>*num_cols, <span class="number">2</span>*i+<span class="number">2</span>)</span><br><span class="line">  plot_value_array(i, predictions[i], test_labels)</span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.tensorflow.org/tutorials/keras/classification_files/output_hQlnbqaw2Qu__0.png?hl=zh_cn" class="lazyload" data-srcset="https://www.tensorflow.org/tutorials/keras/classification_files/output_hQlnbqaw2Qu__0.png?hl=zh_cn" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><strong>使用训练的模型</strong></p>
+<p>最后，利用训练好的模型对单幅图像进行预测。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Grab an image from the test dataset.</span></span><br><span class="line">img = test_images[<span class="number">1</span>]</span><br><span class="line">print(img.shape)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>(28, 28)</p>
+</blockquote>
+<p><code>tf.keras</code>模型经过优化，可以立即对一批或一组示例进行预测。因此，即使使用的是单个图像，也需要将其添加到列表中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Add the image to a batch where it&#x27;s the only member.</span></span><br><span class="line">img = (np.expand_dims(img,<span class="number">0</span>))</span><br><span class="line">print(img.shape)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>(1, 28, 28)</p>
+</blockquote>
+<p>现在为这个图像预测正确的标签</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">predictions_single = probability_model.predict(img)</span><br><span class="line"></span><br><span class="line">print(predictions_single)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>[[2.3256284e-06 5.5768194e-13 9.9955302e-01 3.3701731e-13 4.3444714e-04<br>  3.7890427e-17 1.0105057e-05 4.5671220e-20 8.4883814e-14 9.5599025e-18]]</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot_value_array(<span class="number">1</span>, predictions_single[<span class="number">0</span>], test_labels)_ = plt.xticks(range(<span class="number">10</span>), class_names, rotation=<span class="number">45</span>)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://www.tensorflow.org/tutorials/keras/classification_files/output_6Ai-cpLjO-3A_0.png?hl=zh_cn" class="lazyload" data-srcset="https://www.tensorflow.org/tutorials/keras/classification_files/output_6Ai-cpLjO-3A_0.png?hl=zh_cn" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>keras.Model.predict返回列表的列表-数据批次中每个图像的列表。 批量获取我们（唯一）图像的预测：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.argmax(predictions_single[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2</p>
+</blockquote>
+<p>这个模型预测了一个标签。</p>
+<p>本指南使用Fashion MNIST数据集，该数据集包含10个类别中的70,000张灰度图像。这些图像以低分辨率(28×28像素)显示了衣服的单个物品，如图所示</p>
+<p><img src="https://tensorflow.org/images/fashion-mnist-sprite.png?hl=zh_cn" class="lazyload" data-srcset="https://tensorflow.org/images/fashion-mnist-sprite.png?hl=zh_cn" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>Fashion MNIST旨在替代经典MNIST数据集，通常被用作计算机视觉机器学习程序的“ Hello，World”。 MNIST数据集包含手写数字（0、1、2等）的图像，格式与您将在此处使用的衣服的格式相同。</p>
+<p>本指南将Fashion MNIST用于多种用途，并且因为它比常规MNIST更具挑战性。 两个数据集都相对较小，用于验证算法是否按预期工作。 它们是测试和调试代码的良好起点。</p>
+<p>在这里，使用60,000张图像来训练网络，使用10,000张图像来评估网络学习对图像进行分类的准确程度。 您可以直接从TensorFlow访问Fashion MNIST。 直接从TensorFlow导入和加载Fashion MNIST数据：</p>
+
+    
+      
+      <div class='footer'>
+        
+        
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href=https://sci.ci/2020/06/17/TensorFlow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/>https://sci.ci/2020/06/17/TensorFlow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+        
+      </div>
+    
+  </div>
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-18T13:43:23+02:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年6月18日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/TensorFlow/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>TensorFlow</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/06/17/TensorFlow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=TensorFlow学习笔记 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/06/17/TensorFlow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=TensorFlow学习笔记 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/06/17/TensorFlow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=TensorFlow学习笔记 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2020/06/18/Valantis-ReadMore%E8%87%AA%E5%8A%A8%E6%88%AA%E5%8F%96%E6%96%87%E7%AB%A0%E5%86%85%E5%AE%B9/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Volantis主题ReadMore自动截取文章内容</p>
+          <p class='content'>1：在主题配置文件里添加键值对添加键值对的目的是，控制截取长度和自动截取功能是否开启。在你的博客目录\themes\volantis\_config.yml下添加
+123456# Excerpt...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/06/16/PyTorch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
+          <p class='title'>PyTorch学习笔记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>PyTorch的用处：GPU加速、求导、常用API
+P1：开发环境
+
+Python 3.7+Anaconda 5.3.1
+
+CUDA 10.0
+
+Pycharm Community
+
+
+
+
+下载...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#P1%EF%BC%9Atensorflow%E5%AE%89%E8%A3%85"><span class="toc-text">P1：tensorflow安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P2%EF%BC%9AHello-World%E2%80%94%E2%80%94%E8%A1%A3%E6%9C%8D%E5%88%86%E7%B1%BB"><span class="toc-text">P2：Hello World——衣服分类</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+
+
+</aside>
+
+
+
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="mailto:me@xxx.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://github.com/volantis-x/"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-beta.2" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    
+    <!-- internal -->
+
+
+
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".md").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      // 背景层
+      var bgDiv = document.createElement("div");
+      $(bgDiv).addClass("bg");
+      if ($(this).attr('bg')) {
+        $(bgDiv).css('background', $(this).attr('bg'));
+      }
+      $(this).wrap(bgDiv); // 背景层
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+<!-- optional -->
+
+  <script>
+  
+  var SEARCH_SERVICE = "hexo" || "hexo";
+  var ROOT = "/" || "/";
+  if (!ROOT.endsWith('/')) ROOT += '/';
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "快来评论吧~";
+
+    let path = $.trim($('#pjax-comment-path').text());
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+      appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
+    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://sci.ci' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://sci.ci' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://sci.ci' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              if (pv.getAttribute('data-path') == window.location.pathname) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == window.location.pathname) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+<!-- more -->
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+        pjax_fancybox();
+        
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>

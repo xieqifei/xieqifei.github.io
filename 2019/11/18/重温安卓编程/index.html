@@ -1,0 +1,1903 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-beta.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>JAVA安卓编程笔记 - 🛫起飞了</title>
+  
+    <meta name="keywords" content="安卓编程">
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
+
+  
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+</head>
+
+<body>
+  <header class="l_header auto shadow blur" style='opacity: 0' >
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div class="l_body">
+    <div class="l_cover">
+
+  
+  
+      <div class='cover-wrapper post dock' style="display: none;">
+        
+          <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
+        
+        <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">🛫起飞了</p>
+    
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a target="_blank" rel="noopener" href="https://weibo.com/678199722"
+              
+              
+              id="https:weibocom678199722">
+              <i class='fab fa-weibo fa-fw'></i><p>Weibo</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100006770206489"
+              
+              
+              id="https:wwwfacebookcomprofilephp?id=100006770206489">
+              <i class='fab fa-facebook fa-fw'></i><p>Facebook</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://twitter.com/CruelGiF"
+              
+              
+              id="https:twittercomCruelGiF">
+              <i class='fab fa-twitter fa-fw'></i><p>Twitter</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://www.instagram.com/xie_qifei/"
+              
+              
+              id="https:wwwinstagramcomxie_qifei">
+              <i class='fab fa-instagram fa-fw'></i><p>Instagram</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://github.com/xieqifei"
+              
+              
+              id="https:githubcomxieqifei">
+              <i class='fab fa-github fa-fw'></i><p>Github</p>
+            </a>
+          
+            <a href="mailto:im@xieqifei.com"
+              
+              
+              id="mailto:im@xieqifeicom">
+              <i class='fas fa-envelope fa-fw'></i><p>Email</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+  
+
+</div>
+
+    <div class='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">JAVA安卓编程笔记</div>
+  <div id="pjax-enable-cover">true</div>
+  <div id="pjax-comment-path"></div>
+  <div id="pjax-comment-placeholder"></div>
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "blog") { // 半屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "docs") { // 全屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+
+        
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  <div class='article-header'>
+    
+    <div class="article-meta" id="top">
+      
+      
+      
+        <h1 class="title">
+          <a href="/2019/11/18/%E9%87%8D%E6%B8%A9%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/">
+            JAVA安卓编程笔记
+          </a>
+        </h1>
+      
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://ae01.alicdn.com/kf/Hb5b4a24aa25749c38ad1c3af3f15bac4e.jpg">
+    <p>啓飞</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年11月18日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="JAVA安卓编程笔记" data-path="/2019/11/18/%E9%87%8D%E6%B8%A9%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h1 id="第一章-前言"><a href="#第一章-前言" class="headerlink" title="第一章 前言"></a>第一章 前言</h1><p>大概在两年前，我第一次决定学习安卓编程，在大约两三周的学习之后，由于缺乏JAVA开发基础和经验，单纯的视频教程看得我云里雾里，不过在此期间学会了使用代码进行页面布局，这给我此后学习Web编程，使用html、css进行页面布局打下了基础。</p>
+<p>两年前，我使用的还是联想的i5五系列cpu、机械硬盘、4g内存，这个电脑配置使得我当时用eplise开发安卓程序非常麻烦，打开一个安卓虚拟机需要花很长的时间。半年前，我更换了Surface，用上了8+128G内存+固态硬盘。也更新了最新的i5八系列cpu，电脑配置有了显著提高，运行安卓开发程序也游刃有余了。</p>
+<p>而这次重启安卓学习之旅，我将使用AS进行安卓开发。虽然AS目前已支持C/C++做程序开发，但我仍将选择JAVA作为开发语言，以提高我的JAVA水平。</p>
+<h1 id="第二章-安装Android-Studio"><a href="#第二章-安装Android-Studio" class="headerlink" title="第二章 安装Android Studio"></a>第二章 安装Android Studio</h1><p>从 <a target="_blank" rel="noopener" href="https://developer.android.com/studio">https://developer.android.com/studio</a> 下载IDE和SDK后，进行相应安装和配置。安装教程，从网课和CDSN论坛均可找到。不再赘述。</p>
+<p>此处说明安装时遇到的坑。</p>
+<ol>
+<li><p>SDK安装后，在SDK管理工具中添加SDK目录即andriod-sdk提示<code>android sdk location should not contain whitespace</code></p>
+</li>
+<li><p>问题1解决后紧接着出现提示<code>Target folder is neither empty nor does it point to an existing SDK installtion.</code></p>
+</li>
+</ol>
+<p>问题分析和解决办法：</p>
+<ol>
+<li>提示意思为SDK的目录路径中出现空格。在我的问题中是，Program Files文件夹名称中间有空格，于是我在根路径重新创建了一个以Andriod为名的文件夹，并将andriod-sdk移到此路径下。</li>
+<li>提示为，选择的文件夹既不是空的也不是sdk的文件夹，原因是我将sdk目录指向了Andriod为名的文件夹，正确的路径是上步创建Andriod文件下的andriod-sdk。</li>
+</ol>
+<p>安装好SDK后，还要给AS安装虚拟机，运行AS后，在Tools菜单下找到AVD Manager（虚拟机管理器），添加合适分辨率、Andriod版本的虚拟机即可。</p>
+<h1 id="第三章-应用的资源访问"><a href="#第三章-应用的资源访问" class="headerlink" title="第三章 应用的资源访问"></a>第三章 应用的资源访问</h1><h2 id="3-1-认识Android目录"><a href="#3-1-认识Android目录" class="headerlink" title="3.1 认识Android目录"></a>3.1 认识Android目录</h2><ol>
+<li><p>res资源</p>
+<ul>
+<li>drawable-？dpi（l,h,m,x）：不同分辨率下的资源文件，如图片的大小。</li>
+<li>values：安卓应用界面上需要显示的各类文本标签文字。</li>
+<li>layout：界面布局文件。</li>
+<li>menu：存放菜单</li>
+</ul>
+</li>
+<li><p>gen（ADT中）或JAVA（AS中）</p>
+<p>由IDE自动生成的包文件</p>
+</li>
+</ol>
+<h2 id="3-2-通用资源访问"><a href="#3-2-通用资源访问" class="headerlink" title="3.2 通用资源访问"></a>3.2 通用资源访问</h2><ol>
+<li><p>基于Java代码访问资源</p>
+<ul>
+<li>Java代码访问方式:</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[\&lt;packge-name&gt;.]R.   <span class="comment">//R类所在包路径可省略</span></span><br><span class="line">&lt;resource_type&gt;.&lt;resource_name&gt;  <span class="comment">//resource_type：资源类型如color等。</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Java访问示例</p>
+</li>
+<li><p>//从drawable目录中加载图片，设置为背景图片</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getWindow().setBackgroundDrawableResource(R.drawable.back)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>//从string设置字符串资源，设置为文本框的显示内容</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TextView title=(TextView)findViewById(R.id.title);  </span><br><span class="line">title.setText(R.string.titleinfo);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>在XML配置文件中访问资源</p>
+<ul>
+<li>XML资源访问方式:</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@[<span class="tag">&lt;<span class="name">package_name</span>&gt;</span>:]</span><br><span class="line"><span class="tag">&lt;<span class="name">resource_type</span>&gt;</span>/<span class="tag">&lt;<span class="name">resource_name</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>XML资源定义示例</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot; blue &quot;</span> &gt;</span>#ff00ff<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">&quot; title &quot;</span> &gt;</span></span><br><span class="line">Confirmation<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>在XML中使用资源示例</p>
+<ul>
+<li>XML资源使用实例片段</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">EditText</span> <span class="attr">android:layout_width</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">android:layout_height</span>=<span class="string">&quot;match_parent&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">android:text</span>=<span class="string">&quot; @string/title&quot;</span></span></span><br><span class="line"><span class="tag">	<span class="attr">android:textColor</span>=<span class="string">&quot; @color/blue&quot;</span> </span></span><br><span class="line"><span class="tag">/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">EditText</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-3-安卓中字符串、颜色和尺寸应用"><a href="#3-3-安卓中字符串、颜色和尺寸应用" class="headerlink" title="3.3 安卓中字符串、颜色和尺寸应用"></a>3.3 安卓中字符串、颜色和尺寸应用</h2><ol>
+<li><p>资源列表</p>
+<p>字符串、颜色、尺寸资源，存放在XML文件内，位于/res/values目录下。</p>
+<p>如字符串资源：/res/values/strings.xml。R类中名称：R.string</p>
+</li>
+<li><p>颜色表示方法</p>
+<ul>
+<li><p>使用Color类的常量</p>
+<p>如：<code>int color = Color.BLUE;//创建一个蓝色</code></p>
+</li>
+<li><p>使用Color类的静态方法argb创建颜色</p>
+<p><code>int color = Color.argb\(127.255.0.255\);//半透明紫色</code></p>
+</li>
+<li><p>在XML资源文件定义颜色值</p>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">color</span> <span class="attr">name</span>=<span class="string">&quot; blue &quot;</span> &gt;</span>#ff00ff<span class="tag">&lt;/<span class="name">color</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">&quot; title &quot;</span> &gt;</span></span><br><span class="line">Confirmation<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>使用示例</p>
+</li>
+<li><p>res和assets区别</p>
+<ul>
+<li><p>res内的文件被映射到R.java，基于资源ID直接访问。</p>
+</li>
+<li><p>assets需通过资源管理器访问。</p>
+</li>
+<li><p>res下不可以创建子目录，assets可以有目录结构。</p>
+</li>
+<li><p>读取文件资源的方式不同</p>
+<ul>
+<li>读取res/raw下的文件资源，通过当前Activity中的<code>getResources()</code>方法：</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">InputStream is = getResources().</span><br><span class="line">openRawResource(R.id.filename);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>读取assets下的文件资源，通过当前活动的资源管理器assetmanager读取相应的资源文件：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">AssetManager am = getAssets();<span class="comment">//通过当前的Activity的getAsset()方法。</span></span><br><span class="line">InputStream is = am.open(<span class="string">&quot;filename&quot;</span>);<span class="comment">//基于文件名读取资源。</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-4-Drawable资源"><a href="#3-4-Drawable资源" class="headerlink" title="3.4 Drawable资源"></a>3.4 Drawable资源</h2><ol>
+<li><p>Drawable资源</p>
+<ul>
+<li><p>主要是需要绘制的资源，比如图片资源。</p>
+</li>
+<li><p>主要格式有*.png、*.jpg等。</p>
+</li>
+<li><p>图片放入/res/drawable-xxx目录下。</p>
+</li>
+<li><p>安卓SDK会在编译应用自动加载图片。</p>
+</li>
+<li><p>资源文件在R.java资源类中生成该资源的索引。</p>
+</li>
+</ul>
+</li>
+<li><p>Drawable资源类型</p>
+<ul>
+<li>StateListDrawable资源（动态切换背景）</li>
+<li>LayerDrawable资源（图层叠加）</li>
+<li>ShapeDrawable资源（绘图）</li>
+<li>ClipDrawable资源</li>
+<li>AnimationDrawable资源（动画）</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-5-安卓项目布局文件"><a href="#3-5-安卓项目布局文件" class="headerlink" title="3.5 安卓项目布局文件"></a>3.5 安卓项目布局文件</h2><ol>
+<li><p>什么是安卓布局文件？</p>
+<ul>
+<li>定义用户界面上各个组建之间的组织结构。</li>
+<li>XML格式文件，安卓系统负责初始化。</li>
+<li>实现界面布局和逻辑代码的分离。</li>
+<li>修改和更新界面非常简便，无需修改代码。</li>
+<li>布局文件是树形结构，使用根节点。</li>
+<li>一般在布局控件中放置界面显示组建LinearLayout中放入textview文本标签</li>
+<li>通过节点属性设置显示界面组建的属性：大小、颜色和边距等。</li>
+</ul>
+</li>
+<li><p>布局示例</p>
+</li>
+<li><p>布局文件节点属性示例</p>
+<p><code>android:id=&quot;@+id/button_id&quot;</code></p>
+<ul>
+<li>@表示XML解析器应该解析ID字符串把它作为ID资源。</li>
+<li>+符号表示一个新的资源名字，会被创建且加入到资源列表中（R.java）</li>
+<li>@string/@color等可用于访问其他资源。</li>
+<li>组建id在android应用中是唯一的。</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>主题</th>
+<th align="left">内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>资源位置</td>
+<td align="left">res/layout/my_layout.xml</td>
+</tr>
+<tr>
+<td>布局XML文件格式</td>
+<td align="left">使用&lt;?xml version= “1.0”encoding=”utf-8” ?&gt;<br>&lt;布局类xmlns:android=”<a target="_blank" rel="noopener" href="http://schemas.android/">http://schemas.android</a>.<br>Com/apk/res/android” id= “@id+/string_na<code>&lt;br&gt;</code>me”(属性)&gt;<br>&lt;视图组件或者其他嵌套布局类&gt;<br>&lt;requestFocus/&gt;<br>&lt;/布局类&gt;</td>
+</tr>
+<tr>
+<td>获得XML资源的方法</td>
+<td align="left">Activity.setContentView()</td>
+</tr>
+<tr>
+<td>引用XML资源的格式</td>
+<td align="left">Java代码中：R.layout.my_layout。<br>XML文件中：@[package:]layout/my_layout</td>
+</tr>
+<tr>
+<td>资源位置</td>
+<td align="left">res/layout/my_layout.xml</td>
+</tr>
+</tbody></table>
+<h2 id="3-6-AndroidManifest-xml项目配置文件"><a href="#3-6-AndroidManifest-xml项目配置文件" class="headerlink" title="3.6 AndroidManifest.xml项目配置文件"></a>3.6 AndroidManifest.xml项目配置文件</h2><ol>
+<li><p>什么是AndroidManifest.xml</p>
+<p>位于根目录下，文件名不可修改。</p>
+<p>该文件中 &lt;manifest&gt;和 &lt;application&gt;是必需的且只能出现一次。</p>
+</li>
+<li><p>描述Android应用使用的组建和系统配置信息</p>
+<ul>
+<li>应用使用的组建及其实现类（Activity/Service等）</li>
+<li>需要使用的安卓系统权限。</li>
+<li>声明其他应用程序与该应用程序交互需要的权限</li>
+<li>该应用程序所需的安卓API版本。</li>
+<li>列出该应用程序所需类库。</li>
+</ul>
+</li>
+</ol>
+<h1 id="第四章-界面编程任务分析与设计"><a href="#第四章-界面编程任务分析与设计" class="headerlink" title="第四章 界面编程任务分析与设计"></a>第四章 界面编程任务分析与设计</h1><h2 id="4-1-循序渐进"><a href="#4-1-循序渐进" class="headerlink" title="4.1 循序渐进"></a>4.1 循序渐进</h2><ol>
+<li><p>Activity简介</p>
+<ul>
+<li>安卓的视图组件，四大组件之一。</li>
+<li>定义用户可以看到触摸到的界面。</li>
+<li>活动内使用各种界面组件，实现交互动作。</li>
+<li>通过活动，用户界面之间切换跳转、进行数据传递。</li>
+</ul>
+</li>
+<li><p>Activity概念</p>
+</li>
+</ol>
+<ul>
+<li>用来包装用户界面组件的容器，实现用户和界面组件之间的交互。</li>
+</ul>
+<ol start="3">
+<li><p>案列分析教学特点和注意事项</p>
+<ul>
+<li>界面编程案例分析教学特点<ul>
+<li>案例：基于安卓系统的计算器</li>
+<li>特点：案例驱动，实践先行</li>
+<li>优势：在实践中学习抽象的概念</li>
+</ul>
+</li>
+<li>界面编程案例分析注意事项<ul>
+<li>知识要点：活动的概念和使用</li>
+<li>分析技巧：如何将实际中的问题进行分析；分析问题和解决问题的方法</li>
+<li>编码技巧：在案例中学习编码技巧</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>计算器案例</p>
+<ul>
+<li><p>操作过程：</p>
+<ol>
+<li><p>用户输入两个计算数；</p>
+</li>
+<li><p>选择计算类型；</p>
+</li>
+<li><p>点击计算按钮，进行计算</p>
+</li>
+<li><p>将结果展示给用户</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="4-2-活动的创建和使用"><a href="#4-2-活动的创建和使用" class="headerlink" title="4.2 活动的创建和使用"></a>4.2 活动的创建和使用</h2><ol>
+<li><p>创建活动应用程序</p>
+<ul>
+<li>应用程序通常由多个活动松耦合的组成</li>
+<li>活动是界面上的组件在屏幕上展示的容器</li>
+<li>活动通过布局文件展示界面布局的内容</li>
+<li>活动的生命周期，利用周期的方法扩展</li>
+</ul>
+</li>
+<li><p>创建活动步骤</p>
+<ul>
+<li>声明活动类名，继承于活动</li>
+<li>实现<code>onCreate(Bundle bundle)</code>方法，在系统初始化完成活动对象之后，进行用户自定义的初始化活动</li>
+<li>在<code>onCreate(View view)</code>设置用户界面的布局文件</li>
+<li>通过活动中的<code>findViewById(int id)</code>获取各个界面组件，并基于其属性和方法进行相应的操作</li>
+<li>如果需要在销毁活动进行处理，可以实现<code>onDestroy()</code>的方法。</li>
+</ul>
+</li>
+</ol>
+<h2 id="4-3-活动的声明和配置"><a href="#4-3-活动的声明和配置" class="headerlink" title="4.3 活动的声明和配置"></a>4.3 活动的声明和配置</h2><ol>
+<li><p>活动的声明和配置</p>
+<ul>
+<li><p>活动定义后需在AndroidManifest.xml中声明</p>
+</li>
+<li><p>`&lt;application…/&gt;·节点内添加·&lt;activity…/&gt;·子元素</p>
+</li>
+<li><p>在<code>&lt;activity&gt;</code>子节点内定义Activity的类型（入口活动）</p>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity android:name=<span class="string">&quot;com.quck.android.calculator&quot;</span></span><br><span class="line">android:icon=<span class="string">&quot;@drawable/pic.png&quot;</span></span><br><span class="line">android:label=<span class="string">&quot;@string/app_name&quot;</span> &gt;</span><br><span class="line"><span class="comment">//略去其中内容</span></span><br><span class="line">&lt;/activity&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>配置活动——示例分析</p>
+<p>活动的主要配置属性有如下三个：</p>
+<ul>
+<li><p>name：指定该活动的类名</p>
+</li>
+<li><p>icon：是定该活动对象的图标（可选）</p>
+</li>
+<li><p>label：指定该活动的标签</p>
+</li>
+<li><p>在<code>&lt;activity&gt;</code>节点中指定一个或者多个<code>&lt;intent-filter.../&gt;</code>元素Intent的类型和Action决定活动是否会接收消息。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="4-4-活动之间的数据交换和调用"><a href="#4-4-活动之间的数据交换和调用" class="headerlink" title="4.4 活动之间的数据交换和调用"></a>4.4 活动之间的数据交换和调用</h2><ol>
+<li><p>活动之间的数据交换和调用</p>
+<ul>
+<li>活动之间跳转，需传递数据信息</li>
+<li>通过Intent来进行数据传递</li>
+<li>数据需要放入Intent或者Bundle之内</li>
+</ul>
+</li>
+<li><p>什么是Bundle？</p>
+</li>
+</ol>
+<ul>
+<li>Bundle类是一个key-value对，一个映射，把字符串映射为各种类型。</li>
+</ul>
+<ol start="3">
+<li><p>数据交换</p>
+<ul>
+<li>写入数据<ul>
+<li><code>putExtras(Bundle data)</code>向Intent中放入需要携带的Bundle数据</li>
+<li><code>putXXX(String key, Xxx data)</code>向Bundle放入Int,Long,String等各种类型的数据</li>
+<li><code>putSerializable(String key, Serialzable data)</code>:向Bundle中放入一份可序列化对象</li>
+</ul>
+</li>
+<li>读取数据<ul>
+<li><code>getExtras()</code>从Intent中读取需要携带的Bundle数据</li>
+<li><code>getXXX(String key)</code>从Bundle，Intent读取int,Long,String等各种类型的数据</li>
+<li><code>getSerializable(String key)</code>从Bundle，Intent中读取一个可序列化的对象</li>
+</ul>
+</li>
+<li>活动交换示例</li>
+<li>Intent vs Bundle<ul>
+<li>相同点：传递数据时，作用相同</li>
+<li>不同点：在多个活动之间传递相同数据时，推荐使用Bundle来储存和传递数据，减少重复的读写操作</li>
+<li>例：活动跳转A-&gt;B-&gt;C传递相同数据<ul>
+<li>如果使用Intent，则需要在A、B、C的Intent之间进行数据的复制</li>
+<li>如果使用Bundle，则可直接传递Bundle对象即可</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>返回数据</p>
+<ul>
+<li><p><code>startActivityForResult(Intent intent, int requestCode)</code></p>
+<p>跳转到指定的活动</p>
+<p>参数intent：指定目的活动类名</p>
+<p>参数requestCode：由程序中自定义的识别码，用以区分不同的七点活动</p>
+</li>
+<li><p><code>setResult(int resultCode, Intent data)</code></p>
+<p>设置resultCode表示结果的Activity，第二个参数保存传递的结果数据</p>
+</li>
+<li><p><code>onActivityResult(int requestCode, int resultCode, Intent data)</code></p>
+<p>参数requestCode：起点活动定义唯一值</p>
+<p>参数resultCode：目的活动定义的唯一标识值</p>
+<p>参数data：从墓地活动返回的数据</p>
+</li>
+</ul>
+</li>
+<li><p>数据使用步骤</p>
+<ul>
+<li>起点活动，调用<code>startActivityForResult()</code>跳转目的活动</li>
+<li>在目的活动中调用<code>setResult()</code></li>
+<li>在起点活动覆写<code>onActivityResult()</code>在方法内获取目的活动返回的数据</li>
+</ul>
+</li>
+</ol>
+<h1 id="第五章-服务开发和广播事件"><a href="#第五章-服务开发和广播事件" class="headerlink" title="第五章 服务开发和广播事件"></a>第五章 服务开发和广播事件</h1><h2 id="5-1-循序渐进"><a href="#5-1-循序渐进" class="headerlink" title="5.1 循序渐进"></a>5.1 循序渐进</h2><ul>
+<li><p>案列：音乐播放器</p>
+<ul>
+<li><p>任务概述</p>
+</li>
+<li><p>功能分析</p>
+<p>界面设计</p>
+<p>实现暂停、播放和停止</p>
+<p>播放同时，显示歌手和音乐名称</p>
+</li>
+<li><p>用户界面设计</p>
+<p>主界面</p>
+</li>
+<li><p>技术要点</p>
+<p>服务的创建、调用</p>
+<p>服务和活动之间的通信</p>
+<p>Intent对象的使用</p>
+</li>
+<li><p>案例演示</p>
+</li>
+</ul>
+</li>
+<li><p>案例任务分析和设计</p>
+<p>音乐播放器界面分析</p>
+</li>
+<li><p>核心代码设计和实现</p>
+<p>核心代码编写步骤：</p>
+<ol>
+<li>创建安卓项目MusicBox</li>
+<li>在res/loyout目录，创建播放器的主界面布局文件</li>
+<li>定义一个MusicBoxContant的常量类存放程序中用到的静态或不变的信息</li>
+<li>创建音乐播放器的服务类</li>
+<li>在全局配置文件中，声明服务类</li>
+<li>定义实现音乐播放器的主界面</li>
+<li>定义事项ActicityReciver事件接收器，接受音乐服务状态变化广播事件的接收器</li>
+<li>定义实现按钮事件接收器，播放和停止按钮，发送广播事件</li>
+</ol>
+</li>
+</ul>
+<h2 id="5-2-安卓中的系统服务"><a href="#5-2-安卓中的系统服务" class="headerlink" title="5.2 安卓中的系统服务"></a>5.2 安卓中的系统服务</h2><ul>
+<li><p>安卓将诸多常用功能内置为系统服务</p>
+</li>
+<li><p>提供简单的获取系统服务的方式</p>
+</li>
+<li><p>系统服务涵盖了安卓绝大部分常用功能，如，拨打电话，发送短信</p>
+</li>
+</ul>
+<ol>
+<li><p>安卓中获取系统服务</p>
+<ul>
+<li><p>获取系统服务代码示例</p>
+<p><code>TelephonyManager phoneManager=(TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);</code></p>
+</li>
+<li><p>强制类型转化</p>
+<ul>
+<li>在程序运行过程中，将父类型对象转化为子类型对象。</li>
+<li>由于子类型相比父类型的内涵丰富，属性方法更多，所以要把父类型转化为子类型时，需要强制转化，成为强制类型转换。</li>
+<li>并不是所有父类型都可以转化为子类型，要根据具体的使用情况来做具体的判断。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="5-3-广播接收机制"><a href="#5-3-广播接收机制" class="headerlink" title="5.3 广播接收机制"></a>5.3 广播接收机制</h2><ol>
+<li><p>广播消息</p>
+<ul>
+<li>广播是一种在应用程序之间传输信息的计指</li>
+<li>BroadcastReceiver广播接收者</li>
+<li>广播消息Intent（消息载体）</li>
+<li>被订阅广播的多个广播接收者接收</li>
+<li>消息订阅者不了解发送者</li>
+</ul>
+</li>
+<li><p>广播接收者</p>
+<ul>
+<li>BroadcastReceiver对发出的广播事件进行过滤，应用程序通知其他应用程序某些数据已经下载完毕。</li>
+<li>广播接收者没有图形界面</li>
+<li>广播可以有多个接收者，彼此不知晓。广播接收者之间匿名</li>
+</ul>
+</li>
+<li><p>监听广播机制</p>
+<ul>
+<li>广播和事件监听器是分离的</li>
+<li>通过安卓系统进行广播、接收广播事件</li>
+<li>注册和移除监听通过安卓系统来完成</li>
+<li>安卓系统提供很多广播定义在<code>android.content.Intent</code>类中</li>
+</ul>
+</li>
+<li><p>广播方法</p>
+<p><code>sendBroadcast()</code>:普通模式</p>
+<ul>
+<li>所有注册了广播的接收者会获得事件通知</li>
+<li>接收者接受顺序不确定并发地在各自的应用进程中执行</li>
+<li>接收者和发送者不知晓</li>
+</ul>
+<p><code>sendOrderedBroadcast()</code>:有序广播模式</p>
+<ul>
+<li><p>接收者依照设定的优先级高低依次接受</p>
+</li>
+<li><p>高优先级接收者可以中断后续广播的接收，<code>BroadcastReceiver.abortBroadcast()</code>终止这个广播事件的传播，低优先级的触发器组件不再有机会接收</p>
+</li>
+<li><p>高优先级接收者可添加额外信息给后续接收者</p>
+<p><code>BroadcastReceiver.setResult()</code></p>
+</li>
+</ul>
+</li>
+<li><p>监听广播实现</p>
+<ul>
+<li>获取广播事件的消息接口名称</li>
+<li>事件定制的广播接收器，添加相应的处理逻辑</li>
+<li>注册广播接收器到安卓系统中</li>
+</ul>
+</li>
+<li><p>监听广播实现示例</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyBroadcastReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span></span>&#123;</span><br><span class="line"><span class="comment">//action名称，此为固定的字符</span></span><br><span class="line">String SMS_RECEIVED=<span class="string">&quot;android.provider.Telephony.SMS_RECEIVED&quot;</span>;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(COntext context, Intent intent)</span></span>&#123;</span><br><span class="line"><span class="comment">//如事件有短信接收，则执行</span></span><br><span class="line"><span class="keyword">if</span>(intent.getAction().quals(SMS_RECEIVED))&#123;</span><br><span class="line"><span class="comment">//进行短信接收到之后的逻辑处理</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li><p>监听广播注册</p>
+<p>在manifest中注册监听器</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--声明接收器--&gt;</span><br><span class="line">&lt;receiver android:name = <span class="string">&quot;.MyBroadReceiver&quot;</span>&gt;</span><br><span class="line">	&lt;!--接收事件的过滤条件声明和优先级--&gt;</span><br><span class="line">	&lt;intent-filter android:priority=<span class="string">&quot;1000&quot;</span>&gt;</span><br><span class="line">		&lt;!--支持接收的事件类型--&gt;</span><br><span class="line">	&lt;action android:name=<span class="string">&quot;android.provider.Telephony.SMS_RECEIVED&quot;</span>/&gt;</span><br><span class="line">     &lt;/intent-filter&gt;</span><br><span class="line">&lt;/receiver&gt;</span><br><span class="line">&lt;!--监听系统级事件，需要相应的权限：接收者和发送短信的权限--&gt;</span><br><span class="line">&lt;uses-permission android:name=<span class="string">&quot;android.permission.RECEIVE_SMS&quot;</span>/&gt;</span><br><span class="line">    &lt;uses-permission android:name=<span class="string">&quot;android.permission.SEND_SMS&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
+
+<p>   在运行代码中注册广播监听器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建监听器对象</span></span><br><span class="line">MyBroadcastReceiver myMsgInfoReceiver=<span class="keyword">new</span> MyBroadcastReceiver();</span><br><span class="line"><span class="comment">//声明IntentFilter，描述可以接收的广播消息</span></span><br><span class="line">IntentFilter intentFilter=<span class="keyword">new</span> IntentFilter(<span class="string">&quot;android.provider.Telephony.SMS_RECEIED&quot;</span>);</span><br><span class="line"><span class="comment">//调用Activity的方法，注册监听器</span></span><br><span class="line">registerReceiver(mBatteryInfoReceiver,intentFilter)</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li><p>广播事件生命周期</p>
+<ul>
+<li>广播消息到来，新建BroadcastReceiver对象</li>
+<li>调用<code>onReceive()</code>方法，执行操作</li>
+<li>操作完成后，对象被销毁</li>
+<li>事件出发—&gt;创建事件监听器对象—&gt;调用监听器的<code>onReceiver()</code>—&gt;销毁事件监听器的对象—&gt;结束操作，返回</li>
+</ul>
+</li>
+<li><p>广播事件注意事项</p>
+<ul>
+<li>在广播接收器中响应逻辑中不能执行比较耗时的操作</li>
+<li>在onReceive()方法中执行超过10秒，就会弹出无响应对话框。</li>
+</ul>
+</li>
+</ol>
+
+    
+      
+      <div class='footer'>
+        
+        
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href=https://sci.ci/2019/11/18/%E9%87%8D%E6%B8%A9%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/>https://sci.ci/2019/11/18/%E9%87%8D%E6%B8%A9%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+        
+      </div>
+    
+  </div>
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-20T08:47:20+02:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年6月20日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>安卓编程</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2019/11/18/%E9%87%8D%E6%B8%A9%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/&title=JAVA安卓编程笔记 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2019/11/18/%E9%87%8D%E6%B8%A9%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/&title=JAVA安卓编程笔记 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2019/11/18/%E9%87%8D%E6%B8%A9%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/&title=JAVA安卓编程笔记 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2019/12/12/%E5%A6%82%E4%BD%95%E8%87%AA%E5%B7%B1%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AAVPN%E7%A8%8B%E5%BA%8F/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>如何自己开发一个VPN App</p>
+          <p class='content'>第一章 简介1.1 学习条件和要求学习条件：
+
+你不用一定学习过JAVA或其他编程语言。
+你不用一定了解或精通安卓编程。
+你不用一定懂得Linux编程。
+你需要自费支付服务器费用，国外服务器大概...</p>
+        </a>
+      
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%89%8D%E8%A8%80"><span class="toc-text">第一章 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%AE%89%E8%A3%85Android-Studio"><span class="toc-text">第二章 安装Android Studio</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%BA%94%E7%94%A8%E7%9A%84%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE"><span class="toc-text">第三章 应用的资源访问</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E8%AE%A4%E8%AF%86Android%E7%9B%AE%E5%BD%95"><span class="toc-text">3.1 认识Android目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E9%80%9A%E7%94%A8%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE"><span class="toc-text">3.2 通用资源访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E5%AE%89%E5%8D%93%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E9%A2%9C%E8%89%B2%E5%92%8C%E5%B0%BA%E5%AF%B8%E5%BA%94%E7%94%A8"><span class="toc-text">3.3 安卓中字符串、颜色和尺寸应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-Drawable%E8%B5%84%E6%BA%90"><span class="toc-text">3.4 Drawable资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-%E5%AE%89%E5%8D%93%E9%A1%B9%E7%9B%AE%E5%B8%83%E5%B1%80%E6%96%87%E4%BB%B6"><span class="toc-text">3.5 安卓项目布局文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-AndroidManifest-xml%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">3.6 AndroidManifest.xml项目配置文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%95%8C%E9%9D%A2%E7%BC%96%E7%A8%8B%E4%BB%BB%E5%8A%A1%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1"><span class="toc-text">第四章 界面编程任务分析与设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E5%BE%AA%E5%BA%8F%E6%B8%90%E8%BF%9B"><span class="toc-text">4.1 循序渐进</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E6%B4%BB%E5%8A%A8%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="toc-text">4.2 活动的创建和使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-%E6%B4%BB%E5%8A%A8%E7%9A%84%E5%A3%B0%E6%98%8E%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="toc-text">4.3 活动的声明和配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-%E6%B4%BB%E5%8A%A8%E4%B9%8B%E9%97%B4%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2%E5%92%8C%E8%B0%83%E7%94%A8"><span class="toc-text">4.4 活动之间的数据交换和调用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%9C%8D%E5%8A%A1%E5%BC%80%E5%8F%91%E5%92%8C%E5%B9%BF%E6%92%AD%E4%BA%8B%E4%BB%B6"><span class="toc-text">第五章 服务开发和广播事件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E5%BE%AA%E5%BA%8F%E6%B8%90%E8%BF%9B"><span class="toc-text">5.1 循序渐进</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E5%AE%89%E5%8D%93%E4%B8%AD%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1"><span class="toc-text">5.2 安卓中的系统服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-%E5%B9%BF%E6%92%AD%E6%8E%A5%E6%94%B6%E6%9C%BA%E5%88%B6"><span class="toc-text">5.3 广播接收机制</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+
+
+</aside>
+
+
+
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="mailto:me@xxx.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://github.com/volantis-x/"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
+        本站使用
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-beta.2" target="_blank" class="codename">Volantis</a>
+        作为主题
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    
+    <!-- internal -->
+
+
+
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".md").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      // 背景层
+      var bgDiv = document.createElement("div");
+      $(bgDiv).addClass("bg");
+      if ($(this).attr('bg')) {
+        $(bgDiv).css('background', $(this).attr('bg'));
+      }
+      $(this).wrap(bgDiv); // 背景层
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+<!-- optional -->
+
+  <script>
+  
+  var SEARCH_SERVICE = "hexo" || "hexo";
+  var ROOT = "/" || "/";
+  if (!ROOT.endsWith('/')) ROOT += '/';
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "快来评论吧~";
+
+    let path = $.trim($('#pjax-comment-path').text());
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "dogUA2FSKGTo029M1SEwGROT-MdYXbMMI",
+      appKey: "u0NdtQ8nvHoMdJPSYqm1LRxE",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
+    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://sci.ci' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://sci.ci' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://sci.ci' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              if (pv.getAttribute('data-path') == window.location.pathname) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == window.location.pathname) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+<!-- more -->
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+        pjax_fancybox();
+        
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>
