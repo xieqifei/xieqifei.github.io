@@ -16,9 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>订单卡片备注自动打印系统 - 🛫起飞了</title>
+  <title>在订单中打印收货地址二维码 - 🛫起飞了</title>
   
-    <meta name="keywords" content="电商系统">
+    <meta name="keywords" content="电商">
   
 
   
@@ -399,7 +399,7 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">订单卡片备注自动打印系统</div>
+  <div id="pjax-pageTitle">在订单中打印收货地址二维码</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -440,8 +440,8 @@
       
       
         <h1 class="title">
-          <a href="/2020/08/26/%E8%AE%A2%E5%8D%95%E5%8D%A1%E7%89%87%E5%A4%87%E6%B3%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%B0%E7%B3%BB%E7%BB%9F/">
-            订单卡片备注自动打印系统
+          <a href="/2020/08/28/%E5%9C%A8%E8%AE%A2%E5%8D%95%E4%B8%AD%E6%89%93%E5%8D%B0%E6%94%B6%E8%B4%A7%E5%9C%B0%E5%9D%80%E4%BA%8C%E7%BB%B4%E7%A0%81/">
+            在订单中打印收货地址二维码
           </a>
         </h1>
       
@@ -474,7 +474,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年8月26日</p>
+    <p>发布于：2020年8月28日</p>
   </a>
 </div>
 
@@ -485,7 +485,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="订单卡片备注自动打印系统" data-path="/2020/08/26/%E8%AE%A2%E5%8D%95%E5%8D%A1%E7%89%87%E5%A4%87%E6%B3%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%B0%E7%B3%BB%E7%BB%9F/">
+      <div id="lc-pv" data-title="在订单中打印收货地址二维码" data-path="/2020/08/28/%E5%9C%A8%E8%AE%A2%E5%8D%95%E4%B8%AD%E6%89%93%E5%8D%B0%E6%94%B6%E8%B4%A7%E5%9C%B0%E5%9D%80%E4%BA%8C%E7%BB%B4%E7%A0%81/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -504,15 +504,27 @@
   <div class="article-entry" itemprop="articleBody">
     
     
-    <h1 id="一：系统设计"><a href="#一：系统设计" class="headerlink" title="一：系统设计"></a>一：系统设计</h1><p>系统思维导图：</p>
-<p><img src="https://i.loli.net/2020/08/26/EVucX6TlpsqxiPz.png" class="lazyload" data-srcset="https://i.loli.net/2020/08/26/EVucX6TlpsqxiPz.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p>各个接单平台在收到订单后，将订单信息发送给公网服务器，公网服务器从订单信息中提取卡片内容，并将卡片内容发送给和打印机处在同一个局域网环境下的树莓派，树莓派发送打印请求。</p>
-<p>由于打印机的打印请求必须在局域网环境下发出，内网穿透就是必须的步骤，所以这里的树莓派和公网服务器缺一不可，如果有固定的公网ip，则可取消公网服务器步骤，如果打印机支持http发送api请求创建打印进程，则可取消树莓派的作用。</p>
-<h1 id="二：准备工作"><a href="#二：准备工作" class="headerlink" title="二：准备工作"></a>二：准备工作</h1><ol>
-<li>申请美团和饿了么API接口。</li>
-<li>购买公网服务器，推荐阿里云和腾讯云，学生价购买轻量级应用服务器，一年100元左右。我由于已有小程序，因此和小程序公用了同一台服务器。小程序使用的是开源电商平台“ShopXO”。</li>
-<li>树莓派4B和一台打印机。打印机可选普通的喷墨打印机或者标签打印机。喷墨打印机打印的时候需要间歇的将贺卡放入打印机，而标签机则可连续的打印标签，可将打印后的标签贴在贺卡上。各有优缺点，专门购买一个连续打印贺卡的机器通常比较贵。此系统预算在1k元人民币。其中公网服务器100元/年，树莓派可根据自身资金选择，建议在100~500，打印机在300~800。不同的打印机在树莓派编程时，涉及的指令集是不同的。细节可能在后面选好后，在修改这里的内容。</li>
-</ol>
+    <h1 id="一：简介"><a href="#一：简介" class="headerlink" title="一：简介"></a>一：简介</h1><p>七夕节在配送过程中，发现配送员由于文化有限，在使用导航软件上有极大的障碍。这不仅拖慢了整个配送过程，也不利于业务的增长。于是我想到了，在订单上打印一个二维码，扫描二维码，则就可以导航到收货地点。</p>
+<p>在一段时间的尝试后，我敲定了此方案的可行性。</p>
+<p>由于美图和饿了么订单打印，已在飞鹅打印机上固定了模板，我无法修改他们的打印模板。所以，只能为小程序的订单，打印地址二维码。</p>
+<h1 id="二：方案"><a href="#二：方案" class="headerlink" title="二：方案"></a>二：方案</h1><p>由于各个地图公司都没有提供直接的接口，让地图转为二维码，所以退而求其次，需要先将地址转为url，进入这个url可以进入地图界面，然后将url转为二维码。</p>
+<h2 id="2-1-地图转url"><a href="#2-1-地图转url" class="headerlink" title="2.1 地图转url"></a>2.1 地图转url</h2><p>在查看了几个地图技术文档后，我找到了百度地图的接口。</p>
+<p>地址：<a target="_blank" rel="noopener" href="http://lbsyun.baidu.com/index.php?title=uri/api/web">http://lbsyun.baidu.com/index.php?title=uri/api/web</a></p>
+<p>此接口提供了免费的调起地图的url方案。由于我们只能拿到收货地址，所以可以使用下面的接口</p>
+<p>服务地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;api.map.baidu.com&#x2F;geocoder   &#x2F;&#x2F;PC&amp;Webapp服务地址</span><br></pre></td></tr></table></figure>
+
+<p>示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;api.map.baidu.com&#x2F;geocoder?address&#x3D;北京市海淀区上地信息路9号奎科科技大厦&amp;output&#x3D;html&amp;src&#x3D;webapp.baidu.openAPIdemo</span><br></pre></td></tr></table></figure>
+
+<p>打开后的页面</p>
+<p><img src="https://i.loli.net/2020/08/28/PSI5wTshfGN9z81.png" class="lazyload" data-srcset="https://i.loli.net/2020/08/28/PSI5wTshfGN9z81.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">2</p>
+<h2 id="2-2-url转二维码"><a href="#2-2-url转二维码" class="headerlink" title="2.2 url转二维码"></a>2.2 url转二维码</h2><p>在网上能找到许多提供url转二维码的api接口。</p>
+<p>在简书<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/064ab5c811cf">https://www.jianshu.com/p/064ab5c811cf</a> 里，提供了许多接口。</p>
+<p>由于飞鹅打印机的技术文档中说明了，只需要在打印时在&lt;QR&gt;标签中输入url即可自动转换，所以，不在需要使用额外的接口。</p>
+<blockquote>
+<p>⭐但是需要注意的是，通过get来获取url二维码，必须先使用url_encode将url编码，否则二维码中将丢失url的参数信息。</p>
+</blockquote>
 
     
       
@@ -537,7 +549,7 @@
                 
               
                 
-                  <p>本文永久链接是：<a href=https://sci.ci/2020/08/26/%E8%AE%A2%E5%8D%95%E5%8D%A1%E7%89%87%E5%A4%87%E6%B3%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%B0%E7%B3%BB%E7%BB%9F/>https://sci.ci/2020/08/26/%E8%AE%A2%E5%8D%95%E5%8D%A1%E7%89%87%E5%A4%87%E6%B3%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%B0%E7%B3%BB%E7%BB%9F/</a></p>
+                  <p>本文永久链接是：<a href=https://sci.ci/2020/08/28/%E5%9C%A8%E8%AE%A2%E5%8D%95%E4%B8%AD%E6%89%93%E5%8D%B0%E6%94%B6%E8%B4%A7%E5%9C%B0%E5%9D%80%E4%BA%8C%E7%BB%B4%E7%A0%81/>https://sci.ci/2020/08/28/%E5%9C%A8%E8%AE%A2%E5%8D%95%E4%B8%AD%E6%89%93%E5%8D%B0%E6%94%B6%E8%B4%A7%E5%9C%B0%E5%9D%80%E4%BA%8C%E7%BB%B4%E7%A0%81/</a></p>
                 
               
             </blockquote>
@@ -555,10 +567,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-26T16:32:03+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-28T17:50:37+02:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年8月26日</p>
+    <p>更新于：2020年8月28日</p>
   </a>
 </div>
 
@@ -567,7 +579,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%94%B5%E5%95%86%E7%B3%BB%E7%BB%9F/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>电商系统</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%94%B5%E5%95%86/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>电商</p></a></div>
 
 
         
@@ -580,7 +592,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/08/26/%E8%AE%A2%E5%8D%95%E5%8D%A1%E7%89%87%E5%A4%87%E6%B3%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%B0%E7%B3%BB%E7%BB%9F/&title=订单卡片备注自动打印系统 - 🛫起飞了&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/08/28/%E5%9C%A8%E8%AE%A2%E5%8D%95%E4%B8%AD%E6%89%93%E5%8D%B0%E6%94%B6%E8%B4%A7%E5%9C%B0%E5%9D%80%E4%BA%8C%E7%BB%B4%E7%A0%81/&title=在订单中打印收货地址二维码 - 🛫起飞了&summary="
           
           >
           
@@ -592,7 +604,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/08/26/%E8%AE%A2%E5%8D%95%E5%8D%A1%E7%89%87%E5%A4%87%E6%B3%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%B0%E7%B3%BB%E7%BB%9F/&title=订单卡片备注自动打印系统 - 🛫起飞了&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/08/28/%E5%9C%A8%E8%AE%A2%E5%8D%95%E4%B8%AD%E6%89%93%E5%8D%B0%E6%94%B6%E8%B4%A7%E5%9C%B0%E5%9D%80%E4%BA%8C%E7%BB%B4%E7%A0%81/&title=在订单中打印收货地址二维码 - 🛫起飞了&summary="
           
           >
           
@@ -604,7 +616,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/08/26/%E8%AE%A2%E5%8D%95%E5%8D%A1%E7%89%87%E5%A4%87%E6%B3%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%B0%E7%B3%BB%E7%BB%9F/&title=订单卡片备注自动打印系统 - 🛫起飞了&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/08/28/%E5%9C%A8%E8%AE%A2%E5%8D%95%E4%B8%AD%E6%89%93%E5%8D%B0%E6%94%B6%E8%B4%A7%E5%9C%B0%E5%9D%80%E4%BA%8C%E7%BB%B4%E7%A0%81/&title=在订单中打印收货地址二维码 - 🛫起飞了&summary="
           
           >
           
@@ -632,19 +644,12 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/08/28/%E5%9C%A8%E8%AE%A2%E5%8D%95%E4%B8%AD%E6%89%93%E5%8D%B0%E6%94%B6%E8%B4%A7%E5%9C%B0%E5%9D%80%E4%BA%8C%E7%BB%B4%E7%A0%81/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>在订单中打印收货地址二维码</p>
-          <p class='content'>一：简介七夕节在配送过程中，发现配送员由于文化有限，在使用导航软件上有极大的障碍。这不仅拖慢了整个配送过程，也不利于业务的增长。于是我想到了，在订单上打印一个二维码，扫描二维码，则就可以导航到收...</p>
-        </a>
       
-      
-        <a class='next' href='/2020/07/26/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/'>
-          <p class='title'>爬虫基础<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>1: 任务介绍爬取豆瓣电影Top250的基本信息。
-https://movie.douban.com/top250
-编码规范：
+        <a class='next' href='/2020/08/26/%E8%AE%A2%E5%8D%95%E5%8D%A1%E7%89%87%E5%A4%87%E6%B3%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%B0%E7%B3%BB%E7%BB%9F/'>
+          <p class='title'>订单卡片备注自动打印系统<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>一：系统设计系统思维导图：
 
-1234567#coding=utf-8def hello():...</p>
+各个接单平台在收到订单后，将订单信息发送给公网服务器，公网服务器从订单信息中提取卡片内容，并将卡片内容发送给和打印机处在同一个局域网环境下的树莓派，树莓派发送打印请...</p>
         </a>
       
     </div>
@@ -687,7 +692,7 @@ https://movie.douban.com/top250
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%EF%BC%9A%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1"><span class="toc-text">一：系统设计</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">二：准备工作</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%EF%BC%9A%E7%AE%80%E4%BB%8B"><span class="toc-text">一：简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9A%E6%96%B9%E6%A1%88"><span class="toc-text">二：方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E5%9C%B0%E5%9B%BE%E8%BD%ACurl"><span class="toc-text">2.1 地图转url</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-url%E8%BD%AC%E4%BA%8C%E7%BB%B4%E7%A0%81"><span class="toc-text">2.2 url转二维码</span></a></li></ol></li></ol>
     </div>
   </section>
 
