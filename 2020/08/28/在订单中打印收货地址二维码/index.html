@@ -508,7 +508,10 @@
 <p>在一段时间的尝试后，我敲定了此方案的可行性。</p>
 <p>由于美图和饿了么订单打印，已在飞鹅打印机上固定了模板，我无法修改他们的打印模板。所以，只能为小程序的订单，打印地址二维码。</p>
 <h1 id="二：方案"><a href="#二：方案" class="headerlink" title="二：方案"></a>二：方案</h1><p>由于各个地图公司都没有提供直接的接口，让地图转为二维码，所以退而求其次，需要先将地址转为url，进入这个url可以进入地图界面，然后将url转为二维码。</p>
-<h2 id="2-1-地图转url"><a href="#2-1-地图转url" class="headerlink" title="2.1 地图转url"></a>2.1 地图转url</h2><p>在查看了几个地图技术文档后，我找到了百度地图的接口。</p>
+<h2 id="2-1-地图转url"><a href="#2-1-地图转url" class="headerlink" title="2.1 地图转url"></a>2.1 地图转url</h2><ol>
+<li><strong>百度地图方案</strong></li>
+</ol>
+<p>在查看了几个地图技术文档后，我找到了百度地图的接口。</p>
 <p>地址：<a target="_blank" rel="noopener" href="http://lbsyun.baidu.com/index.php?title=uri/api/web">http://lbsyun.baidu.com/index.php?title=uri/api/web</a></p>
 <p>此接口提供了免费的调起地图的url方案。由于我们只能拿到收货地址，所以可以使用下面的接口</p>
 <p>服务地址</p>
@@ -519,6 +522,65 @@
 
 <p>打开后的页面</p>
 <p><img src="https://i.loli.net/2020/08/28/PSI5wTshfGN9z81.png" class="lazyload" data-srcset="https://i.loli.net/2020/08/28/PSI5wTshfGN9z81.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">2</p>
+<ol start="2">
+<li><strong>高德地图方案</strong></li>
+</ol>
+<p>高德地图提供Web调起地图的接口格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;uri.amap.com&#x2F;marker?position&#x3D;116.473195,39.993253</span><br></pre></td></tr></table></figure>
+
+<p>url参数：</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数名称</th>
+<th align="left">值(点击可编辑)</th>
+<th align="left">参数说明</th>
+<th align="left">是否必选</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">position</td>
+<td align="left">116.473195,39.993253</td>
+<td align="left">位置点经纬度坐标，格式为: position=lon,lat</td>
+<td align="left">是</td>
+<td align="left">lon表示经度，lat表示纬度</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">首开广场</td>
+<td align="left">用户自定义显示名称</td>
+<td align="left">否</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">src</td>
+<td align="left">mypage</td>
+<td align="left">使用方来源信息</td>
+<td align="left">否</td>
+<td align="left">为保证服务质量建议填写</td>
+</tr>
+<tr>
+<td align="left">coordinate</td>
+<td align="left">gaode</td>
+<td align="left">坐标系参数coordinate=gaode,表示高德坐标（gcj02坐标），coordinate=wgs84,表示wgs84坐标（GPS原始坐标）</td>
+<td align="left">否</td>
+<td align="left">默认为高德坐标系（gcj02坐标系）</td>
+</tr>
+<tr>
+<td align="left">callnative</td>
+<td align="left">0</td>
+<td align="left">是否尝试调起高德地图APP并在APP中查看，0表示不调起，1表示调起, 默认值为0</td>
+<td align="left">否</td>
+<td align="left">该参数仅在移动端有效</td>
+</tr>
+</tbody></table>
+<p>和百度地图不同的是，这个接口不提供类似搜索功能的接口方式，其中经纬度为必填项，因此，我们必须将订单地址，先调用高德的地理名称转经纬度api，在调用此接口。</p>
+<p>详细的地理编码api参见：<a target="_blank" rel="noopener" href="https://lbs.amap.com/api/webservice/guide/api/georegeo/">https://lbs.amap.com/api/webservice/guide/api/georegeo/</a></p>
+<p>通过上述两个api获取，地址的链接，详细php函数如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">		   * [getAddressUrl 生成地址url]</span></span><br><span class="line"><span class="comment">		   * <span class="doctag">@param</span>  [string] $taddress [订单地址]</span></span><br><span class="line"><span class="comment">		   * <span class="doctag">@return</span> [string]       [返回地址url]</span></span><br><span class="line"><span class="comment">		   */</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getAddressUrl</span>(<span class="params">$address</span>)</span>&#123;</span><br><span class="line">		    $api = <span class="string">&quot;https://restapi.amap.com/v3/geocode/geo&quot;</span>;</span><br><span class="line">		    $key = <span class="string">&quot;你申请的高德地图key&quot;</span>;</span><br><span class="line">		    $request_url = $api.<span class="string">&quot;?address=&quot;</span>.$address.<span class="string">&quot;&amp;output=JSON&amp;key=&quot;</span>.$key;</span><br><span class="line">		    $response = file_get_contents($request_url);</span><br><span class="line">		    $obj = json_decode($response);</span><br><span class="line">		    <span class="keyword">if</span>(strcmp($obj-&gt;status,<span class="string">&quot;1&quot;</span>)==<span class="number">0</span>)&#123;</span><br><span class="line">		    	$location_code = $obj-&gt;geocodes[<span class="string">&quot;0&quot;</span>]-&gt;location;</span><br><span class="line">		    	$address_url = <span class="string">&quot;https://uri.amap.com/marker?position=&quot;</span>.$location_code.<span class="string">&quot;&amp;name=&quot;</span>.$address;</span><br><span class="line">		    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		    	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		    &#125;</span><br><span class="line">		    <span class="keyword">return</span> $address_url;</span><br><span class="line">		  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>对比高德地图和百度地图。百度地图在编程方面更加方便，但是对于扫描二维码体验而言，百度地图必须使用浏览器扫描，或者微信扫描后根据提示打开浏览器，然后由浏览器调起百度地图进入导航。直接使用百度地图扫描二维码是无法调出导航的，而且百度地图扫描功能隐藏在搜索框之中，使用非常不方便。相对而言，用户使用高德地图api生成的二维码使用高德地图首页的扫一扫功能，可以直接进入导航界面。</p>
 <h2 id="2-2-url转二维码"><a href="#2-2-url转二维码" class="headerlink" title="2.2 url转二维码"></a>2.2 url转二维码</h2><p>在网上能找到许多提供url转二维码的api接口。</p>
 <p>在简书<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/064ab5c811cf">https://www.jianshu.com/p/064ab5c811cf</a> 里，提供了许多接口。</p>
 <p>由于飞鹅打印机的技术文档中说明了，只需要在打印时在&lt;QR&gt;标签中输入url即可自动转换，所以，不在需要使用额外的接口。</p>
@@ -567,10 +629,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-28T17:50:37+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-29T18:05:27+02:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年8月28日</p>
+    <p>更新于：2020年8月29日</p>
   </a>
 </div>
 
