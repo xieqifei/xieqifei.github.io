@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Linux操作系统学习笔记 - 🛫起飞了</title>
+  <title>Linux操作系统 - 🛫起飞了</title>
   
     <meta name="keywords" content="Linux">
   
@@ -399,7 +399,7 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">Linux操作系统学习笔记</div>
+  <div id="pjax-pageTitle">Linux操作系统</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -441,7 +441,7 @@
       
         <h1 class="title">
           <a href="/2020/02/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-            Linux操作系统学习笔记
+            Linux操作系统
           </a>
         </h1>
       
@@ -485,7 +485,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="Linux操作系统学习笔记" data-path="/2020/02/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+      <div id="lc-pv" data-title="Linux操作系统" data-path="/2020/02/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -705,7 +705,7 @@
 <p>软连接：类似windows的快捷方式</p>
 <p>硬链接：硬链接和源文件属性相同，且同步更新，可以向硬链接中写入内容，删除源文件后，硬链接任然存在。硬链接的i节点与源文件相同。</p>
 <p>硬链接不能跨分区，生成对象不能是目录</p>
-<h2 id="2-4-权限管理命令"><a href="#2-4-权限管理命令" class="headerlink" title="2.4 权限管理命令"></a>2.4 权限管理命令</h2><p>命令名称：chmod（change the permissions mode of a file）</p>
+<h2 id="2-4-权限管理命令"><a href="#2-4-权限管理命令" class="headerlink" title="2.4 权限管理命令"></a>2.4 权限管理命令</h2><h2 id="2-4-1-文件权限变更：chmod"><a href="#2-4-1-文件权限变更：chmod" class="headerlink" title="2.4.1 文件权限变更：chmod"></a>2.4.1 文件权限变更：chmod</h2><p>命令名称：chmod（change the permissions mode of a file）</p>
 <p>语法： chmod [{ugoa}]{+-=}[文件或目录]</p>
 <p>​                            [mode=421][文件或目录]</p>
 <p>​                            -R 递归修改</p>
@@ -759,6 +759,66 @@
 <td>cd</td>
 </tr>
 </tbody></table>
+<h2 id="2-4-2-文件所有者变更：chown"><a href="#2-4-2-文件所有者变更：chown" class="headerlink" title="2.4.2 文件所有者变更：chown"></a>2.4.2 文件所有者变更：chown</h2><p>语法： chown [用户] [文件或目录]</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd shenchao	#添加一个用户</span><br><span class="line">chown shenchao /tmp/japan	#改变所有者</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-3-文件所属组变更：chgrp"><a href="#2-4-3-文件所属组变更：chgrp" class="headerlink" title="2.4.3 文件所属组变更：chgrp"></a>2.4.3 文件所属组变更：chgrp</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">groupadd lampbrother	#新建组</span><br><span class="line">chgrp lampbrother /tmp/japan	#更改所属组</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-4-显示新建文件的缺省权限：umask"><a href="#2-4-4-显示新建文件的缺省权限：umask" class="headerlink" title="2.4.4 显示新建文件的缺省权限：umask"></a>2.4.4 显示新建文件的缺省权限：umask</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">umask -S	#显示新建目录缺省权限</span><br><span class="line">umask	#显示新建目录缺省权限的与值</span><br><span class="line">umask 077	#修改新建文件的缺省权限为700.原理为，777与077得700</span><br></pre></td></tr></table></figure>
+
+<p>0022</p>
+<p>0：特殊权限</p>
+<p>022：— -w- -w-</p>
+<p>则目录的权限为：777和022逻辑与的结果，等于755</p>
+<h2 id="2-5-文件搜索命令"><a href="#2-5-文件搜索命令" class="headerlink" title="2.5 文件搜索命令"></a>2.5 文件搜索命令</h2><h3 id="2-5-1-文件搜索命令：find"><a href="#2-5-1-文件搜索命令：find" class="headerlink" title="2.5.1 文件搜索命令：find"></a>2.5.1 文件搜索命令：find</h3><p>语法：find [搜索范围] [匹配条件]</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find /etc -name init	#在/etc目录下搜索名为init的文件，initab不能被搜索到。</span><br><span class="line">find /etc -name *init*	#名字包含init就会被搜索，*作为通配符</span><br><span class="line">find /etc -name int???	#?</span><br><span class="line">find /etc -iname init???	#搜索名字不区分大小写。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -size +204800	#查找大于100MB文件，按数据块算，一个数据块=0.5K。204800个数据块=100MB</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -user shenchao	#根据所有者查找</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find /etc -cmin -5	#根据文件属性5分钟内被改的文件查找 change</span><br><span class="line">find /etc -amin -5	#根据访问时间 access</span><br><span class="line">find /etc -mmin -5	#根据文件内容被改变 modify</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find /etc -size +163840 -a -size -204800	#查找大于80MB并且小于100MB的文件</span><br><span class="line">find /etc -size +163840 -o -size -204800	#查找大于80MB或者小于100MB的文件</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /etc -name init* -a -type f	#查找类型为文件的init*对象</span><br></pre></td></tr></table></figure>
+<p>-exec/-ok 对搜索结果进行处理。-ok比-exec多了询问是否操作过程</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /etc -name inittab -exec ls -l &#123;&#125; \;	#-exec 命令 &#123;&#125; \;为固定格式</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find /etc -inum 3442	#根据i节点查找文件</span><br><span class="line">find /etc -inum 3442 -exec rm &#123;&#125; \;	#删除i节点为3442的文件。可用于名字奇怪的文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5-2-其他文件搜索命令：locate"><a href="#2-5-2-其他文件搜索命令：locate" class="headerlink" title="2.5.2 其他文件搜索命令：locate"></a>2.5.2 其他文件搜索命令：locate</h3><p>在文件资料库中查找文件，速度非常快。但是不能及时更新。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">locate inittab	#查找inittab的位置</span><br><span class="line">locate -i inittab	#查找时不区分大小写</span><br></pre></td></tr></table></figure>
+
+<p>更新资料库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">updatedb</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>locate无法收录/tmp目录下的文件</p>
+</blockquote>
+<h3 id="2-5-3-命令文件搜索命令：which"><a href="#2-5-3-命令文件搜索命令：which" class="headerlink" title="2.5.3 命令文件搜索命令：which"></a>2.5.3 命令文件搜索命令：which</h3><p>对命令使用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which cp	#查找命令绝对路径的位置，并且得到命令是否有别命</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5-4-命令文件搜索命令：whereis"><a href="#2-5-4-命令文件搜索命令：whereis" class="headerlink" title="2.5.4 命令文件搜索命令：whereis"></a>2.5.4 命令文件搜索命令：whereis</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis rm	#找到命令绝对路径，和命令的帮助文档所在位置</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5-5-文件内容搜索命令：grep"><a href="#2-5-5-文件内容搜索命令：grep" class="headerlink" title="2.5.5 文件内容搜索命令：grep"></a>2.5.5 文件内容搜索命令：grep</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-i</td>
+<td>不区分大小写</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>排除指定字串</td>
+</tr>
+</tbody></table>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grep multiuser /etc/inittab	#查找文件中multiuser所在的行。</span><br><span class="line">grep -v ^# /etc/inittab	#排除指定字串所在的行，即以#开头的行，不希显示。</span><br></pre></td></tr></table></figure>
+
 
     
       
@@ -771,7 +831,7 @@
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="\2020\08\28\树莓派4B无网线无显示器出发\" title="树莓派4B无网线无显示器出发" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">树莓派4B无网线无显示器出发</span></a><a class="item" href="\2020\03\01\Bootstrap学习笔记\" title="Bootstrap学习笔记" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Bootstrap学习笔记</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="\2020\08\28\树莓派4B无网线无显示器出发\" title="树莓派4B无网线无显示器出发" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">树莓派4B无网线无显示器出发</span></a><a class="item" href="\2020\09\10\利用树莓派-内网穿透搭建网站服务器\" title="利用树莓派+内网穿透搭建网站服务器" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">利用树莓派+内网穿透搭建网站服务器</span></a><a class="item" href="\2020\03\01\Bootstrap学习笔记\" title="Bootstrap学习笔记" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Bootstrap学习笔记</span></a></div></section></div>
         
         
           <div class='copyright'>
@@ -801,10 +861,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-30T00:16:26+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-05T15:29:52+02:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年8月30日</p>
+    <p>更新于：2020年9月5日</p>
   </a>
 </div>
 
@@ -826,7 +886,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/02/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Linux操作系统学习笔记 - 🛫起飞了&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/02/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Linux操作系统 - 🛫起飞了&summary="
           
           >
           
@@ -838,7 +898,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/02/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Linux操作系统学习笔记 - 🛫起飞了&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/02/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Linux操作系统 - 🛫起飞了&summary="
           
           >
           
@@ -850,7 +910,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/02/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Linux操作系统学习笔记 - 🛫起飞了&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/02/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=Linux操作系统 - 🛫起飞了&summary="
           
           >
           
@@ -932,7 +992,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9ALinux%E7%AE%80%E4%BB%8B"><span class="toc-text">1：Linux简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9ALinux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">2：Linux常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E7%9B%AE%E5%BD%95%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-text">2.1 目录处理命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%E5%B1%95%E7%A4%BA%E5%AD%90%E7%9B%AE%E5%BD%95%EF%BC%9Als"><span class="toc-text">2.1.1 展示子目录：ls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95%EF%BC%9Amkdir"><span class="toc-text">2.1.2 新建目录：mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95%EF%BC%9Acd"><span class="toc-text">2.1.3 切换目录：cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-%E5%B1%95%E7%A4%BA%E5%BD%93%E5%89%8D%E5%AE%8C%E6%95%B4%E8%B7%AF%E5%BE%84%EF%BC%9Apwd"><span class="toc-text">2.1.4 展示当前完整路径：pwd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-5-%E5%88%A0%E9%99%A4%E7%A9%BA%E7%9B%AE%E5%BD%95%EF%BC%9Armdir"><span class="toc-text">2.1.5 删除空目录：rmdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-6-%E5%A4%8D%E5%88%B6%EF%BC%9Acp"><span class="toc-text">2.1.6 复制：cp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-7-%E7%A7%BB%E5%8A%A8%E3%80%81%E5%89%AA%E5%88%87%EF%BC%9Amv"><span class="toc-text">2.1.7 移动、剪切：mv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-8-%E5%88%A0%E9%99%A4%EF%BC%9Arm"><span class="toc-text">2.1.8 删除：rm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-text">2.2 文件处理命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%EF%BC%9Atouch"><span class="toc-text">2.2.1 新建文件：touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%E6%B5%8F%E8%A7%88%E7%9F%AD%E6%96%87%E4%BB%B6%EF%BC%9Acat"><span class="toc-text">2.2.2 浏览短文件：cat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-%E6%8C%89%E8%A1%8C%E5%8F%8D%E5%90%91%E6%98%BE%E7%A4%BA%E6%B5%8F%E8%A7%88%EF%BC%9Atac"><span class="toc-text">2.2.3 按行反向显示浏览：tac</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-%E5%88%86%E9%A1%B5%E6%B5%8F%E8%A7%88%E9%95%BF%E6%96%87%E4%BB%B6%EF%BC%9Amore"><span class="toc-text">2.2.4 分页浏览长文件：more</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-5-%E5%8F%AF%E5%90%91%E4%B8%8A%E5%88%86%E9%A1%B5%E6%B5%8F%E8%A7%88%EF%BC%9Aless"><span class="toc-text">2.2.5 可向上分页浏览：less</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-6-%E6%B5%8F%E8%A7%88%E6%96%87%E4%BB%B6%E5%89%8D%E5%87%A0%E8%A1%8C%EF%BC%9Ahead"><span class="toc-text">2.2.6 浏览文件前几行：head</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-7-%E6%B5%8F%E8%A7%88%E6%96%87%E4%BB%B6%E6%9C%AB%E5%B0%BE%E5%87%A0%E8%A1%8C%EF%BC%9Atail"><span class="toc-text">2.2.7 浏览文件末尾几行：tail</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E9%93%BE%E6%8E%A5%E5%91%BD%E4%BB%A4"><span class="toc-text">2.3 链接命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-text">2.4 权限管理命令</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9ALinux%E7%AE%80%E4%BB%8B"><span class="toc-text">1：Linux简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9ALinux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">2：Linux常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E7%9B%AE%E5%BD%95%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-text">2.1 目录处理命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%E5%B1%95%E7%A4%BA%E5%AD%90%E7%9B%AE%E5%BD%95%EF%BC%9Als"><span class="toc-text">2.1.1 展示子目录：ls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95%EF%BC%9Amkdir"><span class="toc-text">2.1.2 新建目录：mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95%EF%BC%9Acd"><span class="toc-text">2.1.3 切换目录：cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-4-%E5%B1%95%E7%A4%BA%E5%BD%93%E5%89%8D%E5%AE%8C%E6%95%B4%E8%B7%AF%E5%BE%84%EF%BC%9Apwd"><span class="toc-text">2.1.4 展示当前完整路径：pwd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-5-%E5%88%A0%E9%99%A4%E7%A9%BA%E7%9B%AE%E5%BD%95%EF%BC%9Armdir"><span class="toc-text">2.1.5 删除空目录：rmdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-6-%E5%A4%8D%E5%88%B6%EF%BC%9Acp"><span class="toc-text">2.1.6 复制：cp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-7-%E7%A7%BB%E5%8A%A8%E3%80%81%E5%89%AA%E5%88%87%EF%BC%9Amv"><span class="toc-text">2.1.7 移动、剪切：mv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-8-%E5%88%A0%E9%99%A4%EF%BC%9Arm"><span class="toc-text">2.1.8 删除：rm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-text">2.2 文件处理命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%EF%BC%9Atouch"><span class="toc-text">2.2.1 新建文件：touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%E6%B5%8F%E8%A7%88%E7%9F%AD%E6%96%87%E4%BB%B6%EF%BC%9Acat"><span class="toc-text">2.2.2 浏览短文件：cat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-%E6%8C%89%E8%A1%8C%E5%8F%8D%E5%90%91%E6%98%BE%E7%A4%BA%E6%B5%8F%E8%A7%88%EF%BC%9Atac"><span class="toc-text">2.2.3 按行反向显示浏览：tac</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-%E5%88%86%E9%A1%B5%E6%B5%8F%E8%A7%88%E9%95%BF%E6%96%87%E4%BB%B6%EF%BC%9Amore"><span class="toc-text">2.2.4 分页浏览长文件：more</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-5-%E5%8F%AF%E5%90%91%E4%B8%8A%E5%88%86%E9%A1%B5%E6%B5%8F%E8%A7%88%EF%BC%9Aless"><span class="toc-text">2.2.5 可向上分页浏览：less</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-6-%E6%B5%8F%E8%A7%88%E6%96%87%E4%BB%B6%E5%89%8D%E5%87%A0%E8%A1%8C%EF%BC%9Ahead"><span class="toc-text">2.2.6 浏览文件前几行：head</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-7-%E6%B5%8F%E8%A7%88%E6%96%87%E4%BB%B6%E6%9C%AB%E5%B0%BE%E5%87%A0%E8%A1%8C%EF%BC%9Atail"><span class="toc-text">2.2.7 浏览文件末尾几行：tail</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E9%93%BE%E6%8E%A5%E5%91%BD%E4%BB%A4"><span class="toc-text">2.3 链接命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-text">2.4 权限管理命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-1-%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E5%8F%98%E6%9B%B4%EF%BC%9Achmod"><span class="toc-text">2.4.1 文件权限变更：chmod</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-2-%E6%96%87%E4%BB%B6%E6%89%80%E6%9C%89%E8%80%85%E5%8F%98%E6%9B%B4%EF%BC%9Achown"><span class="toc-text">2.4.2 文件所有者变更：chown</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-3-%E6%96%87%E4%BB%B6%E6%89%80%E5%B1%9E%E7%BB%84%E5%8F%98%E6%9B%B4%EF%BC%9Achgrp"><span class="toc-text">2.4.3 文件所属组变更：chgrp</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-4-%E6%98%BE%E7%A4%BA%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E7%9A%84%E7%BC%BA%E7%9C%81%E6%9D%83%E9%99%90%EF%BC%9Aumask"><span class="toc-text">2.4.4 显示新建文件的缺省权限：umask</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E5%91%BD%E4%BB%A4"><span class="toc-text">2.5 文件搜索命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-1-%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E5%91%BD%E4%BB%A4%EF%BC%9Afind"><span class="toc-text">2.5.1 文件搜索命令：find</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-2-%E5%85%B6%E4%BB%96%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E5%91%BD%E4%BB%A4%EF%BC%9Alocate"><span class="toc-text">2.5.2 其他文件搜索命令：locate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-3-%E5%91%BD%E4%BB%A4%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E5%91%BD%E4%BB%A4%EF%BC%9Awhich"><span class="toc-text">2.5.3 命令文件搜索命令：which</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-4-%E5%91%BD%E4%BB%A4%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E5%91%BD%E4%BB%A4%EF%BC%9Awhereis"><span class="toc-text">2.5.4 命令文件搜索命令：whereis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-5-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%90%9C%E7%B4%A2%E5%91%BD%E4%BB%A4%EF%BC%9Agrep"><span class="toc-text">2.5.5 文件内容搜索命令：grep</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -990,7 +1050,7 @@
             
           
             
-              <a href="mailto:me@xxx.com"
+              <a href="mailto:im@xieqifei.com"
                 class="social fas fa-envelope flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
@@ -999,7 +1059,7 @@
             
           
             
-              <a href="https://github.com/volantis-x/"
+              <a href="https://github.com/xieqifei/"
                 class="social fab fa-github flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
