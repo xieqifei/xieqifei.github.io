@@ -529,7 +529,7 @@
 <p>此时，在笔记本上访问树莓派上面的网站，应该已经能够访问了。</p>
 <h1 id="3：内网穿透"><a href="#3：内网穿透" class="headerlink" title="3：内网穿透"></a>3：内网穿透</h1><p>为了让外网的人，能够使用ip地址或者域名，访问到树莓派上的网站，需要做内网穿透，首先，需要让VPS能够访问到树莓派。</p>
 <p>使用花生壳之类的软件也能实现内网穿透，且不用VPS，但是这类软件收费比较高，所以我们可以用VPS自己搞一个内网穿透。</p>
-<p>使用p2p组网的内网穿透软件，比如n2n、zerotier、frp。在github上都能搜得到。frp是一个单端到单端的组网，不需要借助别人提供的服务器来做导航，个人是很推荐的，如果你有多个VPS或者多个电脑，想组成局域网，建议使用zerotier。我这里使用的是zerotier，因为它配置比较简单。</p>
+<p>使用p2p组网的内网穿透软件，比如n2n、zerotier、frp。在github上都能搜得到。frp是一个端口转发的软件，不需要借助别人提供的服务器来做导航，如果只是做网站是非常推荐的，因为这不设及后面讲的nginx做反向代理的步骤，个人是很推荐的。但，如果你有多个VPS或者多个电脑，想组成局域网，建议使用zerotier。我这里使用的是zerotier，因为它配置比较简单。并在此基础上做了网站的反向代理，以实现外网访问内网，和frp直接做端口转发的原理是不同的。</p>
 <p>我们需要分别在树莓派和vps上安装zerotier。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s https://install.zerotier.com | sudo bash</span><br></pre></td></tr></table></figure>
 
@@ -606,7 +606,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-11T01:10:45+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-11T01:31:14+02:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年9月11日</p>
@@ -682,6 +682,12 @@
   
   
     <div class="prev-next">
+      
+        <a class='prev' href='/2020/09/18/Selenium%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Selenium库常用操作记录</p>
+          <p class='content'>1：Selenium简介Selenium库是一个用于浏览器自动化pyhon库。对提高爬虫容错率有很好的效果。它可用于驱动浏览器，来帮助我们实现获取网站js脚本执行后的网页。
+2：Selenium...</p>
+        </a>
       
       
         <a class='next' href='/2020/09/10/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E5%9C%A8Linux%E4%B8%8A%E5%BD%BB%E5%BA%95%E5%8D%B8%E8%BD%BDnginx/'>
