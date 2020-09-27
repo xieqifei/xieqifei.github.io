@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：Vuejs - 🛫起飞了</title>
+  <title>利用树莓派定时抢图书馆座位 - 🛫起飞了</title>
+  
+    <meta name="keywords" content="Linux,树莓派">
   
 
   
@@ -318,7 +318,7 @@
 
   
   
-      <div class='cover-wrapper  dock' style="display: none;">
+      <div class='cover-wrapper post dock' style="display: none;">
         
           <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
         
@@ -398,8 +398,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">利用树莓派定时抢图书馆座位</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -428,75 +428,253 @@
         
         
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  <div class='article-header'>
     
+    <div class="article-meta" id="top">
       
-  <section class="post-list">
-    
       
+      
+        <h1 class="title">
+          <a href="/2020/09/27/%E5%88%A9%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9A%E6%97%B6%E6%8A%A2%E5%9B%BE%E4%B9%A6%E9%A6%86%E5%BA%A7%E4%BD%8D/">
+            利用树莓派定时抢图书馆座位
+          </a>
+        </h1>
+      
+      <div class='new-meta-box'>
         
           
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://ae01.alicdn.com/kf/Hb5b4a24aa25749c38ad1c3af3f15bac4e.jpg">
+    <p>啓飞</p>
+  </a>
+</div>
+
+          
         
-      
-    
-    
-      
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/Linux/">Linux</a>
+    </a>
+  </div>
+
+
+          
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年9月27日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="利用树莓派定时抢图书馆座位" data-path="/2020/09/27/%E5%88%A9%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9A%E6%97%B6%E6%8A%A2%E5%9B%BE%E4%B9%A6%E9%A6%86%E5%BA%A7%E4%BD%8D/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="article-entry" itemprop="articleBody">
     
-    <h2 class="article-title" >
-      <a href="/2020/02/15/Vue%E3%80%81Vuejs%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
-        Vue、Vuejs学习记录
-      </a>
-    </h2>
-  
-  <div class='md'>
+    
+    <h1 id="1：需求分析"><a href="#1：需求分析" class="headerlink" title="1：需求分析"></a>1：需求分析</h1><p>由于新冠疫情的影响，学校图书馆和自习室必须在监管之下运行，每日提供的坐席和开放时间受限。大部分自习室被关闭，导致坐席需求很大，而供应很少。新规要求，图书馆和自习室的坐席必须在学校官网上预定，而且预定时间是周日到周四早上八点，仅能预定后一天的位置。</p>
+<p>在考试周，座位非常难抢到，因此萌发了通过程序抢座的念头。</p>
+<p>目前需求是，程序在周天到周日的早上八点启动，并打开抢座页面，抢座后关闭程序。抢座成功后，学校会自动发送抢座成功的邮件。</p>
+<h1 id="2：软硬件应用"><a href="#2：软硬件应用" class="headerlink" title="2：软硬件应用"></a>2：软硬件应用</h1><p>服务器：树莓派4B+、Linux系统</p>
+<p>语言：Python</p>
+<p>依赖库：Selenium，date</p>
+<p>Linux工具：crontab</p>
+<h1 id="3：抢座程序"><a href="#3：抢座程序" class="headerlink" title="3：抢座程序"></a>3：抢座程序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.action_chains <span class="keyword">import</span> ActionChains</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.ui <span class="keyword">import</span> Select</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.ui <span class="keyword">import</span> WebDriverWait</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="comment">#点击buchen按钮</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">clickbucheng</span>(<span class="params">driver</span>):</span></span><br><span class="line">    inputs = driver.find_elements_by_tag_name(<span class="string">&#x27;input&#x27;</span>)</span><br><span class="line">    <span class="keyword">for</span> input <span class="keyword">in</span> inputs:</span><br><span class="line">        <span class="keyword">if</span> input.get_attribute(<span class="string">&#x27;value&#x27;</span>) == <span class="string">&#x27;buchen&#x27;</span>:</span><br><span class="line">            ActionChains(driver).click(input).perform()</span><br><span class="line">            <span class="comment"># writetohtml(driver,r&quot;C:\Users\97532\OneDrive\程序仓库\getPlatzinBibliothek\1.html&quot;)</span></span><br><span class="line">            window = driver.window_handles[<span class="number">1</span>]</span><br><span class="line">            driver.switch_to.window(window)</span><br><span class="line">            driver.find_elements_by_css_selector(<span class="string">&#x27;#bs_form_main &gt; div &gt; div.bs_etvg &gt; div &gt; label &gt; div.bs_form_uni.bs_right.padding0 &gt; input&#x27;</span>)[<span class="number">0</span>].click()</span><br><span class="line">            print(datetime.datetime.now().strftime(<span class="string">&#x27;%Y.%m.%d-%H:%M:%S&#x27;</span>),<span class="string">&quot;: start buchen&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#发送表格信息</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sendform</span>(<span class="params">driver</span>):</span></span><br><span class="line">    <span class="comment"># writetohtml(driver,r&#x27;C:\Users\97532\OneDrive\程序仓库\getPlatzinBibliothek\2.html&#x27;)</span></span><br><span class="line">    <span class="comment">#sex:M/W</span></span><br><span class="line">    urinfo = &#123;<span class="string">&quot;sex&quot;</span>:<span class="string">&quot;M&quot;</span>,<span class="string">&quot;vorname&quot;</span>:<span class="string">&quot;***&quot;</span>,<span class="string">&quot;name&quot;</span>:<span class="string">&quot;***&quot;</span>,<span class="string">&quot;strasse&quot;</span>:<span class="string">&quot;Hai***1&quot;</span>,<span class="string">&quot;ort&quot;</span>:<span class="string">&quot;***&quot;</span>,<span class="string">&quot;status&quot;</span>:<span class="string">&quot;S-RWTH&quot;</span>,<span class="string">&quot;matnr&quot;</span>:<span class="string">&quot;***93&quot;</span>,<span class="string">&quot;email&quot;</span>:<span class="string">&quot;im@xieqifei.com&quot;</span>,<span class="string">&quot;telefon&quot;</span>:<span class="string">&quot;0049***4845&quot;</span>&#125;</span><br><span class="line">    radios = driver.find_elements_by_name(<span class="string">&#x27;sex&#x27;</span>)</span><br><span class="line">    vorname = driver.find_element_by_name(<span class="string">&#x27;vorname&#x27;</span>)</span><br><span class="line">    name = driver.find_element_by_name(<span class="string">&#x27;name&#x27;</span>)</span><br><span class="line">    strasse = driver.find_element_by_name(<span class="string">&#x27;strasse&#x27;</span>)</span><br><span class="line">    ort = driver.find_element_by_name(<span class="string">&#x27;ort&#x27;</span>)</span><br><span class="line">    status = Select(driver.find_element_by_name(<span class="string">&#x27;statusorig&#x27;</span>))</span><br><span class="line">    matnr = driver.find_element_by_name(<span class="string">&#x27;matnr&#x27;</span>)</span><br><span class="line">    email = driver.find_element_by_name(<span class="string">&#x27;email&#x27;</span>)</span><br><span class="line">    telefon = driver.find_element_by_name(<span class="string">&#x27;telefon&#x27;</span>)</span><br><span class="line">    tnbed = driver.find_element_by_name(<span class="string">&#x27;tnbed&#x27;</span>)</span><br><span class="line">    submit = driver.find_element_by_css_selector(<span class="string">&#x27;#bs_foot &gt; div.bs_form_row &gt; div.bs_right &gt; input&#x27;</span>)</span><br><span class="line">    <span class="keyword">for</span> radio <span class="keyword">in</span> radios:</span><br><span class="line">        <span class="keyword">if</span> radio.get_attribute(<span class="string">&quot;value&quot;</span>) == urinfo[<span class="string">&#x27;sex&#x27;</span>]:</span><br><span class="line">            radio.click()</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    vorname.send_keys(urinfo[<span class="string">&#x27;vorname&#x27;</span>])</span><br><span class="line">    name.send_keys(urinfo[<span class="string">&#x27;name&#x27;</span>])</span><br><span class="line">    strasse.send_keys(urinfo[<span class="string">&#x27;strasse&#x27;</span>])</span><br><span class="line">    ort.send_keys(urinfo[<span class="string">&#x27;ort&#x27;</span>])</span><br><span class="line">    status.select_by_value(urinfo[<span class="string">&#x27;status&#x27;</span>])</span><br><span class="line">    matnr.send_keys(urinfo[<span class="string">&#x27;matnr&#x27;</span>])</span><br><span class="line">    email.send_keys(urinfo[<span class="string">&#x27;email&#x27;</span>])</span><br><span class="line">    telefon.send_keys(urinfo[<span class="string">&#x27;telefon&#x27;</span>])</span><br><span class="line">    tnbed.click()</span><br><span class="line">    telefon.click()</span><br><span class="line">    sleep(<span class="number">4</span>)</span><br><span class="line">    <span class="comment"># WebDriverWait(driver, 10).until(EC.element_to_be_clickable(By.XPATH,&#x27;//*[@id=&quot;bs_foot&quot;]/div[3]/div[2]/input&#x27;))</span></span><br><span class="line">    submit.click()</span><br><span class="line">    print(datetime.datetime.now().strftime(<span class="string">&#x27;%Y.%m.%d-%H:%M:%S&#x27;</span>),<span class="string">&quot;: send MsgForm&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#确认预定</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">confirm</span>(<span class="params">driver</span>):</span></span><br><span class="line">    confirm = driver.find_element_by_css_selector(<span class="string">&#x27;#bs_foot &gt; div.bs_form_row &gt; div.bs_right &gt; input&#x27;</span>)</span><br><span class="line">    confirm.click()</span><br><span class="line">    print(datetime.datetime.now().strftime(<span class="string">&#x27;%Y.%m.%d-%H:%M:%S&#x27;</span>),<span class="string">&quot;: confirm,buchen success!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#可发送用户名密码抢座</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sendpw</span>(<span class="params">driver</span>):</span></span><br><span class="line">    logininfo = &#123;<span class="string">&quot;pw_email&quot;</span>:<span class="string">&quot;im@xieqifei.com&quot;</span>,<span class="string">&quot;password&quot;</span>:<span class="string">&quot;***&quot;</span>&#125;</span><br><span class="line">    pw_email = driver.find_element_by_name(<span class="string">&#x27;pw_email&#x27;</span>)</span><br><span class="line">    pw = driver.find_element_by_css_selector(<span class="string">&#x27;#bs_pw_anm &gt; div:nth-child(3) &gt; div.bs_form_sp2 &gt; input&#x27;</span>)</span><br><span class="line">    submit2 = driver.find_element_by_css_selector(<span class="string">&#x27;#bs_pw_anm &gt; div.bs_form_foot &gt; div.bs_form_row &gt; div.bs_right &gt; input&#x27;</span>)</span><br><span class="line">    pw_email.send_keys(logininfo[<span class="string">&#x27;pw_email&#x27;</span>])</span><br><span class="line">    pw.send_keys(logininfo[<span class="string">&#x27;password&#x27;</span>])</span><br><span class="line">    <span class="comment"># sleep(3)</span></span><br><span class="line">    submit2.submit()</span><br><span class="line">    </span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">def writetohtml(driver,path):</span></span><br><span class="line"><span class="string">    f = open(path,&#x27;wb&#x27;)</span></span><br><span class="line"><span class="string">    f.write(driver.page_source.encode(&quot;utf-8&quot;, &quot;ignore&quot;))</span></span><br><span class="line"><span class="string">    f.close()   </span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span>    </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment">#path = &quot;/home/pi/Programms/getPlatzinBibliothek/chromedriver&quot;</span></span><br><span class="line">    option = webdriver.ChromeOptions()</span><br><span class="line">    option.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">    driver = webdriver.Chrome(options=option)</span><br><span class="line">    print(datetime.datetime.now().strftime(<span class="string">&#x27;%Y.%m.%d-%H:%M:%S&#x27;</span>),<span class="string">&quot;: chrome start up&quot;</span>)</span><br><span class="line">    <span class="comment"># driver.get(&#x27;file:///C:/Users/97532/Desktop/Anmeldung.html&#x27;)</span></span><br><span class="line">    driver.get(<span class="string">&#x27;https://buchung.hsz.rwth-aachen.de/angebote/aktueller_zeitraum/_Lernraumbuchung.html&#x27;</span>)</span><br><span class="line">    ok = clickbucheng(driver)</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> ok != <span class="number">1</span> <span class="keyword">and</span> count &lt; <span class="number">10</span>:</span><br><span class="line">        sleep(<span class="number">1</span>)</span><br><span class="line">        driver.refresh()</span><br><span class="line">        ok = clickbucheng(driver)</span><br><span class="line">        count = count + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> ok == <span class="number">1</span>:</span><br><span class="line">            sendform(driver)</span><br><span class="line">            confirm(driver)</span><br><span class="line">    <span class="comment">#driver.get_screenshot_as_file(r&quot;/home/pi/Programms/tushuguan.jpg&quot;)</span></span><br><span class="line">    sleep(<span class="number">1</span>)</span><br><span class="line">    print(datetime.datetime.now().strftime(<span class="string">&#x27;%Y.%m.%d-%H:%M:%S&#x27;</span>),<span class="string">&quot;: chrome shutdown&quot;</span>)</span><br><span class="line">    driver.quit()</span><br></pre></td></tr></table></figure>
+
+<p>使用Selenium驱动chrome浏览器，实行web自动化，完成抢座功能。</p>
+<h1 id="4：定时任务"><a href="#4：定时任务" class="headerlink" title="4：定时任务"></a>4：定时任务</h1><p>在树莓派上，利用Linux定时工具crontab，指定程序在每周天到周四上午八点运行。</p>
+<p>创建shell脚本，bibplatz.sh</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">cd /home/pi/Programms/getPlatzinBibliothek</span><br><span class="line">python3 -u getplatz.py &gt; result.log 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
+<p>添加任务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+
+<p>在vim编辑器中添加任务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 8 * * 0-4 /home/pi/bibplatz.sh &amp;</span><br></pre></td></tr></table></figure>
+
+<p>crontab的格式为：* * * * * command</p>
+<p>五个*分别代表，分钟，小时，天，月，周</p>
+<p>查看任务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -l</span><br></pre></td></tr></table></figure>
+
+
     
       
-        0：ES6补充0.1 块级作用域12345678910111213141516171819202122232425&lt;script&gt;	//变量作用域：变量在什么范围内可用    &#123;        var name = &#x27;why&#x27;;        console.log(name);    &#125;    console.log(name);//在大...
-      
+      <div class='footer'>
+        
+        
+          
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\2020\08\28\树莓派4B无网线无显示器出发\" title="树莓派4B无网线无显示器出发" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">树莓派4B无网线无显示器出发</span></a><a class="item" href="\2020\09\10\利用树莓派-内网穿透搭建网站服务器\" title="利用树莓派+内网穿透搭建网站服务器" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">利用树莓派+内网穿透搭建网站服务器</span></a><a class="item" href="\2020\02\20\Linux操作系统学习笔记\" title="Linux操作系统" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Linux操作系统</span></a><a class="item" href="\2020\06\25\部署Aria2-Rclone实现离线下载文件到Onedrive\" title="部署Aria2+Rclone实现离线下载文件到Onedrive" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">部署Aria2+Rclone实现离线下载文件到Onedrive</span></a></div></section></div>
+        
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href=https://sci.ci/2020/09/27/%E5%88%A9%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9A%E6%97%B6%E6%8A%A2%E5%9B%BE%E4%B9%A6%E9%A6%86%E5%BA%A7%E4%BD%8D/>https://sci.ci/2020/09/27/%E5%88%A9%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9A%E6%97%B6%E6%8A%A2%E5%9B%BE%E4%B9%A6%E9%A6%86%E5%BA%A7%E4%BD%8D/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+        
+      </div>
     
   </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-02-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
       
-        <div>
-            <a class='readmore' href='/2020/02/15/Vue%E3%80%81Vuejs%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/'>
-            阅读全文
-          </a>
-        </div>
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-27T19:21:45+02:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年9月27日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>树莓派</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/09/27/%E5%88%A9%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9A%E6%97%B6%E6%8A%A2%E5%9B%BE%E4%B9%A6%E9%A6%86%E5%BA%A7%E4%BD%8D/&title=利用树莓派定时抢图书馆座位 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/09/27/%E5%88%A9%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9A%E6%97%B6%E6%8A%A2%E5%9B%BE%E4%B9%A6%E9%A6%86%E5%BA%A7%E4%BD%8D/&title=利用树莓派定时抢图书馆座位 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/09/27/%E5%88%A9%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9A%E6%97%B6%E6%8A%A2%E5%9B%BE%E4%B9%A6%E9%A6%86%E5%BA%A7%E4%BD%8D/&title=利用树莓派定时抢图书馆座位 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2020/09/21/%E6%A0%91%E8%8E%93%E6%B4%BEChrome%E6%B5%8F%E8%A7%88%E5%99%A8%E9%A9%B1%E5%8A%A8webdriver/'>
+          <p class='title'>树莓派Chrome浏览器驱动webdriver<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>树莓派上的系统是基于Arm内核的Linux，且是32位系统，在Google上面下载的chromedriver在selenium运行时，会报错，可以直接使用apt-get安装chromedrive...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-    
-  
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -504,154 +682,19 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">🛫起飞了</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:im@xieqifei.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/xieqifei/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Linux%E7%BC%96%E7%A8%8B/" href="/categories/Linux%E7%BC%96%E7%A8%8B/"
-            id="categoriesLinuxE7BC96E7A88B"
-            ><div class='name'>Linux编程</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Python/" href="/categories/Python/"
-            id="categoriesPython"
-            ><div class='name'>Python</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Windows/" href="/categories/Windows/"
-            id="categoriesWindows"
-            ><div class='name'>Windows</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"
-            id="categoriesE585B6E4BB96"
-            ><div class='name'>其他</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-            id="categoriesE5ADA6E4B9A0E7AC94E8AEB0"
-            ><div class='name'>学习笔记</div><div class='badge'>(14)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/" href="/categories/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/"
-            id="categoriesE5AE89E58D93E7BC96E7A88B"
-            ><div class='name'>安卓编程</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"
-            id="categoriesE6A091E88E93E6B4BE"
-            ><div class='name'>树莓派</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/"
-            id="categoriesE7BD91E7AB99E7BC96E7A88B"
-            ><div class='name'>网站编程</div><div class='badge'>(14)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/ADB/" style="font-size: 14px; color: #999">ADB</a> <a href="/tags/API/" style="font-size: 14px; color: #999">API</a> <a href="/tags/Aria2/" style="font-size: 14px; color: #999">Aria2</a> <a href="/tags/Bootstrap/" style="font-size: 14px; color: #999">Bootstrap</a> <a href="/tags/Cookie/" style="font-size: 14px; color: #999">Cookie</a> <a href="/tags/Flutter/" style="font-size: 14px; color: #999">Flutter</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/JsDelivr/" style="font-size: 14px; color: #999">JsDelivr</a> <a href="/tags/Kali-Linux/" style="font-size: 14px; color: #999">Kali Linux</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Magento/" style="font-size: 14px; color: #999">Magento</a> <a href="/tags/Mysql/" style="font-size: 14px; color: #999">Mysql</a> <a href="/tags/Nginx/" style="font-size: 14px; color: #999">Nginx</a> <a href="/tags/Oneindex/" style="font-size: 17.33px; color: #828282">Oneindex</a> <a href="/tags/PyTorch/" style="font-size: 14px; color: #999">PyTorch</a> <a href="/tags/Python/" style="font-size: 17.33px; color: #828282">Python</a> <a href="/tags/Rclone/" style="font-size: 17.33px; color: #828282">Rclone</a> <a href="/tags/SSR/" style="font-size: 17.33px; color: #828282">SSR</a> <a href="/tags/Selenium/" style="font-size: 17.33px; color: #828282">Selenium</a> <a href="/tags/ShopXO/" style="font-size: 14px; color: #999">ShopXO</a> <a href="/tags/Squid/" style="font-size: 17.33px; color: #828282">Squid</a> <a href="/tags/Stunnel/" style="font-size: 17.33px; color: #828282">Stunnel</a> <a href="/tags/Stunnel%E4%BB%A3%E7%90%86/" style="font-size: 14px; color: #999">Stunnel代理</a> <a href="/tags/TensorFlow/" style="font-size: 14px; color: #999">TensorFlow</a> <a href="/tags/VPN/" style="font-size: 14px; color: #999">VPN</a> <a href="/tags/Vlantis/" style="font-size: 14px; color: #999">Vlantis</a> <a href="/tags/Volantis/" style="font-size: 14px; color: #999">Volantis</a> <a href="/tags/Vuejs/" style="font-size: 14px; color: #999">Vuejs</a> <a href="/tags/YAAW/" style="font-size: 14px; color: #999">YAAW</a> <a href="/tags/haproxy/" style="font-size: 14px; color: #999">haproxy</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 14px; color: #999">博客</a> <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E6%BA%90%E5%BA%93/" style="font-size: 14px; color: #999">安卓开源库</a> <a href="/tags/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">安卓编程</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/" style="font-size: 14px; color: #999">微信公众号</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 14px; color: #999">微信小程序</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">机器学习</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 20.67px; color: #6c6c6c">树莓派</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/" style="font-size: 14px; color: #999">浏览器插件</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E7%94%B5%E5%95%86/" style="font-size: 14px; color: #999">电商</a> <a href="/tags/%E7%94%B5%E5%95%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">电商系统</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">移动网络</a> <a href="/tags/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">网站优化</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" style="font-size: 14px; color: #999">网络技术</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 14px; color: #999">负载均衡</a> <a href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" style="font-size: 14px; color: #999">音乐播放器</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-text">1：需求分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9A%E8%BD%AF%E7%A1%AC%E4%BB%B6%E5%BA%94%E7%94%A8"><span class="toc-text">2：软硬件应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%9A%E6%8A%A2%E5%BA%A7%E7%A8%8B%E5%BA%8F"><span class="toc-text">3：抢座程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%9A%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-text">4：定时任务</span></a></li></ol>
     </div>
   </section>
 
@@ -662,6 +705,7 @@
 
 
 </aside>
+
 
 
       </div>
