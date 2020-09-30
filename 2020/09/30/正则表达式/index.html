@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020 - 🛫起飞了</title>
+  <title>正则表达式 - 🛫起飞了</title>
+  
+    <meta name="keywords" content="正则表达式">
   
 
   
@@ -318,7 +318,7 @@
 
   
   
-      <div class='cover-wrapper  dock' style="display: none;">
+      <div class='cover-wrapper post dock' style="display: none;">
         
           <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
         
@@ -398,8 +398,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">正则表达式</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -408,14 +408,14 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("blog" == "none") { // 移除封面
+  if ("none" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("blog" == "blog") { // 半屏
+    if ("none" == "blog") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("blog" == "docs") { // 全屏
+    } else if ("none" == "docs") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -429,564 +429,496 @@
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  <div class='article-header'>
     
-    
+    <div class="article-meta" id="top">
       
+      
+      
+        <h1 class="title">
+          <a href="/2020/09/30/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+            正则表达式
+          </a>
+        </h1>
+      
+      <div class='new-meta-box'>
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://ae01.alicdn.com/kf/Hb5b4a24aa25749c38ad1c3af3f15bac4e.jpg">
+    <p>啓飞</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年9月30日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="正则表达式" data-path="/2020/09/30/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="article-entry" itemprop="articleBody">
     
-    <h2 class="article-title" >
-      <a href="/2020/05/28/Stunnel-squid%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9F%E4%BA%9A%E7%90%9B%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F/">
-        利用Stunnel+squid代理实现国内无客户端访问外网
-      </a>
-    </h2>
-  
-  <div class='md'>
+    
+    <h1 id="1：简介"><a href="#1：简介" class="headerlink" title="1：简介"></a>1：简介</h1><p>正则表达式，常用于匹配包含一定规律的字符串，可以从字符串中提取符合规律的字符串段，或者返回是否符合要求。也可用于替换字符串。</p>
+<p>比如，我们设置密码时，网站通常要求，密码为字母+数字+下划线组合，并且具有一定长度如3到15位，那么它的正则表达式可以是，<code>^[a-z0-9_-]&#123;3-15&#125;$</code></p>
+<p>其中<code>^</code>表示从开头开始匹配，<code>[a-z0-9_-]</code>表示匹配字母，数字，下划线和连接符，<code>$</code>表示匹配结束。<code>&#123;3-15&#125;</code>表示匹配3到15个字符。完整意义：从开头开始匹配，匹配包括字母数字下划线和连接符，总共15个字符。</p>
+<h1 id="2：语法"><a href="#2：语法" class="headerlink" title="2：语法"></a>2：语法</h1><p><code>*</code>表示匹配0个或多个字符。*<em>qife</em>i**可以匹配：qifei, qifi,qifeeeei</p>
+<p><code>?</code>表示匹配0个或1个字符。qife?i可以匹配：qifi, qifei</p>
+<p><code>+ </code>匹配一个或者多个字符。qife+i可以匹配：qifei,qifeeeei</p>
+<p><code>[]</code>单字符满足[]中的要求，则匹配。<code>[aui]*</code>表示字符串中aui都会被匹配出来</p>
+<table>
+<thead>
+<tr>
+<th align="left">字符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">[ABC]</td>
+<td align="left">匹配 <strong>[…]</strong> 中的所有字符，例如 <strong>[aeiou]</strong> 匹配字符串 “google runoob taobao” 中所有的 e o u a 字母。</td>
+</tr>
+<tr>
+<td align="left">[^ABC]</td>
+<td align="left">匹配除了 <strong>[…]</strong> 中字符的所有字符，例如 <strong>[^aeiou]</strong> 匹配字符串 “google runoob taobao” 中除了 e o u a 字母的所有字母。</td>
+</tr>
+<tr>
+<td align="left">[A-Z]</td>
+<td align="left">[A-Z] 表示一个区间，匹配所有大写字母，[a-z] 表示所有小写字母。</td>
+</tr>
+<tr>
+<td align="left">.</td>
+<td align="left">匹配除换行符（\n、\r）之外的任何单个字符，相等于 [^\n\r]</td>
+</tr>
+<tr>
+<td align="left">[\s\S]</td>
+<td align="left">匹配所有。\s 是匹配所有空白符，包括换行，\S 非空白符，包括换行。</td>
+</tr>
+<tr>
+<td align="left">\w</td>
+<td align="left">匹配字母、数字、下划线。等价于 [A-Za-z0-9_]</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">特别字符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$</td>
+<td align="left">匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 ‘\n’ 或 ‘\r’。要匹配 $ 字符本身，请使用 $。</td>
+</tr>
+<tr>
+<td align="left">( )</td>
+<td align="left">标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用 ( 和 )。</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 *。</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td align="left">匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 +。</td>
+</tr>
+<tr>
+<td align="left">.</td>
+<td align="left">匹配除换行符 \n 之外的任何单字符。要匹配 . ，请使用 . 。</td>
+</tr>
+<tr>
+<td align="left">[</td>
+<td align="left">标记一个中括号表达式的开始。要匹配 [，请使用 [。</td>
+</tr>
+<tr>
+<td align="left">?</td>
+<td align="left">匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。要匹配 ? 字符，请使用 ?。</td>
+</tr>
+<tr>
+<td align="left">\</td>
+<td align="left">将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。例如， ‘n’ 匹配字符 ‘n’。’\n’ 匹配换行符。序列 ‘\‘ 匹配 “&quot;，而 ‘(‘ 则匹配 “(“。</td>
+</tr>
+<tr>
+<td align="left">^</td>
+<td align="left">匹配输入字符串的开始位置，除非在方括号表达式中使用，当该符号在方括号表达式中使用时，表示不接受该方括号表达式中的字符集合。要匹配 ^ 字符本身，请使用 ^。</td>
+</tr>
+<tr>
+<td align="left">{</td>
+<td align="left">标记限定符表达式的开始。要匹配 {，请使用 {。</td>
+</tr>
+<tr>
+<td align="left">|</td>
+<td align="left">指明两项之间的一个选择。要匹配 |，请使用 |。</td>
+</tr>
+</tbody></table>
+<p><code>()</code>选择：使用<code>()</code>给需要选择到的匹配项分组，选择项，可使用列表索引获取每个选择项，匹配的值。</p>
+<h1 id="3：元字符"><a href="#3：元字符" class="headerlink" title="3：元字符"></a>3：元字符</h1><table>
+<thead>
+<tr>
+<th align="left">字符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">\</td>
+<td align="left">将下一个字符标记为一个特殊字符、或一个原义字符、或一个 向后引用、或一个八进制转义符。例如，’n’ 匹配字符 “n”。’\n’ 匹配一个换行符。序列 ‘\‘ 匹配 “&quot; 而 “(“ 则匹配 “(“。</td>
+</tr>
+<tr>
+<td align="left">^</td>
+<td align="left">匹配输入字符串的开始位置。如果设置了 RegExp 对象的 Multiline 属性，^ 也匹配 ‘\n’ 或 ‘\r’ 之后的位置。</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">匹配输入字符串的结束位置。如果设置了RegExp 对象的 Multiline 属性，$ 也匹配 ‘\n’ 或 ‘\r’ 之前的位置。</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">匹配前面的子表达式零次或多次。例如，zo* 能匹配 “z” 以及 “zoo”。* 等价于{0,}。</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td align="left">匹配前面的子表达式一次或多次。例如，’zo+’ 能匹配 “zo” 以及 “zoo”，但不能匹配 “z”。+ 等价于 {1,}。</td>
+</tr>
+<tr>
+<td align="left">?</td>
+<td align="left">匹配前面的子表达式零次或一次。例如，”do(es)?” 可以匹配 “do” 或 “does” 。? 等价于 {0,1}。</td>
+</tr>
+<tr>
+<td align="left">{n}</td>
+<td align="left">n 是一个非负整数。匹配确定的 n 次。例如，’o{2}’ 不能匹配 “Bob” 中的 ‘o’，但是能匹配 “food” 中的两个 o。</td>
+</tr>
+<tr>
+<td align="left">{n,}</td>
+<td align="left">n 是一个非负整数。至少匹配n 次。例如，’o{2,}’ 不能匹配 “Bob” 中的 ‘o’，但能匹配 “foooood” 中的所有 o。’o{1,}’ 等价于 ‘o+’。’o{0,}’ 则等价于 ‘o*’。</td>
+</tr>
+<tr>
+<td align="left">{n,m}</td>
+<td align="left">m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，”o{1,3}” 将匹配 “fooooood” 中的前三个 o。’o{0,1}’ 等价于 ‘o?’。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+<tr>
+<td align="left">?</td>
+<td align="left">当该字符紧跟在任何一个其他限制符 (*, +, ?, {n}, {n,}, {n,m}) 后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串 “oooo”，’o+?’ 将匹配单个 “o”，而 ‘o+’ 将匹配所有 ‘o’。</td>
+</tr>
+<tr>
+<td align="left">.</td>
+<td align="left">匹配除换行符（\n、\r）之外的任何单个字符。要匹配包括 ‘\n’ 在内的任何字符，请使用像”<strong>(.|\n)</strong>“的模式。</td>
+</tr>
+<tr>
+<td align="left">(pattern)</td>
+<td align="left">匹配 pattern 并获取这一匹配。所获取的匹配可以从产生的 Matches 集合得到，在VBScript 中使用 SubMatches 集合，在JScript 中则使用 $0…$9 属性。要匹配圆括号字符，请使用 ‘(‘ 或 ‘)‘。</td>
+</tr>
+<tr>
+<td align="left">(?:pattern)</td>
+<td align="left">匹配 pattern 但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用 “或” 字符 (|) 来组合一个模式的各个部分是很有用。例如， ‘industr(?:y|ies) 就是一个比 ‘industry|industries’ 更简略的表达式。</td>
+</tr>
+<tr>
+<td align="left">(?=pattern)</td>
+<td align="left">正向肯定预查（look ahead positive assert），在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，”Windows(?=95|98|NT|2000)”能匹配”Windows2000”中的”Windows”，但不能匹配”Windows3.1”中的”Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td align="left">(?!pattern)</td>
+<td align="left">正向否定预查(negative assert)，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如”Windows(?!95|98|NT|2000)”能匹配”Windows3.1”中的”Windows”，但不能匹配”Windows2000”中的”Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td align="left">(?&lt;=pattern)</td>
+<td align="left">反向(look behind)肯定预查，与正向肯定预查类似，只是方向相反。例如，”`(?&lt;=95</td>
+</tr>
+<tr>
+<td align="left">(?&lt;!pattern)</td>
+<td align="left">反向否定预查，与正向否定预查类似，只是方向相反。例如”`(?&lt;!95</td>
+</tr>
+<tr>
+<td align="left">x|y</td>
+<td align="left">匹配 x 或 y。例如，’z|food’ 能匹配 “z” 或 “food”。’(z|f)ood’ 则匹配 “zood” 或 “food”。</td>
+</tr>
+<tr>
+<td align="left">[xyz]</td>
+<td align="left">字符集合。匹配所包含的任意一个字符。例如， ‘[abc]’ 可以匹配 “plain” 中的 ‘a’。</td>
+</tr>
+<tr>
+<td align="left">[^xyz]</td>
+<td align="left">负值字符集合。匹配未包含的任意字符。例如， ‘[^abc]’ 可以匹配 “plain” 中的’p’、’l’、’i’、’n’。</td>
+</tr>
+<tr>
+<td align="left">[a-z]</td>
+<td align="left">字符范围。匹配指定范围内的任意字符。例如，’[a-z]’ 可以匹配 ‘a’ 到 ‘z’ 范围内的任意小写字母字符。</td>
+</tr>
+<tr>
+<td align="left">[^a-z]</td>
+<td align="left">负值字符范围。匹配任何不在指定范围内的任意字符。例如，’[^a-z]’ 可以匹配任何不在 ‘a’ 到 ‘z’ 范围内的任意字符。</td>
+</tr>
+<tr>
+<td align="left">\b</td>
+<td align="left">匹配一个单词边界，也就是指单词和空格间的位置。例如， ‘er\b’ 可以匹配”never” 中的 ‘er’，但不能匹配 “verb” 中的 ‘er’。</td>
+</tr>
+<tr>
+<td align="left">\B</td>
+<td align="left">匹配非单词边界。’er\B’ 能匹配 “verb” 中的 ‘er’，但不能匹配 “never” 中的 ‘er’。</td>
+</tr>
+<tr>
+<td align="left">\cx</td>
+<td align="left">匹配由 x 指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符。</td>
+</tr>
+<tr>
+<td align="left">\d</td>
+<td align="left">匹配一个数字字符。等价于 [0-9]。</td>
+</tr>
+<tr>
+<td align="left">\D</td>
+<td align="left">匹配一个非数字字符。等价于 [^0-9]。</td>
+</tr>
+<tr>
+<td align="left">\f</td>
+<td align="left">匹配一个换页符。等价于 \x0c 和 \cL。</td>
+</tr>
+<tr>
+<td align="left">\n</td>
+<td align="left">匹配一个换行符。等价于 \x0a 和 \cJ。</td>
+</tr>
+<tr>
+<td align="left">\r</td>
+<td align="left">匹配一个回车符。等价于 \x0d 和 \cM。</td>
+</tr>
+<tr>
+<td align="left">\s</td>
+<td align="left">匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td align="left">\S</td>
+<td align="left">匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td align="left">\t</td>
+<td align="left">匹配一个制表符。等价于 \x09 和 \cI。</td>
+</tr>
+<tr>
+<td align="left">\v</td>
+<td align="left">匹配一个垂直制表符。等价于 \x0b 和 \cK。</td>
+</tr>
+<tr>
+<td align="left">\w</td>
+<td align="left">匹配字母、数字、下划线。等价于’[A-Za-z0-9_]’。</td>
+</tr>
+<tr>
+<td align="left">\W</td>
+<td align="left">匹配非字母、数字、下划线。等价于 ‘[^A-Za-z0-9_]’。</td>
+</tr>
+<tr>
+<td align="left">\xn</td>
+<td align="left">匹配 n，其中 n 为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，’\x41’ 匹配 “A”。’\x041’ 则等价于 ‘\x04’ &amp; “1”。正则表达式中可以使用 ASCII 编码。</td>
+</tr>
+<tr>
+<td align="left">\num</td>
+<td align="left">匹配 num，其中 num 是一个正整数。对所获取的匹配的引用。例如，’(.)\1’ 匹配两个连续的相同字符。</td>
+</tr>
+<tr>
+<td align="left">\n</td>
+<td align="left">标识一个八进制转义值或一个向后引用。如果 \n 之前至少 n 个获取的子表达式，则 n 为向后引用。否则，如果 n 为八进制数字 (0-7)，则 n 为一个八进制转义值。</td>
+</tr>
+<tr>
+<td align="left">\nm</td>
+<td align="left">标识一个八进制转义值或一个向后引用。如果 \nm 之前至少有 nm 个获得子表达式，则 nm 为向后引用。如果 \nm 之前至少有 n 个获取，则 n 为一个后跟文字 m 的向后引用。如果前面的条件都不满足，若 n 和 m 均为八进制数字 (0-7)，则 \nm 将匹配八进制转义值 nm。</td>
+</tr>
+<tr>
+<td align="left">\nml</td>
+<td align="left">如果 n 为八进制数字 (0-3)，且 m 和 l 均为八进制数字 (0-7)，则匹配八进制转义值 nml。</td>
+</tr>
+<tr>
+<td align="left">\un</td>
+<td align="left">匹配 n，其中 n 是一个用四个十六进制数字表示的 Unicode 字符。例如， \u00A9 匹配版权符号 (?)。</td>
+</tr>
+</tbody></table>
+<h1 id="4：在线测试"><a href="#4：在线测试" class="headerlink" title="4：在线测试"></a>4：在线测试</h1><p><a target="_blank" rel="noopener" href="http://c.runoob.com/front-end/854">http://c.runoob.com/front-end/854</a></p>
+
     
       
-        1：加速原理1.1 squid介绍squid是一个用于代理的开源软件，用户主机将http请求发送到部署了squid的服务器，squid可以帮助用户转发http请求。利用squid，我们可以让服务器替我们请求数据，再由服务器转发给我们。
-按找squid原理，我们就已经可以进行翻墙了，在国内能够访问的国外服务器上部署squid，将访问谷歌的请求发送给squid，squid替我们请求谷歌数据，再将...
-      
+      <div class='footer'>
+        
+        
+          
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\2020\03\01\Bootstrap学习笔记\" title="Bootstrap学习笔记" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Bootstrap学习笔记</span></a></div></section></div>
+        
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href=https://sci.ci/2020/09/30/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/>https://sci.ci/2020/09/30/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+        
+      </div>
     
   </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/28/Stunnel-squid%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9F%E4%BA%9A%E7%90%9B%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-30T10:46:09+02:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年9月30日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/28/%E5%88%A9%E7%94%A8Stunnel+squid%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%9B%BD%E5%86%85%E6%97%A0%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/">
-        利用Stunnel+Squid代理实现国内无客户端访问外网
-      </a>
-    </h2>
-  
-  <div class='md'>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>正则表达式</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        1：加速原理1.1 squid介绍squid是一个用于代理的开源软件，用户主机将http请求发送到部署了squid的服务器，squid可以帮助用户转发http请求。利用squid，我们可以让服务器替我们请求数据，再由服务器转发给我们。
-按找squid原理，我们就已经可以进行翻墙了，在国内能够访问的国外服务器上部署squid，将访问谷歌的请求发送给squid，squid替我们请求谷歌数据，再将...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/09/30/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/&title=正则表达式 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/09/30/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/&title=正则表达式 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/09/30/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/&title=正则表达式 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux%E7%BC%96%E7%A8%8B/">Linux编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/28/%E5%88%A9%E7%94%A8Stunnel+squid%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%9B%BD%E5%86%85%E6%97%A0%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/27/%E4%BA%9A%E7%90%9B%E5%B7%A5%E5%A4%A7%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E6%B7%BB%E5%8A%A0%E4%B8%AD%E5%BE%B7%E5%AD%97%E5%B9%95/">
-        亚琛工大教学视频添加中德字幕
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        第一章 插件用户手册1.1 适用场景和功能说明
-本插件适用于基于chromium内核开发的浏览器，包括Chrome浏览器、360安全浏览器、QQ浏览器等。
-插件只在满足https://*/rwth-aachen.de/*域名匹配时工作，且除了添加字幕外无其他功能。
-支持德语、中文、双语字幕
-插件只能为数据库里存在的视频资源添加字幕。更多视频字幕，会逐渐上传。
 
-1.2 效果图预览以下仅展示了...
+
+        
       
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
-        
-      </div>
+  
+    <div class="prev-next">
       
-        <div>
-            <a class='readmore' href='/2020/05/27/%E4%BA%9A%E7%90%9B%E5%B7%A5%E5%A4%A7%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E6%B7%BB%E5%8A%A0%E4%B8%AD%E5%BE%B7%E5%AD%97%E5%B9%95/'>
-            阅读全文
-          </a>
-        </div>
+      
+        <a class='next' href='/2020/09/27/%E5%88%A9%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9A%E6%97%B6%E6%8A%A2%E5%9B%BE%E4%B9%A6%E9%A6%86%E5%BA%A7%E4%BD%8D/'>
+          <p class='title'>利用树莓派定时抢图书馆座位<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1：需求分析由于新冠疫情的影响，学校图书馆和自习室必须在监管之下运行，每日提供的坐席和开放时间受限。大部分自习室被关闭，导致坐席需求很大，而供应很少。新规要求，图书馆和自习室的坐席必须在学校官网...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/26/ShopXO%E5%95%86%E5%9F%8E%E4%BC%98%E5%8C%96%E5%95%86%E5%93%81%E4%BB%B7%E6%A0%BC%E4%BF%AE%E6%94%B9/">
-        ShopXO商城优化-商城后台、小程序、飞鹅订单打印、公众号新订单推送
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：内容梗概ShopXO是款非常优秀的开源商城软件。为了让商城更加适合没有网站管理经验的人使用，我优化了手机和电脑端的商城后台。修复了小程序的一些BUG，并做了一些其他优化。使用飞鹅打印机，接收新订单推送通知和订单打印。利用微信认证的公众号，在有新订单时，通过公众号给微信推送新订单消息。
-特别说明：此篇文章建议有一定前后端基础的朋友阅读，否则，你在按照本文修改你的网站时，可能由于我在写作时，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/26/ShopXO%E5%95%86%E5%9F%8E%E4%BC%98%E5%8C%96%E5%95%86%E5%93%81%E4%BB%B7%E6%A0%BC%E4%BF%AE%E6%94%B9/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        机器学习深度学习李宏毅版-学习笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        第一章 Regression 回归$$f(input)=output$$
-输入一个对象后，有指定的输出结果。
-示例应用：数码宝贝原始cp值，求进化一次后的cp值
-Step 1: Model
-定义一个函数：确定输入原始cp值和输出进化后的cp值。$$y=b+w*x_{cp}$$
-
-w and b are parameters
-
-Step 2: Goodness of Function方程好坏
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-21</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        计算机网络技术学习笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：基础概念
-局域网、城域网、广域网的区别
-
-实训任务：宽带城域网的逻辑结构，“三个平台一个出口”
+  </article>
 
 
-管理平台、业务平台、网络平台（核心层、汇聚层、接入层）、城市宽带出口- 
-核心层：
-
-为汇聚层的网络提供高速分组转发，为城市提供一个高速安全与具有QoS保障能力的数据传输环境
-提供城市的宽带IP出口
-用户访问Internet所需的路由访问
-
-汇聚层：
-
-汇聚接入层的用户流量
-进行本地路由，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-04-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/04/07/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        微信小程序学习笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：简介
-用户扫一扫或搜索一下即可打开应用。
-微信有海量用户，粘性高
-开发适配成本低
-
-2：目录结构小程序结构目录
-
-pages
-
-index
-logs
 
 
-utils
-
-app.js
-
-app.json
-
-project.config.json
-
-sitemap.json  //某些页面是否能被微信检索
 
 
-开发者文档：https://developers.weixin.qq.com/mi...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-04-07</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/04/07/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/04/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/">
-        微信公众号开发
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：微信公众号简介给个人、企业和组织提供服务和用户管理的全新服务平台。
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-04-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/04/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/03/01/Bootstrap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        Bootstrap学习笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        0：入门例子12345678910111213141516&lt;!DOCTYPE html&gt;&lt;html lang=&quot;zh-CN&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-03-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/03/01/Bootstrap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/02/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        Linux操作系统
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：Linux简介开源软件：
-
-使用自由
-研究自由
-散布及改良的自由
-
-LAMP：Linux+Apache+Mysql+PHP
-网络配置：
-
-桥接：像一台真实电脑一样直接连接互联网
-NAT：类似于使用真实电脑的热点
-host only：只允许和真实机通行
-
-ifconfig eth0 192.168.118.2//配置网卡和ip，如果配置为桥接，需要设置为局域网相同网段。此设置重启后失效。
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-02-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/02/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2020/page/3/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          4 / 5
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2020/page/5/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
-
-
-	
 </div>
 <aside class='l_side'>
   
@@ -994,154 +926,19 @@ ifconfig eth0 192.168.118.2//配置网卡和ip，如果配置为桥接，需要�
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">🛫起飞了</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:im@xieqifei.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/xieqifei/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Linux%E7%BC%96%E7%A8%8B/" href="/categories/Linux%E7%BC%96%E7%A8%8B/"
-            id="categoriesLinuxE7BC96E7A88B"
-            ><div class='name'>Linux编程</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Python/" href="/categories/Python/"
-            id="categoriesPython"
-            ><div class='name'>Python</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Windows/" href="/categories/Windows/"
-            id="categoriesWindows"
-            ><div class='name'>Windows</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"
-            id="categoriesE585B6E4BB96"
-            ><div class='name'>其他</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-            id="categoriesE5ADA6E4B9A0E7AC94E8AEB0"
-            ><div class='name'>学习笔记</div><div class='badge'>(15)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/" href="/categories/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/"
-            id="categoriesE5AE89E58D93E7BC96E7A88B"
-            ><div class='name'>安卓编程</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"
-            id="categoriesE6A091E88E93E6B4BE"
-            ><div class='name'>树莓派</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/"
-            id="categoriesE7BD91E7AB99E7BC96E7A88B"
-            ><div class='name'>网站编程</div><div class='badge'>(14)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/ADB/" style="font-size: 14px; color: #999">ADB</a> <a href="/tags/API/" style="font-size: 14px; color: #999">API</a> <a href="/tags/Aria2/" style="font-size: 14px; color: #999">Aria2</a> <a href="/tags/Bootstrap/" style="font-size: 14px; color: #999">Bootstrap</a> <a href="/tags/Cookie/" style="font-size: 14px; color: #999">Cookie</a> <a href="/tags/Flutter/" style="font-size: 14px; color: #999">Flutter</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/JsDelivr/" style="font-size: 14px; color: #999">JsDelivr</a> <a href="/tags/Kali-Linux/" style="font-size: 14px; color: #999">Kali Linux</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Magento/" style="font-size: 14px; color: #999">Magento</a> <a href="/tags/Mysql/" style="font-size: 14px; color: #999">Mysql</a> <a href="/tags/Nginx/" style="font-size: 14px; color: #999">Nginx</a> <a href="/tags/Oneindex/" style="font-size: 17.33px; color: #828282">Oneindex</a> <a href="/tags/PyTorch/" style="font-size: 14px; color: #999">PyTorch</a> <a href="/tags/Python/" style="font-size: 17.33px; color: #828282">Python</a> <a href="/tags/Rclone/" style="font-size: 17.33px; color: #828282">Rclone</a> <a href="/tags/SSR/" style="font-size: 17.33px; color: #828282">SSR</a> <a href="/tags/Selenium/" style="font-size: 17.33px; color: #828282">Selenium</a> <a href="/tags/ShopXO/" style="font-size: 14px; color: #999">ShopXO</a> <a href="/tags/Squid/" style="font-size: 17.33px; color: #828282">Squid</a> <a href="/tags/Stunnel/" style="font-size: 17.33px; color: #828282">Stunnel</a> <a href="/tags/Stunnel%E4%BB%A3%E7%90%86/" style="font-size: 14px; color: #999">Stunnel代理</a> <a href="/tags/TensorFlow/" style="font-size: 14px; color: #999">TensorFlow</a> <a href="/tags/VPN/" style="font-size: 14px; color: #999">VPN</a> <a href="/tags/Vlantis/" style="font-size: 14px; color: #999">Vlantis</a> <a href="/tags/Volantis/" style="font-size: 14px; color: #999">Volantis</a> <a href="/tags/Vuejs/" style="font-size: 14px; color: #999">Vuejs</a> <a href="/tags/YAAW/" style="font-size: 14px; color: #999">YAAW</a> <a href="/tags/haproxy/" style="font-size: 14px; color: #999">haproxy</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 14px; color: #999">博客</a> <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E6%BA%90%E5%BA%93/" style="font-size: 14px; color: #999">安卓开源库</a> <a href="/tags/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">安卓编程</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/" style="font-size: 14px; color: #999">微信公众号</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 14px; color: #999">微信小程序</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">机器学习</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 20.67px; color: #6c6c6c">树莓派</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 14px; color: #999">正则表达式</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/" style="font-size: 14px; color: #999">浏览器插件</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E7%94%B5%E5%95%86/" style="font-size: 14px; color: #999">电商</a> <a href="/tags/%E7%94%B5%E5%95%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">电商系统</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">移动网络</a> <a href="/tags/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">网站优化</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" style="font-size: 14px; color: #999">网络技术</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 14px; color: #999">负载均衡</a> <a href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" style="font-size: 14px; color: #999">音乐播放器</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E7%AE%80%E4%BB%8B"><span class="toc-text">1：简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9A%E8%AF%AD%E6%B3%95"><span class="toc-text">2：语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%9A%E5%85%83%E5%AD%97%E7%AC%A6"><span class="toc-text">3：元字符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%9A%E5%9C%A8%E7%BA%BF%E6%B5%8B%E8%AF%95"><span class="toc-text">4：在线测试</span></a></li></ol>
     </div>
   </section>
 
@@ -1152,6 +949,7 @@ ifconfig eth0 192.168.118.2//配置网卡和ip，如果配置为桥接，需要�
 
 
 </aside>
+
 
 
       </div>

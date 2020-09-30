@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020 - 🛫起飞了</title>
+  <title>标签：正则表达式 - 🛫起飞了</title>
   
 
   
@@ -408,14 +408,14 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("blog" == "none") { // 移除封面
+  if ("none" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("blog" == "blog") { // 半屏
+    if ("none" == "blog") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("blog" == "docs") { // 全屏
+    } else if ("none" == "docs") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -428,11 +428,19 @@
         
         
 
+
 <div class='l_main'>
-	
-		
+  
+    
+      
   <section class="post-list">
     
+      
+        
+          
+        
+      
+    
     
       
         
@@ -444,220 +452,24 @@
   
     
     <h2 class="article-title" >
-      <a href="/2020/05/28/Stunnel-squid%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9F%E4%BA%9A%E7%90%9B%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F/">
-        利用Stunnel+squid代理实现国内无客户端访问外网
+      <a href="/2020/09/30/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+        正则表达式
       </a>
     </h2>
   
   <div class='md'>
     
       
-        1：加速原理1.1 squid介绍squid是一个用于代理的开源软件，用户主机将http请求发送到部署了squid的服务器，squid可以帮助用户转发http请求。利用squid，我们可以让服务器替我们请求数据，再由服务器转发给我们。
-按找squid原理，我们就已经可以进行翻墙了，在国内能够访问的国外服务器上部署squid，将访问谷歌的请求发送给squid，squid替我们请求谷歌数据，再将...
+        1：简介正则表达式，常用于匹配包含一定规律的字符串，可以从字符串中提取符合规律的字符串段，或者返回是否符合要求。也可用于替换字符串。
+比如，我们设置密码时，网站通常要求，密码为字母+数字+下划线组合，并且具有一定长度如3到15位，那么它的正则表达式可以是，^[a-z0-9_-]&#123;3-15&#125;$
+其中^表示从开头开始匹配，[a-z0-9_-]表示匹配字母，数字，下划线和连接符...
       
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
-        <time>2020-05-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/28/Stunnel-squid%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9F%E4%BA%9A%E7%90%9B%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/28/%E5%88%A9%E7%94%A8Stunnel+squid%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%9B%BD%E5%86%85%E6%97%A0%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/">
-        利用Stunnel+Squid代理实现国内无客户端访问外网
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：加速原理1.1 squid介绍squid是一个用于代理的开源软件，用户主机将http请求发送到部署了squid的服务器，squid可以帮助用户转发http请求。利用squid，我们可以让服务器替我们请求数据，再由服务器转发给我们。
-按找squid原理，我们就已经可以进行翻墙了，在国内能够访问的国外服务器上部署squid，将访问谷歌的请求发送给squid，squid替我们请求谷歌数据，再将...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux%E7%BC%96%E7%A8%8B/">Linux编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/28/%E5%88%A9%E7%94%A8Stunnel+squid%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%9B%BD%E5%86%85%E6%97%A0%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/27/%E4%BA%9A%E7%90%9B%E5%B7%A5%E5%A4%A7%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E6%B7%BB%E5%8A%A0%E4%B8%AD%E5%BE%B7%E5%AD%97%E5%B9%95/">
-        亚琛工大教学视频添加中德字幕
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        第一章 插件用户手册1.1 适用场景和功能说明
-本插件适用于基于chromium内核开发的浏览器，包括Chrome浏览器、360安全浏览器、QQ浏览器等。
-插件只在满足https://*/rwth-aachen.de/*域名匹配时工作，且除了添加字幕外无其他功能。
-支持德语、中文、双语字幕
-插件只能为数据库里存在的视频资源添加字幕。更多视频字幕，会逐渐上传。
-
-1.2 效果图预览以下仅展示了...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/27/%E4%BA%9A%E7%90%9B%E5%B7%A5%E5%A4%A7%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E6%B7%BB%E5%8A%A0%E4%B8%AD%E5%BE%B7%E5%AD%97%E5%B9%95/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/26/ShopXO%E5%95%86%E5%9F%8E%E4%BC%98%E5%8C%96%E5%95%86%E5%93%81%E4%BB%B7%E6%A0%BC%E4%BF%AE%E6%94%B9/">
-        ShopXO商城优化-商城后台、小程序、飞鹅订单打印、公众号新订单推送
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：内容梗概ShopXO是款非常优秀的开源商城软件。为了让商城更加适合没有网站管理经验的人使用，我优化了手机和电脑端的商城后台。修复了小程序的一些BUG，并做了一些其他优化。使用飞鹅打印机，接收新订单推送通知和订单打印。利用微信认证的公众号，在有新订单时，通过公众号给微信推送新订单消息。
-特别说明：此篇文章建议有一定前后端基础的朋友阅读，否则，你在按照本文修改你的网站时，可能由于我在写作时，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/26/ShopXO%E5%95%86%E5%9F%8E%E4%BC%98%E5%8C%96%E5%95%86%E5%93%81%E4%BB%B7%E6%A0%BC%E4%BF%AE%E6%94%B9/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        机器学习深度学习李宏毅版-学习笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        第一章 Regression 回归$$f(input)=output$$
-输入一个对象后，有指定的输出结果。
-示例应用：数码宝贝原始cp值，求进化一次后的cp值
-Step 1: Model
-定义一个函数：确定输入原始cp值和输出进化后的cp值。$$y=b+w*x_{cp}$$
-
-w and b are parameters
-
-Step 2: Goodness of Function方程好坏
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-21</time>
+        <time>2020-09-30</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
@@ -665,287 +477,7 @@ Step 2: Goodness of Function方程好坏
       </div>
       
         <div>
-            <a class='readmore' href='/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        计算机网络技术学习笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：基础概念
-局域网、城域网、广域网的区别
-
-实训任务：宽带城域网的逻辑结构，“三个平台一个出口”
-
-
-管理平台、业务平台、网络平台（核心层、汇聚层、接入层）、城市宽带出口- 
-核心层：
-
-为汇聚层的网络提供高速分组转发，为城市提供一个高速安全与具有QoS保障能力的数据传输环境
-提供城市的宽带IP出口
-用户访问Internet所需的路由访问
-
-汇聚层：
-
-汇聚接入层的用户流量
-进行本地路由，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-04-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/04/07/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        微信小程序学习笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：简介
-用户扫一扫或搜索一下即可打开应用。
-微信有海量用户，粘性高
-开发适配成本低
-
-2：目录结构小程序结构目录
-
-pages
-
-index
-logs
-
-
-utils
-
-app.js
-
-app.json
-
-project.config.json
-
-sitemap.json  //某些页面是否能被微信检索
-
-
-开发者文档：https://developers.weixin.qq.com/mi...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-04-07</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/04/07/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/04/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/">
-        微信公众号开发
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：微信公众号简介给个人、企业和组织提供服务和用户管理的全新服务平台。
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-04-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/04/01/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/03/01/Bootstrap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        Bootstrap学习笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        0：入门例子12345678910111213141516&lt;!DOCTYPE html&gt;&lt;html lang=&quot;zh-CN&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-03-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/03/01/Bootstrap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/02/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        Linux操作系统
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：Linux简介开源软件：
-
-使用自由
-研究自由
-散布及改良的自由
-
-LAMP：Linux+Apache+Mysql+PHP
-网络配置：
-
-桥接：像一台真实电脑一样直接连接互联网
-NAT：类似于使用真实电脑的热点
-host only：只允许和真实机通行
-
-ifconfig eth0 192.168.118.2//配置网卡和ip，如果配置为桥接，需要设置为局域网相同网段。此设置重启后失效。
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-02-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/02/20/Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
+            <a class='readmore' href='/2020/09/30/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/'>
             阅读全文
           </a>
         </div>
@@ -962,31 +494,11 @@ ifconfig eth0 192.168.118.2//配置网卡和ip，如果配置为桥接，需要�
   </section>
   
     
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2020/page/3/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          4 / 5
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2020/page/5/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
   
 
 
-	
+    
+  
 </div>
 <aside class='l_side'>
   
