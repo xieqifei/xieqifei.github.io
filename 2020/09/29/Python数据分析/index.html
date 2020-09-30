@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020/8 - 🛫起飞了</title>
+  <title>Python数据分析 - 🛫起飞了</title>
+  
+    <meta name="keywords" content="Matplotlib,Numpy,Pandas">
   
 
   
@@ -318,7 +318,7 @@
 
   
   
-      <div class='cover-wrapper  dock' style="display: none;">
+      <div class='cover-wrapper post dock' style="display: none;">
         
           <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
         
@@ -398,8 +398,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">Python数据分析</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -408,14 +408,14 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("blog" == "none") { // 移除封面
+  if ("none" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("blog" == "blog") { // 半屏
+    if ("none" == "blog") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("blog" == "docs") { // 全屏
+    } else if ("none" == "docs") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -429,172 +429,293 @@
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  <div class='article-header'>
     
+    <div class="article-meta" id="top">
       
+      
+      
+        <h1 class="title">
+          <a href="/2020/09/29/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+            Python数据分析
+          </a>
+        </h1>
+      
+      <div class='new-meta-box'>
         
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://ae01.alicdn.com/kf/Hb5b4a24aa25749c38ad1c3af3f15bac4e.jpg">
+    <p>啓飞</p>
+  </a>
+</div>
+
           
         
           
-        
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/Python/">Python</a>
+    </a>
+  </div>
+
+
           
         
-      
-    
-    
-      
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年9月29日</p>
+  </a>
+</div>
+
+          
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="Python数据分析" data-path="/2020/09/29/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="article-entry" itemprop="articleBody">
     
-    <h2 class="article-title" >
-      <a href="/2020/08/28/%E6%A0%91%E8%8E%93%E6%B4%BE4B%E6%97%A0%E7%BD%91%E7%BA%BF%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E5%87%BA%E5%8F%91/">
-        树莓派4B无网线无显示器出发
-      </a>
-    </h2>
-  
-  <div class='md'>
+    
+    <h1 id="1：综述"><a href="#1：综述" class="headerlink" title="1：综述"></a>1：综述</h1><p><strong>为什么学习数据分析</strong></p>
+<ol>
+<li>岗位需求</li>
+<li>python数据科学的基础</li>
+<li>机器学习的课程基础</li>
+</ol>
+<p><strong>什么是数据分析</strong></p>
+<p>用适当的方法对收集的大量数据进行分析</p>
+<p>帮助人们做出判断，以便采取适当的行动</p>
+<p><strong>jupyter notebook：</strong></p>
+<p>Python笔记软件</p>
+<h1 id="2：Matplotlib"><a href="#2：Matplotlib" class="headerlink" title="2：Matplotlib"></a>2：Matplotlib</h1><ol>
+<li><p>将数据<strong>可视化</strong>，更<strong>直观</strong>的呈现</p>
+</li>
+<li><p>使数据更加<strong>客观</strong>、更具<strong>说服力</strong></p>
+</li>
+</ol>
+<p>最流行的python底层绘图库，主要做数据可视化，模仿matlab构建</p>
+<p><img src="https://i.loli.net/2020/09/30/LdSCfpJHt2ux7yM.png" class="lazyload" data-srcset="https://i.loli.net/2020/09/30/LdSCfpJHt2ux7yM.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt	<span class="comment">#导入pyplot</span></span><br><span class="line"></span><br><span class="line">x = range(<span class="number">2</span>,<span class="number">26</span>,<span class="number">2</span>)	<span class="comment">#数据在x轴的位置，是一个可迭代的对</span></span><br><span class="line">y = [<span class="number">15</span>,<span class="number">13</span>,<span class="number">14</span>,<span class="number">17</span>,<span class="number">20</span>,<span class="number">25</span>,<span class="number">26</span>,<span class="number">26</span>,<span class="number">25</span>,<span class="number">22</span>,<span class="number">18</span>,<span class="number">15</span>]	<span class="comment">#数据在y轴的位置，是一个可迭代的对象</span></span><br><span class="line">plt.plot(x,y)	<span class="comment">#传入x和y，通过plot绘制出折线图</span></span><br><span class="line">plt.show()	<span class="comment">#执行程序的时候展现图像</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>目前存在的问题：</strong></p>
+<ol>
+<li>图片大小</li>
+<li>保存到本地</li>
+<li>描述信息，比如x，y轴表示什么</li>
+<li>刻度</li>
+<li>线条样式</li>
+<li>标记特殊点</li>
+</ol>
+<h2 id="2-1-设置图片大小"><a href="#2-1-设置图片大小" class="headerlink" title="2.1 设置图片大小"></a>2.1 设置图片大小</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fig = plt.figure(figsize=(<span class="number">20</span>,<span class="number">8</span>),dpi=<span class="number">80</span>)</span><br><span class="line"><span class="comment">#figure图形图标的意思，这里指画的图</span></span><br><span class="line"><span class="comment">#通过实例化一个figure并且传入参数</span></span><br><span class="line"><span class="comment">#传入像素值，dpi，让图片更清晰</span></span><br><span class="line">plt.plot(x,y)</span><br><span class="line">plt.savefig(<span class="string">&quot;./t1.png&quot;</span>)	<span class="comment">#保存图片</span></span><br><span class="line"><span class="comment">#可以保存为svg矢量图格式，放大不会失真</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-设置x，y轴步长"><a href="#2-2-设置x，y轴步长" class="headerlink" title="2.2 设置x，y轴步长"></a>2.2 设置x，y轴步长</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">plt.xticks(x)	<span class="comment">#设置步长</span></span><br><span class="line">plt.xticks(range(<span class="number">2</span>,<span class="number">25</span>))</span><br><span class="line">_xticks_labels = [i/<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>,<span class="number">49</span>)]</span><br><span class="line">plt.xticks(_xticks_labels[::<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.yticks(range(min(y),max(y)+<span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#显示字符串</span></span><br><span class="line">_x = list(x)[::<span class="number">3</span>]</span><br><span class="line">_xticks_labels = [<span class="string">&quot;10点&#123;&#125;分&quot;</span>.format(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">60</span>)]</span><br><span class="line">_xticks_labels += [<span class="string">&quot;11点&#123;&#125;分&quot;</span>.format(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">60</span>)]</span><br><span class="line">plt.xticks(list(_x)[::<span class="number">3</span>],_xticks_labels[::<span class="number">3</span>],rotation=<span class="number">90</span>)	<span class="comment">#,前为步长列表，，后为字符串列表，与步长列表一一对应，并把刻度旋转90度显示。</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>上述绘图，无法显示中文</strong></p>
+<h2 id="2-3-加入中文字体支持"><a href="#2-3-加入中文字体支持" class="headerlink" title="2.3 加入中文字体支持"></a>2.3 加入中文字体支持</h2><p>方法1：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line">font = &#123;<span class="string">&#x27;family&#x27;</span>:<span class="string">&#x27;MicroSoft YaHei&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;weight&#x27;</span>:<span class="string">&#x27;bold&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;size&#x27;</span>:<span class="string">&#x27;larger&#x27;</span>&#125;</span><br><span class="line">matplotlib.rc(<span class="string">&quot;font&quot;</span>,**font)	<span class="comment">#**可以把字典转为xx=xx格式</span></span><br><span class="line">matplotlib.rc(<span class="string">&quot;font&quot;</span>,family=<span class="string">&#x27;MicroSoft YaHei&#x27;</span>,weight=<span class="string">&#x27;bold&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>方法2：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> font_manager</span><br><span class="line">my_font = font_manager.FontProperties(fname=<span class="string">&quot;/System/Library/Fonts/PingFang.ttc&quot;</span>)	<span class="comment">#设定字体位置</span></span><br><span class="line"><span class="comment">#查找系统字体存放位置</span></span><br><span class="line">plt.xticks(list(_x)[::<span class="number">3</span>],_xticks_labels[::<span class="number">3</span>],rotation=<span class="number">90</span>,fontproperties=my_font)</span><br><span class="line"><span class="comment">#使用字体</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-加入描述信息"><a href="#2-4-加入描述信息" class="headerlink" title="2.4 加入描述信息"></a>2.4 加入描述信息</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plt.xlabel(<span class="string">&quot;时间&quot;</span>,fontproperties=my_font)</span><br><span class="line">plt.ylabel(<span class="string">&quot;温度 单位（℃）&quot;</span>,fontproperties=my_font)</span><br><span class="line">plt.title(<span class="string">&quot;10点到12点的请问变化&quot;</span>,fontproperties=my_font)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-5-设置网格"><a href="#2-5-设置网格" class="headerlink" title="2.5 设置网格"></a>2.5 设置网格</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.grid()</span><br><span class="line">plt.grid(alpha=<span class="number">0.4</span>)	<span class="comment">#设置网格透明度，1不透明，0透明</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-6-绘制两个图形"><a href="#2-6-绘制两个图形" class="headerlink" title="2.6 绘制两个图形"></a>2.6 绘制两个图形</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(x,y1,label=<span class="string">&quot;自己&quot;</span>,color=<span class="string">&quot;orange&quot;</span>,linestyle=<span class="string">&quot;:&quot;</span>)</span><br><span class="line">plt.plot(x,y2,label=<span class="string">&quot;同桌&quot;</span>,color=<span class="string">&quot;r&quot;</span>,linestyle=<span class="string">&quot;--&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加图例，解释哪个线表示哪个数据集，显示中文，格式不再是FontProperties</span></span><br><span class="line"><span class="comment">#prop字体，loc位置：0最好的位置，不设置参数则默认0</span></span><br><span class="line">plt.legend(prop=my_font,loc=<span class="number">0</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>color=’r’    颜色</p>
+<p>linestyle=’–’    线条风格：-实线；–虚线；-.点划线；:点虚线；留空或空格，表示无线条</p>
+<p>linewidth=5    线粗细</p>
+<p>alpha=0.4    透明度</p>
+</blockquote>
+<h2 id="2-7-绘制散点图"><a href="#2-7-绘制散点图" class="headerlink" title="2.7 绘制散点图"></a>2.7 绘制散点图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(x, y)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-8-绘制柱状图"><a href="#2-8-绘制柱状图" class="headerlink" title="2.8 绘制柱状图"></a>2.8 绘制柱状图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#绘制电影与其对应票房</span></span><br><span class="line">a=[<span class="string">&quot;战狼2&quot;</span>,<span class="string">&quot;速度与激情8&quot;</span>,<span class="string">&quot;功夫瑜伽&quot;</span>,<span class="string">&quot;西游附魔篇&quot;</span>]</span><br><span class="line">b=[<span class="number">56</span>,<span class="number">61</span>,<span class="number">26</span>,<span class="number">94</span>]</span><br><span class="line">plt.figure(figsize=(<span class="number">20</span>,<span class="number">15</span>),dpi=<span class="number">80</span>)</span><br><span class="line"><span class="comment">#绘制柱状图</span></span><br><span class="line">plt.bar(range(a),b,width=<span class="number">0.3</span>)</span><br><span class="line"><span class="comment">#设置横轴字符串</span></span><br><span class="line">plt.xticks(range(a),a,rotation=<span class="number">45</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-9-绘制条形图"><a href="#2-9-绘制条形图" class="headerlink" title="2.9 绘制条形图"></a>2.9 绘制条形图</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.barh(range(len(a)),b,height=<span class="number">0.3</span>,color=<span class="string">&#x27;orange&#x27;</span>)</span><br><span class="line">plt.yticks(range(len(a)),a)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/10/01/EFdtgolApGN7qPa.png" class="lazyload" data-srcset="https://i.loli.net/2020/10/01/EFdtgolApGN7qPa.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+
     
       
-        从亚马逊新入手了最新款树莓派4B以及相关配件，花了一共109欧。这是第一次把玩树莓派。因为长期浸淫于Linux系统，而受制于surface的小容量硬盘，实在不忍心在电脑上安装一个虚拟机了。之前把玩Linux也是购买的云服务器，但是云服务器是个消耗品啊，而且毕竟是外网，要操做内网设备，比如打印机，就得内网穿透，还是得依赖一个在内网能够长期在线得设备，那么树莓派的作用就不言而喻了。
-树莓派自带G...
-      
+      <div class='footer'>
+        
+        
+          
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\2020\09\06\利用海贝音乐做一个自用音乐播放器\" title="利用海贝音乐做一个自用音乐播放器" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">利用海贝音乐做一个自用音乐播放器</span></a></div></section></div>
+        
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href=https://sci.ci/2020/09/29/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/>https://sci.ci/2020/09/29/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+        
+      </div>
     
   </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-08-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/08/28/%E6%A0%91%E8%8E%93%E6%B4%BE4B%E6%97%A0%E7%BD%91%E7%BA%BF%E6%97%A0%E6%98%BE%E7%A4%BA%E5%99%A8%E5%87%BA%E5%8F%91/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-30T22:30:30+02:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年9月30日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/08/28/%E5%9C%A8%E8%AE%A2%E5%8D%95%E4%B8%AD%E6%89%93%E5%8D%B0%E6%94%B6%E8%B4%A7%E5%9C%B0%E5%9D%80%E4%BA%8C%E7%BB%B4%E7%A0%81/">
-        在订单中打印收货地址二维码
-      </a>
-    </h2>
-  
-  <div class='md'>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Matplotlib/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Matplotlib</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Numpy/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Numpy</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Pandas/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Pandas</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        一：简介七夕节在配送过程中，发现配送员由于文化有限，在使用导航软件上有极大的障碍。这不仅拖慢了整个配送过程，也不利于业务的增长。于是我想到了，在订单上打印一个二维码，扫描二维码，则就可以导航到收货地点。
-在一段时间的尝试后，我敲定了此方案的可行性。
-由于美图和饿了么订单打印，已在飞鹅打印机上固定了模板，我无法修改他们的打印模板。所以，只能为小程序的订单，打印地址二维码。
-二：方案由于各个地图...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/09/29/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/&title=Python数据分析 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/09/29/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/&title=Python数据分析 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/09/29/Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/&title=Python数据分析 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-08-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/08/28/%E5%9C%A8%E8%AE%A2%E5%8D%95%E4%B8%AD%E6%89%93%E5%8D%B0%E6%94%B6%E8%B4%A7%E5%9C%B0%E5%9D%80%E4%BA%8C%E7%BB%B4%E7%A0%81/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/08/26/%E8%AE%A2%E5%8D%95%E5%8D%A1%E7%89%87%E5%A4%87%E6%B3%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%B0%E7%B3%BB%E7%BB%9F/">
-        订单卡片备注自动打印系统
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        一：系统设计系统思维导图：
 
-各个接单平台在收到订单后，将订单信息发送给公网服务器，公网服务器从订单信息中提取卡片内容，并将卡片内容发送给和打印机处在同一个局域网环境下的树莓派，树莓派发送打印请求。
-由于打印机的打印请求必须在局域网环境下发出，内网穿透就是必须的步骤，所以这里的树莓派和公网服务器缺一不可，如果有固定的公网ip，则可取消公网服务器步骤，如果打印机支持http发送api请求创建打...
+
+        
       
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-08-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
+  
+    <div class="prev-next">
       
-        <div>
-            <a class='readmore' href='/2020/08/26/%E8%AE%A2%E5%8D%95%E5%8D%A1%E7%89%87%E5%A4%87%E6%B3%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%B0%E7%B3%BB%E7%BB%9F/'>
-            阅读全文
-          </a>
-        </div>
+        <a class='prev' href='/2020/09/30/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>正则表达式</p>
+          <p class='content'>1：简介正则表达式，常用于匹配包含一定规律的字符串，可以从字符串中提取符合规律的字符串段，或者返回是否符合要求。也可用于替换字符串。
+比如，我们设置密码时，网站通常要求，密码为字母+数字+下划线...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/09/27/%E5%88%A9%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%9A%E6%97%B6%E6%8A%A2%E5%9B%BE%E4%B9%A6%E9%A6%86%E5%BA%A7%E4%BD%8D/'>
+          <p class='title'>利用树莓派定时抢图书馆座位<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1：需求分析由于新冠疫情的影响，学校图书馆和自习室必须在监管之下运行，每日提供的坐席和开放时间受限。大部分自习室被关闭，导致坐席需求很大，而供应很少。新规要求，图书馆和自习室的坐席必须在学校官网...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -602,154 +723,19 @@
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">🛫起飞了</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:im@xieqifei.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/xieqifei/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Linux%E7%BC%96%E7%A8%8B/" href="/categories/Linux%E7%BC%96%E7%A8%8B/"
-            id="categoriesLinuxE7BC96E7A88B"
-            ><div class='name'>Linux编程</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Python/" href="/categories/Python/"
-            id="categoriesPython"
-            ><div class='name'>Python</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Windows/" href="/categories/Windows/"
-            id="categoriesWindows"
-            ><div class='name'>Windows</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"
-            id="categoriesE585B6E4BB96"
-            ><div class='name'>其他</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-            id="categoriesE5ADA6E4B9A0E7AC94E8AEB0"
-            ><div class='name'>学习笔记</div><div class='badge'>(15)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/" href="/categories/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/"
-            id="categoriesE5AE89E58D93E7BC96E7A88B"
-            ><div class='name'>安卓编程</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"
-            id="categoriesE6A091E88E93E6B4BE"
-            ><div class='name'>树莓派</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/"
-            id="categoriesE7BD91E7AB99E7BC96E7A88B"
-            ><div class='name'>网站编程</div><div class='badge'>(14)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/ADB/" style="font-size: 14px; color: #999">ADB</a> <a href="/tags/API/" style="font-size: 14px; color: #999">API</a> <a href="/tags/Aria2/" style="font-size: 14px; color: #999">Aria2</a> <a href="/tags/Bootstrap/" style="font-size: 14px; color: #999">Bootstrap</a> <a href="/tags/Cookie/" style="font-size: 14px; color: #999">Cookie</a> <a href="/tags/Flutter/" style="font-size: 14px; color: #999">Flutter</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/JsDelivr/" style="font-size: 14px; color: #999">JsDelivr</a> <a href="/tags/Kali-Linux/" style="font-size: 14px; color: #999">Kali Linux</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Magento/" style="font-size: 14px; color: #999">Magento</a> <a href="/tags/Matplotlib/" style="font-size: 14px; color: #999">Matplotlib</a> <a href="/tags/Mysql/" style="font-size: 14px; color: #999">Mysql</a> <a href="/tags/Nginx/" style="font-size: 14px; color: #999">Nginx</a> <a href="/tags/Numpy/" style="font-size: 14px; color: #999">Numpy</a> <a href="/tags/Oneindex/" style="font-size: 17.33px; color: #828282">Oneindex</a> <a href="/tags/Pandas/" style="font-size: 14px; color: #999">Pandas</a> <a href="/tags/PyTorch/" style="font-size: 14px; color: #999">PyTorch</a> <a href="/tags/Python/" style="font-size: 17.33px; color: #828282">Python</a> <a href="/tags/Rclone/" style="font-size: 17.33px; color: #828282">Rclone</a> <a href="/tags/SSR/" style="font-size: 17.33px; color: #828282">SSR</a> <a href="/tags/Selenium/" style="font-size: 17.33px; color: #828282">Selenium</a> <a href="/tags/ShopXO/" style="font-size: 14px; color: #999">ShopXO</a> <a href="/tags/Squid/" style="font-size: 17.33px; color: #828282">Squid</a> <a href="/tags/Stunnel/" style="font-size: 17.33px; color: #828282">Stunnel</a> <a href="/tags/Stunnel%E4%BB%A3%E7%90%86/" style="font-size: 14px; color: #999">Stunnel代理</a> <a href="/tags/TensorFlow/" style="font-size: 14px; color: #999">TensorFlow</a> <a href="/tags/VPN/" style="font-size: 14px; color: #999">VPN</a> <a href="/tags/Vlantis/" style="font-size: 14px; color: #999">Vlantis</a> <a href="/tags/Volantis/" style="font-size: 14px; color: #999">Volantis</a> <a href="/tags/Vuejs/" style="font-size: 14px; color: #999">Vuejs</a> <a href="/tags/YAAW/" style="font-size: 14px; color: #999">YAAW</a> <a href="/tags/haproxy/" style="font-size: 14px; color: #999">haproxy</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 14px; color: #999">博客</a> <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E6%BA%90%E5%BA%93/" style="font-size: 14px; color: #999">安卓开源库</a> <a href="/tags/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">安卓编程</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/" style="font-size: 14px; color: #999">微信公众号</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 14px; color: #999">微信小程序</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">机器学习</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 20.67px; color: #6c6c6c">树莓派</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 14px; color: #999">正则表达式</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/" style="font-size: 14px; color: #999">浏览器插件</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E7%94%B5%E5%95%86/" style="font-size: 14px; color: #999">电商</a> <a href="/tags/%E7%94%B5%E5%95%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">电商系统</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">移动网络</a> <a href="/tags/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">网站优化</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" style="font-size: 14px; color: #999">网络技术</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 14px; color: #999">负载均衡</a> <a href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" style="font-size: 14px; color: #999">音乐播放器</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E7%BB%BC%E8%BF%B0"><span class="toc-text">1：综述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9AMatplotlib"><span class="toc-text">2：Matplotlib</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E8%AE%BE%E7%BD%AE%E5%9B%BE%E7%89%87%E5%A4%A7%E5%B0%8F"><span class="toc-text">2.1 设置图片大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E8%AE%BE%E7%BD%AEx%EF%BC%8Cy%E8%BD%B4%E6%AD%A5%E9%95%BF"><span class="toc-text">2.2 设置x，y轴步长</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E5%8A%A0%E5%85%A5%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E6%94%AF%E6%8C%81"><span class="toc-text">2.3 加入中文字体支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E5%8A%A0%E5%85%A5%E6%8F%8F%E8%BF%B0%E4%BF%A1%E6%81%AF"><span class="toc-text">2.4 加入描述信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E8%AE%BE%E7%BD%AE%E7%BD%91%E6%A0%BC"><span class="toc-text">2.5 设置网格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%E7%BB%98%E5%88%B6%E4%B8%A4%E4%B8%AA%E5%9B%BE%E5%BD%A2"><span class="toc-text">2.6 绘制两个图形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%E7%BB%98%E5%88%B6%E6%95%A3%E7%82%B9%E5%9B%BE"><span class="toc-text">2.7 绘制散点图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%E7%BB%98%E5%88%B6%E6%9F%B1%E7%8A%B6%E5%9B%BE"><span class="toc-text">2.8 绘制柱状图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-%E7%BB%98%E5%88%B6%E6%9D%A1%E5%BD%A2%E5%9B%BE"><span class="toc-text">2.9 绘制条形图</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -760,6 +746,7 @@
 
 
 </aside>
+
 
 
       </div>
