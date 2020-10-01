@@ -504,9 +504,9 @@
   <div class="article-entry" itemprop="articleBody">
     
     
-    <h1 id="一：项目简介"><a href="#一：项目简介" class="headerlink" title="一：项目简介"></a>一：项目简介</h1><p>对于我这个经常听歌的人来说，免费的听歌软件总是很有用的。我在网上找到了一款叫做海贝音乐的播放器，这个播放器不提供音乐资源，仅仅是一个播放器，可以播放本地音乐、Onedrive云音乐，以及DLNA局域网里的音乐。对于很多人来说，将好听喜欢的音乐下载下来保存到手机，总归是个麻烦的操作，如果想在线听歌，又需要购买音乐软件的VIP。那么有没有一个方法，可以免费而又在不下载音乐在线听歌呢？</p>
+    <h1 id="1：项目简介"><a href="#1：项目简介" class="headerlink" title="1：项目简介"></a>1：项目简介</h1><p>对于我这个经常听歌的人来说，免费的听歌软件总是很有用的。我在网上找到了一款叫做海贝音乐的播放器，这个播放器不提供音乐资源，仅仅是一个播放器，可以播放本地音乐、Onedrive云音乐，以及DLNA局域网里的音乐。对于很多人来说，将好听喜欢的音乐下载下来保存到手机，总归是个麻烦的操作，如果想在线听歌，又需要购买音乐软件的VIP。那么有没有一个方法，可以免费而又在不下载音乐在线听歌呢？</p>
 <p>我将利用Onedrive作为音乐储存云盘，并在海贝音乐播放器上，实现在线听歌。将喜欢的音乐下载到Onedrive是个非常麻烦的步骤，为此我将在之后编写一个项目，来实现自动下载热榜音乐至云盘指定目录，并编写一个客户端，用作搜索指定音乐，并保存到云盘的接口。此项目，我将使用python进行编写，并在linux系统上运行。</p>
-<h1 id="二：实现原理"><a href="#二：实现原理" class="headerlink" title="二：实现原理"></a>二：实现原理</h1><h2 id="2-1-音乐来源"><a href="#2-1-音乐来源" class="headerlink" title="2.1 音乐来源"></a>2.1 音乐来源</h2><p>免费音乐接口总是很难获取，甚至很不稳定，为此我们需要合法的获取音乐资源。为此，我考虑从YouTube上获取音乐资源，因为音乐MV和MP3格式的隶属不同版权，而MV往往是不收费的，所以直接从youtube上下载mv的mp4格式文件，这里利用基于python编写的you-get程序即可，然后，利用ffmpeg软件将mp4格式文件转为mp3格式。</p>
+<h1 id="2：实现原理"><a href="#2：实现原理" class="headerlink" title="2：实现原理"></a>2：实现原理</h1><h2 id="2-1-音乐来源"><a href="#2-1-音乐来源" class="headerlink" title="2.1 音乐来源"></a>2.1 音乐来源</h2><p>免费音乐接口总是很难获取，甚至很不稳定，为此我们需要合法的获取音乐资源。为此，我考虑从YouTube上获取音乐资源，因为音乐MV和MP3格式的隶属不同版权，而MV往往是不收费的，所以直接从youtube上下载mv的mp4格式文件，这里利用基于python编写的you-get程序即可，然后，利用ffmpeg软件将mp4格式文件转为mp3格式。</p>
 <h2 id="2-2-音乐获取"><a href="#2-2-音乐获取" class="headerlink" title="2.2 音乐获取"></a>2.2 音乐获取</h2><p>获取音乐当然不能一个一个的获取，我们可以在网上找到网易或者qq音乐的榜单api，获取榜单列表，根据列表内容使用程序来检索音乐。</p>
 <p>另外在单独做一个web端，用于搜索音乐。后台根据搜索指令下载音乐。</p>
 <p>歌词可以通过歌词迷接口<a target="_blank" rel="noopener" href="https://hacpai.com/article/1364440883834">https://hacpai.com/article/1364440883834</a> 获取。</p>
@@ -555,10 +555,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-06T19:54:41+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-30T22:32:57+02:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年9月6日</p>
+    <p>更新于：2020年9月30日</p>
   </a>
 </div>
 
@@ -690,7 +690,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%EF%BC%9A%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B"><span class="toc-text">一：项目简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9A%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-text">二：实现原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E9%9F%B3%E4%B9%90%E6%9D%A5%E6%BA%90"><span class="toc-text">2.1 音乐来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E9%9F%B3%E4%B9%90%E8%8E%B7%E5%8F%96"><span class="toc-text">2.2 音乐获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E9%9F%B3%E4%B9%90%E4%BF%9D%E5%AD%98"><span class="toc-text">2.3 音乐保存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E9%9F%B3%E4%B9%90%E6%94%B6%E5%90%AC"><span class="toc-text">2.4 音乐收听</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B"><span class="toc-text">1：项目简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9A%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-text">2：实现原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E9%9F%B3%E4%B9%90%E6%9D%A5%E6%BA%90"><span class="toc-text">2.1 音乐来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E9%9F%B3%E4%B9%90%E8%8E%B7%E5%8F%96"><span class="toc-text">2.2 音乐获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E9%9F%B3%E4%B9%90%E4%BF%9D%E5%AD%98"><span class="toc-text">2.3 音乐保存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E9%9F%B3%E4%B9%90%E6%94%B6%E5%90%AC"><span class="toc-text">2.4 音乐收听</span></a></li></ol></li></ol>
     </div>
   </section>
 
