@@ -590,6 +590,83 @@
 <p>修改浮点型的小数位数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a &#x3D; np.array(random.random() for i in range(10))</span><br><span class="line">np.round(a,2)</span><br></pre></td></tr></table></figure>
 
+<h2 id="2-3-数组形状"><a href="#2-3-数组形状" class="headerlink" title="2.3 数组形状"></a>2.3 数组形状</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t1 = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]])</span><br><span class="line">t1.shape	</span><br><span class="line"><span class="comment">#out:(2,3)</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>数组的形状</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t2 = np.arange(<span class="number">12</span>)	<span class="comment">#新建一维数组</span></span><br><span class="line">t3 = t2.reshape(<span class="number">3</span>,<span class="number">4</span>)	<span class="comment">#变为二维的</span></span><br><span class="line">t4 = t2.reshape(<span class="number">24</span>,)	<span class="comment">#变一维数组</span></span><br><span class="line">t5 = t2.flatten()	<span class="comment">#变一维数组</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-数组计算"><a href="#2-4-数组计算" class="headerlink" title="2.4 数组计算"></a>2.4 数组计算</h2><p><strong>数组和数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">t6 = np.arange(<span class="number">24</span>)</span><br><span class="line">t7 = t6.reshape(<span class="number">4</span>,<span class="number">6</span>)</span><br><span class="line">t7+<span class="number">2</span>	<span class="comment">#数组中每个数都加2</span></span><br><span class="line">t7*<span class="number">2</span>	<span class="comment">#每个数都乘2</span></span><br><span class="line">t7/<span class="number">2</span>	<span class="comment">#每个数都除2，会得到浮点数</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>数组和数组</strong></p>
+<p>形状相同：(4,6)与(4,6)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t8 = np.arange(<span class="number">100</span>,<span class="number">124</span>).reshape(<span class="number">4</span>,<span class="number">6</span>)</span><br><span class="line">t7+t8	<span class="comment">#形状相同，行列相同的数值进行运算</span></span><br><span class="line">t7*t8</span><br></pre></td></tr></table></figure>
+
+<p>(4,6)与(,6)</p>
+<p><img src="https://i.loli.net/2020/10/03/FXmBQap341rgTOf.png" class="lazyload" data-srcset="https://i.loli.net/2020/10/03/FXmBQap341rgTOf.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>(4,6)与(4,1)</p>
+<p><img src="https://i.loli.net/2020/10/03/7iFszdVEr3KNZYf.png" class="lazyload" data-srcset="https://i.loli.net/2020/10/03/7iFszdVEr3KNZYf.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><strong>广播原则：</strong></p>
+<p>如果两个数组的后缘维度，即从末尾开始算起的维度的轴长度相符或其中一方的长度为1，则认为他们是广播兼容的。广播会在缺失和或长度为1的维度上进行</p>
+<h2 id="2-5-读取数据"><a href="#2-5-读取数据" class="headerlink" title="2.5 读取数据"></a>2.5 读取数据</h2><p><strong>轴</strong></p>
+<p>一维数组只有一个轴，即0轴</p>
+<p>二维数组有两个轴，0和1轴。(2,5)，2是0轴长度，5是1轴长度</p>
+<p>三维数组有三个轴，0，1，2轴</p>
+<p><strong>读取数据</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.loadtxt(frame,dtype=np.float,delimiter=<span class="literal">None</span>,skiprows=<span class="number">0</span>,usecols=<span class="literal">None</span>,unpack=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<p>frame：文件、字符串或产生器</p>
+<p>dtype：数据类型</p>
+<p>dlimiter：分割字符串，默认是空格</p>
+<p>skiprows：跳过前x行</p>
+<p>usecols：读取指定的列</p>
+<p>unpack：True表示，读入属性将分别写入不同的数组变量，False 读入数据只写入一个数组变量，默认False。<strong>转置效果</strong>。</p>
+<p>读取的文件内容格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1241,1241,15346,2451</span><br><span class="line">125415,235,4135,1351</span><br><span class="line">12516,15326,1361,616</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+
+<p>读取时可以按<code>,</code>分割。按行划分</p>
+<h2 id="2-6-矩阵转置"><a href="#2-6-矩阵转置" class="headerlink" title="2.6 矩阵转置"></a>2.6 矩阵转置</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t2.transpose()</span><br><span class="line">t2.T</span><br><span class="line">t2.swapaxes(<span class="number">1</span>,<span class="number">0</span>)	<span class="comment">#交换轴，也能实现转置效果</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-7-索引和切片"><a href="#2-7-索引和切片" class="headerlink" title="2.7 索引和切片"></a>2.7 索引和切片</h2><p>取第二行：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t2[<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+<p>取连续的多行：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t2[<span class="number">2</span>:]</span><br></pre></td></tr></table></figure>
+
+<p>取不连续的多行：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t2[[<span class="number">2</span>,<span class="number">8</span>,<span class="number">10</span>]]</span><br></pre></td></tr></table></figure>
+
+<p>取第一列：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t2[:,<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<p>取连续多列：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t2[:,<span class="number">2</span>:]</span><br></pre></td></tr></table></figure>
+
+<p>取不连续的多列：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t2[:,[<span class="number">0</span>,<span class="number">2</span>,<span class="number">5</span>]]</span><br></pre></td></tr></table></figure>
+
+<p>取3行四列的值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t2[<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+
+<p>取多行多列：3行到5行，2列到4列，因为<code>:</code>左右是左闭右开区间，行数为索引+1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t2[<span class="number">2</span>:<span class="number">5</span>,<span class="number">1</span>:<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+
+<p>取多个不连续的点：(0,0)  (2,1)  (5,5)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t2[[0,2,5],[0,1,5]]</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-8-修改数值"><a href="#2-8-修改数值" class="headerlink" title="2.8 修改数值"></a>2.8 修改数值</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t[:,<span class="number">2</span>:<span class="number">4</span>] = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>布尔索引</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t2&lt;<span class="number">10</span>	<span class="comment">#相同的矩阵，矩阵值为布尔类型，对应位置满足值小于10，则为1，否则为0</span></span><br><span class="line">t2[t2&lt;<span class="number">10</span>] = <span class="number">3</span>	<span class="comment">#t2中小于10的位置，赋值为3</span></span><br><span class="line">t2[t2&lt;<span class="number">10</span>]	<span class="comment">#取t2中小于10的数组成新矩阵</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>三元运算符</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.where(t&lt;<span class="number">10</span>,<span class="number">0</span>,<span class="number">10</span>)	<span class="comment">#如果小于10，替换为0，否则替换为10</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>裁剪</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t.clip(<span class="number">10</span>,<span class="number">18</span>)	<span class="comment">#小于10的替换为10，大于18的替换为18</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t2 = t2.astype(float)</span><br><span class="line">t2[<span class="number">3</span>,<span class="number">3</span>] = np.nan</span><br></pre></td></tr></table></figure>
+
 
     
       
@@ -632,10 +709,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-01T23:03:03+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-07T20:09:43+02:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年10月1日</p>
+    <p>更新于：2020年10月7日</p>
   </a>
 </div>
 
@@ -761,7 +838,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E7%BB%BC%E8%BF%B0"><span class="toc-text">1：综述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9AMatplotlib"><span class="toc-text">2：Matplotlib</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E8%AE%BE%E7%BD%AE%E5%9B%BE%E7%89%87%E5%A4%A7%E5%B0%8F-figure"><span class="toc-text">2.1 设置图片大小-figure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E8%AE%BE%E7%BD%AEx%EF%BC%8Cy%E8%BD%B4%E6%AD%A5%E9%95%BF-xticks-yticks"><span class="toc-text">2.2 设置x，y轴步长-xticks&#x2F;yticks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E5%8A%A0%E5%85%A5%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E6%94%AF%E6%8C%81-FontProperties"><span class="toc-text">2.3 加入中文字体支持-FontProperties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E5%8A%A0%E5%85%A5%E6%8F%8F%E8%BF%B0%E4%BF%A1%E6%81%AF-xlabel-ylabel-title"><span class="toc-text">2.4 加入描述信息-xlabel&#x2F;ylabel&#x2F;title</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E8%AE%BE%E7%BD%AE%E7%BD%91%E6%A0%BC-grid"><span class="toc-text">2.5 设置网格-grid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%E7%BB%98%E5%88%B6%E4%B8%A4%E4%B8%AA%E5%9B%BE%E5%BD%A2-legend"><span class="toc-text">2.6 绘制两个图形-legend</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%E7%BB%98%E5%88%B6%E6%95%A3%E7%82%B9%E5%9B%BE-scatter"><span class="toc-text">2.7 绘制散点图-scatter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%E7%BB%98%E5%88%B6%E6%9F%B1%E7%8A%B6%E5%9B%BE-bar"><span class="toc-text">2.8 绘制柱状图-bar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-%E7%BB%98%E5%88%B6%E6%9D%A1%E5%BD%A2%E5%9B%BE-barh"><span class="toc-text">2.9 绘制条形图-barh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-10-%E7%BB%98%E5%88%B6%E7%9B%B4%E6%96%B9%E5%9B%BE-hist"><span class="toc-text">2.10 绘制直方图-hist</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9ANumpy"><span class="toc-text">2：Numpy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84%EF%BC%9A"><span class="toc-text">2.1 创建数组：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.2 数据类型</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E7%BB%BC%E8%BF%B0"><span class="toc-text">1：综述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9AMatplotlib"><span class="toc-text">2：Matplotlib</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E8%AE%BE%E7%BD%AE%E5%9B%BE%E7%89%87%E5%A4%A7%E5%B0%8F-figure"><span class="toc-text">2.1 设置图片大小-figure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E8%AE%BE%E7%BD%AEx%EF%BC%8Cy%E8%BD%B4%E6%AD%A5%E9%95%BF-xticks-yticks"><span class="toc-text">2.2 设置x，y轴步长-xticks&#x2F;yticks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E5%8A%A0%E5%85%A5%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E6%94%AF%E6%8C%81-FontProperties"><span class="toc-text">2.3 加入中文字体支持-FontProperties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E5%8A%A0%E5%85%A5%E6%8F%8F%E8%BF%B0%E4%BF%A1%E6%81%AF-xlabel-ylabel-title"><span class="toc-text">2.4 加入描述信息-xlabel&#x2F;ylabel&#x2F;title</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E8%AE%BE%E7%BD%AE%E7%BD%91%E6%A0%BC-grid"><span class="toc-text">2.5 设置网格-grid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%E7%BB%98%E5%88%B6%E4%B8%A4%E4%B8%AA%E5%9B%BE%E5%BD%A2-legend"><span class="toc-text">2.6 绘制两个图形-legend</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%E7%BB%98%E5%88%B6%E6%95%A3%E7%82%B9%E5%9B%BE-scatter"><span class="toc-text">2.7 绘制散点图-scatter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%E7%BB%98%E5%88%B6%E6%9F%B1%E7%8A%B6%E5%9B%BE-bar"><span class="toc-text">2.8 绘制柱状图-bar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-%E7%BB%98%E5%88%B6%E6%9D%A1%E5%BD%A2%E5%9B%BE-barh"><span class="toc-text">2.9 绘制条形图-barh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-10-%E7%BB%98%E5%88%B6%E7%9B%B4%E6%96%B9%E5%9B%BE-hist"><span class="toc-text">2.10 绘制直方图-hist</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9ANumpy"><span class="toc-text">2：Numpy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84%EF%BC%9A"><span class="toc-text">2.1 创建数组：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.2 数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E6%95%B0%E7%BB%84%E5%BD%A2%E7%8A%B6"><span class="toc-text">2.3 数组形状</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E6%95%B0%E7%BB%84%E8%AE%A1%E7%AE%97"><span class="toc-text">2.4 数组计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text">2.5 读取数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE"><span class="toc-text">2.6 矩阵转置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%E7%B4%A2%E5%BC%95%E5%92%8C%E5%88%87%E7%89%87"><span class="toc-text">2.7 索引和切片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%E4%BF%AE%E6%94%B9%E6%95%B0%E5%80%BC"><span class="toc-text">2.8 修改数值</span></a></li></ol></li></ol>
     </div>
   </section>
 
