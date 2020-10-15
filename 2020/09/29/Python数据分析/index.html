@@ -18,7 +18,7 @@
   
   <title>Python数据分析 - 🛫起飞了</title>
   
-    <meta name="keywords" content="Matplotlib,Numpy,Pandas">
+    <meta name="keywords" content="Pandas,Matplotlib,Numpy">
   
 
   
@@ -667,6 +667,54 @@
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t2 = t2.astype(float)</span><br><span class="line">t2[<span class="number">3</span>,<span class="number">3</span>] = np.nan</span><br></pre></td></tr></table></figure>
 
+<h2 id="2-9-拼接数组"><a href="#2-9-拼接数组" class="headerlink" title="2.9 拼接数组"></a>2.9 拼接数组</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">np.vstack(t1,t2)	<span class="comment">#竖直拼接</span></span><br><span class="line">np.hstack(t1,t2)	<span class="comment">#水平拼接</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.loli.net/2020/10/11/XpmuQc9dIC8jEws.png" class="lazyload" data-srcset="https://i.loli.net/2020/10/11/XpmuQc9dIC8jEws.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h2 id="2-10-行列交换"><a href="#2-10-行列交换" class="headerlink" title="2.10 行列交换"></a>2.10 行列交换</h2><p>行交换：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t[[<span class="number">1</span>,<span class="number">2</span>],:] = t[[<span class="number">2</span>,<span class="number">1</span>],:]</span><br></pre></td></tr></table></figure>
+
+<p>列交换：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t[:,[<span class="number">0</span>,<span class="number">2</span>]] = t[:,[<span class="number">2</span>,<span class="number">0</span>]]</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-11-其他方法"><a href="#2-11-其他方法" class="headerlink" title="2.11 其他方法"></a>2.11 其他方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#获取最大最小值</span></span><br><span class="line">np.argmax(t,axis=<span class="number">0</span>)</span><br><span class="line">np.argmin(t,axis=<span class="number">1</span>)</span><br><span class="line"><span class="comment">#创建一个全0的数组</span></span><br><span class="line">np.zeros((<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line"><span class="comment">#创建全1数组</span></span><br><span class="line">np.ones((<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line"><span class="comment">#创建一个对角线为1的正方形数组（方阵）</span></span><br><span class="line">np.eye(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-12-生成随机数"><a href="#2-12-生成随机数" class="headerlink" title="2.12 生成随机数"></a>2.12 生成随机数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">np.random.rand(3,4)	#均匀分布</span><br><span class="line">np.random.randn(3,4)	#标准正太分布的随机数，平均数为0，标准差为1</span><br><span class="line">np.random.randint(low,high,(shape))	#产生[low,high)之间的数</span><br></pre></td></tr></table></figure>
+
+<p>种子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">np.random.seed(<span class="number">10</span>)</span><br><span class="line">t = np.random.randint(<span class="number">0</span>,<span class="number">20</span>,(<span class="number">3</span>,<span class="number">4</span>))	<span class="comment">#每次随机的结果相同</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-13-copy和view"><a href="#2-13-copy和view" class="headerlink" title="2.13 copy和view"></a>2.13 copy和view</h2><ol>
+<li>a=b完全不复制，a和b相互影响。</li>
+<li>a = b[:]，视图操作，创建新对象a，但a的数据完全由b保管，两者数据变化一致。</li>
+<li>a = b.copy()复制，a和b互不影响。</li>
+</ol>
+<h2 id="2-14-nan和inf"><a href="#2-14-nan和inf" class="headerlink" title="2.14 nan和inf"></a>2.14 nan和inf</h2><p>nan(NAN,Nan)：not a number表示不是一个数字</p>
+<p>inf(-inf,inf)：infinity，正无穷，-inf表示负无穷</p>
+<p>一个数字除以0，python中会报错，numpy中是一个inf</p>
+<p><strong>nan：</strong></p>
+<ol>
+<li>两个nan不相等</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">np.nan !=np.nan</span><br><span class="line"><span class="comment">#True</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>计算nan个数</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">np.count_nonzero(t2!=t2)	<span class="comment">#t2!=t2，得到新矩阵，每个位置是bool类型，true表示该位置是nan</span></span><br><span class="line">np.count_nonzero(np.isnan(t2))	<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>计算矩阵和</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">np.sum(t3)</span><br><span class="line">np.sum(t3, axis=<span class="number">0</span>)	<span class="comment">#数组元素个数，与列数相同。，计算对应列上的和</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-15-常用统计函数"><a href="#2-15-常用统计函数" class="headerlink" title="2.15 常用统计函数"></a>2.15 常用统计函数</h2><p>求和：t.sum(axis=0)</p>
+<p>均值：t.mean(axis=0)</p>
+<p>中值：t.median(axis)</p>
+<p>最大值：t.max</p>
+<p>最小值:t.min</p>
+<p>极值：np.ptp(t,axis=None)    最大值和最小值之差</p>
+<p>标准差：t.std(axis=None)</p>
+<p><strong>默认返回多维数组的全部统计结果</strong></p>
 
     
       
@@ -679,7 +727,7 @@
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="\2020\09\06\利用海贝音乐做一个自用音乐播放器\" title="利用海贝音乐做一个自用音乐播放器" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">利用海贝音乐做一个自用音乐播放器</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="\2020\10\14\Pandas知识总结\" title="Pandas知识总结" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Pandas知识总结</span></a><a class="item" href="\2020\09\06\利用海贝音乐做一个自用音乐播放器\" title="利用海贝音乐做一个自用音乐播放器" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">利用海贝音乐做一个自用音乐播放器</span></a></div></section></div>
         
         
           <div class='copyright'>
@@ -709,10 +757,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-09T16:07:54+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-13T23:14:00+02:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年10月9日</p>
+    <p>更新于：2020年10月13日</p>
   </a>
 </div>
 
@@ -721,7 +769,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Matplotlib/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Matplotlib</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Numpy/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Numpy</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Pandas/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Pandas</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Pandas/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Pandas</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Matplotlib/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Matplotlib</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Numpy/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Numpy</p></a></div>
 
 
         
@@ -838,7 +886,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E7%BB%BC%E8%BF%B0"><span class="toc-text">1：综述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9AMatplotlib"><span class="toc-text">2：Matplotlib</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E8%AE%BE%E7%BD%AE%E5%9B%BE%E7%89%87%E5%A4%A7%E5%B0%8F-figure"><span class="toc-text">2.1 设置图片大小-figure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E8%AE%BE%E7%BD%AEx%EF%BC%8Cy%E8%BD%B4%E6%AD%A5%E9%95%BF-xticks-yticks"><span class="toc-text">2.2 设置x，y轴步长-xticks&#x2F;yticks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E5%8A%A0%E5%85%A5%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E6%94%AF%E6%8C%81-FontProperties"><span class="toc-text">2.3 加入中文字体支持-FontProperties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E5%8A%A0%E5%85%A5%E6%8F%8F%E8%BF%B0%E4%BF%A1%E6%81%AF-xlabel-ylabel-title"><span class="toc-text">2.4 加入描述信息-xlabel&#x2F;ylabel&#x2F;title</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E8%AE%BE%E7%BD%AE%E7%BD%91%E6%A0%BC-grid"><span class="toc-text">2.5 设置网格-grid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%E7%BB%98%E5%88%B6%E4%B8%A4%E4%B8%AA%E5%9B%BE%E5%BD%A2-legend"><span class="toc-text">2.6 绘制两个图形-legend</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%E7%BB%98%E5%88%B6%E6%95%A3%E7%82%B9%E5%9B%BE-scatter"><span class="toc-text">2.7 绘制散点图-scatter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%E7%BB%98%E5%88%B6%E6%9F%B1%E7%8A%B6%E5%9B%BE-bar"><span class="toc-text">2.8 绘制柱状图-bar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-%E7%BB%98%E5%88%B6%E6%9D%A1%E5%BD%A2%E5%9B%BE-barh"><span class="toc-text">2.9 绘制条形图-barh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-10-%E7%BB%98%E5%88%B6%E7%9B%B4%E6%96%B9%E5%9B%BE-hist"><span class="toc-text">2.10 绘制直方图-hist</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9ANumpy"><span class="toc-text">2：Numpy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84%EF%BC%9A"><span class="toc-text">2.1 创建数组：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.2 数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E6%95%B0%E7%BB%84%E5%BD%A2%E7%8A%B6"><span class="toc-text">2.3 数组形状</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E6%95%B0%E7%BB%84%E8%AE%A1%E7%AE%97"><span class="toc-text">2.4 数组计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text">2.5 读取数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE"><span class="toc-text">2.6 矩阵转置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%E7%B4%A2%E5%BC%95%E5%92%8C%E5%88%87%E7%89%87"><span class="toc-text">2.7 索引和切片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%E4%BF%AE%E6%94%B9%E6%95%B0%E5%80%BC"><span class="toc-text">2.8 修改数值</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E7%BB%BC%E8%BF%B0"><span class="toc-text">1：综述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9AMatplotlib"><span class="toc-text">2：Matplotlib</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E8%AE%BE%E7%BD%AE%E5%9B%BE%E7%89%87%E5%A4%A7%E5%B0%8F-figure"><span class="toc-text">2.1 设置图片大小-figure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E8%AE%BE%E7%BD%AEx%EF%BC%8Cy%E8%BD%B4%E6%AD%A5%E9%95%BF-xticks-yticks"><span class="toc-text">2.2 设置x，y轴步长-xticks&#x2F;yticks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E5%8A%A0%E5%85%A5%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E6%94%AF%E6%8C%81-FontProperties"><span class="toc-text">2.3 加入中文字体支持-FontProperties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E5%8A%A0%E5%85%A5%E6%8F%8F%E8%BF%B0%E4%BF%A1%E6%81%AF-xlabel-ylabel-title"><span class="toc-text">2.4 加入描述信息-xlabel&#x2F;ylabel&#x2F;title</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E8%AE%BE%E7%BD%AE%E7%BD%91%E6%A0%BC-grid"><span class="toc-text">2.5 设置网格-grid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%E7%BB%98%E5%88%B6%E4%B8%A4%E4%B8%AA%E5%9B%BE%E5%BD%A2-legend"><span class="toc-text">2.6 绘制两个图形-legend</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%E7%BB%98%E5%88%B6%E6%95%A3%E7%82%B9%E5%9B%BE-scatter"><span class="toc-text">2.7 绘制散点图-scatter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%E7%BB%98%E5%88%B6%E6%9F%B1%E7%8A%B6%E5%9B%BE-bar"><span class="toc-text">2.8 绘制柱状图-bar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-%E7%BB%98%E5%88%B6%E6%9D%A1%E5%BD%A2%E5%9B%BE-barh"><span class="toc-text">2.9 绘制条形图-barh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-10-%E7%BB%98%E5%88%B6%E7%9B%B4%E6%96%B9%E5%9B%BE-hist"><span class="toc-text">2.10 绘制直方图-hist</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9ANumpy"><span class="toc-text">2：Numpy</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84%EF%BC%9A"><span class="toc-text">2.1 创建数组：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.2 数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E6%95%B0%E7%BB%84%E5%BD%A2%E7%8A%B6"><span class="toc-text">2.3 数组形状</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E6%95%B0%E7%BB%84%E8%AE%A1%E7%AE%97"><span class="toc-text">2.4 数组计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text">2.5 读取数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE"><span class="toc-text">2.6 矩阵转置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%E7%B4%A2%E5%BC%95%E5%92%8C%E5%88%87%E7%89%87"><span class="toc-text">2.7 索引和切片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%E4%BF%AE%E6%94%B9%E6%95%B0%E5%80%BC"><span class="toc-text">2.8 修改数值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-%E6%8B%BC%E6%8E%A5%E6%95%B0%E7%BB%84"><span class="toc-text">2.9 拼接数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-10-%E8%A1%8C%E5%88%97%E4%BA%A4%E6%8D%A2"><span class="toc-text">2.10 行列交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-11-%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95"><span class="toc-text">2.11 其他方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-12-%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="toc-text">2.12 生成随机数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-13-copy%E5%92%8Cview"><span class="toc-text">2.13 copy和view</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-14-nan%E5%92%8Cinf"><span class="toc-text">2.14 nan和inf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-15-%E5%B8%B8%E7%94%A8%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0"><span class="toc-text">2.15 常用统计函数</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -861,6 +909,13 @@
       
         
           <div><p><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://hexo.io/"><img src="https://img.shields.io/badge/Powered-Hexo-red" class="lazyload" data-srcset="https://img.shields.io/badge/Powered-Hexo-red" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://volantis.js.org/"><img src="https://img.shields.io/badge/Theme-Volantis-blue" class="lazyload" data-srcset="https://img.shields.io/badge/Theme-Volantis-blue" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-success" class="lazyload" data-srcset="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-success" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" href="https://sci.ci"><img src="https://img.shields.io/badge/Copyright-2019--2020%20QF-orange" class="lazyload" data-srcset="https://img.shields.io/badge/Copyright-2019--2020%20QF-orange" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a></p>
+</div>
+        
+      
+    
+      
+        
+          <div><p>&lt;a style=</p>
 </div>
         
       
