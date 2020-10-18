@@ -5,6 +5,8 @@
   <!-- SEO相关 -->
   
     
+      <meta name="robots" content="noindex,follow">
+    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -16,9 +18,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>利用mitmproxy+Python爬取饿了么零售商家版订单信息 - 🛫起飞了</title>
-  
-    <meta name="keywords" content="Python,Mitmproxy">
+  <title>归档：2020 - 🛫起飞了</title>
   
 
   
@@ -318,7 +318,7 @@
 
   
   
-      <div class='cover-wrapper post dock' style="display: none;">
+      <div class='cover-wrapper  dock' style="display: none;">
         
           <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
         
@@ -398,8 +398,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">利用mitmproxy+Python爬取饿了么零售商家版订单信息</div>
+  <div id="pjax-ispage">false</div>
+  <div id="pjax-pageTitle"></div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -408,14 +408,14 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("none" == "none") { // 移除封面
+  if ("blog" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("none" == "blog") { // 半屏
+    if ("blog" == "blog") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("none" == "docs") { // 全屏
+    } else if ("blog" == "docs") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -429,257 +429,128 @@
         
 
 <div class='l_main'>
-  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+	
+		
+  <section class="post-list">
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/01/26/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84API%E9%A1%B9%E7%9B%AE/">
+        创建一个简单的API项目
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        0：简介API（应用程序接口），我现在正在做一个安卓项目，需要将mysql数据库里的数据，通过api接口以json格式导出，然后再安卓上解析和使用。
+API项目基于php服务器和laravel框架，这个框架听说比较适合做api，当然由于项目简单，我做的API省去了很多验证相关的内容，普通的框架类似thinkphp也能做，这里用laravel为了方便后期补足API的相关内容。
+1：域名和LAM...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        <time>2020-01-26</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
+        
+      </div>
+      
+        <div>
+            <a class='readmore' href='/2020/01/26/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84API%E9%A1%B9%E7%9B%AE/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
   
 
-
-  <div class='article-header'>
-    
-    <div class="article-meta" id="top">
-      
-      
-      
-        <h1 class="title">
-          <a href="/2020/10/16/%E5%88%A9%E7%94%A8mitmproxy-Python%E7%88%AC%E5%8F%96%E9%A5%BF%E4%BA%86%E4%B9%88%E9%9B%B6%E5%94%AE%E5%95%86%E5%AE%B6%E7%89%88%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF/">
-            利用mitmproxy+Python爬取饿了么零售商家版订单信息
-          </a>
-        </h1>
-      
-      <div class='new-meta-box'>
-        
-          
-            
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="https://ae01.alicdn.com/kf/Hb5b4a24aa25749c38ad1c3af3f15bac4e.jpg">
-    <p>啓飞</p>
-  </a>
 </div>
 
-          
-        
-          
-            
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-    </a>
-  </div>
-
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年10月16日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-  <div class="new-meta-item browse leancloud">
-    <a class='notlink'>
-      
-      <div id="lc-pv" data-title="利用mitmproxy+Python爬取饿了么零售商家版订单信息" data-path="/2020/10/16/%E5%88%A9%E7%94%A8mitmproxy-Python%E7%88%AC%E5%8F%96%E9%A5%BF%E4%BA%86%E4%B9%88%E9%9B%B6%E5%94%AE%E5%95%86%E5%AE%B6%E7%89%88%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF/">
-        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-        次浏览
-      </div>
-    </a>
-  </div>
-
-
-          
-        
-      </div>
-    </div>
-  </div>
-
-
-  <div class="article-entry" itemprop="articleBody">
-    
-    
-    <h1 id="1：简单说两句"><a href="#1：简单说两句" class="headerlink" title="1：简单说两句"></a>1：简单说两句</h1><p>这是我一个准备做的完整项目中的一个小部分。从很早以前，我就在思考，如何将美团和饿了么以及我自己做的小程序订单合并在一起，这样来实现统一的管理。。之所以要统一管理，是因为我母亲从事鲜花零售，在节假日里，会有大量的订单，而鲜花的包扎是个时间活。制作和配送，以及订单的处理，繁杂的程序会让人晕头转向。为了减轻我母亲的节假日压力，我想到了一些方法，来帮助她管理订单。</p>
-<p>完整的项目是，汇总小程序、美团、饿了么的订单。将订单返回的信息，通过处理，按配送时间排序，经过处理后通过企业微信api推送给微信。因为，花店的配送人员都是我母亲找的，他们受教育程度低，有的因为不识字，连导航都不会用。所以，需要把订单的位置信息，通过百度地图api转为url发送给配送员。另外，还可以制作一个程序，在程序上实时更新，新订单。。每当一束花被做好，我母亲就可从程序中将该订单从等待制作的列表中移除。。每当，有一个订单被送出，也可在程序上控制美团等客户端发送对应消息。</p>
-<p>这一切都是非常美好的，对零售商家的体验会非常友好。但是，因为我无法取得美团和饿了么的开发者资格，也就拿不到他们的接口授权。。于是，我想到了，利用利用mitmproxy获取美团饿了么的订单信息。通过appium自动化控制手机。无论是mitmrpoxy还是appium对python程序都是非常友好的。</p>
-<p>那么现在开始我的第一步，利用mitmproxy爬取饿了么零售商家版订单信息。</p>
-<h1 id="2：mitmproxy安装与使用"><a href="#2：mitmproxy安装与使用" class="headerlink" title="2：mitmproxy安装与使用"></a>2：mitmproxy安装与使用</h1><p><strong>安装</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install mitmproxy</span><br></pre></td></tr></table></figure>
-
-<p><strong>开启</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mitmweb</span><br><span class="line"><span class="meta">#</span><span class="bash">或者mitmproxy mitmdump</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>与python配合</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mitmdump -s eleme.py</span><br></pre></td></tr></table></figure>
-
-<p><strong>手机使用mitmproxy开启的代理</strong>：</p>
-<p>更改wifi高级设置里的代理模式为手动，主机填写mitmproxy运行的电脑局域网ip。可通过ifconfig查看。</p>
-<p>端口为8080</p>
-<p>此时打开baidu.com会提示不安全，而且mitmproxy应该开始记录了。</p>
-<p>手机打开网页<code>mitm.it</code>下载对应系统的证书文件。安卓下载后直接安装。。</p>
-<p>再上网就不会提示不安全了。</p>
-<h1 id="3：Python程序"><a href="#3：Python程序" class="headerlink" title="3：Python程序"></a>3：Python程序</h1><p>在编写程序之前，我都是在开启<code>mitmweb</code>后，在网页端仔细研究了，从饿了么零售商家版的流量信息。。有一个窍门就是，通常携带了关键信息的那条请求，数据通常都是几kb以上，所以很容易就找到包含订单信息的请求包了。接下来就通过python来将这个信息提取出来。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">@file_name    :eleme.py</span></span><br><span class="line"><span class="string">@description  :</span></span><br><span class="line"><span class="string">@time         :2020/10/16 21:25:01</span></span><br><span class="line"><span class="string">@author       :Qifei</span></span><br><span class="line"><span class="string">@version      :1.0</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> mitmproxy.http</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="comment">#顾客类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Customer</span>(<span class="params">object</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,name,sex,tel</span>):</span></span><br><span class="line">        self.name = name </span><br><span class="line">        self.sex = sex</span><br><span class="line">        self.tel = tel</span><br><span class="line">       </span><br><span class="line"></span><br><span class="line"><span class="comment">#商品类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Good</span>(<span class="params">object</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,name,number,img</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.number = number</span><br><span class="line">        self.img = img</span><br><span class="line"></span><br><span class="line"><span class="comment">#订单类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Order</span>(<span class="params">Customer</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,name,sex,tel,addr,note,send_time,order_id,goods</span>):</span></span><br><span class="line">        Customer.__init__(self,name,sex,tel)</span><br><span class="line">        self.addr = addr</span><br><span class="line">        self.note = note</span><br><span class="line">        self.send_time = send_time</span><br><span class="line">        self.order_id = order_id</span><br><span class="line">        self.goods = goods</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Mitm</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.orders = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">response</span>(<span class="params">self, flow: mitmproxy.http.flow</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="string">&quot;bwm_newretail.recrm_order_j/queryorderapp/queryOrderInfoList?&quot;</span> <span class="keyword">in</span> flow.request.url:</span><br><span class="line">            data = json.loads(flow.response.text)[<span class="string">&quot;data&quot;</span>]</span><br><span class="line">            <span class="keyword">for</span> total_order_list <span class="keyword">in</span> data[<span class="string">&#x27;total_order_list&#x27;</span>]:</span><br><span class="line">                <span class="keyword">for</span> order_list <span class="keyword">in</span> total_order_list[<span class="string">&#x27;order_list&#x27;</span>]:</span><br><span class="line">                    goods = []</span><br><span class="line">                    <span class="keyword">for</span> good <span class="keyword">in</span> order_list[<span class="string">&#x27;order_goods&#x27;</span>][<span class="string">&#x27;goods_list&#x27;</span>]:</span><br><span class="line">                        good = Good(good[<span class="string">&#x27;name&#x27;</span>],good[<span class="string">&#x27;number&#x27;</span>],good[<span class="string">&#x27;url&#x27;</span>])</span><br><span class="line">                        goods.append(good)</span><br><span class="line">                    order = Order(order_list[<span class="string">&#x27;order_basic&#x27;</span>][<span class="string">&#x27;user_real_name&#x27;</span>],order_list[<span class="string">&#x27;order_basic&#x27;</span>][<span class="string">&#x27;sex&#x27;</span>],order_list[<span class="string">&#x27;order_basic&#x27;</span>][<span class="string">&#x27;user_phone&#x27;</span>],order_list[<span class="string">&#x27;order_basic&#x27;</span>][<span class="string">&#x27;user_address&#x27;</span>],order_list[<span class="string">&#x27;order_basic&#x27;</span>][<span class="string">&#x27;user_note&#x27;</span>],order_list[<span class="string">&#x27;order_basic&#x27;</span>][<span class="string">&#x27;send_time&#x27;</span>],order_list[<span class="string">&#x27;order_basic&#x27;</span>][<span class="string">&#x27;order_id&#x27;</span>],goods)</span><br><span class="line">                    self.orders.append(order)</span><br><span class="line">addons = [</span><br><span class="line">    Mitm()</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<p>经过简单的测试，程序能够拿到完整的订单信息。一次性搞定，没有bug。</p>
-<p>在这个程序中，主要需要关注的是，Mitm类中的self.orders这个变量，可以看到，这个变量是一个列表，它包含了大于等于1个订单。每个订单，都是一个Order类的实例化，Order类中最后一个变量goods是一个列表，这个列表由多个实例化的Good类组成。因为一个订单可能包含多种商品。</p>
-<p>具体如何利用这些信息，还需要再Mitm()类中做修改。而提取单个订单类，比如第一个订单，直接使用<code>self.orders[0]</code>，要提取第一个订单中的第一件商品<code>self.orders[0].goods[0]</code>。</p>
-<p>其他的，比如第一个订单的收货地址：<code>self.orders[0].addr</code></p>
-<p>第一个订单的第一件商品的名称：<code>self.orders[0].goods[0].name</code></p>
-<p>后续我可能会将它保存到数据库中，方便下次提取和修改信息。</p>
-<h1 id="4：参考资料"><a href="#4：参考资料" class="headerlink" title="4：参考资料"></a>4：参考资料</h1><p>《<a target="_blank" rel="noopener" href="https://blog.csdn.net/freeking101/article/details/83901842">使用 mitmproxy + python 做拦截代理</a>》</p>
-<p>《<a target="_blank" rel="noopener" href="https://www.weiney.com/2072.html">APP爬虫入门，Appium+Mitmproxy强势组合实现抖音的数据爬取</a>》</p>
-
-    
-      
-      <div class='footer'>
-        
-        
-          
-  <div class="related_posts">
-    <section class='header'>
-      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
-    </section>
-    <section class='body'>
-      <div class="vlts-rps"><a class="item" href="\2020\07\22\Python基础\" title="Python基础" rel="bookmark "><img src="https://i.loli.net/2020/07/22/57QSZPcBOEqXw2m.png" class="lazyload" data-srcset="https://i.loli.net/2020/07/22/57QSZPcBOEqXw2m.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Python基础</span></a><a class="item" href="\2020\09\10\利用树莓派-内网穿透搭建网站服务器\" title="利用树莓派+内网穿透搭建网站服务器" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">利用树莓派+内网穿透搭建网站服务器</span></a></div></section></div>
-        
-        
-          <div class='copyright'>
-            <blockquote>
-              
-                
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-                
-              
-                
-                  <p>本文永久链接是：<a href=https://sci.ci/2020/10/16/%E5%88%A9%E7%94%A8mitmproxy-Python%E7%88%AC%E5%8F%96%E9%A5%BF%E4%BA%86%E4%B9%88%E9%9B%B6%E5%94%AE%E5%95%86%E5%AE%B6%E7%89%88%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF/>https://sci.ci/2020/10/16/%E5%88%A9%E7%94%A8mitmproxy-Python%E7%88%AC%E5%8F%96%E9%A5%BF%E4%BA%86%E4%B9%88%E9%9B%B6%E5%94%AE%E5%95%86%E5%AE%B6%E7%89%88%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF/</a></p>
-                
-              
-            </blockquote>
           </div>
         
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/01/24/%E4%BD%BF%E7%94%A8Magento%E5%88%9B%E5%BB%BA%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E8%AE%B0%E5%BD%95/">
+        使用Magento创建电商网站记录
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        0：绪论安装教程使用magento中国官网的提示，教程原地址为https://www.magentochina.org/blog/magento-guide/install-magento-2-1-with-composer.html
+我是用composer安装magento，composer在宝塔面板安装php时已默认安装了，所以能直接用。若未使用宝塔面板需优先安装composer。使用以...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        <time>2020-01-24</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
+        
+      </div>
+      
+        <div>
+            <a class='readmore' href='/2020/01/24/%E4%BD%BF%E7%94%A8Magento%E5%88%9B%E5%BB%BA%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E8%AE%B0%E5%BD%95/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+    
+  </section>
+  
+    
+      <br>
+      <div class="prev-next">
+        
+          <a class="prev" rel="prev" href="/archives/2020/page/5/">
+            <section class="post prev white-box shadow" >
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
+            </section>
+          </a>
+        
+        <p class="current">
+          6 / 6
+        </p>
         
       </div>
     
-  </div>
-  
-    
-
-
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-17T00:42:22+02:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年10月17日</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Python/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Python</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Mitmproxy/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Mitmproxy</p></a></div>
-
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/10/16/%E5%88%A9%E7%94%A8mitmproxy-Python%E7%88%AC%E5%8F%96%E9%A5%BF%E4%BA%86%E4%B9%88%E9%9B%B6%E5%94%AE%E5%95%86%E5%AE%B6%E7%89%88%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF/&title=利用mitmproxy+Python爬取饿了么零售商家版订单信息 - 🛫起飞了&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/10/16/%E5%88%A9%E7%94%A8mitmproxy-Python%E7%88%AC%E5%8F%96%E9%A5%BF%E4%BA%86%E4%B9%88%E9%9B%B6%E5%94%AE%E5%95%86%E5%AE%B6%E7%89%88%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF/&title=利用mitmproxy+Python爬取饿了么零售商家版订单信息 - 🛫起飞了&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/10/16/%E5%88%A9%E7%94%A8mitmproxy-Python%E7%88%AC%E5%8F%96%E9%A5%BF%E4%BA%86%E4%B9%88%E9%9B%B6%E5%94%AE%E5%95%86%E5%AE%B6%E7%89%88%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF/&title=利用mitmproxy+Python爬取饿了么零售商家版订单信息 - 🛫起飞了&summary="
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
-          
-        </a>
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
-
-
-
-        
-      
-    </div>
-  </div>
-
-
-  
-  
-    <div class="prev-next">
-      
-      
-        <a class='next' href='/2020/10/14/Pandas%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/'>
-          <p class='title'>Pandas知识总结<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>1：简介在我看来，Pandas是一款数据处理工具，它相比于numpy而言，更加具有针对性。比如说，Pandas提供了两种数据结构，Series和DataFrame，分别表示一维数据和二维数据，而...</p>
-        </a>
-      
-    </div>
-  
-</article>
-
-
   
 
-  <article class="post white-box reveal shadow" id="comments">
-    <p ct><i class='fas fa-comments'></i> 评论</p>
-    
-    <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
 
-  </article>
-
-
-
-
-
-
+	
 </div>
 <aside class='l_side'>
   
@@ -687,19 +558,159 @@
     
     
 
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+        
+        
+          <p><span id="jinrishici-sentence">🛫起飞了</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:im@xieqifei.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/xieqifei/"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    
+  </div>
+</section>
 
+  
 
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+  
+    
+    
+  
+
+  <section class="widget category shadow desktop">
     
   <header>
     
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
     
   </header>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E7%AE%80%E5%8D%95%E8%AF%B4%E4%B8%A4%E5%8F%A5"><span class="toc-text">1：简单说两句</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9Amitmproxy%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8"><span class="toc-text">2：mitmproxy安装与使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%9APython%E7%A8%8B%E5%BA%8F"><span class="toc-text">3：Python程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%9A%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">4：参考资料</span></a></li></ol>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/Linux/" href="/categories/Linux/"
+            id="categoriesLinux"
+            ><div class='name'>Linux</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Linux%E7%BC%96%E7%A8%8B/" href="/categories/Linux%E7%BC%96%E7%A8%8B/"
+            id="categoriesLinuxE7BC96E7A88B"
+            ><div class='name'>Linux编程</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Python/" href="/categories/Python/"
+            id="categoriesPython"
+            ><div class='name'>Python</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Windows/" href="/categories/Windows/"
+            id="categoriesWindows"
+            ><div class='name'>Windows</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"
+            id="categoriesE585B6E4BB96"
+            ><div class='name'>其他</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+            id="categoriesE5ADA6E4B9A0E7AC94E8AEB0"
+            ><div class='name'>学习笔记</div><div class='badge'>(16)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/" href="/categories/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/"
+            id="categoriesE5AE89E58D93E7BC96E7A88B"
+            ><div class='name'>安卓编程</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"
+            id="categoriesE6A091E88E93E6B4BE"
+            ><div class='name'>树莓派</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%88%AC%E8%99%AB/" href="/categories/%E7%88%AC%E8%99%AB/"
+            id="categoriesE788ACE899AB"
+            ><div class='name'>爬虫</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/"
+            id="categoriesE7BD91E7AB99E7BC96E7A88B"
+            ><div class='name'>网站编程</div><div class='badge'>(15)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/Python/" style="font-size: 14px; color: #999">-Python</a> <a href="/tags/TWRP/" style="font-size: 14px; color: #999">-TWRP</a> <a href="/tags/ADB/" style="font-size: 14px; color: #999">ADB</a> <a href="/tags/API/" style="font-size: 14px; color: #999">API</a> <a href="/tags/Aria2/" style="font-size: 14px; color: #999">Aria2</a> <a href="/tags/Bootstrap/" style="font-size: 14px; color: #999">Bootstrap</a> <a href="/tags/Cookie/" style="font-size: 14px; color: #999">Cookie</a> <a href="/tags/Flutter/" style="font-size: 14px; color: #999">Flutter</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/JsDelivr/" style="font-size: 14px; color: #999">JsDelivr</a> <a href="/tags/Kali-Linux/" style="font-size: 14px; color: #999">Kali Linux</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Magento/" style="font-size: 14px; color: #999">Magento</a> <a href="/tags/Matplotlib/" style="font-size: 14px; color: #999">Matplotlib</a> <a href="/tags/Mitmproxy/" style="font-size: 14px; color: #999">Mitmproxy</a> <a href="/tags/Mysql/" style="font-size: 14px; color: #999">Mysql</a> <a href="/tags/Nginx/" style="font-size: 14px; color: #999">Nginx</a> <a href="/tags/Numpy/" style="font-size: 14px; color: #999">Numpy</a> <a href="/tags/Oneindex/" style="font-size: 17.33px; color: #828282">Oneindex</a> <a href="/tags/Pandas/" style="font-size: 17.33px; color: #828282">Pandas</a> <a href="/tags/PyTorch/" style="font-size: 14px; color: #999">PyTorch</a> <a href="/tags/Python/" style="font-size: 20.67px; color: #6c6c6c">Python</a> <a href="/tags/Rclone/" style="font-size: 17.33px; color: #828282">Rclone</a> <a href="/tags/SSR/" style="font-size: 17.33px; color: #828282">SSR</a> <a href="/tags/Selenium/" style="font-size: 17.33px; color: #828282">Selenium</a> <a href="/tags/ShopXO/" style="font-size: 14px; color: #999">ShopXO</a> <a href="/tags/Squid/" style="font-size: 17.33px; color: #828282">Squid</a> <a href="/tags/Stunnel/" style="font-size: 17.33px; color: #828282">Stunnel</a> <a href="/tags/Stunnel%E4%BB%A3%E7%90%86/" style="font-size: 14px; color: #999">Stunnel代理</a> <a href="/tags/TensorFlow/" style="font-size: 14px; color: #999">TensorFlow</a> <a href="/tags/VPN/" style="font-size: 14px; color: #999">VPN</a> <a href="/tags/Vlantis/" style="font-size: 14px; color: #999">Vlantis</a> <a href="/tags/Volantis/" style="font-size: 17.33px; color: #828282">Volantis</a> <a href="/tags/Vuejs/" style="font-size: 14px; color: #999">Vuejs</a> <a href="/tags/YAAW/" style="font-size: 14px; color: #999">YAAW</a> <a href="/tags/haproxy/" style="font-size: 14px; color: #999">haproxy</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 14px; color: #999">博客</a> <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E6%BA%90%E5%BA%93/" style="font-size: 14px; color: #999">安卓开源库</a> <a href="/tags/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">安卓编程</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/" style="font-size: 14px; color: #999">微信公众号</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 14px; color: #999">微信小程序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" style="font-size: 14px; color: #999">数据处理</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">机器学习</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 20.67px; color: #6c6c6c">树莓派</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 14px; color: #999">正则表达式</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/" style="font-size: 14px; color: #999">浏览器插件</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E7%94%B5%E5%95%86/" style="font-size: 14px; color: #999">电商</a> <a href="/tags/%E7%94%B5%E5%95%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">电商系统</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">移动网络</a> <a href="/tags/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">网站优化</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" style="font-size: 14px; color: #999">网络技术</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 14px; color: #999">负载均衡</a> <a href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" style="font-size: 14px; color: #999">音乐播放器</a>
     </div>
   </section>
 
@@ -710,7 +721,6 @@
 
 
 </aside>
-
 
 
       </div>
