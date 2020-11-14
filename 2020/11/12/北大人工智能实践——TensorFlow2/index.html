@@ -16,9 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>如何利用ADB开发王者荣耀外挂 - 🛫起飞了</title>
+  <title>北大人工智能实践——TensorFlow2 - 🛫起飞了</title>
   
-    <meta name="keywords" content="ADB,Python,Java">
+    <meta name="keywords" content="人工智能">
   
 
   
@@ -399,7 +399,7 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">如何利用ADB开发王者荣耀外挂</div>
+  <div id="pjax-pageTitle">北大人工智能实践——TensorFlow2</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -440,8 +440,8 @@
       
       
         <h1 class="title">
-          <a href="/2020/10/24/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8ADB%E5%BC%80%E5%8F%91%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E5%A4%96%E6%8C%82/">
-            如何利用ADB开发王者荣耀外挂
+          <a href="/2020/11/12/%E5%8C%97%E5%A4%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94TensorFlow2/">
+            北大人工智能实践——TensorFlow2
           </a>
         </h1>
       
@@ -463,7 +463,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/">安卓编程</a>
+      <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
     </a>
   </div>
 
@@ -474,7 +474,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年10月24日</p>
+    <p>发布于：2020年11月12日</p>
   </a>
 </div>
 
@@ -485,7 +485,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="如何利用ADB开发王者荣耀外挂" data-path="/2020/10/24/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8ADB%E5%BC%80%E5%8F%91%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E5%A4%96%E6%8C%82/">
+      <div id="lc-pv" data-title="北大人工智能实践——TensorFlow2" data-path="/2020/11/12/%E5%8C%97%E5%A4%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94TensorFlow2/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -504,104 +504,278 @@
   <div class="article-entry" itemprop="articleBody">
     
     
-    <h1 id="1：思路"><a href="#1：思路" class="headerlink" title="1：思路"></a>1：思路</h1><p>ADB全称安卓设备调试工具，是谷歌官方提供帮助安卓开发者调试自身应用的一个轻量级工具包，总大小只有几兆。通过shell指令可以实现对安装了安卓系统的手机进行控制，包括开关机，开关应用程序，控制屏幕、音量、相机等操作。利用ADB控制屏幕的功能，可以通过程序来实现快速换装、婉儿一键上天等操作。由于ADB是一种模拟人在屏幕上操作的工具，不会修改王者荣耀的内部文件，也不用root手机，所有是不会被王者荣耀检测到，也不会被封号。只需要简单配置让安装了ADB的电脑连接手机，即可实现程序控制王者角色。因为ADB支持通过TCP/IP协议，可以让电脑脱离数据线远程调试手机。</p>
-<p><strong>那么这个外挂完整的工作过程是什么样的呢？</strong></p>
+    <h1 id="1：人工智能三学派"><a href="#1：人工智能三学派" class="headerlink" title="1：人工智能三学派"></a>1：人工智能三学派</h1><ul>
+<li>准备数据</li>
+<li>搭建网络</li>
+<li>优化参数</li>
+<li>应用网络</li>
+</ul>
+<h1 id="2：神经网络设计过程"><a href="#2：神经网络设计过程" class="headerlink" title="2：神经网络设计过程"></a>2：神经网络设计过程</h1><p>鸢尾花的分类：</p>
+<p>通过测量花萼长、花萼宽。</p>
+<p>if语句case语句——<strong>专家系统</strong>把专家的经验告知计算机，计算机执行逻辑判断。给出分类</p>
+<p>神经网络：采集大量数据对构成数据集。</p>
+<h1 id="3：张量生成"><a href="#3：张量生成" class="headerlink" title="3：张量生成"></a>3：张量生成</h1><p>张量（Tensor）：多维数组（列表）    阶：张量的维数</p>
+<table>
+<thead>
+<tr>
+<th>阶</th>
+<th>名字</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>标量</td>
+<td>S=1 2 3</td>
+</tr>
+<tr>
+<td>1</td>
+<td>向量</td>
+<td>v=[1,2,3]</td>
+</tr>
+<tr>
+<td>2</td>
+<td>矩阵</td>
+<td></td>
+</tr>
+<tr>
+<td>n</td>
+<td>张量</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>创建张量</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = tf.constan(张量内容,dtype = 数据类型)</span><br><span class="line">print(a)</span><br><span class="line">print(a.dtype)</span><br><span class="line">print(a.shape)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tf.zeros(维度)</span><br><span class="line">tf.ones(维度)</span><br><span class="line">tf.fill(维度，指定值)</span><br><span class="line">c = tf.fill([<span class="number">2</span>,<span class="number">2</span>],<span class="number">9</span>)	//两行两列</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tf.random.normal(维度,mean=均值,stddev=标准差)</span><br><span class="line">tf.random.truncated_normal(维度，mean=均值,stddev=标准差)</span><br><span class="line">tf.random.uniform(维度,minval=最小值,maxval=最大值)</span><br></pre></td></tr></table></figure>
+
+<h1 id="4：常用函数"><a href="#4：常用函数" class="headerlink" title="4：常用函数"></a>4：常用函数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tf.cast(张量名,dtype&#x3D;数据类型)	&#x2F;&#x2F;强制转换数据类型</span><br><span class="line">tf.reduce_min()	&#x2F;&#x2F;计算最大值</span><br><span class="line">tf.reduce_max()</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tf.reduce_mean(张量名,axis=操作轴)	//计算张量延指定维度平均值</span><br><span class="line">tf.reduce_sum(张量名,axis=操作轴)	//计算沿指定维度的和</span><br></pre></td></tr></table></figure>
+
+<p>未指定操作轴，则为对全部数进行操作</p>
+<p>变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.Variable(初始值)</span><br></pre></td></tr></table></figure>
+
+<p>数学运算</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tf.add()</span><br><span class="line">tf.subtract()</span><br><span class="line">tf.multiply()</span><br><span class="line">tf.divide()</span><br><span class="line">&#x2F;&#x2F;只有维度相同才能进行四则运算</span><br><span class="line">tf.square(张量名)	平方</span><br><span class="line">tf.pow()	&#x2F;&#x2F;n次方</span><br><span class="line">tf.sqrt()	&#x2F;&#x2F;开方</span><br></pre></td></tr></table></figure>
+
+<p>矩阵乘</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.matmul(矩阵<span class="number">1</span>，矩阵<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<p>特征和标签对应：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">features &#x3D; tf.constant([12,23,10,14])</span><br><span class="line">labels &#x3D; tf.constant([0,1,1,0])</span><br><span class="line">dataset &#x3D; tf.data.Dataset.from_tensor_slices((features,labels))</span><br></pre></td></tr></table></figure>
+
+<p>计算梯度</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.GradientTape() <span class="keyword">as</span> tape:</span><br><span class="line">	w = tf.Variable(tf.constant(<span class="number">3.0</span>))</span><br><span class="line">	loss = tf.pow(w,<span class="number">2</span>)</span><br><span class="line">grad = tape.gradient(loss,w)</span><br></pre></td></tr></table></figure>
+
+<p><strong>enumerate</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">seq = [<span class="string">&#x27;one&#x27;</span>,<span class="string">&#x27;two&#x27;</span>,<span class="string">&#x27;three&#x27;</span>]</span><br><span class="line"><span class="keyword">for</span> i,element <span class="keyword">in</span> enumerate(seq):</span><br><span class="line">	print(i,element)</span><br></pre></td></tr></table></figure>
+
+<p>独热编码：</p>
+<p>标记类别：1表示是，0表示否</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.one_hot(待转换数据，depth&#x3D;几分类)</span><br></pre></td></tr></table></figure>
+
+<p>输出符合概率分布：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tf.nn.softmax(x)</span><br><span class="line"></span><br><span class="line">y = tf.constant([<span class="number">1.01</span>,<span class="number">2.01</span>,<span class="number">-0.66</span>])</span><br><span class="line">y_pro = tf.nn.softmax(y)</span><br></pre></td></tr></table></figure>
+
+<p>参数自更新：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">w &#x3D; tf.Variable(4)</span><br><span class="line">w.assign_sub(1)	&#x2F;&#x2F;w-&#x3D;1</span><br><span class="line">print(w)</span><br></pre></td></tr></table></figure>
+
+<p>返回最大值索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.argmax(张量名，axis&#x3D;操作轴)</span><br></pre></td></tr></table></figure>
+
+<p>条件语句：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.where(条件语句,真返回A,假返回B)</span><br></pre></td></tr></table></figure>
+
+<p>返回[0,1)之间的随机数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.random.RandomState.rand(维度)</span><br></pre></td></tr></table></figure>
+
+<p>将两个数组按垂直方向叠加（一维—&gt;二维）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.vstack(数组<span class="number">1</span>，数组<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x,y = np.mgrid[<span class="number">1</span>:<span class="number">3</span>:<span class="number">1</span>,<span class="number">2</span>:<span class="number">4</span>:<span class="number">0.5</span>]	//x=[[<span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span>]</span><br><span class="line">                                     [<span class="number">2</span> <span class="number">2</span> <span class="number">2</span> <span class="number">2</span>]]</span><br><span class="line">									y=[[<span class="number">2</span> <span class="number">2.5</span> <span class="number">3</span> <span class="number">3.5</span>]</span><br><span class="line">                                       [<span class="number">2</span> <span class="number">2.5</span> <span class="number">3</span> <span class="number">3.5</span>]] </span><br><span class="line">gird = np.c_[x.ravel(),y.ravel()]	//ravel()降维到一维，np.c_[数组<span class="number">1</span>，数组<span class="number">2</span>]配对。</span><br></pre></td></tr></table></figure>
+
+<h1 id="5：神经网络-NN-复杂度"><a href="#5：神经网络-NN-复杂度" class="headerlink" title="5：神经网络(NN)复杂度"></a>5：神经网络(NN)复杂度</h1><p>NN复杂度：多用NN层数和NN参数的个数表示。</p>
+<ul>
+<li>空间复杂度</li>
+<li>时间复杂度</li>
+</ul>
+<p>学习率:<br>$$<br>w_{t+1} = w_t+lr<em>gradient<br>$$<br>指数衰减学习率:<br>$$<br>指数衰减学习率=初始学习率</em>学习率衰减率^{当前轮数/多少轮衰减一次}<br>\\epoch= 40<br>\\LR_BASE= 0.2<br>\\LR_DECAY= 0.99<br>\\LR_STEP=1<br>$$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> range(epoch):</span><br><span class="line">    lr = LR_BASE*LR_DECAY**(epoch/LR_STEP)</span><br><span class="line">    <span class="keyword">with</span> tf.GradientTape() <span class="keyword">as</span> tape:</span><br><span class="line">        loss = tf.square(w+<span class="number">1</span>)</span><br><span class="line">    grads = tape.gradient(loss,w)</span><br><span class="line">    w.assign_sub(lr*grads)</span><br></pre></td></tr></table></figure>
+
+<h1 id="6：激活函数"><a href="#6：激活函数" class="headerlink" title="6：激活函数"></a>6：激活函数</h1><p>$$<br>y = f(wx+b)<br>$$</p>
+<ul>
+<li>Sigmoid函数</li>
+</ul>
+<p>$$<br>f(x)=\frac{1}{1+e^{-x}}<br>$$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.nn.sigmoid(x)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>易造成梯度消失</p>
+<p>输出非0均值，收敛慢</p>
+<p>幂运算复杂，训练时间长</p>
+</blockquote>
+<ul>
+<li>Tanh函数</li>
+</ul>
+<p>$$<br>f(x) = \frac{1-e^{-2x}}{1+e^{-2x}}<br>$$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.math.tanh(x)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Relu函数</li>
+</ul>
+<p>$$<br>\begin{align}<br>f(x)=&amp; max(x,0)<br>\\=&amp; \begin{cases}<br>0\qquad x&lt;0\<br>x\qquad x&gt;=0<br>\end{cases}<br>\end{align}<br>$$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.nn.relu(x)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Leaky Relu函数</li>
+</ul>
+<p>$$<br>f(x)=max(ax,x)<br>$$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.nn.leaky_relu(x)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>初学者：</p>
+<ul>
+<li>首选Relu函数</li>
+<li>学习率设置较小值</li>
+<li>输入特征标准化，让输入特征满足以0为均值，1为标准差的正态分布</li>
+<li>初始参数中心化，让随机生成的参数满足以0为均值，sqrt(2/当前层输入特征个数)为标准差的正态分布</li>
+</ul>
+</blockquote>
+<h1 id="7：损失函数"><a href="#7：损失函数" class="headerlink" title="7：损失函数"></a>7：损失函数</h1><p>loss：预测值(y)与已知答案(y_)的差距</p>
+<ul>
+<li>均方误差mse：</li>
+</ul>
+<p>$$<br>MSE(y_,y)=\frac{\sum^n_{i=1}(y-y_)^2}{n}<br>$$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loss_mse = tf.reduce_mean(tf.square(y-y_))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自定义损失函数</li>
+</ul>
+<p>y_:标准答案</p>
+<p>y:预测答案<br>$$<br>f(y_,y)=\begin{cases}<br>PROFIT*(y_-y)\quad y&lt;y_ \ 预测的y少了，损失利润<br>\COST*(y-y_)\quad y&gt;=y_ \ 预测的y多了，损失成本<br>\end{cases}<br>$$</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loss_diy = tf.reduce_sum(tf.where(tf.greater(y,y_),COST(y-y_),PROFIT(y_-y)))	//y&gt;y_?,为真COST，为假PROFIT</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>交叉熵损失函数CE：表征两个概率分布之间的距离</li>
+</ul>
+<p>$$<br>H(y_,y)=-\sum y_*lny<br>$$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.losses.categorical_crossentropy(y_,y)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>softmax和交叉熵结合</li>
+</ul>
+<p>softmax计算概率分布</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.nn.softmax_cross_entropy_with_logits(y_,y)</span><br></pre></td></tr></table></figure>
+
+<h1 id="8：缓解过拟合"><a href="#8：缓解过拟合" class="headerlink" title="8：缓解过拟合"></a>8：缓解过拟合</h1><ul>
+<li>正则化缓解过拟合</li>
+</ul>
+<p>正则化在损失函数中引入模型复杂度指标，利用给W加权值，弱化训练数据的噪声。</p>
+<p>$$<br>loss=loss(y与y_)+REGULARIZER*losss(w)<br>$$</p>
+<p>L2正则化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">with tf.GradientTape() as tape:</span><br><span class="line">	h1 &#x3D; tf.matmul(x_train,w1)+b1</span><br><span class="line">	h1 &#x3D; tf.nn.relu(h1)</span><br><span class="line">	y &#x3D; tf.matmul(h1,w2) + b2</span><br><span class="line">	loss_mse &#x3D; tf.reduce_mean(tf.square(y_train - y))</span><br><span class="line">	loss_regularization &#x3D; []</span><br><span class="line">	loss_regularization.append(tf.nn.l2_loss(w1))</span><br><span class="line">	loss_regularization.append(tf.nn.l2_loss(w2))</span><br><span class="line">	loss_regularization &#x3D; tf.reduce_sum(loss_regularization)</span><br><span class="line">	loss &#x3D; loss_mse + 0.03*loss_regularization</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<h1 id="9：优化器"><a href="#9：优化器" class="headerlink" title="9：优化器"></a>9：优化器</h1><p>$m_t$：一阶动量(与梯度相关的函数)    $V_t$：二阶动量(与梯度平方相关的函数)</p>
+<p>下降梯度$\eta_t=lr*m_t/\sqrt{V_t}$</p>
+<p>更新参数$w_{t+1}=w_t-\eta_t$</p>
+<blockquote>
+<p>不同的优化器，只是定义了不同的动量函数</p>
+</blockquote>
+<ul>
+<li>SGD，梯度下降法</li>
+</ul>
+<p>$m_t=g_t$   $V_t=1$</p>
+<p>$w_{t+1}=w_t-lr*g_t$</p>
+<ul>
+<li>SGDM，SGD基础上增加了一阶动量</li>
+</ul>
+<p>$m_t=\beta*m_{t-1}+(1-\beta)*g_t$</p>
+<p>$V_t=1$</p>
+<ul>
+<li>Adagrad，在SGD基础上增加二阶动量</li>
+</ul>
+<p>$m_t=g_t$ </p>
+<p>$V_t=\sum^t_{\tau=1}g^2_\tau$</p>
+<ul>
+<li>RMSProp，SGD基础上增加二阶动量</li>
+</ul>
+<p>$m_t=g_t$  </p>
+<p>$V_t=\beta*V_{t-1}+(1-\beta)*g^2_t$</p>
+<ul>
+<li>Adam，同时结合SGDM一阶动量和RMSProp二阶动量</li>
+</ul>
+<p>$m_t=\beta*m_{t-1}+(1-\beta)*g_t$</p>
+<p>修正一阶动量的偏差：$\hat{m_t}=\frac{m_t}{1-\beta^t_1}$</p>
+<p>$V_t=\beta*V_{t-1}+(1-\beta)*g^2_t$</p>
+<p>修正二阶动量的偏差：$\hat{V_t}=\frac{V_t}{1-\beta^t_2}$</p>
+<h1 id="10：搭建八股网络-Sequential"><a href="#10：搭建八股网络-Sequential" class="headerlink" title="10：搭建八股网络-Sequential"></a>10：搭建八股网络-Sequential</h1><p>tf.keras搭建网络八股</p>
+<p>六步法：</p>
 <ol>
-<li><p>在电脑上安装ADB工具，并将其目录放到系统环境或用户环境变量中。开启手机的USB调试功能，通过ADB远程调试功能连接手机。</p>
-</li>
-<li><p>编写一个安卓应用程序，程序使用安卓的悬浮窗功能。在王者荣耀面板上层悬浮一个按钮。点击按钮，发送一个http的get请求。</p>
-</li>
-<li><p>在安装了ADB的电脑上安装一个http服务器用于接收悬浮按钮发送的get请求。简单的http服务器是基于python内自带的http server。</p>
-</li>
-<li><p>http服务器接收到请求后，执行已经写好的ADB指令，控制手机，实现婉儿一键上天。</p>
-</li>
+<li>import</li>
+<li>train,test</li>
+<li>model = tf.keras.models.Sequential</li>
+<li>model.compile</li>
+<li>model.fit</li>
+<li>model.summary</li>
 </ol>
-<p>看看使用效果吧！</p>
-<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
-    <iframe src="//player.bilibili.com/player.html?aid=415048053&bvid=BV18V411y7rw&cid=249226194&page=1&high_quality=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;">
-    </iframe>
-</div>
-
-<h1 id="2：ADB工具及调试手机"><a href="#2：ADB工具及调试手机" class="headerlink" title="2：ADB工具及调试手机"></a>2：ADB工具及调试手机</h1><h2 id="2-1-下载ADB"><a href="#2-1-下载ADB" class="headerlink" title="2.1 下载ADB"></a>2.1 下载ADB</h2><p>在网上下载ADB工具包：<a target="_blank" rel="noopener" href="https://developer.android.com/studio/releases/platform-tools">下载地址</a>（需要连接外网）</p>
-<p>解压后，获得一个名为<code>platform-tools</code>的工具包，包内含有<code>adb.exe</code>程序，即为安卓调试工具。</p>
-<h2 id="2-2-设置环境"><a href="#2-2-设置环境" class="headerlink" title="2.2 设置环境"></a>2.2 设置环境</h2><p>在windows中搜索<code>huanjing</code>打开环境变量面板。</p>
-<p><img src="https://i.loli.net/2020/10/24/RqTVla3Mpu89tnP.png" class="lazyload" data-srcset="https://i.loli.net/2020/10/24/RqTVla3Mpu89tnP.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p>依次点击<code>环境变量</code>，点击系统变量下的名为<code>Path</code>的一行，点击<code>编辑</code>.</p>
-<p><img src="https://i.loli.net/2020/10/24/NoKyh4bwWqzMSFj.png" class="lazyload" data-srcset="https://i.loli.net/2020/10/24/NoKyh4bwWqzMSFj.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p>点击新建，将<code>platform-tools</code>文件夹的完整路径添加到变量中，例：我的工具包存放在<code>C:\Users\9752\.AndroidStudio3.5\platform-tools</code></p>
-<p>点击<code>确认</code>，然后关闭此窗口。</p>
-<p>在windows中搜索<code>cmd</code>，打开终端窗口，输入<code>adb</code>回车。</p>
-<p><img src="https://i.loli.net/2020/10/24/ortdFpacx3NUZqK.png" class="lazyload" data-srcset="https://i.loli.net/2020/10/24/ortdFpacx3NUZqK.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p>出现上文，则配置成功。</p>
-<h2 id="2-3-连接手机"><a href="#2-3-连接手机" class="headerlink" title="2.3 连接手机"></a>2.3 连接手机</h2><p><strong>打开手机开发者模式</strong></p>
-<p>通常是手机设置中，找到版本信息或者内核信息，然后点击七下，在设置中就会出现开发者模式了。具体方法可以自行谷歌。</p>
-<p>打开开发者模式的<code>USB调试</code></p>
-<p>通过<strong>原装</strong>数据线连接电脑，<strong>有的非原装数据线只能充电不能传输数据</strong>。</p>
-<p>连接电脑后，需要在手机上允许此电脑调试，最好一律允许此电脑调试。</p>
-<p>在终端中输入<code>adb devices</code>查看是否连接上了手机。</p>
-<h2 id="2-4-开启远程调试"><a href="#2-4-开启远程调试" class="headerlink" title="2.4 开启远程调试"></a>2.4 开启远程调试</h2><blockquote>
-<p>也可不用远程，直接使用数据线也是可以的。</p>
-</blockquote>
-<p>让手机和电脑处在相同的WiFi下</p>
-<p>电脑通过数据线连接手机后，终端输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb tcpip 5555</span><br></pre></td></tr></table></figure>
-
-<p>拔掉数据线。在WiFi设置里，查看手机的局域网ip地址，通常是<code>192.168.xxx.xxx</code>，或者<code>10.xxx.xxx.xxx</code></p>
-<p>修改为你的手机ip地址，连接手机：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb connect 192.168.xxx.xxx:5555</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-5-主要用到的ADB指令"><a href="#2-5-主要用到的ADB指令" class="headerlink" title="2.5 主要用到的ADB指令"></a>2.5 主要用到的ADB指令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 模拟点击，屏幕上横坐标纵坐标分别为100 120的位置</span><br><span class="line">// 要查看具体坐标值，可以打开开发者选项-&gt;指针位置</span><br><span class="line">adb shell input tap 100 120</span><br><span class="line"></span><br><span class="line">// 模拟滑动，从位置（0,1000）滑动到(800,600)</span><br><span class="line">adb shell input swipe 0 1000 800 600</span><br><span class="line"></span><br><span class="line">// 模拟长按，在位置（100,200）长按500毫秒</span><br><span class="line">adb shell input swipe 100 200 100 200 500// 开启adb服务</span><br></pre></td></tr></table></figure>
-
-<p>其中位置信息，需要在手机上获取。</p>
-<p>在<strong>开发者模式</strong>中打开<strong>显示指针</strong></p>
-<p>通过按住屏幕，就能实时显示按压住的位置的x轴和y轴信息。</p>
-<p>此时已经可以尝试用ADB指令控制屏幕了。</p>
-<h2 id="2-6-控制婉儿上天"><a href="#2-6-控制婉儿上天" class="headerlink" title="2.6 控制婉儿上天"></a>2.6 控制婉儿上天</h2><p>不同的手机，需要自己寻找合适的坐标点来实现婉儿的技能释放。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">向前移动：abd shell input swipe 450 1105 544 983 600</span><br><span class="line">向后移动：adb shell input swipe 450 1105 217 1400 800</span><br><span class="line">普工：adb shell input tap 2726 1226</span><br><span class="line">一技能：adb shell input swipe 2290 1267 2748 790 100</span><br><span class="line">二技能：adb shell input swipe 2451 1010 2793 670 100</span><br><span class="line">三技能：adb shell input swipe 2721 860 2721 860 200</span><br><span class="line"></span><br><span class="line">向前直线上天：adb shell &quot;input swipe 2451 1010 2793 670 100&amp;&amp;input swipe 2721 860 2721 860 200&amp;&amp;input swipe 450 1105 544 983 600&amp;&amp;input tap 2726 1226&amp;&amp;input swipe 2290 1267 2748 790 100&amp;&amp;input swipe 450 1105 743 781 1000&quot;</span><br><span class="line">原地上天：adb shell &quot;input swipe 2451 1010 2793 670 100&amp;&amp;input swipe 2721 860 2721 860 200&amp;&amp;input swipe 450 1105 544 983 600&amp;&amp;input tap 2726 1226&amp;&amp;input swipe 2290 1267 2100 1376 100&amp;&amp;input swipe 450 1105 217 1400 800&amp;&amp;input swipe 450 1105 777 1150 500&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-7-一键换装"><a href="#2-7-一键换装" class="headerlink" title="2.7 一键换装"></a>2.7 一键换装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">打开商店： adb shell input tap 2873 102</span><br><span class="line">装备： adb shell input tap 2173 1278</span><br><span class="line">出售： adb shell input tap 2525 1153</span><br><span class="line">关闭商店： adb shell input tap 2624 167</span><br><span class="line">购买预选：adb shell input tap 2832 243</span><br><span class="line">完整操作链：adb shell &quot;input tap 2873 102&amp;&amp;input tap 2173 1278&amp;&amp;input tap 2525 1153&amp;&amp;input tap 2624 167&amp;&amp;input tap 2832 243&quot;</span><br></pre></td></tr></table></figure>
-
-<h1 id="3：搭建http服务器"><a href="#3：搭建http服务器" class="headerlink" title="3：搭建http服务器"></a>3：搭建http服务器</h1><p>在电脑上安装好python环境。</p>
-<p>新建一个<code>takeoff.py</code>文件。编辑文件：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> http.server <span class="keyword">import</span> BaseHTTPRequestHandler</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GetHandler</span>(<span class="params">BaseHTTPRequestHandler</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">do_GET</span>(<span class="params">self</span>):</span></span><br><span class="line">        parsed_path = parse.urlparse(self.path)</span><br><span class="line">        query = parse.parse_qs(parsed_path.query)</span><br><span class="line">        <span class="keyword">if</span> query[<span class="string">&#x27;skill&#x27;</span>][<span class="number">0</span>] == <span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">            os.system(<span class="string">&#x27;adb shell &quot;input swipe 2451 1010 2793 670 100&amp;&amp;input swipe 2721 860 2721 860 200&amp;&amp;input swipe 450 1105 544 983 600&amp;&amp;input tap 2726 1226&amp;&amp;input swipe 2290 1267 2748 790 100&amp;&amp;input swipe 450 1105 743 781 1000&quot;&#x27;</span>)</span><br><span class="line">            message = <span class="string">&#x27;执行直线起飞指令&#x27;</span></span><br><span class="line">        <span class="keyword">elif</span> query[<span class="string">&#x27;skill&#x27;</span>][<span class="number">0</span>] == <span class="string">&#x27;2&#x27;</span>:</span><br><span class="line">            os.system(<span class="string">&#x27;adb shell &quot;input swipe 2451 1010 2793 670 100&amp;&amp;input swipe 2721 860 2721 860 200&amp;&amp;input swipe 450 1105 544 983 600&amp;&amp;input tap 2726 1226&amp;&amp;input swipe 2290 1267 2100 1376 100&amp;&amp;input swipe 450 1105 217 1400 800&amp;&amp;input swipe 450 1105 777 1150 500&quot;&#x27;</span>)</span><br><span class="line">            message = <span class="string">&#x27;执行原地起飞指令&#x27;</span></span><br><span class="line">        <span class="keyword">elif</span> query[<span class="string">&#x27;skill&#x27;</span>][<span class="number">0</span>] == <span class="string">&#x27;3&#x27;</span>:</span><br><span class="line">            os.system(<span class="string">&#x27;adb shell &quot;input tap 2873 102&amp;&amp;input tap 2173 1278&amp;&amp;input tap 2525 1153&amp;&amp;input tap 2624 167&amp;&amp;input tap 2832 243&quot;&#x27;</span>)</span><br><span class="line">            message = <span class="string">&#x27;执行快速换装指令&#x27;</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            message = <span class="string">&#x27;无指令运行&#x27;</span></span><br><span class="line">        self.send_response(<span class="number">200</span>)</span><br><span class="line">        self.send_header(<span class="string">&#x27;Content-Type&#x27;</span>,</span><br><span class="line">                         <span class="string">&#x27;text/plain; charset=utf-8&#x27;</span>)</span><br><span class="line">        self.end_headers()</span><br><span class="line">        self.wfile.write(message.encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">from</span> http.server <span class="keyword">import</span> HTTPServer</span><br><span class="line">    server = HTTPServer((<span class="string">&#x27;0.0.0.0&#x27;</span>, <span class="number">9797</span>), GetHandler)</span><br><span class="line">    print(<span class="string">&#x27;服务器启动成功, 使用&lt;Ctrl-C&gt; 来停止。。&#x27;</span>)</span><br><span class="line">    server.serve_forever()</span><br></pre></td></tr></table></figure>
-
-<p>需要将<code>os.system()</code>中的<strong>内容替换为自己</strong>的。</p>
+<ul>
+<li>Sequential，描述各层网络</li>
+</ul>
+<p>拉直层：tf.keras.layers.Flatten()</p>
+<p>全连接层：tf.keras.layers.Dense(神经元个数,activation=”激活函数”,kernel_regularizer=哪种正则化)</p>
 <blockquote>
-<p>修改上面的程序很重要，因为不同分辨率手机，需要的adb指令是不一样的，如果不修改，基本上不可能会实现理想的操作，除非你跟我用的相同的手机，三星S10+。</p>
+<p>activation：relu、softmax、sigmoid、tanh</p>
+<p>kernel_regularizer：tf.keras.regularizers.l1()、tf.keras.regularizers.l2()</p>
 </blockquote>
-<p>通过python运行这个文件就已经建立好了http服务器。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python3 filepath/takeoff.py</span><br><span class="line"><span class="meta">#</span><span class="bash">filepath修改为takeoff.py的路径。比如C:/Users/999/Desktop/takeoff.py</span></span><br><span class="line"><span class="meta">#</span><span class="bash">显示，服务器启动成功, 使用&lt;Ctrl-C&gt; 来停止。。则启动成功</span></span><br></pre></td></tr></table></figure>
+<p>卷积层：tf.keras.layers.Conv2D(filters = 卷积核个数,kernel_size = 卷积核尺寸,strides = 卷积步长,padding = “valid”or”same”)</p>
+<p>LSTM层：tf.keras.layers.LSTM()</p>
+<ul>
+<li>Compile</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.compile(optimizer = 优化器,loss=损失函数,metrics=[<span class="string">&quot;准确率&quot;</span>])</span><br></pre></td></tr></table></figure>
 
-<p>查看电脑的局域网ip地址，终端输入</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipconfig</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Fit</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.fit(训练集的输入特征，训练集的标签，bathc_size&#x3D;,epochs&#x3D;,validation_data&#x3D;(测试集的输入特征，测试集的标签)，validation_split&#x3D;从训练集划分多少比例给测试集，validation_freq&#x3D;多少次epoch测试一次)</span><br></pre></td></tr></table></figure>
 
-<p>通常是<code>192.168.xxx.xxx</code>，或者<code>10.xxx.xxx.xxx</code></p>
-<p>在电脑浏览器中，访问：<code>192.168.xxx.xxx:9797/?skill=1</code>就能实现直线上天了。skill =2和skill=3分别对应原地上天和一键换装。</p>
-<p>此时，如果在手机浏览器上访问<code>192.168.xxx.xxx:9797/?skill=1</code>，应该是访问不通的，因为windows自带的防火墙，是不允许局域网下的其他设备访问未开放的端口的。你需要<strong>关闭局域网防火墙</strong>。</p>
-<blockquote>
-<p>关闭防火墙是存在一定风险的，如果你用的公共场所的WiFi，我建议不要关闭。如果是家庭WiFi，记得在使用完后再次开启防火墙。</p>
-</blockquote>
-<p>windows搜索<code>fanghuoqiang</code>注意不要用汉字搜索，用拼音。打开<strong>防火墙和网络保护</strong></p>
-<p>如果是家庭WiFi，则点击专用网络。</p>
-<p><img src="https://i.loli.net/2020/10/24/wJDbeTHg36ntWzm.png" class="lazyload" data-srcset="https://i.loli.net/2020/10/24/wJDbeTHg36ntWzm.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p>将防火墙<strong>关闭</strong>。</p>
-<p>此时在手机浏览器上也能访问到http服务器了。</p>
-<h1 id="4：王者局内悬浮按钮"><a href="#4：王者局内悬浮按钮" class="headerlink" title="4：王者局内悬浮按钮"></a>4：王者局内悬浮按钮</h1><p>新建一个安卓项目，开发一个悬浮按钮，在王者内点击按钮，就能给http服务器发送请求，然后服务器通过adb再返过来控制局内角色。</p>
-<p>开发新项目，我直接选择站在巨人肩膀上。<a target="_blank" rel="noopener" href="https://github.com/dongzhong/TestForFloatingWindow">https://github.com/dongzhong/TestForFloatingWindow</a> 直接对这个仓库里提供的悬浮窗功能进行修改。。关键程序如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//FloatingButtonService2.java</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">showFloatingWindow</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Settings.canDrawOverlays(<span class="keyword">this</span>)) &#123;</span><br><span class="line">            button2 = <span class="keyword">new</span> Button(getApplicationContext());</span><br><span class="line">            button2.setText(<span class="string">&quot;装&quot;</span>);<span class="comment">//按键上的字，表示按下这个按钮一键换装</span></span><br><span class="line">            button2.setBackgroundColor(Color.argb(<span class="number">120</span>,<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>));</span><br><span class="line">            windowManager.addView(button2, layoutParams);</span><br><span class="line">            button2.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">                    send();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            button2.setOnTouchListener(<span class="keyword">new</span> FloatingOnTouchListener());</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//开启线程，发送get请求</span></span><br><span class="line">        <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                <span class="comment">//value对应http服务器接收的技能</span></span><br><span class="line">                <span class="comment">//在http服务器中，设置的，skill=1，直线上天，skill=2，原地上天，skill=3，换装</span></span><br><span class="line">                <span class="keyword">char</span> value = <span class="string">&#x27;3&#x27;</span>;</span><br><span class="line">                <span class="comment">//这里修改为http服务器地址。</span></span><br><span class="line">                String path = <span class="string">&quot;http://192.168.0.109:9797/?skill=&quot;</span>+value;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    URL url = <span class="keyword">new</span> URL(path);</span><br><span class="line">                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();</span><br><span class="line">                    conn.setRequestMethod(<span class="string">&quot;GET&quot;</span>);</span><br><span class="line">                    InputStream in = conn.getInputStream();</span><br><span class="line">                    conn.disconnect();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (MalformedURLException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;).start();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Summary</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
 
-<p>这只是其中一个一键换装的按钮，另外还需要修改一键上天的按钮。在<code>FloatingButtonService.java</code>中，两个程序，都相似。。修改完后，直接编译，就可以使用了。</p>
-<p>完整的项目地址：<a target="_blank" rel="noopener" href="https://github.com/xieqifei/Expandskill">https://github.com/xieqifei/Expandskill</a></p>
-<p>安卓项目，可以直接通过git克隆</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/xieqifei/Expandskill.git</span><br></pre></td></tr></table></figure>
+<h1 id="11：搭建网络八股-class"><a href="#11：搭建网络八股-class" class="headerlink" title="11：搭建网络八股-class"></a>11：搭建网络八股-class</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyModel</span>(<span class="params">Model</span>):</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">		super(MyModel,self).__init__()</span><br><span class="line">        定义网络结构块</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">call</span>(<span class="params">self,x</span>):</span></span><br><span class="line">        调用网络结构块，实现前向传播</span><br><span class="line">        reutrn y</span><br><span class="line">        </span><br><span class="line"> model = MyModel()</span><br></pre></td></tr></table></figure>
 
-<p>修改程序后，直接编译即可。</p>
-<h1 id="5：参考资料"><a href="#5：参考资料" class="headerlink" title="5：参考资料"></a>5：参考资料</h1><p>《<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/85066854c9e6">android adb常用命令收集</a>》</p>
-<p>《<a target="_blank" rel="noopener" href="https://blog.csdn.net/u012785382/article/details/79171782">Android adb远程调试</a>》</p>
-<p>《<a target="_blank" rel="noopener" href="https://learnku.com/docs/pymotw/httpserver-base-classes-for-implementing-web-servers/3436">http.server — 实现 Web 服务器的基础类</a>》</p>
-<p>《<a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/android-tutorial-httpurlconnection.html">Android HTTP请求方式:HttpURLConnection</a>》</p>
-<p>《<a target="_blank" rel="noopener" href="https://blog.csdn.net/dongzhong1990/article/details/80512706">Android悬浮窗的实现</a>》</p>
+<h1 id="12：MNIST数据集"><a href="#12：MNIST数据集" class="headerlink" title="12：MNIST数据集"></a>12：MNIST数据集</h1><p>提供6万张28*28像素点的0-9手写数字图片和标签，用于训练</p>
+<p>1万张28*28像素点的0-9手写数组图片和标签，用于测试</p>
+<ul>
+<li>导入MNIST数据集</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mnist &#x3D; tf.keras.datasets.mnist</span><br><span class="line">(x_train,y_train),(x_test,y_test)&#x3D;mnist.load_data()</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>作为输入特征，将数据拉伸为一维数组</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tf.keras.layers.Flatten()</span><br></pre></td></tr></table></figure>
+
+<h1 id="13：Fasion-MNIST数据集"><a href="#13：Fasion-MNIST数据集" class="headerlink" title="13：Fasion_MNIST数据集"></a>13：Fasion_MNIST数据集</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">fasion = tf.keras.datasets.fashion_mnist</span><br><span class="line">(x_train, y_train),(x_test,y_test) = fasion.load_data()</span><br><span class="line">x_train,x_test = x_train/<span class="number">255.0</span>,x_test/<span class="number">255.0</span></span><br><span class="line"></span><br><span class="line">model = tf.keras.models.Sequential([</span><br><span class="line">    tf.keras.layers.Flatten(),</span><br><span class="line">    tf.keras.layers.Dense(<span class="number">128</span>,activation=<span class="string">&#x27;relu&#x27;</span>),</span><br><span class="line">    tf.keras.layers.Dense(<span class="number">10</span>,activation = <span class="string">&#x27;softmax&#x27;</span>)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">model.compile(optimizer=<span class="string">&quot;adam&quot;</span>,loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=<span class="literal">False</span>),metrics=[<span class="string">&#x27;sparse_categorical_accuracy&#x27;</span>])</span><br><span class="line">model.fit(x_train,y_train,batch_size = <span class="number">32</span>,epochs=<span class="number">5</span>,validation_data=(x_test,y_test),validation_freq = <span class="number">1</span>)</span><br><span class="line">model.summary()</span><br></pre></td></tr></table></figure>
+
+<h1 id="14：自制数据集"><a href="#14：自制数据集" class="headerlink" title="14：自制数据集"></a>14：自制数据集</h1><p><img src="https://i.loli.net/2020/11/15/47flBkU6oI5KuGM.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/47flBkU6oI5KuGM.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>在<code>mnist_image_label</code>文件夹下有两个文件夹<code>mnist_train_jpg_60000</code>和<code>mnist_test_jpg_10000</code></p>
+<p>每个文件夹分别放了对应个数的图片以及一个.txt文件，文件内容如上，jpg名+空格+标签</p>
+<p>现在需要重写<code>(x_train,y_train),(x_test,y_test)=mnist.load_data()</code>中的load_data()方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generateds</span>(<span class="params">path,txt</span>):</span></span><br><span class="line">    f = open(txt,<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">    contents = f.readlines()</span><br><span class="line">    f.close()</span><br><span class="line">    x,y_ = [],[]</span><br><span class="line">    <span class="keyword">for</span> content <span class="keyword">in</span> contents:</span><br><span class="line">        value = content.split()</span><br><span class="line">        img_path = path+value[<span class="number">0</span>]</span><br><span class="line">        img = Image.open(img_path)</span><br><span class="line">        img = np.array(img.convert(<span class="string">&#x27;L&#x27;</span>))</span><br><span class="line">        img = img/<span class="number">255.</span></span><br><span class="line">        x.append(img)</span><br><span class="line">        y_.append(value[<span class="number">1</span>])</span><br><span class="line">        print(<span class="string">&#x27;loading:&#x27;</span>+content)</span><br><span class="line">    x = np.array(x)</span><br><span class="line">    y_ = np.array(y_)</span><br><span class="line">    y_ = y_.astype(np.int64)</span><br><span class="line">    <span class="keyword">return</span> x,y_</span><br></pre></td></tr></table></figure>
+
+<p>保存数据集</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.save(保存路径带拓展,保存的内容)</span><br></pre></td></tr></table></figure>
+
+<h1 id="15：数据增强"><a href="#15：数据增强" class="headerlink" title="15：数据增强"></a>15：数据增强</h1>
     
       
       <div class='footer'>
@@ -613,7 +787,7 @@
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="\2020\09\21\ADB参考指令\" title="ADB参考指令" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">ADB参考指令</span></a><a class="item" href="\2020\07\22\Python基础\" title="Python基础" rel="bookmark "><img src="https://i.loli.net/2020/07/22/57QSZPcBOEqXw2m.png" class="lazyload" data-srcset="https://i.loli.net/2020/07/22/57QSZPcBOEqXw2m.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Python基础</span></a><a class="item" href="\2020\09\10\利用树莓派-内网穿透搭建网站服务器\" title="利用树莓派+内网穿透搭建网站服务器" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">利用树莓派+内网穿透搭建网站服务器</span></a><a class="item" href="\2020\10\16\外卖平台订单爬取之饿了么零售商家版\" title="外卖平台订单爬取之饿了么零售商家版" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">外卖平台订单爬取之饿了么零售商家版</span></a><a class="item" href="\2019\12\12\如何自己开发一个VPN程序\" title="如何自己开发一个VPN App" rel="bookmark "><img src="http://qn.xieqifei.com/static/images/ecaoovpn1.jpg" class="lazyload" data-srcset="http://qn.xieqifei.com/static/images/ecaoovpn1.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">如何自己开发一个VPN App</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="\2020\03\01\Bootstrap学习笔记\" title="Bootstrap学习笔记" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Bootstrap学习笔记</span></a></div></section></div>
         
         
           <div class='copyright'>
@@ -625,7 +799,7 @@
                 
               
                 
-                  <p>本文永久链接是：<a href=https://sci.ci/2020/10/24/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8ADB%E5%BC%80%E5%8F%91%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E5%A4%96%E6%8C%82/>https://sci.ci/2020/10/24/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8ADB%E5%BC%80%E5%8F%91%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E5%A4%96%E6%8C%82/</a></p>
+                  <p>本文永久链接是：<a href=https://sci.ci/2020/11/12/%E5%8C%97%E5%A4%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94TensorFlow2/>https://sci.ci/2020/11/12/%E5%8C%97%E5%A4%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94TensorFlow2/</a></p>
                 
               
             </blockquote>
@@ -643,10 +817,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-24T20:32:32+02:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-14T22:51:50+01:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年10月24日</p>
+    <p>更新于：2020年11月14日</p>
   </a>
 </div>
 
@@ -655,7 +829,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ADB/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>ADB</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Python/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Python</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Java</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>人工智能</p></a></div>
 
 
         
@@ -668,7 +842,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/10/24/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8ADB%E5%BC%80%E5%8F%91%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E5%A4%96%E6%8C%82/&title=如何利用ADB开发王者荣耀外挂 - 🛫起飞了&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/11/12/%E5%8C%97%E5%A4%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94TensorFlow2/&title=北大人工智能实践——TensorFlow2 - 🛫起飞了&summary="
           
           >
           
@@ -680,7 +854,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/10/24/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8ADB%E5%BC%80%E5%8F%91%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E5%A4%96%E6%8C%82/&title=如何利用ADB开发王者荣耀外挂 - 🛫起飞了&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/11/12/%E5%8C%97%E5%A4%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94TensorFlow2/&title=北大人工智能实践——TensorFlow2 - 🛫起飞了&summary="
           
           >
           
@@ -692,7 +866,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/10/24/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8ADB%E5%BC%80%E5%8F%91%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E5%A4%96%E6%8C%82/&title=如何利用ADB开发王者荣耀外挂 - 🛫起飞了&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/11/12/%E5%8C%97%E5%A4%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94TensorFlow2/&title=北大人工智能实践——TensorFlow2 - 🛫起飞了&summary="
           
           >
           
@@ -720,24 +894,10 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/11/12/%E5%8C%97%E5%A4%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94TensorFlow2/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>北大人工智能实践——TensorFlow2</p>
-          <p class='content'>1：人工智能三学派
-准备数据
-搭建网络
-优化参数
-应用网络
-
-2：神经网络设计过程鸢尾花的分类：
-通过测量花萼长、花萼宽。
-if语句case语句——专家系统把专家的经验告知计算机，计算机执行逻辑...</p>
-        </a>
       
-      
-        <a class='next' href='/2020/10/19/%E5%B7%B2%E7%9F%A5%E5%A4%9A%E4%B8%AA%E5%9C%B0%E7%82%B9%E7%BB%8F%E7%BA%AC%E5%BA%A6%E7%9A%84%E6%9C%80%E4%BC%98%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%92/'>
-          <p class='title'>已知多个地点经纬度的最优路径规划<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>1：为什么规划路线这是统一美团饿了么订单后的后续工作，要求对多个指定的配送地点进行统计，并计算出从花店出发，到配送完所有地点返回花店的可能路程，并得出最优的路线。。
-2：设计思想假设有四个配送点...</p>
+        <a class='next' href='/2020/10/24/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8ADB%E5%BC%80%E5%8F%91%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80%E5%A4%96%E6%8C%82/'>
+          <p class='title'>如何利用ADB开发王者荣耀外挂<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1：思路ADB全称安卓设备调试工具，是谷歌官方提供帮助安卓开发者调试自身应用的一个轻量级工具包，总大小只有几兆。通过shell指令可以实现对安装了安卓系统的手机进行控制，包括开关机，开关应用程序...</p>
         </a>
       
     </div>
@@ -780,7 +940,7 @@ if语句case语句——专家系统把专家的经验告知计算机，计算�
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E6%80%9D%E8%B7%AF"><span class="toc-text">1：思路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9AADB%E5%B7%A5%E5%85%B7%E5%8F%8A%E8%B0%83%E8%AF%95%E6%89%8B%E6%9C%BA"><span class="toc-text">2：ADB工具及调试手机</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E4%B8%8B%E8%BD%BDADB"><span class="toc-text">2.1 下载ADB</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83"><span class="toc-text">2.2 设置环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E8%BF%9E%E6%8E%A5%E6%89%8B%E6%9C%BA"><span class="toc-text">2.3 连接手机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E5%BC%80%E5%90%AF%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95"><span class="toc-text">2.4 开启远程调试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E4%B8%BB%E8%A6%81%E7%94%A8%E5%88%B0%E7%9A%84ADB%E6%8C%87%E4%BB%A4"><span class="toc-text">2.5 主要用到的ADB指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%E6%8E%A7%E5%88%B6%E5%A9%89%E5%84%BF%E4%B8%8A%E5%A4%A9"><span class="toc-text">2.6 控制婉儿上天</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%E4%B8%80%E9%94%AE%E6%8D%A2%E8%A3%85"><span class="toc-text">2.7 一键换装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%9A%E6%90%AD%E5%BB%BAhttp%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text">3：搭建http服务器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%9A%E7%8E%8B%E8%80%85%E5%B1%80%E5%86%85%E6%82%AC%E6%B5%AE%E6%8C%89%E9%92%AE"><span class="toc-text">4：王者局内悬浮按钮</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%EF%BC%9A%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">5：参考资料</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%89%E5%AD%A6%E6%B4%BE"><span class="toc-text">1：人工智能三学派</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AE%BE%E8%AE%A1%E8%BF%87%E7%A8%8B"><span class="toc-text">2：神经网络设计过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%9A%E5%BC%A0%E9%87%8F%E7%94%9F%E6%88%90"><span class="toc-text">3：张量生成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%9A%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">4：常用函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-NN-%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">5：神经网络(NN)复杂度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%EF%BC%9A%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-text">6：激活函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7%EF%BC%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-text">7：损失函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8%EF%BC%9A%E7%BC%93%E8%A7%A3%E8%BF%87%E6%8B%9F%E5%90%88"><span class="toc-text">8：缓解过拟合</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9%EF%BC%9A%E4%BC%98%E5%8C%96%E5%99%A8"><span class="toc-text">9：优化器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10%EF%BC%9A%E6%90%AD%E5%BB%BA%E5%85%AB%E8%82%A1%E7%BD%91%E7%BB%9C-Sequential"><span class="toc-text">10：搭建八股网络-Sequential</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11%EF%BC%9A%E6%90%AD%E5%BB%BA%E7%BD%91%E7%BB%9C%E5%85%AB%E8%82%A1-class"><span class="toc-text">11：搭建网络八股-class</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12%EF%BC%9AMNIST%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">12：MNIST数据集</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#13%EF%BC%9AFasion-MNIST%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">13：Fasion_MNIST数据集</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#14%EF%BC%9A%E8%87%AA%E5%88%B6%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">14：自制数据集</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#15%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA"><span class="toc-text">15：数据增强</span></a></li></ol>
     </div>
   </section>
 
