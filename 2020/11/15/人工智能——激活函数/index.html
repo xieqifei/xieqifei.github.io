@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020 - 🛫起飞了</title>
+  <title>人工智能——激活函数 - 🛫起飞了</title>
+  
+    <meta name="keywords" content="人工智能,AI">
   
 
   
@@ -318,7 +318,7 @@
 
   
   
-      <div class='cover-wrapper  dock' style="display: none;">
+      <div class='cover-wrapper post dock' style="display: none;">
         
           <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
         
@@ -398,8 +398,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">人工智能——激活函数</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -408,14 +408,14 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("blog" == "none") { // 移除封面
+  if ("none" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("blog" == "blog") { // 半屏
+    if ("none" == "blog") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("blog" == "docs") { // 全屏
+    } else if ("none" == "docs") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -429,546 +429,334 @@
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/08/26/%E8%AE%A2%E5%8D%95%E5%8D%A1%E7%89%87%E5%A4%87%E6%B3%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%B0%E7%B3%BB%E7%BB%9F/">
-        订单卡片备注自动打印系统
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        一：系统设计系统思维导图：
 
-各个接单平台在收到订单后，将订单信息发送给公网服务器，公网服务器从订单信息中提取卡片内容，并将卡片内容发送给和打印机处在同一个局域网环境下的树莓派，树莓派发送打印请求。
-由于打印机的打印请求必须在局域网环境下发出，内网穿透就是必须的步骤，所以这里的树莓派和公网服务器缺一不可，如果有固定的公网ip，则可取消公网服务器步骤，如果打印机支持http发送api请求创建打...
+
+  <div class='article-header'>
+    
+    <div class="article-meta" id="top">
       
+      
+      
+        <h1 class="title">
+          <a href="/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/">
+            人工智能——激活函数
+          </a>
+        </h1>
+      
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://ae01.alicdn.com/kf/Hb5b4a24aa25749c38ad1c3af3f15bac4e.jpg">
+    <p>啓飞</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年11月15日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="人工智能——激活函数" data-path="/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h1 id="1：什么是激活函数"><a href="#1：什么是激活函数" class="headerlink" title="1：什么是激活函数"></a>1：什么是激活函数</h1><p><img src="https://i.loli.net/2020/11/15/Fc29UrBolCvhXsu.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/Fc29UrBolCvhXsu.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>以一个简单的神经元为例。在没有激活函数时，神经元输出z等于$z=x_1w_1+x_2w_2+x_3w_3+b$</p>
+<p>而激活函数将z作为输入，得到新的神经元输出$f(z)$</p>
+<p>这里的$f(z)$即激活函数。激活函数的主要作用是使输出非线性化，即曲线化或者分段化（对应分段函数）。</p>
+<h1 id="2：为什么要激活函数"><a href="#2：为什么要激活函数" class="headerlink" title="2：为什么要激活函数"></a>2：为什么要激活函数</h1><p>从$z=x_1w_1+x_2w_2+x_3w_3+b$不难看出，在没有激活函数时，我们的神经元输出，总是与输入$x_1,x_2,x_3$成线性关系。。</p>
+<p>简单点的例子，$z = x_1*w+b$。</p>
+<p><img src="https://i.loli.net/2020/11/15/YHsCFPyKq9fbWr4.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/YHsCFPyKq9fbWr4.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>可以知道，这是一条直线。可以解决一个简单的二分类问题。</p>
+<p><img src="https://i.loli.net/2020/11/15/xEYhM3Lae7nyHgP.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/xEYhM3Lae7nyHgP.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>如果这个二分类不是用直线分割的呢？</p>
+<p>比如，一个圆形，圆内的点是1，圆外是0。我们用直线就很难将他们区分开了。</p>
+<p>当然，也可以使用无数条小的直线来划分这两个区域，但是对比直接使用曲线，就复杂多了。</p>
+<p>为了让我们的输出函数，符合非线性特征，引入了激活函数的概念。</p>
+<h1 id="3：哪些激活函数"><a href="#3：哪些激活函数" class="headerlink" title="3：哪些激活函数"></a>3：哪些激活函数</h1><p><img src="https://pic1.zhimg.com/80/v2-17708ef17113fc120b045db3de3dbaac_1440w.jpg" class="lazyload" data-srcset="https://pic1.zhimg.com/80/v2-17708ef17113fc120b045db3de3dbaac_1440w.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="img"></p>
+<ul>
+<li>Sigmoid函数</li>
+</ul>
+<p>Sigmoid函数只会输出0到1之间的正数，当输入无穷小时，输出为0，输入无穷大时，输出为1。</p>
+<p><strong>缺点</strong>：</p>
+<p>基于反向传播（根据链式求导法则）的参数更新，随着网络层数的增加，w更新的梯度会越来越小，并逐渐接近于零。也就是所谓的梯度消失。</p>
+<p>下图是链式求导法则求w梯度的过程。这是某个神经网络中的一部分神经元。</p>
+<p><img src="https://i.loli.net/2020/11/15/oNuhZldMr53q7Dx.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/oNuhZldMr53q7Dx.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>其中，$net_{o1}=h1<em>w5+h2</em>w6+b2$</p>
+<p>$out_{o1}=Sigmoid(net_{o1})$</p>
+<p>误差函数为$E_{o1}=\frac{target-out_{o1}}{2}$</p>
+<p>获得$w_5$更新所需的梯度就是求$E_{o1}$对$w_5$求导。</p>
+<p>根据链式法则，<br>$$<br>\frac{\partial E_{o1}}{\part w_5} = \frac{\part E_{o1}}{\part out_{o1}}* \frac{\part out_{o1}}{\part net_{o1}}* \frac{\part net_{o1}}{\part w_5}<br>$$<br>其中$\frac{\part out_{o1}}{\part net_{o1}}$就是Sigmoid函数求导。</p>
+<p>根据Sigmoid函数求导公式，<br>$$<br>\frac{\part g(z)}{\part z} = g(z)(1-g(z))<br>$$<br><img src="https://i.loli.net/2020/11/15/Y6AES1lOiv5CX7d.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/Y6AES1lOiv5CX7d.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>上式，$g(z)$为Sigmoid函数，其导数最大值为0.25.</p>
+<p>当神经元个数逐渐增多，前向w梯度，是后向w梯度做链式法则的结果，那么会有许多个$g’(z)$相乘。则，前向w的梯度会逐渐趋近于0。</p>
+<ul>
+<li>tanh函数</li>
+</ul>
+<p><img src="https://i.loli.net/2020/11/15/5gxnFPvMa1Tdq6l.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/5gxnFPvMa1Tdq6l.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>相比于Sigmod函数，其输出均值为0。</p>
+<p>缺点：</p>
+<p>仍然存在梯度消失现象。</p>
+<ul>
+<li>Relu函数</li>
+</ul>
+<p>目前最常用的函数，只需判断输入是否大于零，小于零的输入，输出为0</p>
+<p><img src="https://i.loli.net/2020/11/15/EenTzWxGV9iAqfZ.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/EenTzWxGV9iAqfZ.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h1 id="4：参考资料"><a href="#4：参考资料" class="headerlink" title="4：参考资料"></a>4：参考资料</h1><p>《<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32824193">CNN入门讲解：什么是激活函数（Activation Function）</a>》</p>
+<p>《<a target="_blank" rel="noopener" href="https://blog.csdn.net/tyhj_sf/article/details/79932893">常用激活函数（激励函数）理解与总结</a>》</p>
+<p>《<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32819991">BP（反向传播算法）公式推导及例题解析</a>》</p>
+<p>《<a target="_blank" rel="noopener" href="https://blog.csdn.net/C_Dreams/article/details/75748005">sigmoid函数的求导</a>》</p>
+
+    
+      
+      <div class='footer'>
+        
+        
+          
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\2020\11\12\北大人工智能实践——TensorFlow2\" title="北大人工智能实践——TensorFlow2" rel="bookmark "><img src="https://i.loli.net/2020/11/15/47flBkU6oI5KuGM.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/47flBkU6oI5KuGM.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">北大人工智能实践——TensorFlow2</span></a></div></section></div>
+        
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href=https://sci.ci/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/>https://sci.ci/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+        
+      </div>
     
   </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-08-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/08/26/%E8%AE%A2%E5%8D%95%E5%8D%A1%E7%89%87%E5%A4%87%E6%B3%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%B0%E7%B3%BB%E7%BB%9F/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-15T13:11:18+01:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年11月15日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/07/26/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/">
-        爬虫基础
-      </a>
-    </h2>
-  
-  <div class='md'>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>人工智能</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/AI/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>AI</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        1: 任务介绍和准备工作爬取豆瓣电影Top250的基本信息。
-https://movie.douban.com/top250
-编码规范：
-
-1234567#coding=utf-8def hello():	print(&quot;hello&quot;)	if __name__ = &quot;__main__&quot;:	#入口函数，控制函数的执行顺序	hello()
-
-引入模块：
-目录...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/&title=人工智能——激活函数 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/&title=人工智能——激活函数 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/&title=人工智能——激活函数 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-07-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/07/26/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/07/22/httponly%E7%9A%84Cookie/">
-        httponly的Cookie
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        JS获取cookie的程序是document.cookie，但是为了网站安全。服务器可以设置某些cookie不能使用js获取。这种类型的cookie即使httponly的cookie，而且只有服务器能发送此类cookie。
-1setcookie(&quot;abc&quot;, &quot;test&quot;, NULL, NULL, NULL, NULL, TRUE); 
 
-在最新php...
+
+        
       
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-07-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
+  
+    <div class="prev-next">
       
-        <div>
-            <a class='readmore' href='/2020/07/22/httponly%E7%9A%84Cookie/'>
-            阅读全文
-          </a>
-        </div>
+      
+        <a class='next' href='/2020/11/12/%E5%8C%97%E5%A4%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94TensorFlow2/'>
+          <p class='title'>北大人工智能实践——TensorFlow2<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1：人工智能三学派
+准备数据
+搭建网络
+优化参数
+应用网络
+
+2：神经网络设计过程鸢尾花的分类：
+通过测量花萼长、花萼宽。
+if语句case语句——专家系统把专家的经验告知计算机，计算机执行逻辑...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/07/22/Python%E5%9F%BA%E7%A1%80/">
-        Python基础
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1: Hello Worldwindows win+R打开运行菜单，输入CMD，进入终端。输入python进入python终端程序。输入print(&quot;hello,world&quot;)打印文字。
-import this打印python之禅
-结束命令提示符：
-exit()
-ctrl+z
-
-命令提示符中的每一行是相关联的。
-
-执行以.py结尾文件。
-命令提示符中输入python he...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-07-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/07/22/Python%E5%9F%BA%E7%A1%80/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/07/17/php%E5%92%8Cjs%E4%B8%AD%E7%9A%84JSON%E6%93%8D%E4%BD%9C/">
-        php和js中的JSON操作
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：基本知识JSON(JavaScript Object Notation, JS 对象简谱) 是一种轻量级的数据交换格式。这种格式的特点如下：
-12&#123;[&#123;&quot;name&quot;:&quot;zhangsan&quot;,&quot;age&quot;:54&#125;],[&#123;&quot;name&quot;:&quot;lisi&quot;,&quo...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-07-17</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/07/17/php%E5%92%8Cjs%E4%B8%AD%E7%9A%84JSON%E6%93%8D%E4%BD%9C/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/07/12/git%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">
-        git使用记录
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：git指令1git clone https://github.com/user/repo/program.git
-
-将远程仓库克隆到git打开的目录。
-1git switch -c dev
-
-新建并切换至dev分支。
-1git switch dev
-
-切换到dev分支
-1git add .
-
-将所有变更提交至缓冲区
-1git commit -m &quot;message&quot;
-
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-07-12</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/07/12/git%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/07/11/%E4%BD%BF%E7%94%A8JsDelivr%E7%BB%99%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E5%8A%A0%E9%80%9F/">
-        使用JsDelivr给静态资源加速
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        github仓库里的js、css静态资源是无法被直接放在网页的静态资源url里的，因此，需要借助第三方工具来引用。
-这里使用JsDelivr。
-说明打开jsDeliver官网，可以看到使用方式：
-12345&#x2F;&#x2F; load any GitHub release or commit&#x2F;&#x2F; note: we recommend using npm for pr...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-07-11</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/07/11/%E4%BD%BF%E7%94%A8JsDelivr%E7%BB%99%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E5%8A%A0%E9%80%9F/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/06/25/Oneindex-YAAW%E5%A2%9E%E5%8A%A0%E5%90%8E%E5%8F%B0%E7%A6%BB%E7%BA%BF%E4%B8%8A%E4%BC%A0/">
-        Oneindex+YAAW增加后台离线上传
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        一：简介Yaaw是个开源的aria2的WebUI，通过这个UI可以使用aria2的rpc功能，向aria2发送下载某文件的指令。我将yaaw嵌入到了Oneindex后台，同时在前台也部署了yaaw供游客使用。
-项目地址：https://github.com/xieqifei/OneindexN
-Demo：https://pan.sci.ci
-后台预览：
-
-二：部署网站网站环境尽量使用ngin...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-06-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/06/25/Oneindex-YAAW%E5%A2%9E%E5%8A%A0%E5%90%8E%E5%8F%B0%E7%A6%BB%E7%BA%BF%E4%B8%8A%E4%BC%A0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/06/25/%E9%83%A8%E7%BD%B2Aria2-Rclone%E5%AE%9E%E7%8E%B0%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%88%B0Onedrive/">
-        部署Aria2+Rclone实现离线下载文件到Onedrive
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        一：前言Aria2是一款多线程下载的应用，可以充分利用网络带宽，实现满速下载。Rclone是个网盘管理工具，可以绑定Onedrive实现将网盘挂载到本地。利用aria2和Rclone，可以在服务器上通过指令，直接将远程文件下载到本地，并自动保存到Onedrive。
-二：安装Aria2推荐使用一键脚本：
-1wget -N git.io/aria2.sh &amp;&amp; chmod +x ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-06-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/06/25/%E9%83%A8%E7%BD%B2Aria2-Rclone%E5%AE%9E%E7%8E%B0%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%88%B0Onedrive/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/06/22/Rclone%E5%9C%A8win%E4%B8%8A%E6%8C%82%E5%9C%A8Onedrive/">
-        Rclone在win上挂在Onedrive
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        一：Rclone下载首先下载适用于 Windows 的 rclone 👇
-官网下载：https://rclone.org/downloads/GitHub下载：https://github.com/ncw/rclone
-在rclone官网中，Windows 平台下选择下载 AMD64 - 64 Bit
-
-或者在github下载。
-
-下载后解压到一个英文路径中。
-
-另外在Windows平台使...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-06-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Windows/">Windows</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/06/22/Rclone%E5%9C%A8win%E4%B8%8A%E6%8C%82%E5%9C%A8Onedrive/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2020/page/2/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          3 / 6
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2020/page/4/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
+  </article>
 
 
-	
+
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -976,159 +764,19 @@ Demo：https://pan.sci.ci
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">🛫起飞了</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:im@xieqifei.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/xieqifei/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Python/" href="/categories/Python/"
-            id="categoriesPython"
-            ><div class='name'>Python</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Windows/" href="/categories/Windows/"
-            id="categoriesWindows"
-            ><div class='name'>Windows</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"
-            id="categoriesE4BABAE5B7A5E699BAE883BD"
-            ><div class='name'>人工智能</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"
-            id="categoriesE585B6E4BB96"
-            ><div class='name'>其他</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-            id="categoriesE5ADA6E4B9A0E7AC94E8AEB0"
-            ><div class='name'>学习笔记</div><div class='badge'>(17)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/" href="/categories/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/"
-            id="categoriesE5AE89E58D93E7BC96E7A88B"
-            ><div class='name'>安卓编程</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"
-            id="categoriesE6A091E88E93E6B4BE"
-            ><div class='name'>树莓派</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%88%AC%E8%99%AB/" href="/categories/%E7%88%AC%E8%99%AB/"
-            id="categoriesE788ACE899AB"
-            ><div class='name'>爬虫</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/"
-            id="categoriesE7BD91E7AB99E7BC96E7A88B"
-            ><div class='name'>网站编程</div><div class='badge'>(15)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Python/" style="font-size: 14px; color: #999">-Python</a> <a href="/tags/TWRP/" style="font-size: 14px; color: #999">-TWRP</a> <a href="/tags/ADB/" style="font-size: 17.33px; color: #828282">ADB</a> <a href="/tags/AI/" style="font-size: 14px; color: #999">AI</a> <a href="/tags/API/" style="font-size: 14px; color: #999">API</a> <a href="/tags/Aria2/" style="font-size: 14px; color: #999">Aria2</a> <a href="/tags/Bootstrap/" style="font-size: 14px; color: #999">Bootstrap</a> <a href="/tags/Cookie/" style="font-size: 14px; color: #999">Cookie</a> <a href="/tags/Flutter/" style="font-size: 14px; color: #999">Flutter</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/JsDelivr/" style="font-size: 14px; color: #999">JsDelivr</a> <a href="/tags/Kali-Linux/" style="font-size: 14px; color: #999">Kali Linux</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Magento/" style="font-size: 14px; color: #999">Magento</a> <a href="/tags/Matplotlib/" style="font-size: 14px; color: #999">Matplotlib</a> <a href="/tags/Mitmproxy/" style="font-size: 14px; color: #999">Mitmproxy</a> <a href="/tags/Mysql/" style="font-size: 14px; color: #999">Mysql</a> <a href="/tags/Nginx/" style="font-size: 14px; color: #999">Nginx</a> <a href="/tags/Numpy/" style="font-size: 14px; color: #999">Numpy</a> <a href="/tags/Oneindex/" style="font-size: 17.33px; color: #828282">Oneindex</a> <a href="/tags/Pandas/" style="font-size: 17.33px; color: #828282">Pandas</a> <a href="/tags/PyTorch/" style="font-size: 14px; color: #999">PyTorch</a> <a href="/tags/Python/" style="font-size: 24px; color: #555">Python</a> <a href="/tags/Rclone/" style="font-size: 17.33px; color: #828282">Rclone</a> <a href="/tags/SSR/" style="font-size: 17.33px; color: #828282">SSR</a> <a href="/tags/Selenium/" style="font-size: 17.33px; color: #828282">Selenium</a> <a href="/tags/ShopXO/" style="font-size: 14px; color: #999">ShopXO</a> <a href="/tags/Squid/" style="font-size: 17.33px; color: #828282">Squid</a> <a href="/tags/Stunnel/" style="font-size: 17.33px; color: #828282">Stunnel</a> <a href="/tags/Stunnel%E4%BB%A3%E7%90%86/" style="font-size: 14px; color: #999">Stunnel代理</a> <a href="/tags/TensorFlow/" style="font-size: 14px; color: #999">TensorFlow</a> <a href="/tags/VPN/" style="font-size: 14px; color: #999">VPN</a> <a href="/tags/Vlantis/" style="font-size: 14px; color: #999">Vlantis</a> <a href="/tags/Volantis/" style="font-size: 17.33px; color: #828282">Volantis</a> <a href="/tags/Vuejs/" style="font-size: 14px; color: #999">Vuejs</a> <a href="/tags/YAAW/" style="font-size: 14px; color: #999">YAAW</a> <a href="/tags/haproxy/" style="font-size: 14px; color: #999">haproxy</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 17.33px; color: #828282">人工智能</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 14px; color: #999">博客</a> <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E6%BA%90%E5%BA%93/" style="font-size: 14px; color: #999">安卓开源库</a> <a href="/tags/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">安卓编程</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/" style="font-size: 14px; color: #999">微信公众号</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 14px; color: #999">微信小程序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" style="font-size: 14px; color: #999">数据处理</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">机器学习</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 20.67px; color: #6c6c6c">树莓派</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 14px; color: #999">正则表达式</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/" style="font-size: 14px; color: #999">浏览器插件</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">爬虫</a> <a href="/tags/%E7%94%B5%E5%95%86/" style="font-size: 14px; color: #999">电商</a> <a href="/tags/%E7%94%B5%E5%95%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">电商系统</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">移动网络</a> <a href="/tags/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">网站优化</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" style="font-size: 14px; color: #999">网络技术</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 14px; color: #999">负载均衡</a> <a href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" style="font-size: 14px; color: #999">音乐播放器</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-text">1：什么是激活函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-text">2：为什么要激活函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%9A%E5%93%AA%E4%BA%9B%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-text">3：哪些激活函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%9A%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">4：参考资料</span></a></li></ol>
     </div>
   </section>
 
@@ -1139,6 +787,7 @@ Demo：https://pan.sci.ci
 
 
 </aside>
+
 
 
       </div>

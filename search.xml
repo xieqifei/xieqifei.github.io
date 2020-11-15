@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>人工智能——激活函数</title>
+      <link href="/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/"/>
+      <url>/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1：什么是激活函数"><a href="#1：什么是激活函数" class="headerlink" title="1：什么是激活函数"></a>1：什么是激活函数</h1><p><img src="https://i.loli.net/2020/11/15/Fc29UrBolCvhXsu.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/Fc29UrBolCvhXsu.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><p>以一个简单的神经元为例。在没有激活函数时，神经元输出z等于$z=x_1w_1+x_2w_2+x_3w_3+b$</p><p>而激活函数将z作为输入，得到新的神经元输出$f(z)$</p><p>这里的$f(z)$即激活函数。激活函数的主要作用是使输出非线性化，即曲线化或者分段化（对应分段函数）。</p><h1 id="2：为什么要激活函数"><a href="#2：为什么要激活函数" class="headerlink" title="2：为什么要激活函数"></a>2：为什么要激活函数</h1><p>从$z=x_1w_1+x_2w_2+x_3w_3+b$不难看出，在没有激活函数时，我们的神经元输出，总是与输入$x_1,x_2,x_3$成线性关系。。</p><p>简单点的例子，$z = x_1*w+b$。</p><p><img src="https://i.loli.net/2020/11/15/YHsCFPyKq9fbWr4.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/YHsCFPyKq9fbWr4.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><p>可以知道，这是一条直线。可以解决一个简单的二分类问题。</p><p><img src="https://i.loli.net/2020/11/15/xEYhM3Lae7nyHgP.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/xEYhM3Lae7nyHgP.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><p>如果这个二分类不是用直线分割的呢？</p><p>比如，一个圆形，圆内的点是1，圆外是0。我们用直线就很难将他们区分开了。</p><p>当然，也可以使用无数条小的直线来划分这两个区域，但是对比直接使用曲线，就复杂多了。</p><p>为了让我们的输出函数，符合非线性特征，引入了激活函数的概念。</p><h1 id="3：哪些激活函数"><a href="#3：哪些激活函数" class="headerlink" title="3：哪些激活函数"></a>3：哪些激活函数</h1><p><img src="https://pic1.zhimg.com/80/v2-17708ef17113fc120b045db3de3dbaac_1440w.jpg" class="lazyload" data-srcset="https://pic1.zhimg.com/80/v2-17708ef17113fc120b045db3de3dbaac_1440w.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="img"></p><ul><li>Sigmoid函数</li></ul><p>Sigmoid函数只会输出0到1之间的正数，当输入无穷小时，输出为0，输入无穷大时，输出为1。</p><p><strong>缺点</strong>：</p><p>基于反向传播（根据链式求导法则）的参数更新，随着网络层数的增加，w更新的梯度会越来越小，并逐渐接近于零。也就是所谓的梯度消失。</p><p>下图是链式求导法则求w梯度的过程。这是某个神经网络中的一部分神经元。</p><p><img src="https://i.loli.net/2020/11/15/oNuhZldMr53q7Dx.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/oNuhZldMr53q7Dx.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><p>其中，$net_{o1}=h1<em>w5+h2</em>w6+b2$</p><p>$out_{o1}=Sigmoid(net_{o1})$</p><p>误差函数为$E_{o1}=\frac{target-out_{o1}}{2}$</p><p>获得$w_5$更新所需的梯度就是求$E_{o1}$对$w_5$求导。</p><p>根据链式法则，<br>$$<br>\frac{\partial E_{o1}}{\part w_5} = \frac{\part E_{o1}}{\part out_{o1}}* \frac{\part out_{o1}}{\part net_{o1}}* \frac{\part net_{o1}}{\part w_5}<br>$$<br>其中$\frac{\part out_{o1}}{\part net_{o1}}$就是Sigmoid函数求导。</p><p>根据Sigmoid函数求导公式，<br>$$<br>\frac{\part g(z)}{\part z} = g(z)(1-g(z))<br>$$<br><img src="https://i.loli.net/2020/11/15/Y6AES1lOiv5CX7d.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/Y6AES1lOiv5CX7d.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><p>上式，$g(z)$为Sigmoid函数，其导数最大值为0.25.</p><p>当神经元个数逐渐增多，前向w梯度，是后向w梯度做链式法则的结果，那么会有许多个$g’(z)$相乘。则，前向w的梯度会逐渐趋近于0。</p><ul><li>tanh函数</li></ul><p><img src="https://i.loli.net/2020/11/15/5gxnFPvMa1Tdq6l.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/5gxnFPvMa1Tdq6l.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><p>相比于Sigmod函数，其输出均值为0。</p><p>缺点：</p><p>仍然存在梯度消失现象。</p><ul><li>Relu函数</li></ul><p>目前最常用的函数，只需判断输入是否大于零，小于零的输入，输出为0</p><p><img src="https://i.loli.net/2020/11/15/EenTzWxGV9iAqfZ.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/EenTzWxGV9iAqfZ.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p><h1 id="4：参考资料"><a href="#4：参考资料" class="headerlink" title="4：参考资料"></a>4：参考资料</h1><p>《<a href="https://zhuanlan.zhihu.com/p/32824193">CNN入门讲解：什么是激活函数（Activation Function）</a>》</p><p>《<a href="https://blog.csdn.net/tyhj_sf/article/details/79932893">常用激活函数（激励函数）理解与总结</a>》</p><p>《<a href="https://zhuanlan.zhihu.com/p/32819991">BP（反向传播算法）公式推导及例题解析</a>》</p><p>《<a href="https://blog.csdn.net/C_Dreams/article/details/75748005">sigmoid函数的求导</a>》</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 人工智能 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 人工智能 </tag>
+            
+            <tag> AI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>北大人工智能实践——TensorFlow2</title>
       <link href="/2020/11/12/%E5%8C%97%E5%A4%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94TensorFlow2/"/>
       <url>/2020/11/12/%E5%8C%97%E5%A4%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AE%9E%E8%B7%B5%E2%80%94%E2%80%94TensorFlow2/</url>
@@ -868,7 +895,7 @@
       
       <categories>
           
-          <category> Linux编程 </category>
+          <category> Linux </category>
           
       </categories>
       
@@ -947,7 +974,7 @@
       
       <categories>
           
-          <category> Linux编程 </category>
+          <category> Linux </category>
           
       </categories>
       
@@ -1026,7 +1053,7 @@
       
       <categories>
           
-          <category> Linux编程 </category>
+          <category> Linux </category>
           
       </categories>
       

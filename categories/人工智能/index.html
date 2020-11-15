@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020 - 🛫起飞了</title>
+  <title>分类：人工智能 - 🛫起飞了</title>
   
 
   
@@ -408,14 +408,14 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("blog" == "none") { // 移除封面
+  if ("none" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("blog" == "blog") { // 半屏
+    if ("none" == "blog") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("blog" == "docs") { // 全屏
+    } else if ("none" == "docs") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -428,11 +428,19 @@
         
         
 
+
 <div class='l_main'>
-	
-		
+  
+    
+      
   <section class="post-list">
     
+      
+        
+          
+        
+      
+    
     
       
         
@@ -444,490 +452,34 @@
   
     
     <h2 class="article-title" >
-      <a href="/2020/08/26/%E8%AE%A2%E5%8D%95%E5%8D%A1%E7%89%87%E5%A4%87%E6%B3%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%B0%E7%B3%BB%E7%BB%9F/">
-        订单卡片备注自动打印系统
+      <a href="/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/">
+        人工智能——激活函数
       </a>
     </h2>
   
   <div class='md'>
     
       
-        一：系统设计系统思维导图：
-
-各个接单平台在收到订单后，将订单信息发送给公网服务器，公网服务器从订单信息中提取卡片内容，并将卡片内容发送给和打印机处在同一个局域网环境下的树莓派，树莓派发送打印请求。
-由于打印机的打印请求必须在局域网环境下发出，内网穿透就是必须的步骤，所以这里的树莓派和公网服务器缺一不可，如果有固定的公网ip，则可取消公网服务器步骤，如果打印机支持http发送api请求创建打...
+        1：什么是激活函数
+以一个简单的神经元为例。在没有激活函数时，神经元输出z等于$z=x_1w_1+x_2w_2+x_3w_3+b$
+而激活函数将z作为输入，得到新的神经元输出$f(z)$
+这里的$f(z)$即激活函数。激活函数的主要作用是使输出非线性化，即曲线化或者分段化（对应分段函数）。
+2：为什么要激活函数从$z=x_1w_1+x_2w_2+x_3w_3+b$不难看出，在没有激活函数时，...
       
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
-        <time>2020-08-26</time>
+        <time>2020-11-15</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
+          <a class="category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
         
       </div>
       
         <div>
-            <a class='readmore' href='/2020/08/26/%E8%AE%A2%E5%8D%95%E5%8D%A1%E7%89%87%E5%A4%87%E6%B3%A8%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%B0%E7%B3%BB%E7%BB%9F/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/07/26/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/">
-        爬虫基础
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1: 任务介绍和准备工作爬取豆瓣电影Top250的基本信息。
-https://movie.douban.com/top250
-编码规范：
-
-1234567#coding=utf-8def hello():	print(&quot;hello&quot;)	if __name__ = &quot;__main__&quot;:	#入口函数，控制函数的执行顺序	hello()
-
-引入模块：
-目录...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-07-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/07/26/%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/07/22/httponly%E7%9A%84Cookie/">
-        httponly的Cookie
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        JS获取cookie的程序是document.cookie，但是为了网站安全。服务器可以设置某些cookie不能使用js获取。这种类型的cookie即使httponly的cookie，而且只有服务器能发送此类cookie。
-1setcookie(&quot;abc&quot;, &quot;test&quot;, NULL, NULL, NULL, NULL, TRUE); 
-
-在最新php...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-07-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/07/22/httponly%E7%9A%84Cookie/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/07/22/Python%E5%9F%BA%E7%A1%80/">
-        Python基础
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1: Hello Worldwindows win+R打开运行菜单，输入CMD，进入终端。输入python进入python终端程序。输入print(&quot;hello,world&quot;)打印文字。
-import this打印python之禅
-结束命令提示符：
-exit()
-ctrl+z
-
-命令提示符中的每一行是相关联的。
-
-执行以.py结尾文件。
-命令提示符中输入python he...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-07-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/07/22/Python%E5%9F%BA%E7%A1%80/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/07/17/php%E5%92%8Cjs%E4%B8%AD%E7%9A%84JSON%E6%93%8D%E4%BD%9C/">
-        php和js中的JSON操作
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：基本知识JSON(JavaScript Object Notation, JS 对象简谱) 是一种轻量级的数据交换格式。这种格式的特点如下：
-12&#123;[&#123;&quot;name&quot;:&quot;zhangsan&quot;,&quot;age&quot;:54&#125;],[&#123;&quot;name&quot;:&quot;lisi&quot;,&quo...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-07-17</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/07/17/php%E5%92%8Cjs%E4%B8%AD%E7%9A%84JSON%E6%93%8D%E4%BD%9C/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/07/12/git%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">
-        git使用记录
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：git指令1git clone https://github.com/user/repo/program.git
-
-将远程仓库克隆到git打开的目录。
-1git switch -c dev
-
-新建并切换至dev分支。
-1git switch dev
-
-切换到dev分支
-1git add .
-
-将所有变更提交至缓冲区
-1git commit -m &quot;message&quot;
-
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-07-12</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/07/12/git%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/07/11/%E4%BD%BF%E7%94%A8JsDelivr%E7%BB%99%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E5%8A%A0%E9%80%9F/">
-        使用JsDelivr给静态资源加速
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        github仓库里的js、css静态资源是无法被直接放在网页的静态资源url里的，因此，需要借助第三方工具来引用。
-这里使用JsDelivr。
-说明打开jsDeliver官网，可以看到使用方式：
-12345&#x2F;&#x2F; load any GitHub release or commit&#x2F;&#x2F; note: we recommend using npm for pr...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-07-11</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/07/11/%E4%BD%BF%E7%94%A8JsDelivr%E7%BB%99%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E5%8A%A0%E9%80%9F/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/06/25/Oneindex-YAAW%E5%A2%9E%E5%8A%A0%E5%90%8E%E5%8F%B0%E7%A6%BB%E7%BA%BF%E4%B8%8A%E4%BC%A0/">
-        Oneindex+YAAW增加后台离线上传
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        一：简介Yaaw是个开源的aria2的WebUI，通过这个UI可以使用aria2的rpc功能，向aria2发送下载某文件的指令。我将yaaw嵌入到了Oneindex后台，同时在前台也部署了yaaw供游客使用。
-项目地址：https://github.com/xieqifei/OneindexN
-Demo：https://pan.sci.ci
-后台预览：
-
-二：部署网站网站环境尽量使用ngin...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-06-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/06/25/Oneindex-YAAW%E5%A2%9E%E5%8A%A0%E5%90%8E%E5%8F%B0%E7%A6%BB%E7%BA%BF%E4%B8%8A%E4%BC%A0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/06/25/%E9%83%A8%E7%BD%B2Aria2-Rclone%E5%AE%9E%E7%8E%B0%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%88%B0Onedrive/">
-        部署Aria2+Rclone实现离线下载文件到Onedrive
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        一：前言Aria2是一款多线程下载的应用，可以充分利用网络带宽，实现满速下载。Rclone是个网盘管理工具，可以绑定Onedrive实现将网盘挂载到本地。利用aria2和Rclone，可以在服务器上通过指令，直接将远程文件下载到本地，并自动保存到Onedrive。
-二：安装Aria2推荐使用一键脚本：
-1wget -N git.io/aria2.sh &amp;&amp; chmod +x ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-06-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/06/25/%E9%83%A8%E7%BD%B2Aria2-Rclone%E5%AE%9E%E7%8E%B0%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E5%88%B0Onedrive/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/06/22/Rclone%E5%9C%A8win%E4%B8%8A%E6%8C%82%E5%9C%A8Onedrive/">
-        Rclone在win上挂在Onedrive
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        一：Rclone下载首先下载适用于 Windows 的 rclone 👇
-官网下载：https://rclone.org/downloads/GitHub下载：https://github.com/ncw/rclone
-在rclone官网中，Windows 平台下选择下载 AMD64 - 64 Bit
-
-或者在github下载。
-
-下载后解压到一个英文路径中。
-
-另外在Windows平台使...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-06-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Windows/">Windows</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/06/22/Rclone%E5%9C%A8win%E4%B8%8A%E6%8C%82%E5%9C%A8Onedrive/'>
+            <a class='readmore' href='/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/'>
             阅读全文
           </a>
         </div>
@@ -944,31 +496,11 @@ Demo：https://pan.sci.ci
   </section>
   
     
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2020/page/2/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          3 / 6
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2020/page/4/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
   
 
 
-	
+    
+  
 </div>
 <aside class='l_side'>
   
