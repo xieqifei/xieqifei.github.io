@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-beta.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>ESP8266从0到1 - 🛫起飞了</title>
+  
+    <meta name="keywords" content="ESP8266">
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
+
+  
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+</head>
+
+<body>
+  <header class="l_header auto shadow blur" style='opacity: 0' >
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div class="l_body">
+    <div class="l_cover">
+
+  
+  
+      <div class='cover-wrapper post dock' style="display: none;">
+        
+          <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
+        
+        <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">🛫起飞了</p>
+    
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a target="_blank" rel="noopener" href="https://weibo.com/678199722"
+              
+              
+              id="https:weibocom678199722">
+              <i class='fab fa-weibo fa-fw'></i><p>Weibo</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100006770206489"
+              
+              
+              id="https:wwwfacebookcomprofilephp?id=100006770206489">
+              <i class='fab fa-facebook fa-fw'></i><p>Facebook</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://twitter.com/CruelGiF"
+              
+              
+              id="https:twittercomCruelGiF">
+              <i class='fab fa-twitter fa-fw'></i><p>Twitter</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://www.instagram.com/xie_qifei/"
+              
+              
+              id="https:wwwinstagramcomxie_qifei">
+              <i class='fab fa-instagram fa-fw'></i><p>Instagram</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://github.com/xieqifei"
+              
+              
+              id="https:githubcomxieqifei">
+              <i class='fab fa-github fa-fw'></i><p>Github</p>
+            </a>
+          
+            <a href="mailto:im@xieqifei.com"
+              
+              
+              id="mailto:im@xieqifeicom">
+              <i class='fas fa-envelope fa-fw'></i><p>Email</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+  
+
+</div>
+
+    <div class='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">ESP8266从0到1</div>
+  <div id="pjax-enable-cover">true</div>
+  <div id="pjax-comment-path"></div>
+  <div id="pjax-comment-placeholder"></div>
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "blog") { // 半屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "docs") { // 全屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+
+        
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  <div class='article-header'>
+    
+    <div class="article-meta" id="top">
+      
+      
+      
+        <h1 class="title">
+          <a href="/2020/11/26/ESP8266%E4%BB%8E0%E5%88%B01/">
+            ESP8266从0到1
+          </a>
+        </h1>
+      
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://ae01.alicdn.com/kf/Hb5b4a24aa25749c38ad1c3af3f15bac4e.jpg">
+    <p>啓飞</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年11月26日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="ESP8266从0到1" data-path="/2020/11/26/ESP8266%E4%BB%8E0%E5%88%B01/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h1 id="0：前语"><a href="#0：前语" class="headerlink" title="0：前语"></a>0：前语</h1><p>推荐<a target="_blank" rel="noopener" href="http://www.taichi-maker.com/">太极创客</a>，学习ESP8266模块的更多知识。</p>
+<h1 id="1：连线"><a href="#1：连线" class="headerlink" title="1：连线"></a>1：连线</h1><p>ESP8266通过串口与电脑或者其他单片机实现交互，串口的使用比较简单。以最简单的ESP8266模块为例进行介绍。其他模块可能已经有了usb type-c或者其他接口，就直接用对应接口的线和设备连接就可以了。下图的模块，没有usb接口，因此需要我们自己连线。</p>
+<p><img src="https://i.loli.net/2020/11/25/1BzINH4M5urOPnQ.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/25/1BzINH4M5urOPnQ.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>模块共引出了8个引脚，其中，</p>
+<p>VCC：接3.3V电压，为模块供电。</p>
+<p>GUD：接地</p>
+<p>GPIO0：平时直接悬空。需要刷固件的时候接地。</p>
+<p>CH_PD：通过一个10K电阻接3.3V电压，表示模块处于工作状态。否则将不工作。</p>
+<p>串口通信引脚，</p>
+<p>RXD：串口输入，表示这个引脚会接收其他模块传入的信息。与其他模块的TX引脚相连。</p>
+<p>TXD：串口输出，接其他模块的RX引脚，把数据传给其他模块。</p>
+<p>通过FTDI USB to TTL模块，可以将ESP直接和电脑连接。只需要将对应引脚与FTDI模块相连即可。</p>
+<h1 id="2：简单开始"><a href="#2：简单开始" class="headerlink" title="2：简单开始"></a>2：简单开始</h1><p>下图为一个FTDI模块。将其引脚与ESP模块各引脚相连。</p>
+<p>下载FTDI模块的芯片驱动，直接搜索对应芯片就能找到。安装驱动后，将连接好的FTDI模块插入电脑，在电脑设备管理器中，能找到端口一栏，多了这个模块的端口比如(COM6)</p>
+<p><img src="https://i.loli.net/2020/11/27/o96CQ28riWtsUSv.jpg" class="lazyload" data-srcset="https://i.loli.net/2020/11/27/o96CQ28riWtsUSv.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>随意下载一个串口助手，选择FTDI模块的端口，设置波特率为115200，结束符为NL和CR。其他的默认。</p>
+<p>在串口助手上发送：AT</p>
+<p>串口助手的窗口会返回：OK，或者ERROR。</p>
+<p>如果返回OK，那么就可以通过AT指令操作ESP芯片连接WIFI或者作为AP让别人连wifi了。</p>
+<p>如果返回ERROR，那么就需要更新固件，以让ESP支持AT指令。</p>
+<blockquote>
+<p>未必一定要直接将ESP与电脑连接，也可以和其他单片机连接，通过对其他单片机编程，向ESP发送AT指令。重要的是，理解ESP的工作方式。</p>
+</blockquote>
+<h1 id="3：更新固件"><a href="#3：更新固件" class="headerlink" title="3：更新固件"></a>3：更新固件</h1><p>如果你不小心将ESP配置错了，又不知道怎么去将它出厂设置，或者你发送AT指令总是返回ERROR，那么你就需要学习如何更新芯片固件。</p>
+<p>更新固件需要用到FTDI模块，将FTDI和ESP连接，FTDI连接电脑。</p>
+<p>首先下载<a target="_blank" rel="noopener" href="https://www.espressif.com/zh-hans/support/download/other-tools">Flash下载工具</a>。只有Windows系统能用。</p>
+<p>然后下载最新版本的<a target="_blank" rel="noopener" href="https://www.espressif.com/zh-hans/products/socs/esp8266ex/resources">ESP8266 NONOS SDK</a>。并解压。</p>
+<p>接线，需要注意，<strong>GPIO0引脚必须接地</strong>。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>序号</strong></td>
+<td><strong>引脚名称</strong></td>
+<td><strong>I/O</strong></td>
+<td><strong>描述</strong></td>
+<td><strong>DC特性</strong></td>
+<td><strong>备注</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>UTXD</td>
+<td></td>
+<td>AT 串口发送输出</td>
+<td>3.3V</td>
+<td>开机时禁止下拉</td>
+</tr>
+<tr>
+<td>2</td>
+<td>GND</td>
+<td></td>
+<td>地</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>CH_PD(EN)</td>
+<td></td>
+<td>模块断电信号</td>
+<td>3.3V</td>
+<td>1）高电平工作； 2）低电平模块供电关掉；</td>
+</tr>
+<tr>
+<td>4</td>
+<td>GPIO2</td>
+<td></td>
+<td>预留，默认悬空</td>
+<td>3.3V</td>
+<td>开机上电时必须为高电平，禁止硬件下拉；内部默认已拉高</td>
+</tr>
+<tr>
+<td>5</td>
+<td>GPIO16</td>
+<td>I</td>
+<td>复位信号(RESET)</td>
+<td>3.3V</td>
+<td>低电平复位，高电平工作（默认高）；</td>
+</tr>
+<tr>
+<td>6</td>
+<td>GPIO0</td>
+<td></td>
+<td>模块状态灯/工作模式选择</td>
+<td>3.3V</td>
+<td>1）默认WiFiStatus：WiFi工作状态指示灯控制信号；2）工作模式选择：上拉：FlashBoot，工作模式；下拉：UARTDownload，下载模式（下载固件）；</td>
+</tr>
+<tr>
+<td>7</td>
+<td>VCC</td>
+<td>I</td>
+<td>模块采用单电源供电，通过 1 个VCC 电源引脚供电，电压范围：3.0V-3.6V,电流&gt;600mA</td>
+<td>Vmax=3.6VVmin=3.0VVnorm=3.3V</td>
+<td>电源供电能力请大于600mA;否则可能会引起模块工作异常，或者无线性能不好。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>URXD</td>
+<td></td>
+<td>AT 串口发送输入</td>
+<td>3.3V</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><img src="https://i.loli.net/2020/11/27/a6YnuPe1fNhdBsm.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/27/a6YnuPe1fNhdBsm.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>打开flash_download_tool_v3.8.5.exe。选择Developer模式。</p>
+<p>选择8266芯片</p>
+<p><img src="https://i.loli.net/2020/11/27/cTbj4kOs6VIr5mi.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/27/cTbj4kOs6VIr5mi.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>然后在之前解压的SDK中找到<code>C:\Users……\ESP8266_NONOS_SDK-3.0.4\bin\boot_v1.6.bin</code>文件刷入地址0x00000中</p>
+<p><img src="https://i.loli.net/2020/11/27/o8Ug96EyxarKh2n.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/27/o8Ug96EyxarKh2n.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>然后点击START按钮开始，如果显示<code>等待上电</code>，在保证GPIO0接地的情况下，将RST引脚接地再断开。</p>
+<p>至此固件等待刷新完毕。</p>
+<h1 id="4：AT指令"><a href="#4：AT指令" class="headerlink" title="4：AT指令"></a>4：AT指令</h1><p>完整的<a target="_blank" rel="noopener" href="https://www.espressif.com/sites/default/files/documentation/4a-esp8266_at_instruction_set_cn.pdf">AT指令PDF</a></p>
+<p>常见的指令：</p>
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><ul>
+<li>测试：AT</li>
+<li>复位：AT+RST</li>
+<li>恢复出厂设置：AT+RESTORE</li>
+<li>查询本机IP和MAC：AT+CIFSR</li>
+</ul>
+<h2 id="模式命令"><a href="#模式命令" class="headerlink" title="模式命令"></a>模式命令</h2><ul>
+<li>查询模式：AT+CWMODE?</li>
+<li>设置模式 1:STA 2:AP 3:both：AT+CWMODE=1</li>
+<li>（STA）查询当前可用AP ：AT+CWLAP</li>
+<li>（STA）加入可用AP ：AT+CWJAP=“ssid”,“psw”</li>
+<li>（STA）退出当前AP ：AT+CWQAP</li>
+<li>（AP）设置AP参数，ssid+psw+chn+ecn+n+01 ：AT+CWSAP=“哈哈”,“12345678”,3,3,4,0</li>
+<li>（AP）查询AP参数：AT+CWSAP?</li>
+</ul>
+<h2 id="客户端-服务器设置"><a href="#客户端-服务器设置" class="headerlink" title="客户端|服务器设置"></a>客户端|服务器设置</h2><ul>
+<li>查询是否多连接 是1，否0 ：AT+CIPMUX?</li>
+<li>设置启动多连接1，单链接0（重启后默认0）：AT+CIPMUX=1</li>
+<li>（多连接）关闭服务器，就是开启多连接客户端，默认是0 ：AT+CIPSERVER=0</li>
+<li>（多连接）开启服务器,:开启+端口号port。 此时客户端要连本机，远程地址为 IP+Port ：AT+CIPSERVER=1,8080</li>
+<li>（多连接）发送数据 id+Byte：AT+CIPSEND=0,10</li>
+<li>（多连接）关闭TCP/UDP连接，id：AT+CIPCLOSE=0</li>
+<li>（客户端单连接）建立TCP/UDP连接：AT+CIPSTART=“TCP”,“192.168.4.2”,100</li>
+<li>（客户端单连接）发送数据，Byte ：AT+CIPSEND=10</li>
+<li>（客户端单连接）使能穿透模式：AT+CIPMODE=1</li>
+<li>（客户端单连接）进入透传模式发送：AT+CIPSEND</li>
+<li>（客户端单连接）退出透传：+++</li>
+<li>（客户端单连接）关闭TCP/UDP连接：AT+CIPCLOSE</li>
+<li>（客户端多连接）建立TCP/UDP连接，id，TCP/UDP，IP，端口：AT+CIPSTART=0,“TCP”,“192.168.4.2”,100</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>如果需要用到ESP通过软串口连接Arduino单片机，就需要修改ESP的波特率，ESP默认波特率是115200，而软串口只能是9600，修改波特率AT指令</p>
+<p>AT+CIOBAUD=9600</p>
+<p>如果返回ERROR，可以尝试</p>
+<p>AT+UART=9600,8,1,0,0</p>
+<h1 id="5：使用Arduino-IDE编写程序"><a href="#5：使用Arduino-IDE编写程序" class="headerlink" title="5：使用Arduino IDE编写程序"></a>5：使用Arduino IDE编写程序</h1><p>ESP8266是可以直接使用Arduino IDE上烧录程序的。为了在Arduino IDE上直接编写程序，首先需要导入ESP8266的库。</p>
+<ol>
+<li>在IDE的文件-&gt;首选项里边的附加开发板管理网址输入<a target="_blank" rel="noopener" href="https://github.com/esp8266/Arduino/releases/download/2.5.0/package_esp8266com_index.json">https://github.com/esp8266/Arduino/releases/download/2.5.0/package_esp8266com_index.json</a></li>
+</ol>
+<p>或者<a target="_blank" rel="noopener" href="http://arduino.esp8266.com/stable/package_esp8266com_index.json">http://arduino.esp8266.com/stable/package_esp8266com_index.json</a></p>
+<p>之后点击好。</p>
+<p><img src="https://i.loli.net/2020/11/28/nfQaI8zcKqG3imS.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/28/nfQaI8zcKqG3imS.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<ol start="2">
+<li>在 工具-&gt;开发板选择最上方开发板管理器，之后搜索esp即可出现esp8266，选择版本之后进行安装即可。</li>
+</ol>
+<p><img src="https://i.loli.net/2020/11/28/17fGHoFmrZyERPV.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/28/17fGHoFmrZyERPV.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<ol start="3">
+<li>在Arduino IDE 菜单&gt;工具&gt;开发板&gt;开发板管理器 中选择你正在使用的8266开发板。</li>
+</ol>
+<p>如果你不清楚自己使用的是哪个开发板，可以选择generic esp8266 module，这是通用板子。</p>
+<ol start="4">
+<li>选择正确的端口。如果不知道自己板子连接电脑上的是哪个端口，可以打开电脑的<code>设备管理器</code>，其中有端口一栏，有详细信息。</li>
+<li>上载程序前，将GPIO0引脚下拉接地，并将RST引脚接地在放开，上载程序时，GPIO0引脚需保持接地状态。上载完毕，将GPIO0引脚放空，并再次将RST引脚接地放开，切换到运行状态。</li>
+</ol>
+<h1 id="6：Https请求程序"><a href="#6：Https请求程序" class="headerlink" title="6：Https请求程序"></a>6：Https请求程序</h1><p>这里以企业微信api发送应用消息为例，简述https请求中的get和post请求。http请求更为简单。网上资料也更多。</p>
+<p>要调取企业微信api首先需要仔细阅读其<a target="_blank" rel="noopener" href="https://work.weixin.qq.com/api/doc/90000/90135/91039">开发文档</a>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ESP8266WiFi.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ESP8266HTTPClient.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;WiFiClientSecureBearSSL.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ArduinoJson.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//WiFi连接信息（注意：需要自行修改以下内容否则ESP8266无法连接WiFi）</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ssid <span class="meta-string">&quot;SSID&quot;</span>   <span class="comment">//WiFi名称 </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> password <span class="meta-string">&quot;PASSWORD&quot;</span>  <span class="comment">//WiFi密码</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//https://qyapi.weixin.qq.com网站的指纹。</span></span><br><span class="line"><span class="comment">//esp通过https访问网站，都需要自己通过浏览器获取指纹，获取方法可自行搜索，在参考资料中也有文章，指纹一般几个月就需要更新一次。浏览器打开https://qyapi.weixin.qq.com/cgi-bin/gettoken获取指纹，而不只是只有主机名。</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> fingerprint[] PROGMEM = <span class="string">&quot;790e6e32485bb89503ac6da87d948f5e634322a7&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//HTTPS端口443</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> httpsPort = <span class="number">443</span>;  </span><br><span class="line"><span class="comment">// 企业微信api相关</span></span><br><span class="line"><span class="keyword">String</span> tokenUrl = <span class="string">&quot;https://qyapi.weixin.qq.com/cgi-bin/gettoken&quot;</span>;</span><br><span class="line"><span class="keyword">String</span> sendMsgUrl = <span class="string">&quot;https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=&quot;</span>;</span><br><span class="line"><span class="comment">//以下信息需要替换，这里的均不可用</span></span><br><span class="line"><span class="keyword">String</span> corpid = <span class="string">&quot;ww98b3k1b63788a7ad&quot;</span>;<span class="comment">//你的企业id</span></span><br><span class="line"><span class="keyword">String</span> corpsecret = <span class="string">&quot;Kh8asfasfaTrbSwRBGK5H0osnfasakjkmSYCqV3Tgcs&quot;</span>;<span class="comment">//你的企业应用密钥</span></span><br><span class="line"><span class="keyword">String</span> agentid = <span class="string">&quot;1000002&quot;</span>;<span class="comment">//你的企业应用id</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取企业微信access_token</span></span><br><span class="line"><span class="function"><span class="keyword">String</span> <span class="title">get_token</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">String</span> token = <span class="string">&quot;123&quot;</span>;</span><br><span class="line">  <span class="keyword">String</span> requestUrl = tokenUrl + <span class="string">&quot;?corpid=&quot;</span>+corpid+<span class="string">&quot;&amp;corpsecret=&quot;</span>+corpsecret;</span><br><span class="line">  <span class="comment">//https需要创建一个加密路径</span></span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">unique_ptr</span>&lt;BearSSL::WiFiClientSecure&gt;client(<span class="keyword">new</span> BearSSL::WiFiClientSecure);</span><br><span class="line">  client-&gt;setFingerprint(fingerprint);</span><br><span class="line">  <span class="comment">//创建一个HTTP客户端</span></span><br><span class="line">  HTTPClient https;</span><br><span class="line">  <span class="comment">//http和https的区别就是https.begin中的*client。如果没有*client,那么发送出去的就是http请求</span></span><br><span class="line">  <span class="comment">//建立连接</span></span><br><span class="line">  <span class="keyword">if</span> (https.<span class="built_in">begin</span>(*client, requestUrl)) &#123;  <span class="comment">// HTTPS</span></span><br><span class="line">      <span class="built_in">Serial</span>.<span class="built_in">print</span>(<span class="string">&quot;[HTTPS] GET...\n&quot;</span>);</span><br><span class="line">      <span class="comment">// 发送get请求</span></span><br><span class="line">      <span class="keyword">int</span> httpCode = https.GET();</span><br><span class="line">	  <span class="comment">//如果httpCode小于零则连接错误</span></span><br><span class="line">      <span class="keyword">if</span> (httpCode &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">Serial</span>.<span class="built_in">printf</span>(<span class="string">&quot;[HTTPS] GET... code: %d\n&quot;</span>, httpCode);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// file found at server</span></span><br><span class="line">        <span class="keyword">if</span> (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY) &#123;</span><br><span class="line">          <span class="comment">//将返回的json序列，放到json变量</span></span><br><span class="line">          <span class="keyword">String</span> json = https.getString();</span><br><span class="line">          <span class="built_in">Serial</span>.<span class="built_in">println</span>(json);</span><br><span class="line">          <span class="comment">// 创建DynamicJsonDocument对象，json中的参数为4个。</span></span><br><span class="line">          <span class="keyword">const</span> <span class="keyword">size_t</span> capacity = JSON_OBJECT_SIZE(<span class="number">4</span>) + <span class="number">290</span>;</span><br><span class="line">          <span class="function">DynamicJsonDocument <span class="title">doc</span><span class="params">(capacity)</span></span>;</span><br><span class="line">          <span class="comment">//反序列化数据</span></span><br><span class="line">          deserializeJson(doc, json);</span><br><span class="line">          <span class="keyword">if</span>(doc[<span class="string">&quot;errcode&quot;</span>].as&lt;<span class="keyword">int</span>&gt;()==<span class="number">0</span>)&#123;</span><br><span class="line">              token = doc[<span class="string">&quot;access_token&quot;</span>].as&lt;<span class="keyword">String</span>&gt;();</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">Serial</span>.<span class="built_in">printf</span>(<span class="string">&quot;[HTTPS] GET... failed, error: %s\n&quot;</span>, https.errorToString(httpCode).c_str());</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      https.<span class="built_in">end</span>();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">Serial</span>.<span class="built_in">printf</span>(<span class="string">&quot;[HTTPS] Unable to connect\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> token;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">//调用企业微信api，发送信息。</span></span><br><span class="line"> <span class="function"><span class="keyword">void</span> <span class="title">send_msg</span><span class="params">(<span class="keyword">String</span> msg)</span></span>&#123;</span><br><span class="line">   <span class="comment">//调用get_token函数，获取token</span></span><br><span class="line">   <span class="keyword">String</span> token = get_token();</span><br><span class="line">   <span class="comment">//token=123表示get_token()函数请求token失败。</span></span><br><span class="line">   <span class="comment">//如果失败，可能还需要其他步骤，比如重新获取。这里没有完善。</span></span><br><span class="line">   <span class="keyword">if</span> (token == <span class="string">&quot;123&quot;</span>)&#123;</span><br><span class="line">      <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">&quot;not get token&quot;</span>);</span><br><span class="line">     <span class="keyword">return</span>;</span><br><span class="line">   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">&quot;got token&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="comment">//构造请求url</span></span><br><span class="line">   <span class="keyword">String</span> requestUrl = sendMsgUrl + token;</span><br><span class="line">   <span class="built_in">std</span>::<span class="built_in">unique_ptr</span>&lt;BearSSL::WiFiClientSecure&gt;client(<span class="keyword">new</span> BearSSL::WiFiClientSecure);</span><br><span class="line">   client-&gt;setFingerprint(fingerprint);</span><br><span class="line">   HTTPClient httpClient;</span><br><span class="line">   </span><br><span class="line">   <span class="comment">//与微信服务器建立连接</span></span><br><span class="line">   httpClient.<span class="built_in">begin</span>(*client,requestUrl);</span><br><span class="line">   <span class="comment">//构建json数据，用于发送请求内容</span></span><br><span class="line">   <span class="keyword">String</span> json = <span class="string">&quot;&#123;\&quot;touser\&quot;:\&quot;@all\&quot;,\&quot;msgtype\&quot;:\&quot;text\&quot;,\&quot;agentid\&quot;:1000002,\&quot;text\&quot;:&#123;\&quot;content\&quot;:\&quot;&quot;</span>+msg+<span class="string">&quot;\&quot;&#125;,\&quot;safe\&quot;:0,\&quot;enable_id_trans\&quot;:0,\&quot;enable_duplicate_check\&quot;:0,\&quot;duplicate_check_interval\&quot;:1800&#125;&quot;</span>;</span><br><span class="line">   <span class="comment">//发送请求内容</span></span><br><span class="line">   <span class="built_in">Serial</span>.<span class="built_in">println</span>(json);</span><br><span class="line">   <span class="comment">//将请求数据放到POST()中。</span></span><br><span class="line">   <span class="keyword">int</span> httpCode = httpClient.POST(json);</span><br><span class="line">   <span class="comment">//这里没有读取服务器返回的json数据，最好还是提取出来，判断是否发送成功。可自行添加代码</span></span><br><span class="line">   <span class="keyword">if</span> (httpCode &gt; <span class="number">0</span>) &#123;</span><br><span class="line">     <span class="comment">//将服务器响应头打印到串口</span></span><br><span class="line">     <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">&quot;[HTTP] POST... code:&quot;</span>+ httpCode);</span><br><span class="line">     <span class="comment">//将从服务器获取的数据打印到串口</span></span><br><span class="line">     <span class="keyword">if</span> (httpCode == HTTP_CODE_OK) &#123;</span><br><span class="line">       <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">&quot;Send success&quot;</span>);</span><br><span class="line">       <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">&quot;return str:&quot;</span>+httpClient.getString());</span><br><span class="line">     &#125;</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">     <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">&quot;send failure&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">//关闭ESP8266与服务器连接</span></span><br><span class="line">   httpClient.<span class="built_in">end</span>();</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Wifi init</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">wifi_init</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">begin</span>(<span class="number">9600</span>);</span><br><span class="line">  <span class="built_in">WiFi</span>.mode(WIFI_STA);        <span class="comment">//设置ESP8266为无线终端工作模式</span></span><br><span class="line">  </span><br><span class="line">  <span class="built_in">WiFi</span>.<span class="built_in">begin</span>(ssid, password); <span class="comment">//连接WiFi</span></span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line"> </span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">&quot;Connecting&quot;</span>); <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 等待连接</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">WiFi</span>.status() != WL_CONNECTED) &#123;</span><br><span class="line">    <span class="built_in">delay</span>(<span class="number">500</span>);</span><br><span class="line">    <span class="built_in">Serial</span>.<span class="built_in">print</span>(<span class="string">&quot;.&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  <span class="comment">//成功连接后通过串口监视器显示WiFi名称以及ESP8266的IP地址。</span></span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">print</span>(<span class="string">&quot;Connected to &quot;</span>);</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>(ssid);</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">print</span>(<span class="string">&quot;IP address: &quot;</span>);</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="built_in">WiFi</span>.<span class="built_in">localIP</span>()); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  wifi_init();</span><br><span class="line">  send_msg(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ArduinoJSON库需要在IDE库管理中搜索安装，</p>
+<p>其他库都是随ESP8266库一起安装的。</p>
+</blockquote>
+<p>json格式化和转义：<a target="_blank" rel="noopener" href="http://www.bejson.com/">http://www.bejson.com/</a></p>
+<p>ArduinoJson Assistant：<a target="_blank" rel="noopener" href="https://arduinojson.org/v6/assistant/">https://arduinojson.org/v6/assistant/</a></p>
+<p>关于ArduinoJSON详细教程可见参考资料章节</p>
+<h1 id="7：低功耗方案"><a href="#7：低功耗方案" class="headerlink" title="7：低功耗方案"></a>7：低功耗方案</h1><p>ESP8266提供三种省电模式。</p>
+<p><img src="https://i.loli.net/2020/11/28/ISEmNwO87xsL2uJ.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/28/ISEmNwO87xsL2uJ.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>当我们的程序在某个时间段不需要使用wifi模块时，可让它进入睡眠模式，</p>
+<p>Modem-Sleep模式：wifi与路由器保持连接，只在间断的时间里发送一个消息以保持连接。</p>
+<p>Light-Sleep模式：在Modem-Sleep的基础上，关闭CPU。在esp循环任务长时间不需要esp工作时，会自动进入此模式。</p>
+<p>Deep-Sleep模式：断开wifi。可用户配置。</p>
+<p>deepsleep模式提供定时器唤醒和外部IO唤醒两种方案。</p>
+<ol>
+<li>定时器唤醒</li>
+</ol>
+<p>将RST引脚接GPIO16。</p>
+<p><img src="https://i.loli.net/2020/11/28/fLxZXFoKgtsji9k.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/28/fLxZXFoKgtsji9k.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * ESP8266 Deep sleep mode example</span></span><br><span class="line"><span class="comment"> * Rui Santos </span></span><br><span class="line"><span class="comment"> * Complete Project Details https://randomnerdtutorials.com</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">begin</span>(<span class="number">115200</span>);</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">setTimeout</span>(<span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Wait for serial to initialize.</span></span><br><span class="line">  <span class="keyword">while</span>(!<span class="built_in">Serial</span>) &#123; &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Deep sleep mode for 30 seconds, the ESP8266 wakes up by itself when GPIO 16 (D0 in NodeMCU board) is connected to the RESET pin</span></span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">&quot;I&#x27;m awake, but I&#x27;m going into deep sleep mode for 30 seconds&quot;</span>);</span><br><span class="line">  ESP.deepSleep(<span class="number">30e6</span>); </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>ESP-01芯片，GPIO16引脚并没有引出，所以，很难将RST引脚与其相接。</p>
+<p><img src="https://i.loli.net/2020/11/28/t1DKzIw8EcpknCy.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/28/t1DKzIw8EcpknCy.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<ol start="2">
+<li>外部唤醒。</li>
+</ol>
+<p>将RST与外部单片机的IO口相接，当外部IO给RST一个低电平时，芯片将重启激活。</p>
+<p>例如使用按钮来提供低电平</p>
+<p><img src="https://i.loli.net/2020/11/28/HuzF2oGUgDsN4Sl.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/28/HuzF2oGUgDsN4Sl.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><img src="https://i.loli.net/2020/11/28/aS3wmf4FZR5plv7.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/28/aS3wmf4FZR5plv7.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * ESP8266 Deep sleep mode example</span></span><br><span class="line"><span class="comment"> * Rui Santos </span></span><br><span class="line"><span class="comment"> * Complete Project Details https://randomnerdtutorials.com</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">begin</span>(<span class="number">115200</span>);</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">setTimeout</span>(<span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Wait for serial to initialize.</span></span><br><span class="line">  <span class="keyword">while</span>(!<span class="built_in">Serial</span>) &#123; &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">// Deep sleep mode until RESET pin is connected to a LOW signal (for example pushbutton or magnetic reed switch)</span></span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">&quot;I&#x27;m awake, but I&#x27;m going into deep sleep mode until RESET pin is connected to a LOW signal&quot;</span>);</span><br><span class="line">  ESP.deepSleep(<span class="number">0</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>有的ESP模块上面带有LED灯，采用低功耗方案，务必将LED移除。</li>
+</ol>
+<h1 id="8：与其他单片机通讯"><a href="#8：与其他单片机通讯" class="headerlink" title="8：与其他单片机通讯"></a>8：与其他单片机通讯</h1><p>ESP通过串口可与其他单片机传递信息，将ESP的TX引脚连接其他单片机RX引脚，ESP的RX连接其他单片机的TX。</p>
+<blockquote>
+<p>注意，ESP8266是3.3V供电，VCC需要接3.3V。如果其他单片机是5V供电，ESP的RX引脚需要分压之后连接其他单片机的TX，否则进入ESP的5V电压会烧坏芯片。ESP的TX则不用分压。</p>
+</blockquote>
+<p>下图为ESP连接Arduino Nano的接线图，途中，ESP RX引脚，通过1K和2K的电阻分压，其实也可以直接在ESP TX引脚和单片机RX引脚之间连接一个550左右的电阻。</p>
+<p><img src="https://i.loli.net/2020/11/27/u2Ggy1z9U87fV3i.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/27/u2Ggy1z9U87fV3i.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h1 id="9：参考资料"><a href="#9：参考资料" class="headerlink" title="9：参考资料"></a>9：参考资料</h1><p>《<a target="_blank" rel="noopener" href="http://www.piaoyi.org/iot/espressif-ESP8266-MQTT-AT.html">乐鑫ESP8266烧录固件、升级最新固件、刷MQTT固件</a>》</p>
+<p>《<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44713763/article/details/104755899">ESP8266 WIFI模块常用AT指令汇总</a>》</p>
+<p>《<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34020487/article/details/102766314">Arduino安装ESP8266的开发环境</a>》</p>
+<p>《<a target="_blank" rel="noopener" href="http://www.taichi-maker.com/homepage/esp8266-nodemcu-iot/iot-c/esp8266-nodemcu-web-client/esp8266-json-parse/">ESP8266 JSON解析</a>》</p>
+<p>《<a target="_blank" rel="noopener" href="http://www.taichi-maker.com/homepage/iot-development/iot-dev-reference/esp8266-c-plus-plus-reference/http-client-secure/certificate-fingerprint/">物联网开发实用知识 – 查看网站证书指纹</a>》</p>
+<p>《<a target="_blank" rel="noopener" href="https://randomnerdtutorials.com/esp8266-deep-sleep-with-arduino-ide/">ESP8266 Deep Sleep with Arduino IDE (NodeMCU)</a>》</p>
+
+    
+      
+      <div class='footer'>
+        
+        
+          
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="\2020\11\24\基于ESP8266WIFI模块和MPU6050加速度计在Arduino上开发智能信箱\" title="基于ESP8266WIFI模块和MPU6050传感器在Arduino上开发智能信箱" rel="bookmark "><img src="https://i.loli.net/2020/11/25/1BzINH4M5urOPnQ.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/25/1BzINH4M5urOPnQ.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">基于ESP8266WIFI模块和MPU6050传感器在Arduino上开发智能信箱</span></a></div></section></div>
+        
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href=https://sci.ci/2020/11/26/ESP8266%E4%BB%8E0%E5%88%B01/>https://sci.ci/2020/11/26/ESP8266%E4%BB%8E0%E5%88%B01/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+        
+      </div>
+    
+  </div>
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-28T12:10:49+01:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年11月28日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ESP8266/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>ESP8266</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/11/26/ESP8266%E4%BB%8E0%E5%88%B01/&title=ESP8266从0到1 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/11/26/ESP8266%E4%BB%8E0%E5%88%B01/&title=ESP8266从0到1 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/11/26/ESP8266%E4%BB%8E0%E5%88%B01/&title=ESP8266从0到1 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2020/11/24/%E5%9F%BA%E4%BA%8EESP8266WIFI%E6%A8%A1%E5%9D%97%E5%92%8CMPU6050%E5%8A%A0%E9%80%9F%E5%BA%A6%E8%AE%A1%E5%9C%A8Arduino%E4%B8%8A%E5%BC%80%E5%8F%91%E6%99%BA%E8%83%BD%E4%BF%A1%E7%AE%B1/'>
+          <p class='title'>基于ESP8266WIFI模块和MPU6050传感器在Arduino上开发智能信箱<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1：开篇在德国，每家每户都有一个信箱，家庭的电气暖账单，亲人的问候，个人的信件都会装到这个小小的箱子里。。相较于送货到人的快递，信件往往被我们所忽略，常宅在家的我，就一两个星期才会检查一次信箱。...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0%EF%BC%9A%E5%89%8D%E8%AF%AD"><span class="toc-text">0：前语</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E8%BF%9E%E7%BA%BF"><span class="toc-text">1：连线</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9A%E7%AE%80%E5%8D%95%E5%BC%80%E5%A7%8B"><span class="toc-text">2：简单开始</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%9A%E6%9B%B4%E6%96%B0%E5%9B%BA%E4%BB%B6"><span class="toc-text">3：更新固件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%9AAT%E6%8C%87%E4%BB%A4"><span class="toc-text">4：AT指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-text">基础命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%BC%8F%E5%91%BD%E4%BB%A4"><span class="toc-text">模式命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE"><span class="toc-text">客户端|服务器设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%EF%BC%9A%E4%BD%BF%E7%94%A8Arduino-IDE%E7%BC%96%E5%86%99%E7%A8%8B%E5%BA%8F"><span class="toc-text">5：使用Arduino IDE编写程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%EF%BC%9AHttps%E8%AF%B7%E6%B1%82%E7%A8%8B%E5%BA%8F"><span class="toc-text">6：Https请求程序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7%EF%BC%9A%E4%BD%8E%E5%8A%9F%E8%80%97%E6%96%B9%E6%A1%88"><span class="toc-text">7：低功耗方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8%EF%BC%9A%E4%B8%8E%E5%85%B6%E4%BB%96%E5%8D%95%E7%89%87%E6%9C%BA%E9%80%9A%E8%AE%AF"><span class="toc-text">8：与其他单片机通讯</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9%EF%BC%9A%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">9：参考资料</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+
+
+</aside>
+
+
+
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        
+          <div><p><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://hexo.io/"><img src="https://img.shields.io/badge/Powered-Hexo-red" class="lazyload" data-srcset="https://img.shields.io/badge/Powered-Hexo-red" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://volantis.js.org/"><img src="https://img.shields.io/badge/Theme-Volantis-blue" class="lazyload" data-srcset="https://img.shields.io/badge/Theme-Volantis-blue" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-success" class="lazyload" data-srcset="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-success" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" href="https://sci.ci"><img src="https://img.shields.io/badge/Copyright-2019--2020%20QF-orange" class="lazyload" data-srcset="https://img.shields.io/badge/Copyright-2019--2020%20QF-orange" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a></p>
+</div>
+        
+      
+    
+      
+        
+          <div><img src="https://img.shields.io/badge/Bitcoin-1MeDbjhePSdQnHgHXmb9qFtwqG4aP6izCh-brightgreen" class="lazyload" data-srcset="https://img.shields.io/badge/Bitcoin-1MeDbjhePSdQnHgHXmb9qFtwqG4aP6izCh-brightgreen" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></div>
+        
+      
+    
+  </footer>
+
+
+      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    
+    <!-- internal -->
+
+
+
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".md").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      // 背景层
+      var bgDiv = document.createElement("div");
+      $(bgDiv).addClass("bg");
+      if ($(this).attr('bg')) {
+        $(bgDiv).css('background', $(this).attr('bg'));
+      }
+      $(this).wrap(bgDiv); // 背景层
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+<!-- optional -->
+
+  <script>
+  
+  var SEARCH_SERVICE = "hexo" || "hexo";
+  var ROOT = "/" || "/";
+  if (!ROOT.endsWith('/')) ROOT += '/';
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+
+
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = '5054430406';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.7';
+</script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+
+
+
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "快来评论吧~";
+
+    let path = $.trim($('#pjax-comment-path').text());
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "48JncNXaMCBOYe2LYwnCKUuC-gzGzoHsz",
+      appKey: "mQwPJ4JtjJavw1ukXCv9G6eD",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
+    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://sci.ci' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://sci.ci' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://sci.ci' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              if (pv.getAttribute('data-path') == window.location.pathname) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == window.location.pathname) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+<!-- more -->
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+        pjax_fancybox();
+        
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>
