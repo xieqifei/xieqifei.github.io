@@ -523,7 +523,10 @@
 <blockquote>
 <p>‘Authorization’: ‘token 77ed8fdca6<strong>*a00f0***</strong>d73239790c6323dd’</p>
 </blockquote>
-<h1 id="5：设置语雀-hook"><a href="#5：设置语雀-hook" class="headerlink" title="5：设置语雀 hook"></a>5：设置语雀 hook</h1><p>在语雀的钩子中，将腾讯云函数的触发 api 填写进去，就可以尽情享受本地+在线写作的快乐了。</p>
+<h1 id="5：语雀转-markdown"><a href="#5：语雀转-markdown" class="headerlink" title="5：语雀转 markdown"></a>5：语雀转 markdown</h1><p>从语雀同步文章到本地时，文章会自动转为 markdown 格式，而通常这个文章是没有分类和标签的，为了能够让文章同步到博客时，更加融洽，需要在编写语雀文章时，添加语雀插件自带的 Font-matter 插件的头部格式。<br>也就是说，需要在语雀编辑器中，标题一下，正文以上的部位，添加如下内容</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tags:</span> [<span class="string">语雀</span>, <span class="string">travis</span>, <span class="string">serverless</span>]</span><br><span class="line"><span class="attr">categories:</span> [<span class="string">语雀</span>]</span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>为了方便书写，建议为此知识库建立一个模板，每次写文章都应用此模板。书写更加游刃有余。</p>
 <h1 id="6：参考资料"><a href="#6：参考资料" class="headerlink" title="6：参考资料"></a>6：参考资料</h1><p>《<a target="_blank" rel="noopener" href="https://www.kikohk.top/article/3899/">Hexo+GitHub+Action+腾讯云函数+语雀搭建自动化个人博客</a>》<br>《<a target="_blank" rel="noopener" href="https://www.yuque.com/gavinluo/blog/yuque-auto-2-hexo">语雀云编辑自动部署 Hexo 博客</a><strong>》</strong><br><strong>《</strong><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1665753">语雀自动同步到 hexo 博客</a><strong>》</strong><br><strong>《</strong><a target="_blank" rel="noopener" href="https://www.tangruiping.com/post/yque-serverless-github-actions-hexo.html">语雀文章用 Serverless 自动部署到 Hexo 博客</a><strong>》</strong></p>
 
     
@@ -567,7 +570,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-21T07:18:30+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-21T07:26:24+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年2月21日</p>
@@ -692,7 +695,7 @@ http...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9AHexo-%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2"><span class="toc-text">1：Hexo 本地博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9AHexo-%E5%90%8C%E6%AD%A5-Github-%E4%BB%93%E5%BA%93"><span class="toc-text">2：Hexo 同步 Github 仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%9AAction"><span class="toc-text">3：Action</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%9A%E4%BA%91%E5%87%BD%E6%95%B0"><span class="toc-text">4：云函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%EF%BC%9A%E8%AE%BE%E7%BD%AE%E8%AF%AD%E9%9B%80-hook"><span class="toc-text">5：设置语雀 hook</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%EF%BC%9A%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">6：参考资料</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9AHexo-%E6%9C%AC%E5%9C%B0%E5%8D%9A%E5%AE%A2"><span class="toc-text">1：Hexo 本地博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9AHexo-%E5%90%8C%E6%AD%A5-Github-%E4%BB%93%E5%BA%93"><span class="toc-text">2：Hexo 同步 Github 仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%9AAction"><span class="toc-text">3：Action</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%9A%E4%BA%91%E5%87%BD%E6%95%B0"><span class="toc-text">4：云函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%EF%BC%9A%E8%AF%AD%E9%9B%80%E8%BD%AC-markdown"><span class="toc-text">5：语雀转 markdown</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%EF%BC%9A%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">6：参考资料</span></a></li></ol>
     </div>
   </section>
 
