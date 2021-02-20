@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>ifvod去除广告</title>
+      <link href="/2021/02/16/ifvod%E5%8E%BB%E9%99%A4%E5%B9%BF%E5%91%8A/"/>
+      <url>/2021/02/16/ifvod%E5%8E%BB%E9%99%A4%E5%B9%BF%E5%91%8A/</url>
+      
+        <content type="html"><![CDATA[<p>ifvod视频会在视频的开始、25分钟、50分钟的时候插入广告，现在仅需简单的两步，就能去除ifvod播放广告。</p><h1 id="1：安装浏览器插件"><a href="#1：安装浏览器插件" class="headerlink" title="1：安装浏览器插件"></a>1：安装浏览器插件</h1><p>点击下面的链接，将ReRes插件<code>添加至Chrome</code>。</p><p><a href="https://chrome.google.com/webstore/detail/reres/gieocpkbblidnocefjakldecahgeeica">https://chrome.google.com/webstore/detail/reres/gieocpkbblidnocefjakldecahgeeica</a></p><p>安装好后，在浏览器拓展程序中，将出现ReRes插件。</p><p>在浏览器地址栏输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chrome:&#x2F;&#x2F;extensions&#x2F;</span><br></pre></td></tr></table></figure><p>查看插件，确保插件已经激活，激活时，右下角的<code>滑动按钮</code>状态如图所示。</p><p><img src="https://i.loli.net/2021/02/16/JsmNcldYvGoenX9.png" class="lazyload" data-srcset="https://i.loli.net/2021/02/16/JsmNcldYvGoenX9.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210216094238426"></p><p>点击浏览器窗口右上角的ReRes图标，应该会出现下图所示的弹窗。当然此时应当还没有任何规则。</p><p><img src="https://i.loli.net/2021/02/16/3OHyDYPJz1WrvCb.png" class="lazyload" data-srcset="https://i.loli.net/2021/02/16/3OHyDYPJz1WrvCb.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210216093951914"></p><h1 id="2：添加规则"><a href="#2：添加规则" class="headerlink" title="2：添加规则"></a>2：添加规则</h1><p>如图所示，点击<code>添加规则</code>按钮</p><p><img src="https://i.loli.net/2021/02/16/guW3XIzaKTricwv.png" class="lazyload" data-srcset="https://i.loli.net/2021/02/16/guW3XIzaKTricwv.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210216094503703"></p><p>在<code>If URL match:</code>一栏填入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.ifvod.tv&#x2F;7-es2015.5cef6194389ec0967828.js</span><br></pre></td></tr></table></figure><p>在<code>Response:</code>一栏填入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;qn.xieqifei.com&#x2F;7-es2015.5cef6194389ec0967828.js</span><br></pre></td></tr></table></figure><p>点击保存。</p><p><strong>至此，你在ifvod观看视频，将不会有任何视频广告插入。</strong></p><h1 id="3：原理"><a href="#3：原理" class="headerlink" title="3：原理"></a>3：原理</h1><p>ifvod广告是通过js代码嵌入到播放器中的。我仔细阅读了，它的播放器代码，也就是，上面替换掉的js文件，我修改了其中，关于广告投放部分的代码。。</p><p>ReRes插件是我在网上随便找的一个插件，它的作用是，当浏览器请求一个资源时，如果它符合我在ReRes上设定的url规则，就将它重定向到另一个资源文件。这样就能实现篡改ifvod的播放器源代码。</p><p>也许你可以通过对比修改前后的js文件，来了解我具体是如何修改的。。不过，我并不推荐你阅读这个两万行代码的文件，它会让你崩溃。。我也没有完全阅读这些代码，而是通过一些逆向工程的推断，来找到核心代码，这需要一些耐心。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网站编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>爬取Youtube搜索结果</title>
       <link href="/2021/02/06/%E7%88%AC%E5%8F%96Youtube%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C/"/>
       <url>/2021/02/06/%E7%88%AC%E5%8F%96Youtube%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C/</url>
