@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Selenium-Webdriver接口</title>
+      <link href="/2021/02/23/yuque/fc448d/"/>
+      <url>/2021/02/23/yuque/fc448d/</url>
+      
+        <content type="html"><![CDATA[<p>越来越多的人开始使用 Serverless 构架搭建自己的应用，而 Serverless 的缺点显而易见，很难自定义运行时。当我尝试在云函数搭建一个基于 Webdriver 的爬虫程序时，我了解到，基于 python 的 Selenium 应用还无法在云函数上运行，这是由于云函数并没有安装 chrome 浏览器。<br>如果想在云函数上运行 Selenium，则必须使用 node.js 8.10 版本+puppeteer 插件。对于 node.js 并不熟悉的我，需要重新学习这款程序。<br>我相信，随着 Serverless 的发展，会有越来越多的人跟我一样，希望通过云函数基于 Python 实现 Selenium 爬虫。因此，我将在此方向上，迈出一步，构建一个 Selenium 的 api。此应用，应当以 url 作为参数，并返回给用户 js 处理后的 html 代码。我希望它是运行在云函数上的。<br>也许它能够成为，反向代理的一种方式。那么现在开始学习 Nodjs 吧！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 构想 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Selenium </tag>
+            
+            <tag> Serverless </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于Serverless的音乐下载工具</title>
       <link href="/2021/02/22/yuque/nnzrrl/"/>
       <url>/2021/02/22/yuque/nnzrrl/</url>
@@ -76,9 +103,9 @@
             
             <tag> Hexo </tag>
             
-            <tag> 语雀 </tag>
-            
             <tag> Serverless </tag>
+            
+            <tag> 语雀 </tag>
             
         </tags>
       
