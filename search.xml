@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>RWTH自习室自动预定程序(RWTH Lernraum)</title>
+      <link href="/2021/07/21/yuque/dbbkl1/"/>
+      <url>/2021/07/21/yuque/dbbkl1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-开篇"><a href="#1-开篇" class="headerlink" title="1.开篇"></a>1.开篇</h2><p>抢座程序分为两种，基于 selenium 的浏览器自动化程序，和基于 requests 库的 http 模拟请求程序。</p><p>为了成功运行程序，请确保你的计算机安装了 Python。如何安装 Python 可自行网上搜索。两种程序命中率均比较高。可任选一种运行。<br>项目地址：<a href="https://github.com/xieqifei/AutoLernraum">https://github.com/xieqifei/AutoLernraum</a></p><h2 id="2-基于-Requests-库的预定程序-正在测试当中，不太稳定，关注-github-更新"><a href="#2-基于-Requests-库的预定程序-正在测试当中，不太稳定，关注-github-更新" class="headerlink" title="2.基于 Requests 库的预定程序(正在测试当中，不太稳定，关注 github 更新)"></a>2.基于 Requests 库的预定程序(正在测试当中，不太稳定，关注 github 更新)</h2><ol><li>安装 Python 环境</li><li>点击 github 网页上面那个绿色的<code>Code</code>按钮，选择下载为 zip，将整个程序文件从 github 下载到本地并解压。</li><li>使用任意编辑器打开<code>test_requests.py</code>，修改变量 buchung</li></ol><blockquote><p>buchung = {‘ort’: ‘’, ‘kursnr’: ‘08411027’,’info’:{ ‘username’: ‘’, ‘email’: ‘example@gmail.com’, ‘sex’: ‘M’, ‘vorname’: ‘Ivan’, ‘name’: ‘Natanael’, ‘strasse’: ‘Pontstr.23’, ‘ort’: ‘52076 Aachen’, ‘status’: ‘S-RWTH’, ‘matnr’: ‘468389’, ‘telefon’: ‘00491748068847’}}</p><p>在变量 buchung 中,需要修改的数据如下：</p><p>kursnr:你想预定的自习室的编号。例如 08411027 为 Semi90。在图书馆的预定系统中，很容易就可以找到。图书馆系统链接：<a href="https://buchung.hsz.rwth-aachen.de/angebote/aktueller_zeitraum/_Lernraumbuchung.html">https://buchung.hsz.rwth-aachen.de/angebote/aktueller_zeitraum/_Lernraumbuchung.html</a></p><p>email:你的邮箱。</p><p>sex:性别。男：M；女:W</p><p>vorname:名字。首字母大写</p><p>name:姓。首字母大写</p><p>strasse:街道和号码</p><p>ort:邮编和地址，务必注意格式是 52076 Aachen.邮编和地址以空格隔开</p><p>matnr:六位学号</p><p>telefon:带前缀的手机号</p><p>其余内容可不修改。务必注意在每个字符串两边都有单引号</p></blockquote><ol start="3"><li>保存文件，并用 python 运行<code>test_requests.py</code>文件。若你不知道如何运行 python 文件，建议上网查询。</li><li>运行后，程序会在两分钟之内，以 2 秒为间隔刷新，直到发现你指定的自习室可以预定并完成预定，或两分钟后依然没有发现可以预定的位置为止。如果你需要抢的自习室在 8 点开始，那么建议你在 7 点 59 的时候开始运行程序。。程序结束 5 分钟后，你将收到来自学校邮箱的，预定成功邮件。若没有收到，那么抢座失败。</li></ol><h2 id="3-基于-Selenium-库的浏览器自动化程序"><a href="#3-基于-Selenium-库的浏览器自动化程序" class="headerlink" title="3.基于 Selenium 库的浏览器自动化程序"></a>3.基于 Selenium 库的浏览器自动化程序</h2><p>顾名思义，你除了需要在你的电脑中安装 Python 以外，还要在你的电脑里安装 Chrome 浏览器。如果你不想安装 Chrome 那么上面的程序应该就可以满足你的需求了。之所以使用自动化，是因为它可能会比模拟 http 请求更加可靠，但缺点也很明显，它比上面的程序会慢个几秒。不过没关系，相比于人为抢座来说，它同样非常快。那么，</p><ol><li>安装 Python 环境</li><li>安装任意版本 Chrome 浏览器</li><li>打开<code>test_selenium.py</code>文件，修改<code>buchung</code>变量里的个人信息和需要预定的自习室编号，详情看第 2 章 3 节</li><li>保存文件，用 Python 运行<code>test_selenium.py</code>。</li><li>同样的，如果你预定的程序 8 点开抢，那么建议你 7:59 运行它。它将在两分钟之内反复刷新页面，直到你指定的自习室位置可以被预定，并执行预定程序，或者两分钟之后结束运行。</li></ol><h2 id="4-随机抢座"><a href="#4-随机抢座" class="headerlink" title="4.随机抢座"></a>4.随机抢座</h2><p>也许你在抢座时头破血流，也没有抢到一个位置。那么亡羊补牢，你可能需要一个程序来尝试捡漏，如果有人放弃了他的预定，并在学校的预定系统被释放出来，那么你可以用到这个程序。他会间断的刷新，直到从学校的网页里找到一个可以预定的位置，并预定成功为止。或者，除非你手动终止它，否则他将不会停止运行。</p><ol><li>安装 Python 环境</li><li>安装任意版本 Chrome 浏览器</li><li>打开<code>random_test.py</code>文件，修改<code>buchung</code>变量里的个人信息，详情看第 2 章 3 节。自习室的编号任意填写即可。</li><li>保存文件，用 Python 运行<code>random_test.py</code>。</li><li>你可在任意时候运行它。当需要结束的时候，按住<code>ctrl+C</code>或关闭终端可终止。</li></ol><p>这个程序相当鸡肋，因为很少能够遇到可以捡漏的机会，而遇到的时候，也没抢到过。</p><h2 id="5-定时运行"><a href="#5-定时运行" class="headerlink" title="5.定时运行"></a>5.定时运行</h2><p>也许你想早起的时候睡个懒觉。那么，你可以试试使用计算机定时运行 python 程序。</p><p>Windows 和 mac 系统的定时运行方法，你可以自行谷歌搜索。因为我用到过树莓派和云函数进行定时抢座，所以这里只讲 Linux 和基于腾讯云函数的定时方法。</p><p><strong>Linux 系统下的定时运行</strong>：</p><p>你需要用到 linux 自带的定时软件 crontab。非常简单，</p><ol><li>输入指令,开始编辑时间表</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure><ol start="2"><li>按下<code>i</code>开始编辑,编辑内容如下</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0,30 8 * * * python -u /home/***/test_requests.py &gt;result.log 2&gt;&amp;1</span><br></pre></td></tr></table></figure><p>将上述<code>/home/***/test_requestes.py</code>改为你放置该文件的地址即可。</p><p>此行代码表示。将在每日的 8 点和八点半执行 python 此程序，并将 python 的输出保存到定时程序文件夹里的 result.log 文件里</p><ol start="3"><li>按下<code>:wq</code>保存退出</li></ol><p><strong>利用腾讯云函数</strong></p><p>腾讯云函数，有非常充足的免费运行空间。可以直接把程序放到上面执行，应该很少有人会用到吧，所以简单讲讲。</p><ol><li>建立一个新函数，将完整的程序上传。</li><li>新建定时触发器，自定义触发周期如下，因为定时器是以北京时间为准，所以需要考虑时差问题。</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 0,30 14 * * *</span><br></pre></td></tr></table></figure><ol start="3"><li>函数入口为<code>test_serverless.main_handler</code></li></ol><h2 id="6-结尾"><a href="#6-结尾" class="headerlink" title="6.结尾"></a>6.结尾</h2><p>如果你对程序的运行原理感兴趣，那么你可以看看<code>/myclass/lernraum.py</code>文件，所有的抢座程序都在这个文件中，因为文件经过了多次修改，所以看起来可能有点杂乱无章。另外，基于此程序我开发了一个网站，用于批量自动化抢座，<a href="https://buchung.sci.ci/">https://buchung.sci.ci</a> 功能以基本实现，但由于基于 Requests 库程序还不稳定，浏览器自动化又颇耗内存，只给我的好友提供服务，暂时未开放注册，敬请期待。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何利用Selenium实现更加高效的爬虫</title>
       <link href="/2021/07/10/yuque/kdo456/"/>
       <url>/2021/07/10/yuque/kdo456/</url>
