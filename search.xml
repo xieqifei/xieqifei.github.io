@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>在控制器中用JS验证CSS Selector和Xpath</title>
+      <link href="/2021/07/25/yuque/hzg0pr/"/>
+      <url>/2021/07/25/yuque/hzg0pr/</url>
+      
+        <content type="html"><![CDATA[<h1 id="0：引言"><a href="#0：引言" class="headerlink" title="0：引言"></a>0：引言</h1><p>使用 Beautifulsoup 和 Selenuim 等网页分析工具时，经常需要自己构造一个选择器，最常用的是 CSS 选择器和 Xpath。如何验证选择器构造是否正确呢？我们可以直接在网页的开发者工具 Console 栏里使用 JS 代码来验证选择器的正确性。<br>​</p><h1 id="1：CSS-Selector-验证"><a href="#1：CSS-Selector-验证" class="headerlink" title="1：CSS Selector 验证"></a>1：CSS Selector 验证</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">css_selector = <span class="string">&quot;#bs_form_main input[value=buchen]&quot;</span>;</span><br><span class="line"><span class="built_in">document</span>.querySelector(css_selector);</span><br></pre></td></tr></table></figure><p>JS 有提供 querySelector 方法，如果返回值不为 Null，则说明选择器构造正确。<br>​</p><h1 id="2：Xpath-验证"><a href="#2：Xpath-验证" class="headerlink" title="2：Xpath 验证"></a>2：Xpath 验证</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xpath = <span class="string">&#x27;//*[@id=&quot;bs_tr3FE6EE511403&quot;]/td[9]/input&#x27;</span>;</span><br><span class="line"><span class="built_in">document</span></span><br><span class="line">  .evaluate(xpath, <span class="built_in">document</span>, <span class="literal">null</span>, XPathResult.ANY_TYPE, <span class="literal">null</span>)</span><br><span class="line">  .iterateNext();</span><br></pre></td></tr></table></figure><p>evaluate 方法返回 XpathResult 对象，通过 iterateNext 可以依次获取符合选择的 Dom。通常情况下，不需要确认是否有多个符合条件的返回值，所以如果返回不是 null，则 xpath 构造正确<br>如果需要确认，返回一个或者多个符合 xpath 的 dom，可以使用下面的方法。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params">xpath</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> result = <span class="built_in">document</span>.evaluate(</span><br><span class="line">    xpath,</span><br><span class="line">    <span class="built_in">document</span>,</span><br><span class="line">    <span class="literal">null</span>,</span><br><span class="line">    XPathResult.ANY_TYPE,</span><br><span class="line">    <span class="literal">null</span></span><br><span class="line">  );</span><br><span class="line">  <span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (result.iterateNext()) &#123;</span><br><span class="line">    i++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="3：参考"><a href="#3：参考" class="headerlink" title="3：参考"></a>3：参考</h1><p>《<a href="https://cloud.tencent.com/developer/article/1702495">JavaScript 技术篇-js 通过 xpath 获取 dom 节点，js 校验 xpath 唯一性。</a>》</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网站编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>RWTH自习室自动预定程序(RWTH Lernraum)</title>
       <link href="/2021/07/21/yuque/dbbkl1/"/>
       <url>/2021/07/21/yuque/dbbkl1/</url>
