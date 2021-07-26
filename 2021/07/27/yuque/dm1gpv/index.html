@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-beta.2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>安卓ToyVPN服务端从零开始读 - 🛫起飞了</title>
+  
+    <meta name="keywords" content="VPN">
+  
+
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/css/all.min.css">
+
+  
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+</head>
+
+<body>
+  <header class="l_header auto shadow blur" style='opacity: 0' >
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div class="l_body">
+    <div class="l_cover">
+
+  
+  
+      <div class='cover-wrapper post dock' style="display: none;">
+        
+          <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
+        
+        <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">🛫起飞了</p>
+    
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a target="_blank" rel="noopener" href="https://weibo.com/678199722"
+              
+              
+              id="https:weibocom678199722">
+              <i class='fab fa-weibo fa-fw'></i><p>Weibo</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100006770206489"
+              
+              
+              id="https:wwwfacebookcomprofilephp?id=100006770206489">
+              <i class='fab fa-facebook fa-fw'></i><p>Facebook</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://twitter.com/CruelGiF"
+              
+              
+              id="https:twittercomCruelGiF">
+              <i class='fab fa-twitter fa-fw'></i><p>Twitter</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://www.instagram.com/xie_qifei/"
+              
+              
+              id="https:wwwinstagramcomxie_qifei">
+              <i class='fab fa-instagram fa-fw'></i><p>Instagram</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://github.com/xieqifei"
+              
+              
+              id="https:githubcomxieqifei">
+              <i class='fab fa-github fa-fw'></i><p>Github</p>
+            </a>
+          
+            <a href="mailto:im@xieqifei.com"
+              
+              
+              id="mailto:im@xieqifeicom">
+              <i class='fas fa-envelope fa-fw'></i><p>Email</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+  
+
+</div>
+
+    <div class='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">安卓ToyVPN服务端从零开始读</div>
+  <div id="pjax-enable-cover">true</div>
+  <div id="pjax-comment-path"></div>
+  <div id="pjax-comment-placeholder"></div>
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "blog") { // 半屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "docs") { // 全屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+
+        
+        
+<meta name="referrer" content="no-referrer" />
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  <div class='article-header'>
+    
+    <div class="article-meta" id="top">
+      
+      
+      
+        <h1 class="title">
+          <a href="/2021/07/27/yuque/dm1gpv/">
+            安卓ToyVPN服务端从零开始读
+          </a>
+        </h1>
+      
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://ae01.alicdn.com/kf/Hb5b4a24aa25749c38ad1c3af3f15bac4e.jpg">
+    <p>啓飞</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/Linux/">Linux</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年7月27日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="安卓ToyVPN服务端从零开始读" data-path="/2021/07/27/yuque/dm1gpv/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h1 id="0：导读"><a href="#0：导读" class="headerlink" title="0：导读"></a>0：导读</h1><p>这个程序是基于 c++实现的一个简单 VPN 服务器，搭配 ToyVPN 安卓客户端食用。为了从零开始了解 VPN 的原理，我决定花时间来解读服务端的代码，并在此记录。<br>代码原址：<a target="_blank" rel="noopener" href="https://android.googlesource.com/platform/development/+/master/samples/ToyVpn/server/linux/ToyVpnServer.cpp">ToyVPNServer.cpp</a></p>
+<h1 id="1：库说明"><a href="#1：库说明" class="headerlink" title="1：库说明"></a>1：库说明</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;			//标准输入输出库，例如printf和scanf函数</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;			//标准库，将字符串变量转为其他类型变量</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;			//字符串库</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;			//Unix标准库，提供通用的文件、目录、程序及进程操作的函数</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;arpa/inet.h&gt;		//提供IP地址转换函数</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;netinet/in.h&gt;		//定义数据结构sockaddr_in</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/ioctl.h&gt;		//提供对I/O控制的函数</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;		//提供socket函数及数据结构</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;		//unix/linux系统定义文件状态所在的伪标准头文件</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;		//数据类型定义</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;errno.h&gt;			//提供错误号errno的定义，用于错误处理</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;			//提供对文件控制的函数</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __linux__			<span class="comment">//如果__linux__被定义了</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;net/if.h&gt;			//套接字本地接口，</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;linux/if_tun.h&gt;	//用于建立Tun，虚拟网卡</span></span></span><br></pre></td></tr></table></figure>
+
+<h1 id="2：获取接口"><a href="#2：获取接口" class="headerlink" title="2：获取接口"></a>2：获取接口</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//此方法中用到的函数，均在linux/if_tun.h中</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">get_interface</span><span class="params">(<span class="keyword">char</span> *name)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> interface = open(<span class="string">&quot;/dev/net/tun&quot;</span>, O_RDWR | O_NONBLOCK);	<span class="comment">//打开tun字符设备</span></span><br><span class="line">    ifreq ifr;											<span class="comment">//初始化一个ifreq结构体，见2，1节</span></span><br><span class="line">    <span class="built_in">memset</span>(픦, <span class="number">0</span>, <span class="keyword">sizeof</span>(ifr));						<span class="comment">//清空结构体ifr成员变量的值，或者叫初始化</span></span><br><span class="line">    ifr.ifr_flags = IFF_TUN | IFF_NO_PI;				<span class="comment">//指定网络设备的一些特性</span></span><br><span class="line">    <span class="built_in">strncpy</span>(ifr.ifr_name, name, <span class="keyword">sizeof</span>(ifr.ifr_name));	<span class="comment">//把name复制给ifr.ifr_name，指定虚拟网络设备名称</span></span><br><span class="line">    <span class="keyword">if</span> (ioctl(interface, TUNSETIFF, 픦)) &#123;			<span class="comment">//管理IO设备函数ioctl，创建或打开一个虚拟网络设备，返回值&lt;0则出错。见2.2节</span></span><br><span class="line">        perror(<span class="string">&quot;Cannot get TUN interface&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> interface;									<span class="comment">//返回接口</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 linux 操作系统中，可以直接向**/dev/net/tun**字符设备写入或读取 IP 数据包，写入的 IP 数据包，将被直接送到 TCP/IP 协议栈并进行发送，而接收到的 IP 数据包也可以从 tun 文件中读取。</p>
+<ul>
+<li>O_RDWR 以可读写方式打开文件；</li>
+<li>O_NONBLOCK 以不可阻断的方式打开文件, 也就是无论有无数据读取或等待, 都会立即返回进程之中。</li>
+</ul>
+<h2 id="2-1-ifreq-结构体"><a href="#2-1-ifreq-结构体" class="headerlink" title="2.1 ifreq 结构体"></a>2.1 ifreq 结构体</h2><p>对于结构体 ifr，我们只关心其中的两个成员 ifr_name, ifr_flags。ifr_name 定义了要创建或者打开的虚拟设备名字，如果没有此名称的设备或者为空，则新建一个虚拟设备，并返回一个新建的虚拟网络上设备名称。ifr_flags 用来描述设备的一些属性：</p>
+<blockquote>
+<ul>
+<li>IFF_TUN: 创建一个点对点设备</li>
+<li>IFF_TAP: 创建一个以太网设备</li>
+<li>IFF_NO_PI: 不包含包信息，默认的每个数据包当传到用户空间时，都将包含一个附加的包头来保存包信息</li>
+<li>IFF_ONE_QUEUE: 采用单一队列模式，即当数据包队列满的时候，由虚拟网络设备自已丢弃以后的数据包直到数据包队列再有空闲</li>
+</ul>
+</blockquote>
+<p>配置的时候，IFF_TUN 和 IFF_TAP 必须择一，其他选项则可任意组合。TAP 等同于一个以太网设备，它操作第二层数据包如以太网数据帧。TUN 模拟了网络层设备，操作第三层数据包比如 IP 数据包。可以理解为 TAP 比 TUN 封装时多了一个目标和本机的机器地址(MAC)。IFF_NO_PI 没有开启时所附加的包信息头如下:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">tun_pi</span> &#123;</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">short</span> flags;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">short</span> proto;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>目前，flags 只在收取数据包的时候有效，当它的 TUN_PKT_STRIP 标志被置时，表示当前的用户空间缓冲区太小，以致数据包被截断。proto 成员表示发送/接收的数据包的协议。</p>
+<h2 id="2-2-ioctl-函数"><a href="#2-2-ioctl-函数" class="headerlink" title="2.2 ioctl()函数"></a>2.2 ioctl()函数</h2><p>上面代码中的文件描述符 fd 除了支持 TUN_SETIFF 和其他的常规 ioctl 命令外，还支持以下命令:</p>
+<blockquote>
+<ul>
+<li>TUNSETNOCSUM: 不做校验和校验。参数为 int 型的 bool 值。</li>
+<li>TUNSETPERSIST: 把对应网络设备设置成持续模式，默认的虚拟网络设备，当其相关的文件符被关闭时，也将会伴随着与之相关的路由等信息同时消失。如果设置成持续模式，那么它将会被保留供以后使用。参数为 int 型的 bool 值。</li>
+<li>TUNSETOWNER: 设置网络设备的属主。参数类型为 uid_t。</li>
+<li>TUNSETLINK: 设置网络设备的链路类型，此命令只有在虚拟网络设备关闭的情况下有效。参数为 int 型。</li>
+</ul>
+</blockquote>
+<p>ioctl 函数的作用是，将我们要求的配置，转换为/dev/net/tun 能够识别的字符写入到字符设备中。来建立一个 tun 接口。</p>
+<h1 id="3：获取隧道"><a href="#3：获取隧道" class="headerlink" title="3：获取隧道"></a>3：获取隧道</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">get_tunnel</span><span class="params">(<span class="keyword">char</span> *port, <span class="keyword">char</span> *secret)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// We use an IPv6 socket to cover both IPv4 and IPv6.</span></span><br><span class="line">    <span class="keyword">int</span> tunnel = socket(AF_INET6, SOCK_DGRAM, <span class="number">0</span>);	<span class="comment">//创建一个socket描述符，见3.1节</span></span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">    setsockopt(tunnel, SOL_SOCKET, SO_REUSEADDR, &amp;flag, <span class="keyword">sizeof</span>(flag));	<span class="comment">//打开地址复用功能</span></span><br><span class="line">    flag = <span class="number">0</span>;</span><br><span class="line">    setsockopt(tunnel, IPPROTO_IPV6, IPV6_V6ONLY, &amp;flag, <span class="keyword">sizeof</span>(flag));	<span class="comment">//同时允许ipv6和ipv4</span></span><br><span class="line">    <span class="comment">// 只接收本地端口消息</span></span><br><span class="line">    sockaddr_in6 addr;					<span class="comment">//IPV6结构体，成员包括地址，端口，flow information以及scope-id等</span></span><br><span class="line">    <span class="built_in">memset</span>(&amp;addr, <span class="number">0</span>, <span class="keyword">sizeof</span>(addr));		<span class="comment">//初始化addr</span></span><br><span class="line">    addr.sin6_family = AF_INET6;</span><br><span class="line">    addr.sin6_port = htons(atoi(port));	<span class="comment">//atoi()字符串转整数，htons()将主机字节顺序转为网络字节顺序</span></span><br><span class="line">    <span class="comment">// Call bind(2) in a loop since Linux does not have SO_REUSEPORT.</span></span><br><span class="line">    <span class="keyword">while</span> (bind(tunnel, (sockaddr *)&amp;addr, <span class="keyword">sizeof</span>(addr))) &#123;</span><br><span class="line">        <span class="keyword">if</span> (errno != EADDRINUSE) &#123;		<span class="comment">//错误如果不是端口被占用，则退出。否则继续循环</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        usleep(<span class="number">100000</span>);					<span class="comment">//停止0.1s，此函数包含在unistd.h中</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Receive packets till the secret matches.</span></span><br><span class="line">    <span class="keyword">char</span> packet[<span class="number">1024</span>];</span><br><span class="line">    <span class="keyword">socklen_t</span> addrlen;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        addrlen = <span class="keyword">sizeof</span>(addr);</span><br><span class="line">        <span class="keyword">int</span> n = recvfrom(tunnel, packet, <span class="keyword">sizeof</span>(packet), <span class="number">0</span>,</span><br><span class="line">                (sockaddr *)&amp;addr, &amp;addrlen);	<span class="comment">//接收数据，成功返回接收到的字符数</span></span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        packet[n] = <span class="number">0</span>;</span><br><span class="line">    &#125; <span class="keyword">while</span> (packet[<span class="number">0</span>] != <span class="number">0</span> || <span class="built_in">strcmp</span>(secret, &amp;packet[<span class="number">1</span>]));	<span class="comment">//strcmp 字符串比较，相等返回0，否则为正或者负数</span></span><br><span class="line">    <span class="comment">// Connect to the client as we only handle one client at a time.</span></span><br><span class="line">    connect(tunnel, (sockaddr *)&amp;addr, addrlen);			<span class="comment">//连接客户端</span></span><br><span class="line">    <span class="keyword">return</span> tunnel;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-1-socket-函数"><a href="#3-1-socket-函数" class="headerlink" title="3.1 socket 函数"></a>3.1 socket 函数</h2><p><strong>int socket(int domain, int type, int protocol);</strong><br>对应普通文件的打开操作，文件打开返回文件描述符，而 socket 返回 soket 描述符，它唯一标识了一个 socket。通过指定不同的参数，来创建不同的 socket。<br><strong>domain：</strong>即协议域，又称为协议族（family）。常用的协议族有，AF_INET、AF_INET6、AF_LOCAL（或称 AF_UNIX，Unix 域 socket）、AF_ROUTE 等等。协议族决定了 socket 的地址类型，在通信中必须采用对应的地址。</p>
+<blockquote>
+<ul>
+<li>AF_INET：决定了要用 ipv4 地址 host（32 位的）与端口号 port（16 位的）的组合。host 是一个表示为互联网域名表示法之内的主机名或者一个 IPv4 地址的字符串，例如 ‘daring.cwi.nl’ 或 ‘100.50.200.5’，port 是一个整数。对于 TCP/IP 协议族，该参数置 AF_INET。</li>
+<li>AF_INET6：表示使用 ipv6 地址或者 ipv4 地址和端口。</li>
+<li>AF_UNIX：决定了要用一个绝对路径名作为地址。</li>
+</ul>
+</blockquote>
+<p><strong>type：</strong>指定 socket 类型。常用的 socket 类型有，流套接字类型 SOCK_STREAM、数据报套接字类型 SOCK_DGRAM、原始套接字 SOCK_RAW、SOCK_PACKET、SOCK_SEQPACKET 等等。<br><strong>protocol：</strong>就是指定协议。常用的协议有，IPPROTO_TCP、IPPROTO_UDP、IPPROTO_SCTP、IPPROTO_TIPC 等，它们分别对应 TCP 传输协议、UDP 传输协议、STCP 传输协议、TIPC 传输协议。<br>type 和 protocol 是不能够随意搭配的，比如流套接字类型不能选用 UDP 协议。<strong>当 protocol 为 0 时，会自动选择 type 类型对应的协议。</strong><br>而以下两句返回的肯定是无效套接字 INVALID_SOCKET，使用 WSAGetLastError()获取的错误代码为 10043：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SOCKET s = socket(AF_INET, SOCK_DGRAM,IPPROTO_TCP)</span><br><span class="line">SOCKET s = socket(AF_INET, SOCK_STREAM,IPPROTO_UDP)</span><br></pre></td></tr></table></figure>
+
+<p>##</p>
+<p>3.2 setsockopt 函数<br><strong>int setsockopt( int socket, int level, int option_name,const void *option_value, size_t option_len);</strong><br>第一个参数 socket 是套接字描述符。第二个参数 level 是被设置的选项的级别。<br>level 指定控制套接字的层次.可以取三种值:</p>
+<ul>
+<li>SOL_SOCKET:通用套接字选项..</li>
+<li>IPPROTO_IPV6:IPV6 选项</li>
+<li>IPPROTO_IP:IP 选项</li>
+<li>IPPROTO_TCP:TCP 选项 ​</li>
+</ul>
+<p>如果想要在套接字级别上设置选项，就必须把 level 设置为 SOL_SOCKET。 option_name 指定准备设置的选项，option_name 可以有哪些取值，这取决于 level，以 linux 2.6 内核为例（在不同的平台上，这种关系可能会有不同），在套接字级别上(SOL_SOCKET)，option_name 可以有以下取 值：</p>
+<table>
+<thead>
+<tr>
+<th>SO_BROADCAST</th>
+<th>允许发送广播数据</th>
+<th>int</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SO_DEBUG</td>
+<td>允许调试</td>
+<td>int</td>
+</tr>
+<tr>
+<td>SO_DONTROUTE</td>
+<td>不查找路由</td>
+<td>int</td>
+</tr>
+<tr>
+<td>SO_ERROR</td>
+<td>获得套接字错误</td>
+<td>int</td>
+</tr>
+<tr>
+<td>SO_KEEPALIVE</td>
+<td>保持连接</td>
+<td>int</td>
+</tr>
+<tr>
+<td>SO_LINGER</td>
+<td>延迟关闭连接</td>
+<td>struct linger</td>
+</tr>
+<tr>
+<td>SO_OOBINLINE</td>
+<td>带外数据放入正常数据流</td>
+<td>int</td>
+</tr>
+<tr>
+<td>SO_RCVBUF</td>
+<td>接收缓冲区大小</td>
+<td>int</td>
+</tr>
+<tr>
+<td>SO_SNDBUF</td>
+<td>发送缓冲区大小</td>
+<td>int</td>
+</tr>
+<tr>
+<td>SO_RCVLOWAT</td>
+<td>接收缓冲区下限</td>
+<td>int</td>
+</tr>
+<tr>
+<td>SO_SNDLOWAT</td>
+<td>发送缓冲区下限</td>
+<td>int</td>
+</tr>
+<tr>
+<td>SO_RCVTIMEO</td>
+<td>接收超时</td>
+<td>struct timeval</td>
+</tr>
+<tr>
+<td>SO_SNDTIMEO</td>
+<td>发送超时</td>
+<td>struct timeval​</td>
+</tr>
+<tr>
+<td>SO_REUSERADDR</td>
+<td>允许重用本地地址和端口</td>
+<td>int​</td>
+</tr>
+<tr>
+<td>SO_TYPE</td>
+<td>获得套接字类型</td>
+<td>int​</td>
+</tr>
+<tr>
+<td>SO_BSDCOMPAT</td>
+<td>与 BSD 系统兼容</td>
+<td>int</td>
+</tr>
+</tbody></table>
+<h2 id="3-3-htons-函数"><a href="#3-3-htons-函数" class="headerlink" title="3.3 htons 函数"></a>3.3 htons 函数</h2><p>将主机字节顺序转换为网络字节顺序。比如，数字 16 的 16 进制表示为 0x0010，数字 4096 的 16 进制表示为 0x1000。 由于 Intel 机器是小尾端，存储数字 16 时实际顺序为 1000，存储 4096 时实际顺序为 0010。因此在发送网络包时为了报文中数据为 0010，需要经过 htons 进行字节转换。如果用 IBM 等大尾端机器，则没有这种字节顺序转换，但为了程序的可移植性，也最好用这个函数<br>。</p>
+<h2 id="3-4-bind-函数"><a href="#3-4-bind-函数" class="headerlink" title="3.4 bind 函数"></a>3.4 bind 函数</h2><p>在套接口中，一个套接字只是用户程序与内核交互信息的枢纽，它自身没有太多的信息，也没有网络协议地址和 端口号等信息，在进行网络通信的时候，必须把一个套接字与一个地址相关联，这个过程就是地址绑定的过程。许多时候内核会我们自动绑定一个地址，然而有时用 户可能需要自己来完成这个绑定的过程，以满足实际应用的需要，最典型的情况是一个服务器进程需要绑定一个众所周知的地址或端口以等待客户来连接。这个事由 bind 的函数完成。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bind</span><span class="params">( <span class="keyword">int</span> sockfd, struct sockaddr * addr, <span class="keyword">socklen_t</span> addrlen )</span></span></span><br></pre></td></tr></table></figure>
+
+<p>成功返回 0，失败返回-1.</p>
+<blockquote>
+<ul>
+<li>sockfd:指定地址与哪个套接字绑定，这是一个由之前的 socket 函数调用返回的套接字。调用 bind 的函数之后，该套接字与一个相应的地址关联，发送到这个地址的数据可以通过这个套接字来读取与使用。</li>
+<li>addr:指定地址。这是一个地址结构，并且是一个已经经过填写的有效的地址结构。调用 bind 之后这个地址与参数 sockfd 指定的套接字关联，从而实现上面所说的效果。</li>
+<li>addrlen:正如大多数 socket 接口一样，内核不关心地址结构，当它复制或传递地址给驱动的时候，它依据这个值来确定需要复制多少数据。这已经成为 socket 接口中最常见的参数之一了</li>
+</ul>
+</blockquote>
+<h2 id="3-5-recvfrom-函数"><a href="#3-5-recvfrom-函数" class="headerlink" title="3.5 recvfrom 函数"></a>3.5 recvfrom 函数</h2><p>用来接收远程主机经指定的 socket 传来的数据, 并把数据存到由参数 buf 指向的内存空间, 参数 len 为可接收数据的最大长度. 参数 flags 一般设 0, 其他数值定义请参考 recv(). 参数 from 用来指定欲传送的网络地址, 结构 sockaddr 请参考 bind(). 参数 fromlen 为 sockaddr 的结构长度.</p>
+<p>返回值：成功则返回接收到的字符数, 失败则返回-1, 错误原因存于 errno 中.<br>错误代码：</p>
+<blockquote>
+<ul>
+<li>EBADF 参数 s 非合法的 socket 处理代码</li>
+<li>EFAULT 参数中有一指针指向无法存取的内存空间.</li>
+<li>ENOTSOCK 参数 s 为一文件描述词, 非 socket.</li>
+<li>EINTR 被信号所中断.</li>
+<li>EAGAIN 此动作会令进程阻断, 但参数 s 的 socket 为不可阻断.</li>
+<li>ENOBUFS 系统的缓冲内存不足</li>
+<li>ENOMEM 核心内存不足</li>
+<li>EINVAL 传给系统调用的参数不正确.</li>
+</ul>
+</blockquote>
+<h1 id="4：构建参数"><a href="#4：构建参数" class="headerlink" title="4：构建参数"></a>4：构建参数</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">build_parameters</span><span class="params">(<span class="keyword">char</span> *parameters, <span class="keyword">int</span> size, <span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Well, for simplicity, we just concatenate them (almost) blindly.</span></span><br><span class="line">    <span class="keyword">int</span> offset = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">4</span>; i &lt; argc; ++i) &#123;</span><br><span class="line">        <span class="keyword">char</span> *parameter = argv[i];</span><br><span class="line">        <span class="keyword">int</span> length = <span class="built_in">strlen</span>(parameter);</span><br><span class="line">        <span class="keyword">char</span> delimiter = <span class="string">&#x27;,&#x27;</span>;</span><br><span class="line">        <span class="comment">// If it looks like an option, prepend a space instead of a comma.</span></span><br><span class="line">        <span class="keyword">if</span> (length == <span class="number">2</span> &amp;&amp; parameter[<span class="number">0</span>] == <span class="string">&#x27;-&#x27;</span>) &#123;</span><br><span class="line">            ++parameter;</span><br><span class="line">            --length;</span><br><span class="line">            delimiter = <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// This is just a demo app, really.</span></span><br><span class="line">        <span class="keyword">if</span> (offset + length &gt;= size) &#123;</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">&quot;Parameters are too large&quot;</span>);</span><br><span class="line">            <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Append the delimiter and the parameter.</span></span><br><span class="line">        parameters[offset] = delimiter;</span><br><span class="line">        <span class="built_in">memcpy</span>(&amp;parameters[offset + <span class="number">1</span>], parameter, length);</span><br><span class="line">        offset += <span class="number">1</span> + length;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Fill the rest of the space with spaces.</span></span><br><span class="line">    <span class="built_in">memset</span>(&amp;parameters[offset], <span class="string">&#x27; &#x27;</span>, size - offset);</span><br><span class="line">    <span class="comment">// Control messages always start with zero.</span></span><br><span class="line">    parameters[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>《<a target="_blank" rel="noopener" href="https://www.zybuluo.com/zwh8800/note/816322">Linux 的 TUN/TAP 编程</a>》<br>《<a target="_blank" rel="noopener" href="https://blog.csdn.net/KingCat666/article/details/75269373">linux ioctl()函数详解</a>》<br>《<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/231.html">memset 函数及其用法，C 语言 memset 函数详解</a>》<br>《<a target="_blank" rel="noopener" href="https://blog.csdn.net/lusirking/article/details/51470752">C++ socket 函数解析</a>》<br>《<a target="_blank" rel="noopener" href="https://www.cnblogs.com/cthon/p/9270778.html">setsockopt 函数功能及参数详解</a>》<br>《<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xianzhedeyu/p/3298649.html">LINUX 下 getsockopt 和 setsockopt 函数</a>》<br>《<a target="_blank" rel="noopener" href="https://blog.csdn.net/dongliqiang2006/article/details/5824651">网络编程 socket 之 bind 函数</a>》<br>《<a target="_blank" rel="noopener" href="https://www.cnblogs.com/carle-09/p/12402185.html">C++ —usleep()功能</a>》<br>《<a target="_blank" rel="noopener" href="http://c.biancheng.net/cpp/html/368.html">C 语言 recvfrom()函数：经 socket 接收数据</a>》</p>
+
+    
+      
+      <div class='footer'>
+        
+        
+          
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="/2019/12/12/如何自己开发一个VPN程序/" title="如何自己开发一个VPN App" rel="bookmark "><img src="http://qn.xieqifei.com/static/images/ecaoovpn1.jpg" class="lazyload" data-srcset="http://qn.xieqifei.com/static/images/ecaoovpn1.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">如何自己开发一个VPN App</span></a><a class="item" href="/2020/06/08/SSR加速和降低服务器端口被封风险/" title="SSR加速和降低服务器端口被封风险" rel="bookmark "><img src="https://ae01.alicdn.com/kf/Hb7bba28a9bda457899c0f56c82042376m.jpg" class="lazyload" data-srcset="https://ae01.alicdn.com/kf/Hb7bba28a9bda457899c0f56c82042376m.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">SSR加速和降低服务器端口被封风险</span></a></div></section></div>
+        
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href=https://sci.ci/2021/07/27/yuque/dm1gpv/>https://sci.ci/2021/07/27/yuque/dm1gpv/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+        
+      </div>
+    
+  </div>
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-27T05:45:23+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年7月27日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/VPN/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>VPN</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2021/07/27/yuque/dm1gpv/&title=安卓ToyVPN服务端从零开始读 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2021/07/27/yuque/dm1gpv/&title=安卓ToyVPN服务端从零开始读 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2021/07/27/yuque/dm1gpv/&title=安卓ToyVPN服务端从零开始读 - 🛫起飞了&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2021/07/25/yuque/hzg0pr/'>
+          <p class='title'>在控制器中用JS验证CSS Selector和Xpath<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>0：引言使用 Beautifulsoup 和 Selenuim 等网页分析工具时，经常需要自己构造一个选择器，最常用的是 CSS 选择器和 Xpath。如何验证选择器构造是否正确呢？我们可以直接...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0%EF%BC%9A%E5%AF%BC%E8%AF%BB"><span class="toc-text">0：导读</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E5%BA%93%E8%AF%B4%E6%98%8E"><span class="toc-text">1：库说明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9A%E8%8E%B7%E5%8F%96%E6%8E%A5%E5%8F%A3"><span class="toc-text">2：获取接口</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-ifreq-%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-text">2.1 ifreq 结构体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-ioctl-%E5%87%BD%E6%95%B0"><span class="toc-text">2.2 ioctl()函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%9A%E8%8E%B7%E5%8F%96%E9%9A%A7%E9%81%93"><span class="toc-text">3：获取隧道</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-socket-%E5%87%BD%E6%95%B0"><span class="toc-text">3.1 socket 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-htons-%E5%87%BD%E6%95%B0"><span class="toc-text">3.3 htons 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-bind-%E5%87%BD%E6%95%B0"><span class="toc-text">3.4 bind 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-recvfrom-%E5%87%BD%E6%95%B0"><span class="toc-text">3.5 recvfrom 函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%9A%E6%9E%84%E5%BB%BA%E5%8F%82%E6%95%B0"><span class="toc-text">4：构建参数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+
+
+</aside>
+
+
+
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        
+          <div><p><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://hexo.io/"><img src="https://img.shields.io/badge/Powered-Hexo-red" class="lazyload" data-srcset="https://img.shields.io/badge/Powered-Hexo-red" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://volantis.js.org/"><img src="https://img.shields.io/badge/Theme-Volantis-blue" class="lazyload" data-srcset="https://img.shields.io/badge/Theme-Volantis-blue" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-success" class="lazyload" data-srcset="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-success" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" href="https://sci.ci"><img src="https://img.shields.io/badge/Copyright-2019--2020%20QF-orange" class="lazyload" data-srcset="https://img.shields.io/badge/Copyright-2019--2020%20QF-orange" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a></p>
+</div>
+        
+      
+    
+      
+        
+          <div><img src="https://img.shields.io/badge/Bitcoin-1MeDbjhePSdQnHgHXmb9qFtwqG4aP6izCh-brightgreen" class="lazyload" data-srcset="https://img.shields.io/badge/Bitcoin-1MeDbjhePSdQnHgHXmb9qFtwqG4aP6izCh-brightgreen" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></div>
+        
+      
+    
+  </footer>
+
+
+      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    
+    <!-- internal -->
+
+
+
+<!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".md").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      // 背景层
+      var bgDiv = document.createElement("div");
+      $(bgDiv).addClass("bg");
+      if ($(this).attr('bg')) {
+        $(bgDiv).css('background', $(this).attr('bg'));
+      }
+      $(this).wrap(bgDiv); // 背景层
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+<!-- optional -->
+
+  <script>
+  
+  var SEARCH_SERVICE = "hexo" || "hexo";
+  var ROOT = "/" || "/";
+  if (!ROOT.endsWith('/')) ROOT += '/';
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+
+
+  <script>
+  let APlayerController = new Object();
+  APlayerController.id = '5054430406';  // 设定全局音乐播放ID
+  APlayerController.volume = '0.7';
+</script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+
+
+
+
+
+
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    if(!document.querySelectorAll("#valine_container")[0])return;
+
+    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) || "快来评论吧~";
+
+    let path = $.trim($('#pjax-comment-path').text());
+    if (path.length == 0) {
+      let defaultPath = '';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: path,
+      appId: "48JncNXaMCBOYe2LYwnCKUuC-gzGzoHsz",
+      appKey: "mQwPJ4JtjJavw1ukXCv9G6eD",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI',
+    app_key: 'jfHtEKVE24j0IVCGHbvuFClp',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://sci.ci' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://sci.ci' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://sci.ci' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              if (pv.getAttribute('data-path') == window.location.pathname) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == window.location.pathname) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+<!-- more -->
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+        pjax_fancybox();
+        
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>
