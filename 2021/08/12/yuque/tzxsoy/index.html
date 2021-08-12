@@ -16,9 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>机器学习深度学习李宏毅版-学习笔记 - 🛫起飞了</title>
+  <title>Vuejs学习笔记 - 🛫起飞了</title>
   
-    <meta name="keywords" content="机器学习">
+    <meta name="keywords" content="Vuejs">
   
 
   
@@ -399,7 +399,7 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">机器学习深度学习李宏毅版-学习笔记</div>
+  <div id="pjax-pageTitle">Vuejs学习笔记</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -440,8 +440,8 @@
       
       
         <h1 class="title">
-          <a href="/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-            机器学习深度学习李宏毅版-学习笔记
+          <a href="/2021/08/12/yuque/tzxsoy/">
+            Vuejs学习笔记
           </a>
         </h1>
       
@@ -474,7 +474,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年5月21日</p>
+    <p>发布于：2021年8月12日</p>
   </a>
 </div>
 
@@ -485,7 +485,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="机器学习深度学习李宏毅版-学习笔记" data-path="/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+      <div id="lc-pv" data-title="Vuejs学习笔记" data-path="/2021/08/12/yuque/tzxsoy/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -504,202 +504,28 @@
   <div class="article-entry" itemprop="articleBody">
     
     
-    <h1 id="第一章-Regression-回归"><a href="#第一章-Regression-回归" class="headerlink" title="第一章 Regression 回归"></a>第一章 Regression 回归</h1><p>$$<br>f(input)=output<br>$$</p>
-<p>输入一个对象后，有指定的输出结果。</p>
-<p><strong>示例应用：</strong>数码宝贝原始cp值，求进化一次后的cp值</p>
-<p>Step 1: Model</p>
-<p>定义一个函数：确定输入原始cp值和输出进化后的cp值。<br>$$<br>y=b+w*x_{cp}<br>$$</p>
-<blockquote>
-<p>w and b are parameters</p>
-</blockquote>
-<p>Step 2: Goodness of Function方程好坏</p>
-<p>对象1：function input: cp612-&gt;x1      function output:cp979-&gt;y1<br>$$<br>(x^1,y^1)<br>$$</p>
-<p>$$<br>(x^2,y^2)<br>$$</p>
-<p>$$<br>……<br>$$</p>
-<p>$$<br>(x^{10},y^{10})<br>$$</p>
-<p>定义另一个函数：确定第一个函数效果如何。输入一个函数，输出函数好坏程度。</p>
-<p>Loss Function<br>$$<br>\begin{split}<br>L(f) &amp;= L(w,b)<br>\ &amp;=\sum_{n=1}^{10}\left(y^n-\left(b+w*x^n_{cp}\right)\right)^2<br>\end{split}<br>$$<br>Step 3: Best Function最好的函数</p>
-<p>Gradient Descent<br>$$<br>w^*=arg\ min\ L(w)<br>$$<br>枚举w值，找到Loss Function最小的w值。</p>
-<ul>
-<li><p>随机选择一个初始w0,</p>
-</li>
-<li><p>$$<br>\frac{dL}{dw}|w=w^0<br>$$</p>
-</li>
-</ul>
-<p>在w0位置，如果斜率为正，则w向小的位置移动，反之向w增大的位置移动，目的是找到L(w)更小的位置。下一个位置w1。<br>$$<br>w^1=w^0-\eta\frac{\partial L}{\partial w}|w=w^0,b=b^0<br>\b^1=b^0-\eta\frac{\partial L}{\partial b}|w=w^0,b=b^0<br>\\eta表示学习率。<br>$$<br>最终找到一个最佳的w和b，确定一个L(f)最小。</p>
-<p>然而，由于数码宝贝的物种不同，b和w的取值将不同。</p>
-<p><strong>修改模型</strong></p>
-<p>Step 1:选择模型<br>$$<br>y=b_1<em>\delta(x^s=宝贝1)+w_1</em>\delta(x_s=宝贝1)<em>x_{cp}+b_2</em>\delta(x^s=宝贝2)+w_2*\delta(x_s=宝贝2)*x_{cp}+……<br>$$</p>
-<p>$$<br>\delta(x_s=宝贝1)\begin{cases}<br>=1\ if,x_s=宝贝1 \\<br>=0\ else\end{cases}<br>$$</p>
-<p>此时已经很精准了，但是可能还存在其他除了种类以外的影响因素，比如身高，体重，hp。</p>
-<p>回到Step 2:Regularization<br>$$<br>y=b+\sum w_ix_i<br>\L=\sum_n(y^n-(b+\sum w_ix_i))^2+\lambda\sum (w_i)^2<br>$$<br>为了获取一个更光滑的曲线，来减少噪音对输出结果的影响。</p>
-<blockquote>
-<p><strong>采用较小的拟合次数简单的model，通常具有更小的方差，但偏差更大，即结果集中但集中位置偏离真实值；较大的拟合次数复杂的model，方差比较大，但偏差更小。</strong></p>
-</blockquote>
-<p>偏差大：</p>
-<ol>
-<li>更多训练数据</li>
-<li>更复杂的模型</li>
-</ol>
-<p>方差大：</p>
-<ol>
-<li>更多训练数据</li>
-</ol>
-<p>获取模型：Validation</p>
-<p>训练数据-&gt;分三份，两份获取模型，一份验证模型。</p>
-<h1 id="第二章-Gradient-Descent梯度下降法"><a href="#第二章-Gradient-Descent梯度下降法" class="headerlink" title="第二章 Gradient Descent梯度下降法"></a>第二章 Gradient Descent梯度下降法</h1><p>在第一章Step 3中，我们要找到一个最低的loss function<br>$$<br>\theta^*=arg\ max\ L(\theta) \ \ \ \ L:loss\ function\ \ \theta:parameters<br>$$<br>假设$\theta$有两个参数${\theta_1,\theta_2}$</p>
-<p>随机设置一个$\theta^0=\begin{bmatrix}\theta_1^0\\theta_2^0\end{bmatrix}$<br>$$<br>\begin{bmatrix}\theta_1^1\\theta_2^1\end{bmatrix}=\begin{bmatrix}\theta_1^0\\theta^0_2\end{bmatrix}-\eta\begin{bmatrix}\frac{\partial(\theta_1^0)}{\partial\theta_1}\\frac{\partial(\theta_2^0)}{\partial\theta_2}\end{bmatrix}<br>$$</p>
-<p>$$<br>\begin{bmatrix}\theta_1^2\\theta_2^2\end{bmatrix}=\begin{bmatrix}\theta_1^1\\theta^1_2\end{bmatrix}-\eta\begin{bmatrix}\frac{\partial(\theta_1^1)}{\partial\theta_1}\\frac{\partial(\theta_2^1)}{\partial\theta_2}\end{bmatrix}<br>$$</p>
-<p>简化公式：<br>$$<br>\bigtriangledown L(\theta)=\begin{bmatrix}\frac{\partial L(\theta_1)}{\partial\theta_1}\\frac{\partial L(\theta_2)}{\partial\theta_2}\end{bmatrix}<br>\\theta^1=\theta^0-\eta\bigtriangledown L(\theta^0)<br>$$<br>需要调节学习率（步长）$\eta$到合适的值。</p>
-<blockquote>
-<p>不同的$\theta$给不同的$\eta$。</p>
-</blockquote>
-<p>Adagrad:随着参数增加，步长逐渐减小。<br>$$<br>w^1\gets w^1-\frac{\eta^0}{\sigma^0}g^0 \ \ \ \sigma^0=\sqrt{(g^0)^2}<br>\\vdots<br>\\vdots<br>\w^{t+1}\gets w^t-\frac{\eta^t}{\sigma^t}g^t\ \ \ \sigma^t=\sqrt{\frac{1}{t+1}\sum^t_{i=0}(g^i)^2}<br>$$</p>
-<p>$$<br>\eta^t=\frac{\eta}{\sqrt{t+1}}<br>$$</p>
-<p>Feature Scaling:</p>
-<p>将多个x输入的范围统一到一个范围，以保证在计算L(f)时，每个w对L(f)的影响相同。</p>
-<blockquote>
-<p>Gradient Descent会卡在局部最小值的位置</p>
-</blockquote>
-<h1 id="第三章-New-Optimizers-for-Deep-Learning-优化"><a href="#第三章-New-Optimizers-for-Deep-Learning-优化" class="headerlink" title="第三章 New Optimizers for Deep Learning 优化"></a>第三章 New Optimizers for Deep Learning 优化</h1><p>一些记号：</p>
-<p>$\theta_t$:模型参数</p>
-<p>$m_{t+1}$:从step 0到step t 的动量。</p>
-<p><strong>SGD：</strong></p>
-<p>SGDM、Learning rate scheduling、NAG</p>
-<p>走到最低点时，还不会停下来，由于之前的动量影响，存在一个类似的惯性作用，会继续向上爬坡。</p>
-<p><strong>Adam：</strong></p>
-<p>Adagrad、RMSProp、AMSGrad、AdaBound、RAdam、Nadam、AdamW</p>
-<p>SGD+Adam-&gt;SWATS</p>
-<p><strong>Lookahead</strong></p>
-<h1 id="第四章-Classification-分类"><a href="#第四章-Classification-分类" class="headerlink" title="第四章 Classification 分类"></a>第四章 Classification 分类</h1><p>例：投简历</p>
-<ul>
-<li>输入：收入、存款、专业、年纪</li>
-<li>输出：录取或拒绝</li>
-</ul>
-<p>模型：<br>$$<br>x\rightarrow f(x)\begin{cases}g(x)&gt;0\ &amp;Output=class1\else \ \ &amp;Output=class2\end{cases}<br>$$<br>Loss function：<br>$$<br>L(f)=\sum_n\delta(f(x^n)\ne y^n)<br>$$<br>79个水系（C1）宝可梦，61只普通系（C2）的宝可梦</p>
-<p>$P(x|C_1)$的可能性。</p>
-<p>$P(x|C_1)$满足高斯分布（正态分布），找到最合适的高速分布系数$\mu$和$E$</p>
-<p>使用贝叶斯公式，求测试数据$P(C_1|x)$的概率。</p>
-<p>所以：</p>
-<p>模型<br>$$<br>x\rightarrow P(C_1|x)=\frac{P(x|C_1)P(C_1)}{P(x|C_1)P(C_1)+P(x|C_2)P(C_2)}<br>$$<br>函数的好坏：</p>
-<p>平均值$\mu$和$E$。</p>
-<p>一堆数学运算……</p>
-<p>模型：<br>$$<br>P_{w,b}(C_2|x)=\sigma(z)<br>\<br>\sigma(z)=\frac{1}{1+exp(-z)}<br>\<br>z=w*x+b<br>$$</p>
-<h1 id="第五章-Logistic-Regression"><a href="#第五章-Logistic-Regression" class="headerlink" title="第五章 Logistic Regression"></a>第五章 Logistic Regression</h1><p>$$<br>f_{w,b}(x)=\sigma(\sum w_ix+b)<br>$$<br>$x_1$属于$C_1$,$x_2$属于$C_1$,$x_3$属于$C_2$……<br>$$<br>L(w,b)=f_{w,b}(x^1)f_{w,b}(x^2)(1-f_{w,b}(x^3))…<br>$$<br>找到一个$w^*,b^*$满足$arg\ max,L(w,b)$最大。</p>
-<h1 id="第六章-Deep-learning"><a href="#第六章-Deep-learning" class="headerlink" title="第六章 Deep learning"></a>第六章 Deep learning</h1><p>历史：</p>
-<p>1958: Perceptron(linear model)</p>
-<p>1980: Multi-layer perceptron</p>
-<p>1986: Backpropagation</p>
-<p>1989: 1 hidden layer is “good enough”</p>
-<p>2006: RBM initialization</p>
-<p>2009: GPU</p>
-<p>2011: Speech recognizition</p>
-<p>步骤：</p>
-<ol>
-<li>找到一个函数-&gt;Neural Network</li>
-</ol>
-<p><img src="https://ae01.alicdn.com/kf/Hfab376d7115d4542a9bca22bbae41b31b.jpg" class="lazyload" data-srcset="https://ae01.alicdn.com/kf/Hfab376d7115d4542a9bca22bbae41b31b.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p>Deep = Many hidden layers</p>
-<h1 id="第七章-Backpropagation-反向传播"><a href="#第七章-Backpropagation-反向传播" class="headerlink" title="第七章 Backpropagation 反向传播"></a>第七章 Backpropagation 反向传播</h1><p>让计算梯度下降法的参数更有效。</p>
-<p>Chain Rule 链式法则：</p>
-<p>Case1：<br>$$<br>y=g(x) \ \ \ \ z=h(y)<br>\\triangle x \rightarrow \triangle y\rightarrow \triangle z<br>\ \frac{dz}{dx}=\frac{dz}{dy}\frac{dy}{dx}<br>$$<br>Case2:<br>$$<br>x=g(s) \ \ y=h(s) \ \ z=k(x,y)<br>\ \frac{dz}{ds}=\frac{\partial z}{\partial x}\frac{dx}{ds}+\frac{\partial z}{\partial y}\frac{dy}{ds}<br>$$</p>
-<p>Loss function是所有输入经神经网络处理后的输出，与理想输出误差之和。<br>$$<br>L(\theta)=\sum_nC(\theta)<br>$$<br>对Loss function求导：<br>$$<br>\frac{\partial L}{\partial w}=\sum_n\frac{\partial C}{\partial w}<br>$$<br>只讨论神经网络的一个节点。</p>
-<p><img src="https://i.loli.net/2020/06/20/o5kCyJMm9NULnFI.png" class="lazyload" data-srcset="https://i.loli.net/2020/06/20/o5kCyJMm9NULnFI.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p>$$<br>\frac{\partial C}{\partial w}=\frac{\part C}{\part z}\frac{\part z}{\part w}<br>$$<br>求z对w求导，很简单，对w1求导是x1，对w2求导是x2。</p>
-<p><img src="https://i.loli.net/2020/06/20/gICwHOfq65uS9dj.png" class="lazyload" data-srcset="https://i.loli.net/2020/06/20/gICwHOfq65uS9dj.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p>假设第二层神经节点的输入a，是将z通过一个信号函数(signal) $\sigma(z)$得到的现在求$\frac{\part C}{\part z}$<br>$$<br>\frac{\part C}{\part z}=\frac{\part a}{\part z}\frac{\part C}{\part a}<br>$$<br>利用链式法则，求$\frac{\part C}{\part a}$</p>
-<p>公式见上图。此时，通过反向传递法则。假设红色的信号节点就是神经网络的最后一个节点，对应输出就是神经网络输出。那么可以倒推回去。$\frac{\part C}{\part z^,}$就等于最后的sign函数导数。因此能求得$\frac{\part C}{\part a}$，这样依次反推回去。最终求得每个节点的$\frac{\part C}{\part z}$。从而求得Loss function的导数。</p>
-<h1 id="第八章-Tips-for-Deep-Learning"><a href="#第八章-Tips-for-Deep-Learning" class="headerlink" title="第八章 Tips for Deep Learning"></a>第八章 Tips for Deep Learning</h1><ol>
-<li><p>定义一个方程</p>
-</li>
-<li><p>方程好坏</p>
-</li>
-<li><p>选择最好的方程</p>
-</li>
-<li><p>获得一个Neural Network</p>
-</li>
-<li><p>是否获得一个好的结果在Training Data，如果不好重新选择最好的方程</p>
-</li>
-<li><p>在Testing Data获得不好的结果，overfitting，则重新定义一个方程。</p>
-</li>
-</ol>
-<p><strong>ReLU</strong></p>
-<p>Rectified Linear Unit.矫正线性单元</p>
-<p><img src="https://i.loli.net/2020/06/20/YxX9CrsUGl2ot1J.png" class="lazyload" data-srcset="https://i.loli.net/2020/06/20/YxX9CrsUGl2ot1J.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p>如果某个节点，输出是零，那么他对最后的结果没有任何影响。所以，输出为零关联的之后节点都可以被拿掉。</p>
-<p><strong>ReLU -variant</strong></p>
-<p>当z小于0时，a=mz。</p>
-<p>Leaky ReLU ：m=0.01</p>
-<p>Parametric: m可变</p>
-<p><strong>Maxout</strong></p>
-<p>最大输出，将不同输入的输出z分组，组内选出最大的值，作为下一个节点输入。</p>
-<p><strong>RMSProp</strong><br>$$<br>w^1 \leftarrow w^0-\frac{\eta}{\sigma^0}g^0 \ \ \ \ \ \sigma^0=g^0<br>\<br>w^2 \leftarrow w^1-\frac{\eta}{\sigma^1}g^1 \ \ \ \ \ \sigma^1=\sqrt{\alpha (\sigma^0)^2+(1-\alpha)(g^1)^2}<br>\……<br>$$<br>$\alpha$可以设置。</p>
-<p><strong>Momentum</strong></p>
-<p>在初始点$\theta^0$处，加速度方向为gradient方向。</p>
-<p>初始移动距离:$v_0=0$</p>
-<p>加速度(第一点处的gradient):$\triangledown L(\theta^0)$</p>
-<p>移动距离:$v^1=\lambda v^0-\eta \triangledown L(\theta^0)$</p>
-<p>移到第二点:$\theta^1=\theta^0+v^1$</p>
-<p>计算第二点的加速度:$\triangledown L(\theta^1)$</p>
-<p>下一次移动距离:$v^2=\lambda v^1-\eta \triangledown L(\theta^1)$</p>
-<p>移动到第三点:$\theta^2=\theta^1+v^2$</p>
-<p><strong>Adam</strong>:RMSProp+Momentum</p>
-<p><strong>过拟合问题</strong></p>
-<ol>
-<li>early stop</li>
-</ol>
-<p>通过情况可能出席，当训练集增加时，测试集的正确率反而下降，因此通过减少训练集的数据来达到防止过拟合。</p>
-<ol start="2">
-<li>Regularization</li>
-</ol>
-<p>$$<br>L^,(\theta)=L(\theta)+\lambda \frac{1}{2}||\theta||_2<br>$$</p>
-<p>$$<br>||\theta||_2=(w_1)^2+(w_2)^2+……<br>$$</p>
-<p>$||\theta||_2$不考虑biases，因为正则化是为了让loss function更加平滑，biases并不会起到作用。</p>
-<p>Loss function求导:<br>$$<br>\frac{\partial L^,}{\partial w}=\frac{\partial L}{\part w}+\lambda w<br>$$<br>在找下一个<br>$$<br>w^{t+1}\rightarrow w^t-\eta\frac{\part L^,}{\part w} =w^t-\eta(\frac{\part L}{\part w}+\lambda w^t)=(1-\eta\lambda)w^t-\eta\frac{\part L}{\part w}<br>$$</p>
-<ol start="3">
-<li>Dropout</li>
-</ol>
-<p>在更新参数之前：</p>
-<ul>
-<li>每个节点有p%几率被丢掉</li>
-<li>使用新的网络去训练</li>
-</ul>
-<p>测试时：</p>
-<p>没有丢弃节点</p>
-<ul>
-<li>如果丢弃率为p%，所有的weights times(1-p)%</li>
-</ul>
-<p>可以理解为，在训练时，腿上绑重物，测试时把重物拿掉。</p>
-<p>为什么要乘(1-p)%</p>
-<p><img src="https://i.loli.net/2020/06/21/dAis9PpjHgMKWy7.png" class="lazyload" data-srcset="https://i.loli.net/2020/06/21/dAis9PpjHgMKWy7.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<p>假设丢弃率为50%,在训练时一半节点被拿掉，而测试时使用了所有节点，导致节点z相差两倍，在测试时将所有weight乘50%，保证测试时的$z’\approx z$</p>
-<h1 id="第八章-Why-deep"><a href="#第八章-Why-deep" class="headerlink" title="第八章 Why deep"></a>第八章 Why deep</h1><p>矮胖？高瘦？</p>
-<p>实验数据表明，相同参数情况下，deep的错误率更小。</p>
-<p><strong>Modularization</strong></p>
-<ul>
-<li>Deep-&gt;Modularization</li>
-</ul>
-<p>比如辨别男生长发、男生短发、女生长发、女生长发。</p>
-<p>男生长发的训练集是很少的。</p>
-<p>使用模组化，可以先辨别性别，在辨别头发长短。这样性别和长短发的训练集都是差不多的。这样男生长发也有好的正确率。</p>
-<ul>
-<li>Deep-&gt;Modularization-&gt;Less training data</li>
-</ul>
-<p><strong>Modularization-Speech</strong></p>
-<p>人类语言的架构</p>
-<p>Phoneme:人类发音的音节，</p>
-<p>Tri-phone:不同的组合</p>
-<p>State: 不同的节</p>
-<ul>
-<li>语音识别：</li>
-</ul>
-<p>分类：input-&gt;acoustic feature,output-&gt;state</p>
-<blockquote>
-<p>deep的好处是，可以把复杂的问题，使用很多个简单的function连接在一起。</p>
-</blockquote>
-<h1 id="第九章-Pytorch"><a href="#第九章-Pytorch" class="headerlink" title="第九章 Pytorch"></a>第九章 Pytorch</h1><p>指定设备，迁移到某个设备</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cpu = torch.device(<span class="string">&quot;cpu&quot;</span>)</span><br><span class="line">gpu=torch.device(<span class="string">&quot;gpu&quot;</span>)</span><br><span class="line">x= torch.rand(<span class="number">10</span>)</span><br><span class="line">print(x)</span><br><span class="line">x=x.to(gpu)</span><br></pre></td></tr></table></figure>
+    <h1 id="1：简介"><a href="#1：简介" class="headerlink" title="1：简介"></a>1：简介</h1><p>从两年前我学习 web 编程开始，我参与或完成了好几个 web 项目，这几个 web 项目都是比较简单的、给自己练习用的，而在开发过程中，我一直使用 js+html+css+mdui。使用单纯的原生语言和最基础的一个 css 库开发，体验是很不好的，我一直想找一个好用的前端开发方案，让开发变得简单，直到认识了 vue。<br>这不是我第一次学习 vue，早在一年前，我就学习过一段时间，可惜当时没有好的 web 练手项目。导致 vue 在学习之后就荒废了，后来的项目开发也没有去使用它。经过了几个项目开发，才感觉到，我真的需要将 vue 好好的利用起来。于是在我备考之余，重新来学习 vue。之后可能还会学习 Vue Dev-ui。它提供的组件很丰富，我觉得可以完全替代 mdui。</p>
+<h1 id="2：Hello-World"><a href="#2：Hello-World" class="headerlink" title="2：Hello World"></a>2：Hello World</h1><p>vue 使用 script 标签引入<br>一个简单的 html 实例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  &#123;&#123;1+1&#125;&#125; &#123;&#123;myname&#125;&#125; &#123;&#123;myhtml&#125;&#125;</span><br><span class="line">  <span class="comment">&lt;!-- v-指令 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-html</span>=<span class="string">&quot;myhtml&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el: <span class="string">&quot;#box&quot;</span>,</span></span><br><span class="line">    data: &#123;</span><br><span class="line"><span class="javascript">      myname: <span class="string">&quot;qifei&quot;</span>,</span></span><br><span class="line"><span class="javascript">      myjob: <span class="string">&quot;student&quot;</span>,</span></span><br><span class="line"><span class="handlebars"><span class="xml">      myhtml: &quot;<span class="tag">&lt;<span class="name">b</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">b</span>&gt;</span>&quot;,</span></span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h1 id="3：v-if-和-v-show"><a href="#3：v-if-和-v-show" class="headerlink" title="3：v if 和 v show"></a>3：v if 和 v show</h1><p>v-if：创建和删除节点<br>v-show：显示和隐藏节点</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-show</span>=<span class="string">&quot;isShow&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;isCreated&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el: <span class="string">&quot;#box&quot;</span>,</span></span><br><span class="line">    data: &#123;</span><br><span class="line"><span class="javascript">      isShow: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">      isCreated: <span class="literal">true</span>,</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="javascript">  vm.isShow = <span class="literal">false</span>; <span class="comment">//控件显示隐藏</span></span></span><br><span class="line"><span class="javascript">  vm.isCreated = <span class="literal">false</span>; <span class="comment">//控件创建和删除</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="4：class-绑定和按钮"><a href="#4：class-绑定和按钮" class="headerlink" title="4：class 绑定和按钮"></a>4：class 绑定和按钮</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;handleClick()&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">&quot;isActive?&#x27;red&#x27;:&#x27;yellow&#x27;&quot;</span>&gt;</span>动态class-三目写法<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">&quot;classObj&quot;</span>&gt;</span>动态class-字典写法<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">&quot;classArr&quot;</span>&gt;</span>动态class-数组写法<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el: <span class="string">&quot;#box&quot;</span>,</span></span><br><span class="line">    data: &#123;</span><br><span class="line"><span class="javascript">      isActive: <span class="literal">true</span>,</span></span><br><span class="line">      classObj: &#123;</span><br><span class="line"><span class="javascript">        a: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">        b: <span class="literal">true</span>,</span></span><br><span class="line">      &#125;,</span><br><span class="line"><span class="javascript">      classArr: [<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>],</span></span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      handleClick() &#123;</span><br><span class="line"><span class="javascript">        <span class="built_in">this</span>.isActive = !<span class="built_in">this</span>.isActive;</span></span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="javascript">  vm.classObj.a = <span class="literal">false</span>;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>字典写法，不能通过添加键值对来增加 class。而数组写法，可以通过 pop()，push()方法添加元素来怎加 class</p>
+<h1 id="5：style-绑定"><a href="#5：style-绑定" class="headerlink" title="5：style 绑定"></a>5：style 绑定</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">&quot;&#x27;background:&#x27;+(isActive?&#x27;red&#x27;:&#x27;yellow&#x27;)&quot;</span>&gt;</span></span><br><span class="line">    动态绑定style-三目写法</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">&quot;styleObj&quot;</span>&gt;</span>动态绑定style-对象写法<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">:style</span>=<span class="string">&quot;styleArr&quot;</span>&gt;</span>动态绑定style-数组写法<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el: <span class="string">&quot;#box&quot;</span>,</span></span><br><span class="line">    data: &#123;</span><br><span class="line"><span class="javascript">      isActive: <span class="literal">true</span>,</span></span><br><span class="line">      styleObj: &#123;</span><br><span class="line"><span class="javascript">        background: <span class="string">&quot;red&quot;</span>,</span></span><br><span class="line"><span class="javascript">        backgroundColor: <span class="string">&quot;red&quot;</span>,</span></span><br><span class="line">      &#125;,</span><br><span class="line"><span class="javascript">      styleArr: [&#123; <span class="attr">backgroud</span>: <span class="string">&quot;red&quot;</span> &#125;],</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="javascript">  vm.classObj.a = <span class="literal">false</span>;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>数组写法，可以通过 push()添加新的样式，字典写法不能新加。</p>
+<h1 id="6：条件渲染"><a href="#6：条件渲染" class="headerlink" title="6：条件渲染"></a>6：条件渲染</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;isCreated&quot;</span>&gt;</span>动态创建<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span>动态创建<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;datalist.length&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;data in datalist&quot;</span>&gt;</span>&#123;&#123;data&#125;&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">&quot;datalist.length &gt;=3&quot;</span>&gt;</span>if lager than 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>empty<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el: <span class="string">&quot;#box&quot;</span>,</span></span><br><span class="line">    data: &#123;</span><br><span class="line"><span class="javascript">      isCreated: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">      datalist: [<span class="string">&quot;111&quot;</span>, <span class="string">&quot;222&quot;</span>, <span class="string">&quot;333&quot;</span>],</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="7：列表渲染"><a href="#7：列表渲染" class="headerlink" title="7：列表渲染"></a>7：列表渲染</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;data in datalist&quot;</span> <span class="attr">key</span>=<span class="string">&quot;data.id&quot;</span>&gt;</span>&#123;&#123;data&#125;&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;(data,key) in dataObj&quot;</span>&gt;</span>&#123;&#123;data&#125;&#125;&#125; ---&#123;&#123;key&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el: <span class="string">&quot;#box&quot;</span>,</span></span><br><span class="line">    data: &#123;</span><br><span class="line"><span class="javascript">      datalist: [<span class="string">&quot;111&quot;</span>, <span class="string">&quot;222&quot;</span>, <span class="string">&quot;333&quot;</span>],</span></span><br><span class="line">      dataObj: &#123;</span><br><span class="line"><span class="javascript">        abc: <span class="string">&quot;abio&quot;</span>,</span></span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="javascript">  vm.datalist.push(<span class="string">&quot;666&quot;</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>关键字可以是 in 也可以是 of</p>
+<h1 id="8：列表数组检测"><a href="#8：列表数组检测" class="headerlink" title="8：列表数组检测"></a>8：列表数组检测</h1><p>filter(),contact(),map()方法对原数组没有影响，视图不会更新。<br>通过索引值修改数组，视图不会更新。<br>通过 splice 或者，<br>Vue.set(datalist,0,’111’)</p>
+<h1 id="9：列表过滤引用"><a href="#9：列表过滤引用" class="headerlink" title="9：列表过滤引用"></a>9：列表过滤引用</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> @<span class="attr">input</span>=<span class="string">&quot;handleInput()&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;mytext&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;data in datalist&quot;</span> <span class="attr">key</span>=<span class="string">&quot;data.id&quot;</span>&gt;</span>&#123;&#123;data&#125;&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el: <span class="string">&quot;#box&quot;</span>,</span></span><br><span class="line">    data: &#123;</span><br><span class="line"><span class="javascript">      mytext: <span class="string">&quot;&quot;</span>,</span></span><br><span class="line"><span class="javascript">      datalist: [<span class="string">&quot;111&quot;</span>, <span class="string">&quot;222&quot;</span>, <span class="string">&quot;333&quot;</span>],</span></span><br><span class="line"><span class="javascript">      list: [<span class="string">&quot;111&quot;</span>, <span class="string">&quot;222&quot;</span>, <span class="string">&quot;333&quot;</span>],</span></span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      handleInput() &#123;</span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> datalist = <span class="built_in">this</span>.list.filter(</span></span><br><span class="line"><span class="javascript">          (item) =&gt; item.indexOf(<span class="built_in">this</span>.mytext) &gt; <span class="number">-1</span></span></span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="javascript">  vm.datalist.push(<span class="string">&quot;666&quot;</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="10：事件处理"><a href="#10：事件处理" class="headerlink" title="10：事件处理"></a>10：事件处理</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;handleClick&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;handleClick()&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;javascript:&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el: <span class="string">&quot;#box&quot;</span>,</span></span><br><span class="line">    data: &#123;&#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      handleClick() &#123;&#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="javascript">  vm.datalist.push(<span class="string">&quot;666&quot;</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
     
       
@@ -712,7 +538,7 @@
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="/2020/04/01/微信公众号开发/" title="微信公众号开发" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">微信公众号开发</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="/2020/02/15/Vue、Vuejs学习记录/" title="Vue、Vuejs学习记录" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">Vue、Vuejs学习记录</span></a><a class="item" href="/2020/04/01/微信公众号开发/" title="微信公众号开发" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">微信公众号开发</span></a></div></section></div>
         
         
           <div class='copyright'>
@@ -724,7 +550,7 @@
                 
               
                 
-                  <p>本文永久链接是：<a href=https://sci.ci/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/>https://sci.ci/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></p>
+                  <p>本文永久链接是：<a href=https://sci.ci/2021/08/12/yuque/tzxsoy/>https://sci.ci/2021/08/12/yuque/tzxsoy/</a></p>
                 
               
             </blockquote>
@@ -742,7 +568,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-13T05:44:31+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-13T05:45:12+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年8月13日</p>
@@ -754,7 +580,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>机器学习</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Vuejs/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Vuejs</p></a></div>
 
 
         
@@ -767,7 +593,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=机器学习深度学习李宏毅版-学习笔记 - 🛫起飞了&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2021/08/12/yuque/tzxsoy/&title=Vuejs学习笔记 - 🛫起飞了&summary="
           
           >
           
@@ -779,7 +605,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=机器学习深度学习李宏毅版-学习笔记 - 🛫起飞了&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2021/08/12/yuque/tzxsoy/&title=Vuejs学习笔记 - 🛫起飞了&summary="
           
           >
           
@@ -791,7 +617,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/&title=机器学习深度学习李宏毅版-学习笔记 - 🛫起飞了&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2021/08/12/yuque/tzxsoy/&title=Vuejs学习笔记 - 🛫起飞了&summary="
           
           >
           
@@ -819,24 +645,10 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/05/26/ShopXO%E5%95%86%E5%9F%8E%E4%BC%98%E5%8C%96%E5%95%86%E5%93%81%E4%BB%B7%E6%A0%BC%E4%BF%AE%E6%94%B9/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>ShopXO商城优化-商城后台、小程序、飞鹅订单打印、公众号新订单推送</p>
-          <p class='content'>1：内容梗概ShopXO是款非常优秀的开源商城软件。为了让商城更加适合没有网站管理经验的人使用，我优化了手机和电脑端的商城后台。修复了小程序的一些BUG，并做了一些其他优化。使用飞鹅打印机，接收...</p>
-        </a>
       
-      
-        <a class='next' href='/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-          <p class='title'>计算机网络技术学习笔记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>1：基础概念
-局域网、城域网、广域网的区别
-
-实训任务：宽带城域网的逻辑结构，“三个平台一个出口”
-
-
-管理平台、业务平台、网络平台（核心层、汇聚层、接入层）、城市宽带出口- 
-核心层：
-
-为汇...</p>
+        <a class='next' href='/2021/08/02/yuque/sbv265/'>
+          <p class='title'>OpenOffice连接Mysql数据库<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>使用 Openoffice 连接 mysql 数据库总体体验不是很好，软件长时间处于未响应状态，并不建议使用它来操作 mysql 数据库，其他的数据库暂时不知道。这里简单说下使用过程中的一些问题...</p>
         </a>
       
     </div>
@@ -859,59 +671,6 @@
 
 
 
-  <script>
-  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    // 文章章节标题不能为 “MathJax” ，否则会报错。
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-
 
 </div>
 <aside class='l_side'>
@@ -932,7 +691,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-Regression-%E5%9B%9E%E5%BD%92"><span class="toc-text">第一章 Regression 回归</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-Gradient-Descent%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95"><span class="toc-text">第二章 Gradient Descent梯度下降法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-New-Optimizers-for-Deep-Learning-%E4%BC%98%E5%8C%96"><span class="toc-text">第三章 New Optimizers for Deep Learning 优化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-Classification-%E5%88%86%E7%B1%BB"><span class="toc-text">第四章 Classification 分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-Logistic-Regression"><span class="toc-text">第五章 Logistic Regression</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-Deep-learning"><span class="toc-text">第六章 Deep learning</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-Backpropagation-%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-text">第七章 Backpropagation 反向传播</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-Tips-for-Deep-Learning"><span class="toc-text">第八章 Tips for Deep Learning</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-Why-deep"><span class="toc-text">第八章 Why deep</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-Pytorch"><span class="toc-text">第九章 Pytorch</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%9A%E7%AE%80%E4%BB%8B"><span class="toc-text">1：简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%9AHello-World"><span class="toc-text">2：Hello World</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%9Av-if-%E5%92%8C-v-show"><span class="toc-text">3：v if 和 v show</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%9Aclass-%E7%BB%91%E5%AE%9A%E5%92%8C%E6%8C%89%E9%92%AE"><span class="toc-text">4：class 绑定和按钮</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%EF%BC%9Astyle-%E7%BB%91%E5%AE%9A"><span class="toc-text">5：style 绑定</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%EF%BC%9A%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-text">6：条件渲染</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7%EF%BC%9A%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93"><span class="toc-text">7：列表渲染</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8%EF%BC%9A%E5%88%97%E8%A1%A8%E6%95%B0%E7%BB%84%E6%A3%80%E6%B5%8B"><span class="toc-text">8：列表数组检测</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9%EF%BC%9A%E5%88%97%E8%A1%A8%E8%BF%87%E6%BB%A4%E5%BC%95%E7%94%A8"><span class="toc-text">9：列表过滤引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10%EF%BC%9A%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-text">10：事件处理</span></a></li></ol>
     </div>
   </section>
 
