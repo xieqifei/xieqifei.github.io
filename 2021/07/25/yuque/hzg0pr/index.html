@@ -326,35 +326,16 @@
   <div class='top'>
     
     
-      <p class="title">🛫起飞了</p>
+      <p class="title">🛫Qifei`s Notebook</p>
     
+    
+      <p class="subtitle">A web page for sharing my knowledge</p>
     
   </div>
   <div class='bottom'>
     <div class='menu navigation'>
       <div class='list-h'>
         
-          
-            <a target="_blank" rel="noopener" href="https://weibo.com/678199722"
-              
-              
-              id="https:weibocom678199722">
-              <i class='fab fa-weibo fa-fw'></i><p>Weibo</p>
-            </a>
-          
-            <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=100006770206489"
-              
-              
-              id="https:wwwfacebookcomprofilephp?id=100006770206489">
-              <i class='fab fa-facebook fa-fw'></i><p>Facebook</p>
-            </a>
-          
-            <a target="_blank" rel="noopener" href="https://twitter.com/CruelGiF"
-              
-              
-              id="https:twittercomCruelGiF">
-              <i class='fab fa-twitter fa-fw'></i><p>Twitter</p>
-            </a>
           
             <a target="_blank" rel="noopener" href="https://www.instagram.com/xie_qifei/"
               
@@ -452,7 +433,7 @@
 <div class='new-meta-item author'>
   <a class='author' href="/" rel="nofollow">
     <img no-lazy src="https://ae01.alicdn.com/kf/Hb5b4a24aa25749c38ad1c3af3f15bac4e.jpg">
-    <p>啓飞</p>
+    <p>Qifei</p>
   </a>
 </div>
 
@@ -504,10 +485,10 @@
   <div class="article-entry" itemprop="articleBody">
     
     
-    <h1 id="0：引言"><a href="#0：引言" class="headerlink" title="0：引言"></a>0：引言</h1><p>使用 Beautifulsoup 和 Selenuim 等网页分析工具时，经常需要自己构造一个选择器，最常用的是 CSS 选择器和 Xpath。如何验证选择器构造是否正确呢？我们可以直接在网页的开发者工具 Console 栏里使用 JS 代码来验证选择器的正确性。<br>​</p>
+    <h1 id="0：引言"><a href="#0：引言" class="headerlink" title="0：引言"></a>0：引言</h1><p>使用 Beautifulsoup 和 Selenuim 等网页分析工具时，经常需要自己构造一个选择器，最常用的是 CSS 选择器和 Xpath。如何验证选择器构造是否正确呢？我们可以直接在网页的开发者工具 Console 栏里使用 JS 代码来验证选择器的正确性。</p>
 <h1 id="1：CSS-Selector-验证"><a href="#1：CSS-Selector-验证" class="headerlink" title="1：CSS Selector 验证"></a>1：CSS Selector 验证</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">css_selector = <span class="string">&quot;#bs_form_main input[value=buchen]&quot;</span>;</span><br><span class="line"><span class="built_in">document</span>.querySelector(css_selector);</span><br></pre></td></tr></table></figure>
 
-<p>JS 有提供 querySelector 方法，如果返回值不为 Null，则说明选择器构造正确。<br>​</p>
+<p>JS 有提供 querySelector 方法，如果返回值不为 Null，则说明选择器构造正确。</p>
 <h1 id="2：Xpath-验证"><a href="#2：Xpath-验证" class="headerlink" title="2：Xpath 验证"></a>2：Xpath 验证</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xpath = <span class="string">&#x27;//*[@id=&quot;bs_tr3FE6EE511403&quot;]/td[9]/input&#x27;</span>;</span><br><span class="line"><span class="built_in">document</span></span><br><span class="line">  .evaluate(xpath, <span class="built_in">document</span>, <span class="literal">null</span>, XPathResult.ANY_TYPE, <span class="literal">null</span>)</span><br><span class="line">  .iterateNext();</span><br></pre></td></tr></table></figure>
 
 <p>evaluate 方法返回 XpathResult 对象，通过 iterateNext 可以依次获取符合选择的 Dom。通常情况下，不需要确认是否有多个符合条件的返回值，所以如果返回不是 null，则 xpath 构造正确<br>如果需要确认，返回一个或者多个符合 xpath 的 dom，可以使用下面的方法。</p>
@@ -556,10 +537,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-15T21:05:06+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-20T22:08:21+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年10月15日</p>
+    <p>更新于：2023年1月20日</p>
   </a>
 </div>
 
