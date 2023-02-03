@@ -491,7 +491,7 @@
 <p>偶然的机会，我发现当用户使用 Puppeteer 访问网页时，即便控制台没有被开启，这个方法的 this.opened 也会被置为 true，也就是说，我们用这个方法不仅可以检测到用户是否打开了控制台，用户在使用 Puppeteer 没有开启控制台的情况下也会被检测到。<br>这里的一个简单小实验是，别人提供的一个<a target="_blank" rel="noopener" href="https://blog.aepkill.com/demos/devtools-detector">检测控制台开启 Demo</a>，通过 Puppeteer 测试开启并截图后，看到控制台是开启状态。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> <span class="built_in">this</span>.page.goto(<span class="string">&quot;https://blog.aepkill.com/demos/devtools-detector/&quot;</span>);</span><br><span class="line"><span class="keyword">await</span> <span class="built_in">this</span>.page.screenshot(&#123; <span class="attr">path</span>: <span class="string">&quot;aaa.png&quot;</span> &#125;);</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12641647/1634302613686-7afd16c2-520e-4f75-b1f9-1bca435784dd.png#clientId=udb29c5f4-00bd-4&from=paste&height=143&id=u53548930&margin=%5Bobject%20Object%5D&name=image.png&originHeight=286&originWidth=2235&originalType=binary%E2%88%B6=1&size=53437&status=done&style=none&taskId=ub416649a-78ca-4185-bac2-4fbdde70cb1&width=1117.5" class="lazyload" data-srcset="https://cdn.nlark.com/yuque/0/2021/png/12641647/1634302613686-7afd16c2-520e-4f75-b1f9-1bca435784dd.png#clientId=udb29c5f4-00bd-4&from=paste&height=143&id=u53548930&margin=%5Bobject%20Object%5D&name=image.png&originHeight=286&originWidth=2235&originalType=binary%E2%88%B6=1&size=53437&status=done&style=none&taskId=ub416649a-78ca-4185-bac2-4fbdde70cb1&width=1117.5" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image.png"><br>刚才提到的那篇文章的作者，提供了一个开源的检测控制台模块，<a target="_blank" rel="noopener" href="https://github.com/AEPKILL/devtools-detector#devtools-detector-">devtools-detector</a>，可以用做 Puppeteer 检测。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12641647/1634302613686-7afd16c2-520e-4f75-b1f9-1bca435784dd.png#clientId=udb29c5f4-00bd-4&from=paste&height=143&id=u53548930&name=image.png&originHeight=286&originWidth=2235&originalType=binary%E2%88%B6=1&size=53437&status=done&style=none&taskId=ub416649a-78ca-4185-bac2-4fbdde70cb1&width=1117.5" class="lazyload" data-srcset="https://cdn.nlark.com/yuque/0/2021/png/12641647/1634302613686-7afd16c2-520e-4f75-b1f9-1bca435784dd.png#clientId=udb29c5f4-00bd-4&from=paste&height=143&id=u53548930&name=image.png&originHeight=286&originWidth=2235&originalType=binary%E2%88%B6=1&size=53437&status=done&style=none&taskId=ub416649a-78ca-4185-bac2-4fbdde70cb1&width=1117.5" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image.png"><br>刚才提到的那篇文章的作者，提供了一个开源的检测控制台模块，<a target="_blank" rel="noopener" href="https://github.com/AEPKILL/devtools-detector#devtools-detector-">devtools-detector</a>，可以用做 Puppeteer 检测。</p>
 
     
       
@@ -534,10 +534,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-01-23T22:42:51+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-02-03T22:42:25+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年1月23日</p>
+    <p>更新于：2023年2月3日</p>
   </a>
 </div>
 
