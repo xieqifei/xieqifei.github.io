@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>在Hexo博客添加Nostr NIP-05认证 - 🛫起飞了</title>
+  <title>Hexo博客添加Nostr NIP-05认证 - 🛫起飞了</title>
   
     <meta name="keywords" content="Hexo,Nostr,NIP-05">
   
@@ -380,7 +380,7 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">在Hexo博客添加Nostr NIP-05认证</div>
+  <div id="pjax-pageTitle">Hexo博客添加Nostr NIP-05认证</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -422,7 +422,7 @@
       
         <h1 class="title">
           <a href="/2023/02/06/yuque/yws2f9r5gek9mpxe/">
-            在Hexo博客添加Nostr NIP-05认证
+            Hexo博客添加Nostr NIP-05认证
           </a>
         </h1>
       
@@ -466,7 +466,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="在Hexo博客添加Nostr NIP-05认证" data-path="/2023/02/06/yuque/yws2f9r5gek9mpxe/">
+      <div id="lc-pv" data-title="Hexo博客添加Nostr NIP-05认证" data-path="/2023/02/06/yuque/yws2f9r5gek9mpxe/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -485,22 +485,22 @@
   <div class="article-entry" itemprop="articleBody">
     
     
-    <p>Hexo 博客通过部署，可以生成一个静态网站，Nostr NIP-05 认证，要求我们在网站根目录下创建一个路径为/.well-known/nostr.json 的文件，并将认证信息放入其中。<br>为了在 Hexo 博客部署之后在 public 目录（静态网站根目录）下在生成认证路径，我们可以按照以下步骤设置，</p>
+    <p>Hexo 博客部署之后可以生成一个静态网站，Nostr NIP-05 认证，要求我们在网站根目录下创建一个路径为/.well-known/nostr.json 的文件，并将认证信息放入其中。<br>为了在 Hexo 博客 public 目录（静态网站根目录）下在生成认证路径，我们可以按照以下步骤设置，</p>
 <ol>
 <li>在 hexo 根目录下的 sources 文件夹中新建文件夹**.well-known**</li>
 <li>在文件夹内新建文件<strong>nostr.json</strong></li>
-<li>将形如以下内容的 json 数据放入<strong>nostr.json</strong>，注意，下面 dca 开头的内容为 hex 格式的 public key，客户端显示的 key 都是以 npub 开头，你需要将它在网站<a target="_blank" rel="noopener" href="https://damus.io/key/">https://damus.io/key/</a> 中进行转换。下面的 qifei 也可以换成你喜欢的字符。</li>
+<li>将形如以下内容的 json 数据放入<strong>nostr.json</strong>，注意，下面 dca 开头的内容为 hex 格式的 public key，客户端显示的 key 都是以 npub 开头，你需要将它在网站<a target="_blank" rel="noopener" href="https://damus.io/key/">https://damus.io/key/</a> 中进行转换。下面的 name 也可以换成你喜欢的字符。</li>
 </ol>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;names&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;qifei&quot;</span>: <span class="string">&quot;dca5a66fed9db68c042d40e944619d1be0a6c14147f6aa54b5f02efea5551d90&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;names&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;dca5a66fed9db68c042d40e944619d1be0a6c14147f6aa54b5f02efea5551d90&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="4">
 <li>修改博客根目录下的<strong>_config.yml</strong>文件，如下：</li>
 </ol>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Include / Exclude file(s)</span></span><br><span class="line"><span class="comment">## include:/exclude: options only apply to the &#x27;source/&#x27; folder</span></span><br><span class="line"><span class="attr">include:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">.well-known/nostr.json</span></span><br></pre></td></tr></table></figure>
 
-<p>至此，当你使用<em>hexo g</em>命令生成静态文件，将在 public 文件夹下自动生成.well-known 文件夹。</p>
+<p>至此，当你使用<em>hexo g</em>命令生成静态文件，在 public 文件夹下会自动生成.well-known 文件夹。</p>
 <ol start="5">
-<li>在 Nostr 客户端的 NIP-05 设置中添加形如<strong><a href="mailto:&#113;&#105;&#102;&#101;&#x69;&#x40;&#x79;&#x6f;&#117;&#x72;&#x64;&#x6f;&#x6d;&#97;&#x69;&#110;&#46;&#99;&#x6f;&#109;">&#113;&#105;&#102;&#101;&#x69;&#x40;&#x79;&#x6f;&#117;&#x72;&#x64;&#x6f;&#x6d;&#97;&#x69;&#110;&#46;&#99;&#x6f;&#109;</a></strong>的配置即可验证成功。</li>
+<li>在 Nostr 客户端的 NIP-05 设置中，添加形如<strong><a href="mailto:&#110;&#x61;&#x6d;&#101;&#64;&#121;&#111;&#117;&#x72;&#x64;&#x6f;&#109;&#x61;&#105;&#110;&#x2e;&#x63;&#111;&#x6d;">&#110;&#x61;&#x6d;&#101;&#64;&#121;&#111;&#117;&#x72;&#x64;&#x6f;&#109;&#x61;&#105;&#110;&#x2e;&#x63;&#111;&#x6d;</a></strong>的配置，即可验证成功。</li>
 </ol>
 
     
@@ -544,7 +544,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-02-06T21:35:36+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-02-06T21:38:45+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2023年2月6日</p>
@@ -569,7 +569,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2023/02/06/yuque/yws2f9r5gek9mpxe/&title=在Hexo博客添加Nostr NIP-05认证 - 🛫起飞了&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2023/02/06/yuque/yws2f9r5gek9mpxe/&title=Hexo博客添加Nostr NIP-05认证 - 🛫起飞了&summary="
           
           >
           
@@ -581,7 +581,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2023/02/06/yuque/yws2f9r5gek9mpxe/&title=在Hexo博客添加Nostr NIP-05认证 - 🛫起飞了&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2023/02/06/yuque/yws2f9r5gek9mpxe/&title=Hexo博客添加Nostr NIP-05认证 - 🛫起飞了&summary="
           
           >
           
@@ -593,7 +593,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2023/02/06/yuque/yws2f9r5gek9mpxe/&title=在Hexo博客添加Nostr NIP-05认证 - 🛫起飞了&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2023/02/06/yuque/yws2f9r5gek9mpxe/&title=Hexo博客添加Nostr NIP-05认证 - 🛫起飞了&summary="
           
           >
           
