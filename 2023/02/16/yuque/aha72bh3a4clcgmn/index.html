@@ -515,7 +515,7 @@
 <p>7.柱子高度变化值相对于柱子高度值太小，比如 dz 在(666666,666699)之间。呈现出来的结果可能时，柱子高度几乎相同，但是颜色却变化很大。为了避免此问题，可以将柱子高度的范围缩小到(0,33)之间，而刻度值显示其真是大小。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">z = min(dz)</span><br><span class="line">dz=np.array(dz)-z</span><br><span class="line">ax.bar3d(x, y, z, dx, dy, dz, color=colors,shade=<span class="literal">True</span>，lightsource=lightsource)</span><br></pre></td></tr></table></figure>
 
-<p>z 是柱子底面中心的坐标，原来全为 0，现在改为柱子高度最小的值，dz 为柱子的高度，现在改为原来的高度-高度最小值。那么每个柱子的高度，就是当前柱子与最短柱子的差。<br>这就是使用 Matplotlib 创建 3D 柱形图的基本步骤。通过调整数据和参数，可以创建出各种样式和格式的 3D 柱形图。<br>下面是我的数据绘制出的一个例子。<a target="_blank" rel="noopener" href="https://i.328888.xyz/2023/03/02/6xvfo.png">点击可查看</a><br><a target="_blank" rel="noopener" href="https://i.328888.xyz/2023/03/02/6xvfo.png"><img src="https://cdn.nlark.com/yuque/0/2023/png/12641647/1677709082140-e9b3a1fd-186e-41e7-9ff9-869ea57e6067.png#averageHue=%23f3efec&clientId=u5b4d204a-67f4-4&from=ui&height=292&id=u81be2280&name=bss_effici_bss_ener_cap.png&originHeight=2500&originWidth=3000&originalType=binary%E2%88%B6=2&rotation=0&showTitle=false&size=692935&status=done&style=none&taskId=u14c06928-21a6-4866-a815-2a95c36473d&title=&width=350" class="lazyload" data-srcset="https://cdn.nlark.com/yuque/0/2023/png/12641647/1677709082140-e9b3a1fd-186e-41e7-9ff9-869ea57e6067.png#averageHue=%23f3efec&clientId=u5b4d204a-67f4-4&from=ui&height=292&id=u81be2280&name=bss_effici_bss_ener_cap.png&originHeight=2500&originWidth=3000&originalType=binary%E2%88%B6=2&rotation=0&showTitle=false&size=692935&status=done&style=none&taskId=u14c06928-21a6-4866-a815-2a95c36473d&title=&width=350" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="bss_effici_bss_ener_cap.png"></a></p>
+<p>z 是柱子底面中心的坐标，原来全为 0，现在改为柱子高度最小的值，dz 为柱子的高度，现在改为原来的高度-高度最小值。那么每个柱子的高度，就是当前柱子与最短柱子的差。<br>这就是使用 Matplotlib 创建 3D 柱形图的基本步骤。通过调整数据和参数，可以创建出各种样式和格式的 3D 柱形图。<br>下面是我的数据绘制出的一个例子。<a target="_blank" rel="noopener" href="https://i.328888.xyz/2023/03/02/6xvfo.png">点击可查看</a><br><a target="_blank" rel="noopener" href="https://i.328888.xyz/2023/03/02/6xvfo.png"><img src="https://cdn.nlark.com/yuque/0/2023/png/12641647/1677709082140-e9b3a1fd-186e-41e7-9ff9-869ea57e6067.png#averageHue=%23f3efec&clientId=u5b4d204a-67f4-4&from=ui&height=292&id=u81be2280&originHeight=2500&originWidth=3000&originalType=binary%E2%88%B6=2&rotation=0&showTitle=false&size=692935&status=done&style=none&taskId=u14c06928-21a6-4866-a815-2a95c36473d&title=&width=350" class="lazyload" data-srcset="https://cdn.nlark.com/yuque/0/2023/png/12641647/1677709082140-e9b3a1fd-186e-41e7-9ff9-869ea57e6067.png#averageHue=%23f3efec&clientId=u5b4d204a-67f4-4&from=ui&height=292&id=u81be2280&originHeight=2500&originWidth=3000&originalType=binary%E2%88%B6=2&rotation=0&showTitle=false&size=692935&status=done&style=none&taskId=u14c06928-21a6-4866-a815-2a95c36473d&title=&width=350" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="bss_effici_bss_ener_cap.png"></a></p>
 
     
       
@@ -558,10 +558,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-04-10T23:38:04+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-05-25T03:29:57+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年4月10日</p>
+    <p>更新于：2023年5月25日</p>
   </a>
 </div>
 
