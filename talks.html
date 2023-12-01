@@ -16,9 +16,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>反爬虫-如何检测有没有使用Puppeteer - 🛫Qifei&#39;s Blog</title>
-  
-    <meta name="keywords" content="反爬虫,Puppeteer">
+  <title>说说 - 🛫Qifei&#39;s Blog</title>
   
 
   
@@ -320,7 +318,7 @@
 
   
   
-      <div class='cover-wrapper post dock' style="display: none;">
+      <div class='cover-wrapper page dock' style="display: none;">
         
           <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
         
@@ -381,8 +379,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">反爬虫-如何检测有没有使用Puppeteer</div>
+  <div id="pjax-ispage">false</div>
+  <div id="pjax-pageTitle"></div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -410,9 +408,9 @@
 
         
         
-<meta name="referrer" content="no-referrer" />
+
 <div class='l_main'>
-  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  <article class="article post white-box reveal md shadow article-type-page" id="page" itemscope itemprop="blogPost">
   
 
 
@@ -423,8 +421,8 @@
       
       
         <h1 class="title">
-          <a href="/2021/10/15/yuque/sarv0k/">
-            反爬虫-如何检测有没有使用Puppeteer
+          <a href="/talks.html">
+            说说
           </a>
         </h1>
       
@@ -443,13 +441,6 @@
         
           
             
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
-    </a>
-  </div>
-
 
           
         
@@ -457,7 +448,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年10月15日</p>
+    <p>发布于：2023年12月2日</p>
   </a>
 </div>
 
@@ -468,7 +459,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="反爬虫-如何检测有没有使用Puppeteer" data-path="/2021/10/15/yuque/sarv0k/">
+      <div id="lc-pv" data-title="说说" data-path="/talks.html">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -487,45 +478,11 @@
   <div class="article-entry" itemprop="articleBody">
     
     
-    <p>现在检测 Puppeteer 越来越难了，用户可以通过 js 对无头浏览器进行各种伪装，webdriver、webgl、plugins 都很难检测到爬虫，在这里有一个新思路。<br>许多网页都有检测控制台是否开启的功能，其中大多数网页会直接禁用 F12 和右键，但这似乎并没有什么用处，因为浏览器也有其他办法开启控制台，偶然的机会，我看到这篇文章《<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903857227726856">判断控制台是否开启(chrome)</a>》。其中提供了一个思路来检测控制台是否开启，也就是重写某个函数的 toString 方法。当控制台开启时使用 console.log 时这个方法将被调用，从而检测到用户开启了控制台。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkOpen</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">checkOpen.toString = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.opened = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;%c&quot;</span>, checkOpen);</span><br><span class="line"><span class="comment">// checkOpen.opened will become true if/when the console is opened</span></span><br></pre></td></tr></table></figure>
+    <div id="qexot"></div>
+<script src="https://cdn.jsdelivr.net/npm/qexo-static@1.6.0/hexo/talks.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/qexo-static@1.6.0/hexo/talks.css">
+<script>showQexoTalks("qexot", "https://blog-admin.sci.ci", 5)</script>
 
-<p>偶然的机会，我发现当用户使用 Puppeteer 访问网页时，即便控制台没有被开启，这个方法的 this.opened 也会被置为 true，也就是说，我们用这个方法不仅可以检测到用户是否打开了控制台，用户在使用 Puppeteer 没有开启控制台的情况下也会被检测到。<br>这里的一个简单小实验是，别人提供的一个<a target="_blank" rel="noopener" href="https://blog.aepkill.com/demos/devtools-detector">检测控制台开启 Demo</a>，通过 Puppeteer 测试开启并截图后，看到控制台是开启状态。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> <span class="built_in">this</span>.page.goto(<span class="string">&quot;https://blog.aepkill.com/demos/devtools-detector/&quot;</span>);</span><br><span class="line"><span class="keyword">await</span> <span class="built_in">this</span>.page.screenshot(&#123; <span class="attr">path</span>: <span class="string">&quot;aaa.png&quot;</span> &#125;);</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.nlark.com/yuque/0/2021/png/12641647/1634302613686-7afd16c2-520e-4f75-b1f9-1bca435784dd.png#clientId=udb29c5f4-00bd-4&from=paste&height=143&id=u53548930&originHeight=286&originWidth=2235&originalType=binary%E2%88%B6=1&size=53437&status=done&style=none&taskId=ub416649a-78ca-4185-bac2-4fbdde70cb1&width=1117.5" class="lazyload" data-srcset="https://cdn.nlark.com/yuque/0/2021/png/12641647/1634302613686-7afd16c2-520e-4f75-b1f9-1bca435784dd.png#clientId=udb29c5f4-00bd-4&from=paste&height=143&id=u53548930&originHeight=286&originWidth=2235&originalType=binary%E2%88%B6=1&size=53437&status=done&style=none&taskId=ub416649a-78ca-4185-bac2-4fbdde70cb1&width=1117.5" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image.png"><br>刚才提到的那篇文章的作者，提供了一个开源的检测控制台模块，<a target="_blank" rel="noopener" href="https://github.com/AEPKILL/devtools-detector#devtools-detector-">devtools-detector</a>，可以用做 Puppeteer 检测。</p>
-
-    
-      
-      <div class='footer'>
-        
-        
-          
-  <div class="related_posts">
-    <section class='header'>
-      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
-    </section>
-    <section class='body'>
-      <div class="vlts-rps"><a class="item" href="/2020/10/17/外卖平台订单爬取之美团外卖商家版/" title="外卖平台订单爬取之美团外卖商家版" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">外卖平台订单爬取之美团外卖商家版</span></a></div></section></div>
-        
-        
-          <div class='copyright'>
-            <blockquote>
-              
-                
-                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-                
-              
-                
-                  <p>本文永久链接是：<a href=https://sci.ci/2021/10/15/yuque/sarv0k/>https://sci.ci/2021/10/15/yuque/sarv0k/</a></p>
-                
-              
-            </blockquote>
-          </div>
-        
-        
-      </div>
     
   </div>
   
@@ -536,7 +493,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-12-02T07:48:45+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-12-02T07:48:01+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2023年12月2日</p>
@@ -547,9 +504,6 @@
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>反爬虫</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Puppeteer/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Puppeteer</p></a></div>
-
 
         
       
@@ -561,7 +515,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2021/10/15/yuque/sarv0k/&title=反爬虫-如何检测有没有使用Puppeteer - 🛫Qifei's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/talks.html&title=说说 - 🛫Qifei's Blog&summary="
           
           >
           
@@ -573,7 +527,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2021/10/15/yuque/sarv0k/&title=反爬虫-如何检测有没有使用Puppeteer - 🛫Qifei's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/talks.html&title=说说 - 🛫Qifei's Blog&summary="
           
           >
           
@@ -585,7 +539,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2021/10/15/yuque/sarv0k/&title=反爬虫-如何检测有没有使用Puppeteer - 🛫Qifei's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/talks.html&title=说说 - 🛫Qifei's Blog&summary="
           
           >
           
@@ -610,22 +564,6 @@
 
 
   
-  
-    <div class="prev-next">
-      
-        <a class='prev' href='/2022/12/08/yuque/xl9i86wz2ibmvgzz/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Onedrive API大文件上传记录</p>
-          <p class='content'>1. 获取 UploadSession在已经获取到 AccessToken 的条件下，发送 post 请求，获取 uploadsession
-12345POSThttps://graph.mic...</p>
-        </a>
-      
-      
-        <a class='next' href='/2021/08/12/yuque/tzxsoy/'>
-          <p class='title'>Vuejs学习笔记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>1：简介从两年前我学习 web 编程开始，我参与或完成了好几个 web 项目，这几个 web 项目都是比较简单的、给自己练习用的，而在开发过程中，我一直使用 js+html+css+mdui。使...</p>
-        </a>
-      
-    </div>
   
 </article>
 
