@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="noindex,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -20,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>🛫Qifei&#39;s Blog</title>
+  <title>Hexo博客页面引入足迹地图 - 🛫Qifei&#39;s Blog</title>
   
 
   
@@ -354,7 +350,7 @@
 
   
   
-      <div class='cover-wrapper  dock' style="display: none;">
+      <div class='cover-wrapper post dock' style="display: none;">
         
           <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
         
@@ -415,8 +411,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">Hexo博客页面引入足迹地图</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -444,534 +440,244 @@
 
         
         
-
+<meta name="referrer" content="no-referrer" />
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-  <section class="post-list">
+
+
+  <div class='article-header'>
     
-    
+    <div class="article-meta" id="top">
       
+      
+      
+        <h1 class="title">
+          <a href="/2023/12/02/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/">
+            Hexo博客页面引入足迹地图
+          </a>
+        </h1>
+      
+      <div class='new-meta-box'>
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://ae01.alicdn.com/kf/Hb5b4a24aa25749c38ad1c3af3f15bac4e.jpg">
+    <p>Qifei</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2023年12月2日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="Hexo博客页面引入足迹地图" data-path="/2023/12/02/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="article-entry" itemprop="articleBody">
     
-    <h2 class="article-title" >
-      <a href="/2020/06/14/%E7%A7%BB%E5%8A%A8%E8%BF%90%E8%90%A5%E5%95%86%E8%BF%87%E6%BB%A4%E5%A4%96%E7%BD%91%E6%B5%81%E9%87%8F%E9%97%AE%E9%A2%98/">
-        移动运营商过滤外网流量和解决办法
-      </a>
-    </h2>
-  
-  <div class='md'>
+    
+    <h1 id="0-先看效果"><a href="#0-先看效果" class="headerlink" title="0. 先看效果"></a>0. 先看效果</h1><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="400px" src="/footprint"></iframe>
+
+<p>这个地图是基于<a target="_blank" rel="noopener" href="https://jvectormap.com/">jvectormap.com</a>制作的。地图制作，需要在hexo博客目录source路径下新建footprint文件夹。</p>
+<h1 id="1-依赖下载"><a href="#1-依赖下载" class="headerlink" title="1. 依赖下载"></a>1. 依赖下载</h1><p>将jvectormap的依赖js代码和css代码下载到文件根目录。</p>
+<p>文件路径结构形如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- source</span><br><span class="line">  - _post</span><br><span class="line">  - _data</span><br><span class="line">  - footprint</span><br><span class="line">    - index.html</span><br><span class="line">    - jquery-jvectormap-2.0.5.css</span><br><span class="line">    - jquery-jvectormap-2.0.5.min.js</span><br><span class="line">    - jquery-jvectormap-europe-mill.js</span><br><span class="line">    - jquery.min.js</span><br></pre></td></tr></table></figure>
+
+<p>jquery-jvectormap下载地址在：<a target="_blank" rel="noopener" href="https://jvectormap.com/download/">https://jvectormap.com/download/</a></p>
+<p>jquery可到jsdeliver搜索下载。</p>
+<p>矢量地图下载地址：<a target="_blank" rel="noopener" href="https://jvectormap.com/maps/world/europe/">https://jvectormap.com/maps/world/europe/</a>，</p>
+<p>本文以欧洲地图jquery-jvectormap-europe-mill.js 为例。</p>
+<h1 id="2-地图制作"><a href="#2-地图制作" class="headerlink" title="2. 地图制作"></a>2. 地图制作</h1><p>在index.html中编辑地图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;title&gt;jVectorMap demo&lt;&#x2F;title&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id&#x3D;&quot;map&quot; style&#x3D;&quot;width: 600px; height: 400px&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;footprint&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;footprint&#x2F;jquery-jvectormap-2.0.5.css&quot; &#x2F;&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;footprint&#x2F;jquery-jvectormap-2.0.5.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;footprint&#x2F;jquery-jvectormap-europe-mill.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    $(function () &#123;</span><br><span class="line">      $(&#39;#map&#39;).vectorMap(&#123;</span><br><span class="line">        map: &#39;europe_mill&#39;,</span><br><span class="line">        markerStyle: &#123;</span><br><span class="line">          initial: &#123;</span><br><span class="line">            fill: &#39;#F8E23B&#39;,</span><br><span class="line">            stroke: &#39;#383f47&#39;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        backgroundColor: &#39;#383f47&#39;,</span><br><span class="line">        markers: [</span><br><span class="line">          &#123; latLng: [68.350273, 18.830460], name: &#39;Abisko, Sweden&#39; &#125;,</span><br><span class="line">          &#123; latLng: [35.1746503, 33.3638783], name: &#39;Nicosia, Nicosia District, Cyprus&#39; &#125;,</span><br><span class="line">        ]</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>latLng变量是经纬度，可在网上搜索地址转经纬度的办法。</p>
+<h1 id="3-博客配置"><a href="#3-博客配置" class="headerlink" title="3.  博客配置"></a>3.  博客配置</h1><p>制作好地图之后，需要修改地图配置文件，来防止html代码被渲染。</p>
+<p>打开博客根目录下的_config.yml文件，</p>
+<p>修改skip_render的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">skip_render: </span><br><span class="line">  - &#39;footprint&#x2F;**&#x2F;*&#39;</span><br></pre></td></tr></table></figure>
+
+<h1 id="4-引用足迹地图"><a href="#4-引用足迹地图" class="headerlink" title="4. 引用足迹地图"></a>4. 引用足迹地图</h1><p>在配置好步骤三之后，部署的博客，应当可以使用<a target="_blank" rel="noopener" href="https://yourblogsite.com/footprint%E7%9A%84%E5%BD%A2%E5%BC%8F%E7%BD%91%E5%9D%80%E8%AE%BF%E9%97%AE%E5%88%B0%E5%9C%B0%E5%9B%BE%E4%BA%86%E3%80%82">https://yourblogsite.com/footprint的形式网址访问到地图了。</a></p>
+<p>此时可以在任意post或者page直接通过添加html iframe代码嵌入地图到markdown文本中，例如，在我的about.md，关于页面的文件里，我在我想要嵌入的位置添加代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">style</span>=<span class="string">&quot;max-width: 100%&quot;</span> <span class="attr">frameborder</span>=<span class="string">&quot;no&quot;</span> <span class="attr">border</span>=<span class="string">&quot;0&quot;</span> <span class="attr">marginwidth</span>=<span class="string">&quot;0&quot;</span> <span class="attr">marginheight</span>=<span class="string">&quot;0&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;400px&quot;</span><span class="attr">src</span>=<span class="string">&quot;/footprint&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>部署后的页面如下：<a target="_blank" rel="noopener" href="https://blog.sci.ci/about">https://blog.sci.ci/about</a></p>
+<h1 id="5-参考"><a href="#5-参考" class="headerlink" title="5. 参考"></a>5. 参考</h1><p>《<a target="_blank" rel="noopener" href="https://jvectormap.com/tutorials/getting-started/">Getting started</a>》</p>
+<p>《<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2203926">Hexo添加jVectorMap足迹地图</a>》</p>
+
     
       
-        移动在哪些方面对用户访问外网进行了限制？
+      <div class='footer'>
+        
+        
+          
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="/2020/02/01/收集一些优秀的安卓开源库/" title="个人推荐的一些优秀的安卓开源库" rel="bookmark "><img src="https://github.com/kongzue/Res/raw/master/app/src/main/res/mipmap-xxxhdpi/img_dialog_v3_messagedialog.png" class="lazyload" data-srcset="https://github.com/kongzue/Res/raw/master/app/src/main/res/mipmap-xxxhdpi/img_dialog_v3_messagedialog.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">个人推荐的一些优秀的安卓开源库</span></a></div></section></div>
+        
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
 
-国内过滤掉海外站点的http请求。
-
-我们最常使用的https协议是由http和tls协议构成。通常访问一个https网站，第一步是，向目标网站比如youtube.com发起一个http明文请求，要求建立连接，之后传递数据才由tls协议进行加密。。如果只是单纯的使用浏览器代理，发送到youtube的http请求将被移动网络过滤掉，从而无法建立连接。...
-      
+                
+              
+                
+                  <p>本文永久链接是：<a href=https://sci.ci/2023/12/02/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/>https://sci.ci/2023/12/02/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+        
+      </div>
     
   </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-06-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/06/14/%E7%A7%BB%E5%8A%A8%E8%BF%90%E8%90%A5%E5%95%86%E8%BF%87%E6%BB%A4%E5%A4%96%E7%BD%91%E6%B5%81%E9%87%8F%E9%97%AE%E9%A2%98/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-12-02T22:52:40+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年12月2日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/06/14/BLOG%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2-https/">
-        BLOG双线部署+https
-      </a>
-    </h2>
-  
-  <div class='md'>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        dns.la支持多线解析，而且免费，非常好用。推荐！
-关于证书申请的方式，就不多说了。之前在coding申请证书失败，是因为域名cname解析没有配置正确。将域名服务商修改为 https://dns.la 后，需要先将域名海外线路解析到coding。
-
-将海外线路解析到coding是，coding证书能够申请成功的关键！在github申请证书时，也需要将海外线路解析到github。
-
-证书申...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2023/12/02/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/&title=Hexo博客页面引入足迹地图 - 🛫Qifei's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2023/12/02/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/&title=Hexo博客页面引入足迹地图 - 🛫Qifei's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2023/12/02/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/&title=Hexo博客页面引入足迹地图 - 🛫Qifei's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-06-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/06/14/BLOG%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2-https/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/06/08/SSR%E5%8A%A0%E9%80%9F%E5%92%8C%E9%99%8D%E4%BD%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%B0%81%E9%A3%8E%E9%99%A9/">
-        SSR加速和降低服务器端口被封风险
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        另外需要说明的是，购买的国内服务器，不需要进行备案，你可以帮定一个域名到此服务器上，填写ssr客户端也只需要使用这个域名，ssr会自动帮你查询dns，此后即便国外ssr出现端口或ip被封，也不需要更改ssr客户端的配置信息。而只需要另起一台国外服务器，修改国内中转服务器的配置信息。
-如果你懂得更多编程知识，你可以在国内国外的两台服务器上进行编程，实现，当国外服务器端口被封，国内和国外服务器自...
-      
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-06-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
-        
-      </div>
+  
+    <div class="prev-next">
       
-        <div>
-            <a class='readmore' href='/2020/06/08/SSR%E5%8A%A0%E9%80%9F%E5%92%8C%E9%99%8D%E4%BD%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%B0%81%E9%A3%8E%E9%99%A9/'>
-            阅读全文
-          </a>
-        </div>
+      
+        <a class='next' href='/2023/11/19/yuque/dg4x1y8qy3sv2kud/'>
+          <p class='title'>利用国内服务器加速v2ray访问速度和规避检查<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>简介为什么用国内服务器？国内连接外网时，本地的营运商和网络服务会极大影响我们连接外网的能力。此时外网服务器的路由配置就及其重要，通常我们会选在路由较好的机房，比如使用了 CN2 之类线路的机房。...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/06/02/Squid-MySQL%E5%82%A8%E5%AD%98%E7%94%A8%E6%88%B7%E9%AA%8C%E8%AF%81%E9%80%9A%E8%BF%87%E7%9A%84IP/">
-        Squid+MySQL储存用户验证通过的IP
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        0：前文在文章《利用Stunnel+squid代理实现国内无客户端访问外网》中，提到了，当使用代理验证实现代理访问时，手机的软件无法连接网络，而且切换浏览器需要重新验证用户名和密码。为了解决这个问题，我提出了四种方案。前两种漏洞太大，第三种，开发比较麻烦。于是，我采用了第四种方法。下面将对代码和具体细节进行说明。
-阅读本文，请确保你已经安装了squid 3.5以上版本。squid -v可以查...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-06-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/06/02/Squid-MySQL%E5%82%A8%E5%AD%98%E7%94%A8%E6%88%B7%E9%AA%8C%E8%AF%81%E9%80%9A%E8%BF%87%E7%9A%84IP/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/28/%E5%88%A9%E7%94%A8Stunnel+squid%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%9B%BD%E5%86%85%E6%97%A0%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/">
-        利用Stunnel+Squid代理实现国内无客户端访问外网
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：加速原理1.1 squid介绍squid是一个用于代理的开源软件，用户主机将http请求发送到部署了squid的服务器，squid可以帮助用户转发http请求。利用squid，我们可以让服务器替我们请求数据，再由服务器转发给我们。
-按找squid原理，我们就已经可以进行翻墙了，在国内能够访问的国外服务器上部署squid，将访问谷歌的请求发送给squid，squid替我们请求谷歌数据，再将...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/28/%E5%88%A9%E7%94%A8Stunnel+squid%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%9B%BD%E5%86%85%E6%97%A0%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/28/Stunnel-squid%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9F%E4%BA%9A%E7%90%9B%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F/">
-        利用Stunnel+squid代理实现国内无客户端访问外网
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：加速原理1.1 squid介绍squid是一个用于代理的开源软件，用户主机将http请求发送到部署了squid的服务器，squid可以帮助用户转发http请求。利用squid，我们可以让服务器替我们请求数据，再由服务器转发给我们。
-按找squid原理，我们就已经可以进行翻墙了，在国内能够访问的国外服务器上部署squid，将访问谷歌的请求发送给squid，squid替我们请求谷歌数据，再将...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/28/Stunnel-squid%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9F%E4%BA%9A%E7%90%9B%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/27/%E4%BA%9A%E7%90%9B%E5%B7%A5%E5%A4%A7%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E6%B7%BB%E5%8A%A0%E4%B8%AD%E5%BE%B7%E5%AD%97%E5%B9%95/">
-        亚琛工大教学视频添加中德字幕
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        第一章 插件用户手册1.1 适用场景和功能说明
-本插件适用于基于chromium内核开发的浏览器，包括Chrome浏览器、360安全浏览器、QQ浏览器等。
-插件只在满足https://*/rwth-aachen.de/*域名匹配时工作，且除了添加字幕外无其他功能。
-支持德语、中文、双语字幕
-插件只能为数据库里存在的视频资源添加字幕。更多视频字幕，会逐渐上传。
-
-1.2 效果图预览以下仅展示了...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/27/%E4%BA%9A%E7%90%9B%E5%B7%A5%E5%A4%A7%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E6%B7%BB%E5%8A%A0%E4%B8%AD%E5%BE%B7%E5%AD%97%E5%B9%95/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/26/ShopXO%E5%95%86%E5%9F%8E%E4%BC%98%E5%8C%96%E5%95%86%E5%93%81%E4%BB%B7%E6%A0%BC%E4%BF%AE%E6%94%B9/">
-        ShopXO商城优化-商城后台、小程序、飞鹅订单打印、公众号新订单推送
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：内容梗概ShopXO是款非常优秀的开源商城软件。为了让商城更加适合没有网站管理经验的人使用，我优化了手机和电脑端的商城后台。修复了小程序的一些BUG，并做了一些其他优化。使用飞鹅打印机，接收新订单推送通知和订单打印。利用微信认证的公众号，在有新订单时，通过公众号给微信推送新订单消息。
-特别说明：此篇文章建议有一定前后端基础的朋友阅读，否则，你在按照本文修改你的网站时，可能由于我在写作时，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/26/ShopXO%E5%95%86%E5%9F%8E%E4%BC%98%E5%8C%96%E5%95%86%E5%93%81%E4%BB%B7%E6%A0%BC%E4%BF%AE%E6%94%B9/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        机器学习深度学习李宏毅版-学习笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        第一章 Regression 回归$$f(input)=output$$
-输入一个对象后，有指定的输出结果。
-示例应用：数码宝贝原始cp值，求进化一次后的cp值
-Step 1: Model
-定义一个函数：确定输入原始cp值和输出进化后的cp值。$$y=b+w*x_{cp}$$
-
-w and b are parameters
-
-Step 2: Goodness of Function方程好坏
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-21</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        计算机网络技术学习笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：基础概念
-局域网、城域网、广域网的区别
-
-实训任务：宽带城域网的逻辑结构，“三个平台一个出口”
+  </article>
 
 
-管理平台、业务平台、网络平台（核心层、汇聚层、接入层）、城市宽带出口- 
-核心层：
 
-为汇聚层的网络提供高速分组转发，为城市提供一个高速安全与具有QoS保障能力的数据传输环境
-提供城市的宽带IP出口
-用户访问Internet所需的路由访问
 
-汇聚层：
-
-汇聚接入层的用户流量
-进行本地路由，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-04-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/page/6/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          7 / 9
-        </p>
-        
-          <a class="next" rel="next" href="/page/8/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
 
 
 </div>
@@ -981,184 +687,19 @@ Step 2: Goodness of Function方程好坏
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/xieqifei/xieqifei.github.io@master/img/webpagelogo.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">🛫Qifei's Blog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:im@xieqifei.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/xieqifei/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Machine-Learning/" href="/categories/Machine-Learning/"
-            id="categoriesMachine-Learning"
-            ><div class='name'>Machine Learning</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Nostr/" href="/categories/Nostr/"
-            id="categoriesNostr"
-            ><div class='name'>Nostr</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Python/" href="/categories/Python/"
-            id="categoriesPython"
-            ><div class='name'>Python</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Windows/" href="/categories/Windows/"
-            id="categoriesWindows"
-            ><div class='name'>Windows</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/python/" href="/categories/python/"
-            id="categoriespython"
-            ><div class='name'>python</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"
-            id="categoriesE4BABAE5B7A5E699BAE883BD"
-            ><div class='name'>人工智能</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%85%B6%E4%BB%96/" href="/categories/%E5%85%B6%E4%BB%96/"
-            id="categoriesE585B6E4BB96"
-            ><div class='name'>其他</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-            id="categoriesE5ADA6E4B9A0E7AC94E8AEB0"
-            ><div class='name'>学习笔记</div><div class='badge'>(18)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/" href="/categories/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/"
-            id="categoriesE5AE89E58D93E7BC96E7A88B"
-            ><div class='name'>安卓编程</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/" href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"
-            id="categoriesE5B58CE585A5E5BC8F"
-            ><div class='name'>嵌入式</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%9E%84%E6%83%B3/" href="/categories/%E6%9E%84%E6%83%B3/"
-            id="categoriesE69E84E683B3"
-            ><div class='name'>构想</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/" href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/"
-            id="categoriesE6A091E88E93E6B4BE"
-            ><div class='name'>树莓派</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%88%AC%E8%99%AB/" href="/categories/%E7%88%AC%E8%99%AB/"
-            id="categoriesE788ACE899AB"
-            ><div class='name'>爬虫</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/"
-            id="categoriesE7BD91E7AB99E7BC96E7A88B"
-            ><div class='name'>网站编程</div><div class='badge'>(21)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Python/" style="font-size: 14px; color: #999">-Python</a> <a href="/tags/TWRP/" style="font-size: 14px; color: #999">-TWRP</a> <a href="/tags/ADB/" style="font-size: 16.5px; color: #888">ADB</a> <a href="/tags/AI/" style="font-size: 14px; color: #999">AI</a> <a href="/tags/API/" style="font-size: 14px; color: #999">API</a> <a href="/tags/Arduino/" style="font-size: 14px; color: #999">Arduino</a> <a href="/tags/Aria2/" style="font-size: 14px; color: #999">Aria2</a> <a href="/tags/Bar3d/" style="font-size: 14px; color: #999">Bar3d</a> <a href="/tags/Bootstrap/" style="font-size: 14px; color: #999">Bootstrap</a> <a href="/tags/Content-Length/" style="font-size: 14px; color: #999">Content Length</a> <a href="/tags/Cookie/" style="font-size: 14px; color: #999">Cookie</a> <a href="/tags/Data-Science/" style="font-size: 14px; color: #999">Data Science</a> <a href="/tags/ESP8266/" style="font-size: 16.5px; color: #888">ESP8266</a> <a href="/tags/Flutter/" style="font-size: 14px; color: #999">Flutter</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Hexo/" style="font-size: 19px; color: #777">Hexo</a> <a href="/tags/JS/" style="font-size: 14px; color: #999">JS</a> <a href="/tags/JSON/" style="font-size: 14px; color: #999">JSON</a> <a href="/tags/Java/" style="font-size: 14px; color: #999">Java</a> <a href="/tags/Javascript/" style="font-size: 14px; color: #999">Javascript</a> <a href="/tags/JsDelivr/" style="font-size: 14px; color: #999">JsDelivr</a> <a href="/tags/Kali-Linux/" style="font-size: 14px; color: #999">Kali Linux</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/MPU6050/" style="font-size: 14px; color: #999">MPU6050</a> <a href="/tags/Machine-Learning/" style="font-size: 14px; color: #999">Machine Learning</a> <a href="/tags/Magento/" style="font-size: 14px; color: #999">Magento</a> <a href="/tags/Matplotlib/" style="font-size: 16.5px; color: #888">Matplotlib</a> <a href="/tags/Mitmproxy/" style="font-size: 14px; color: #999">Mitmproxy</a> <a href="/tags/Mysql/" style="font-size: 14px; color: #999">Mysql</a> <a href="/tags/NIP-05/" style="font-size: 16.5px; color: #888">NIP-05</a> <a href="/tags/Nginx/" style="font-size: 14px; color: #999">Nginx</a> <a href="/tags/Nostr/" style="font-size: 16.5px; color: #888">Nostr</a> <a href="/tags/Numpy/" style="font-size: 14px; color: #999">Numpy</a> <a href="/tags/Oneindex/" style="font-size: 16.5px; color: #888">Oneindex</a> <a href="/tags/Openoffice/" style="font-size: 14px; color: #999">Openoffice</a> <a href="/tags/Pandas/" style="font-size: 16.5px; color: #888">Pandas</a> <a href="/tags/Puppeteer/" style="font-size: 14px; color: #999">Puppeteer</a> <a href="/tags/PyTorch/" style="font-size: 14px; color: #999">PyTorch</a> <a href="/tags/Python/" style="font-size: 24px; color: #555">Python</a> <a href="/tags/Rclone/" style="font-size: 16.5px; color: #888">Rclone</a> <a href="/tags/SSR/" style="font-size: 16.5px; color: #888">SSR</a> <a href="/tags/Scikit-learn/" style="font-size: 14px; color: #999">Scikit-learn</a> <a href="/tags/Selenium/" style="font-size: 21.5px; color: #666">Selenium</a> <a href="/tags/Serverless/" style="font-size: 21.5px; color: #666">Serverless</a> <a href="/tags/ShopXO/" style="font-size: 14px; color: #999">ShopXO</a> <a href="/tags/Squid/" style="font-size: 16.5px; color: #888">Squid</a> <a href="/tags/Stunnel/" style="font-size: 19px; color: #777">Stunnel</a> <a href="/tags/Stunnel%E4%BB%A3%E7%90%86/" style="font-size: 14px; color: #999">Stunnel代理</a> <a href="/tags/TensorFlow/" style="font-size: 14px; color: #999">TensorFlow</a> <a href="/tags/V2ray/" style="font-size: 14px; color: #999">V2ray</a> <a href="/tags/VPN/" style="font-size: 16.5px; color: #888">VPN</a> <a href="/tags/Vlantis/" style="font-size: 14px; color: #999">Vlantis</a> <a href="/tags/Volantis/" style="font-size: 16.5px; color: #888">Volantis</a> <a href="/tags/Vuejs/" style="font-size: 16.5px; color: #888">Vuejs</a> <a href="/tags/YAAW/" style="font-size: 14px; color: #999">YAAW</a> <a href="/tags/Youtube-dl/" style="font-size: 14px; color: #999">Youtube-dl</a> <a href="/tags/api/" style="font-size: 14px; color: #999">api</a> <a href="/tags/haproxy/" style="font-size: 14px; color: #999">haproxy</a> <a href="/tags/m3u8/" style="font-size: 14px; color: #999">m3u8</a> <a href="/tags/nohup/" style="font-size: 14px; color: #999">nohup</a> <a href="/tags/onedrive/" style="font-size: 14px; color: #999">onedrive</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 16.5px; color: #888">人工智能</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 14px; color: #999">博客</a> <a href="/tags/%E5%8F%8D%E7%88%AC%E8%99%AB/" style="font-size: 14px; color: #999">反爬虫</a> <a href="/tags/%E5%AE%89%E5%8D%93%E5%BC%80%E6%BA%90%E5%BA%93/" style="font-size: 14px; color: #999">安卓开源库</a> <a href="/tags/%E5%AE%89%E5%8D%93%E7%BC%96%E7%A8%8B/" style="font-size: 14px; color: #999">安卓编程</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/" style="font-size: 14px; color: #999">微信公众号</a> <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 14px; color: #999">微信小程序</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" style="font-size: 14px; color: #999">数据处理</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">机器学习</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 19px; color: #777">树莓派</a> <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" style="font-size: 14px; color: #999">正则表达式</a> <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/" style="font-size: 14px; color: #999">浏览器插件</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">深度学习</a> <a href="/tags/%E7%88%AC%E8%99%AB/" style="font-size: 21.5px; color: #666">爬虫</a> <a href="/tags/%E7%94%B5%E5%95%86/" style="font-size: 14px; color: #999">电商</a> <a href="/tags/%E7%94%B5%E5%95%86%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">电商系统</a> <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">移动网络</a> <a href="/tags/%E7%BD%91%E7%AB%99%E4%BC%98%E5%8C%96/" style="font-size: 14px; color: #999">网站优化</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF/" style="font-size: 14px; color: #999">网络技术</a> <a href="/tags/%E8%AF%AD%E9%9B%80/" style="font-size: 14px; color: #999">语雀</a> <a href="/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" style="font-size: 14px; color: #999">负载均衡</a> <a href="/tags/%E8%B7%A8%E5%9F%9F/" style="font-size: 14px; color: #999">跨域</a> <a href="/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/" style="font-size: 14px; color: #999">音乐播放器</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-%E5%85%88%E7%9C%8B%E6%95%88%E6%9E%9C"><span class="toc-text">0. 先看效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%BE%9D%E8%B5%96%E4%B8%8B%E8%BD%BD"><span class="toc-text">1. 依赖下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%9C%B0%E5%9B%BE%E5%88%B6%E4%BD%9C"><span class="toc-text">2. 地图制作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE"><span class="toc-text">3.  博客配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%BC%95%E7%94%A8%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE"><span class="toc-text">4. 引用足迹地图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%8F%82%E8%80%83"><span class="toc-text">5. 参考</span></a></li></ol>
     </div>
   </section>
 

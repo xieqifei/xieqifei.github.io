@@ -5,9 +5,7 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="noindex,follow">
-      
+      <meta name="robots" content="noindex,follow">
     
   
   <!-- 渲染优化 -->
@@ -20,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>🛫Qifei&#39;s Blog</title>
+  <title>归档：2023/12 - 🛫Qifei&#39;s Blog</title>
   
 
   
@@ -425,14 +423,14 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("none" == "none") { // 移除封面
+  if ("blog" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("none" == "blog") { // 半屏
+    if ("blog" == "blog") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("none" == "docs") { // 全屏
+    } else if ("blog" == "docs") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -446,9 +444,16 @@
         
 
 <div class='l_main'>
-  
+	
+		
   <section class="post-list">
     
+      
+        
+          
+        
+      
+    
     
       
         
@@ -460,480 +465,32 @@
   
     
     <h2 class="article-title" >
-      <a href="/2020/06/14/%E7%A7%BB%E5%8A%A8%E8%BF%90%E8%90%A5%E5%95%86%E8%BF%87%E6%BB%A4%E5%A4%96%E7%BD%91%E6%B5%81%E9%87%8F%E9%97%AE%E9%A2%98/">
-        移动运营商过滤外网流量和解决办法
+      <a href="/2023/12/02/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/">
+        Hexo博客页面引入足迹地图
       </a>
     </h2>
   
   <div class='md'>
     
       
-        移动在哪些方面对用户访问外网进行了限制？
+        0. 先看效果
 
-国内过滤掉海外站点的http请求。
-
-我们最常使用的https协议是由http和tls协议构成。通常访问一个https网站，第一步是，向目标网站比如youtube.com发起一个http明文请求，要求建立连接，之后传递数据才由tls协议进行加密。。如果只是单纯的使用浏览器代理，发送到youtube的http请求将被移动网络过滤掉，从而无法建立连接。...
+这个地图是基于jvectormap.com制作的。地图制作，需要在hexo博客目录source路径下新建footprint文件夹。
+1. 依赖下载将jvectormap的依赖js代码和css代码下载到文件根目录。
+文件路径结构形如：
+123456789- source  - _post  - _data  - footprint    - index.html    - j...
       
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
-        <time>2020-06-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
+        <time>2023-12-02</time>
         
       </div>
       
         <div>
-            <a class='readmore' href='/2020/06/14/%E7%A7%BB%E5%8A%A8%E8%BF%90%E8%90%A5%E5%95%86%E8%BF%87%E6%BB%A4%E5%A4%96%E7%BD%91%E6%B5%81%E9%87%8F%E9%97%AE%E9%A2%98/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/06/14/BLOG%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2-https/">
-        BLOG双线部署+https
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        dns.la支持多线解析，而且免费，非常好用。推荐！
-关于证书申请的方式，就不多说了。之前在coding申请证书失败，是因为域名cname解析没有配置正确。将域名服务商修改为 https://dns.la 后，需要先将域名海外线路解析到coding。
-
-将海外线路解析到coding是，coding证书能够申请成功的关键！在github申请证书时，也需要将海外线路解析到github。
-
-证书申...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-06-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/06/14/BLOG%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2-https/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/06/08/SSR%E5%8A%A0%E9%80%9F%E5%92%8C%E9%99%8D%E4%BD%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%B0%81%E9%A3%8E%E9%99%A9/">
-        SSR加速和降低服务器端口被封风险
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        另外需要说明的是，购买的国内服务器，不需要进行备案，你可以帮定一个域名到此服务器上，填写ssr客户端也只需要使用这个域名，ssr会自动帮你查询dns，此后即便国外ssr出现端口或ip被封，也不需要更改ssr客户端的配置信息。而只需要另起一台国外服务器，修改国内中转服务器的配置信息。
-如果你懂得更多编程知识，你可以在国内国外的两台服务器上进行编程，实现，当国外服务器端口被封，国内和国外服务器自...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-06-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/06/08/SSR%E5%8A%A0%E9%80%9F%E5%92%8C%E9%99%8D%E4%BD%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%B0%81%E9%A3%8E%E9%99%A9/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/06/02/Squid-MySQL%E5%82%A8%E5%AD%98%E7%94%A8%E6%88%B7%E9%AA%8C%E8%AF%81%E9%80%9A%E8%BF%87%E7%9A%84IP/">
-        Squid+MySQL储存用户验证通过的IP
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        0：前文在文章《利用Stunnel+squid代理实现国内无客户端访问外网》中，提到了，当使用代理验证实现代理访问时，手机的软件无法连接网络，而且切换浏览器需要重新验证用户名和密码。为了解决这个问题，我提出了四种方案。前两种漏洞太大，第三种，开发比较麻烦。于是，我采用了第四种方法。下面将对代码和具体细节进行说明。
-阅读本文，请确保你已经安装了squid 3.5以上版本。squid -v可以查...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-06-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/06/02/Squid-MySQL%E5%82%A8%E5%AD%98%E7%94%A8%E6%88%B7%E9%AA%8C%E8%AF%81%E9%80%9A%E8%BF%87%E7%9A%84IP/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/28/%E5%88%A9%E7%94%A8Stunnel+squid%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%9B%BD%E5%86%85%E6%97%A0%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/">
-        利用Stunnel+Squid代理实现国内无客户端访问外网
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：加速原理1.1 squid介绍squid是一个用于代理的开源软件，用户主机将http请求发送到部署了squid的服务器，squid可以帮助用户转发http请求。利用squid，我们可以让服务器替我们请求数据，再由服务器转发给我们。
-按找squid原理，我们就已经可以进行翻墙了，在国内能够访问的国外服务器上部署squid，将访问谷歌的请求发送给squid，squid替我们请求谷歌数据，再将...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/28/%E5%88%A9%E7%94%A8Stunnel+squid%E4%BB%A3%E7%90%86%E5%AE%9E%E7%8E%B0%E5%9B%BD%E5%86%85%E6%97%A0%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/28/Stunnel-squid%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9F%E4%BA%9A%E7%90%9B%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F/">
-        利用Stunnel+squid代理实现国内无客户端访问外网
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：加速原理1.1 squid介绍squid是一个用于代理的开源软件，用户主机将http请求发送到部署了squid的服务器，squid可以帮助用户转发http请求。利用squid，我们可以让服务器替我们请求数据，再由服务器转发给我们。
-按找squid原理，我们就已经可以进行翻墙了，在国内能够访问的国外服务器上部署squid，将访问谷歌的请求发送给squid，squid替我们请求谷歌数据，再将...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/28/Stunnel-squid%E4%BB%A3%E7%90%86%E5%8A%A0%E9%80%9F%E4%BA%9A%E7%90%9B%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E5%8A%A0%E9%80%9F/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/27/%E4%BA%9A%E7%90%9B%E5%B7%A5%E5%A4%A7%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E6%B7%BB%E5%8A%A0%E4%B8%AD%E5%BE%B7%E5%AD%97%E5%B9%95/">
-        亚琛工大教学视频添加中德字幕
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        第一章 插件用户手册1.1 适用场景和功能说明
-本插件适用于基于chromium内核开发的浏览器，包括Chrome浏览器、360安全浏览器、QQ浏览器等。
-插件只在满足https://*/rwth-aachen.de/*域名匹配时工作，且除了添加字幕外无其他功能。
-支持德语、中文、双语字幕
-插件只能为数据库里存在的视频资源添加字幕。更多视频字幕，会逐渐上传。
-
-1.2 效果图预览以下仅展示了...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/27/%E4%BA%9A%E7%90%9B%E5%B7%A5%E5%A4%A7%E6%95%99%E5%AD%A6%E8%A7%86%E9%A2%91%E6%B7%BB%E5%8A%A0%E4%B8%AD%E5%BE%B7%E5%AD%97%E5%B9%95/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/26/ShopXO%E5%95%86%E5%9F%8E%E4%BC%98%E5%8C%96%E5%95%86%E5%93%81%E4%BB%B7%E6%A0%BC%E4%BF%AE%E6%94%B9/">
-        ShopXO商城优化-商城后台、小程序、飞鹅订单打印、公众号新订单推送
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：内容梗概ShopXO是款非常优秀的开源商城软件。为了让商城更加适合没有网站管理经验的人使用，我优化了手机和电脑端的商城后台。修复了小程序的一些BUG，并做了一些其他优化。使用飞鹅打印机，接收新订单推送通知和订单打印。利用微信认证的公众号，在有新订单时，通过公众号给微信推送新订单消息。
-特别说明：此篇文章建议有一定前后端基础的朋友阅读，否则，你在按照本文修改你的网站时，可能由于我在写作时，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/26/ShopXO%E5%95%86%E5%9F%8E%E4%BC%98%E5%8C%96%E5%95%86%E5%93%81%E4%BB%B7%E6%A0%BC%E4%BF%AE%E6%94%B9/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        机器学习深度学习李宏毅版-学习笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        第一章 Regression 回归$$f(input)=output$$
-输入一个对象后，有指定的输出结果。
-示例应用：数码宝贝原始cp值，求进化一次后的cp值
-Step 1: Model
-定义一个函数：确定输入原始cp值和输出进化后的cp值。$$y=b+w*x_{cp}$$
-
-w and b are parameters
-
-Step 2: Goodness of Function方程好坏
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-05-21</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/05/21/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        计算机网络技术学习笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1：基础概念
-局域网、城域网、广域网的区别
-
-实训任务：宽带城域网的逻辑结构，“三个平台一个出口”
-
-
-管理平台、业务平台、网络平台（核心层、汇聚层、接入层）、城市宽带出口- 
-核心层：
-
-为汇聚层的网络提供高速分组转发，为城市提供一个高速安全与具有QoS保障能力的数据传输环境
-提供城市的宽带IP出口
-用户访问Internet所需的路由访问
-
-汇聚层：
-
-汇聚接入层的用户流量
-进行本地路由，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-04-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2020/04/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
+            <a class='readmore' href='/2023/12/02/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/'>
             阅读全文
           </a>
         </div>
@@ -950,30 +507,10 @@ Step 2: Goodness of Function方程好坏
   </section>
   
     
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/page/6/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          7 / 9
-        </p>
-        
-          <a class="next" rel="next" href="/page/8/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
   
 
 
+	
 </div>
 <aside class='l_side'>
   
@@ -1169,7 +706,6 @@ Step 2: Goodness of Function方程好坏
 
 
 </aside>
-
 
 
       </div>
