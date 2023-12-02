@@ -475,22 +475,23 @@
   
     
     <h2 class="article-title" >
-      <a href="/2021/10/15/yuque/sarv0k/">
-        反爬虫-如何检测有没有使用Puppeteer
+      <a href="/2023/12/03/yuque/%E5%8F%8D%E7%88%AC%E8%99%AB-%E5%A6%82%E4%BD%95%E6%A3%80%E6%B5%8B%E6%9C%89%E6%B2%A1%E6%9C%89%E4%BD%BF%E7%94%A8Puppeteer/">
+        2023年12月3日
       </a>
     </h2>
   
   <div class='md'>
     
       
-        现在检测 Puppeteer 越来越难了，用户可以通过 js 对无头浏览器进行各种伪装，webdriver、webgl、plugins 都很难检测到爬虫，在这里有一个新思路。许多网页都有检测控制台是否开启的功能，其中大多数网页会直接禁用 F12 和右键，但这似乎并没有什么用处，因为浏览器也有其他办法开启控制台，偶然的机会，我看到这篇文章《判断控制台是否开启(chrome)》。其中提供了一个思...
+        现在检测Puppeteer越来越难了，用户可以通过js对无头浏览器进行各种伪装，webdriver、webgl、plugins都很难检测到爬虫，在这里有一个新思路。
+许多网页都有检测控制台是否开启的功能，其中大多数网页会直接禁用F12和右键，但这似乎并没有什么用处，因为浏览器也有其他办法开启控制台，偶然的机会，我看到这篇文章《判断控制台是否开启(chrome)》。其中提供了一个思路来检测控制...
       
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
-        <time>2021-10-15</time>
+        <time>2023-12-03</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
@@ -498,7 +499,7 @@
       </div>
       
         <div>
-            <a class='readmore' href='/2021/10/15/yuque/sarv0k/'>
+            <a class='readmore' href='/2023/12/03/yuque/%E5%8F%8D%E7%88%AC%E8%99%AB-%E5%A6%82%E4%BD%95%E6%A3%80%E6%B5%8B%E6%9C%89%E6%B2%A1%E6%9C%89%E4%BD%BF%E7%94%A8Puppeteer/'>
             阅读全文
           </a>
         </div>
@@ -520,23 +521,24 @@
   
     
     <h2 class="article-title" >
-      <a href="/2021/07/10/yuque/kdo456/">
-        如何利用Selenium实现更加高效的爬虫
+      <a href="/2023/12/03/yuque/%E5%9C%A8ifvod%E4%B8%8A%E7%88%AC%E5%8F%96m3u8%E6%92%AD%E6%94%BE%E9%93%BE%E6%8E%A5/">
+        2023年12月3日
       </a>
     </h2>
   
   <div class='md'>
     
       
-        1. 导语Selenium 作为浏览器自动化工具，由于其可以直接执行 js 代码的优越性，经常被用做爬虫工具。但是，毕竟需要控制浏览器，低效率高内存始终是其难以甩掉的标签。在我个人爬虫开发中，对如何高效利用 selenium 有了一套个人的理解。
-2. 用 js 注入代替 selenium 原生操作selenium 库提供的 execute_script 方法使 js 注入成为可能。下面是一...
+        0：绪在上个月，我通过爬取youtube视频，提取mp3，制作了一个基于云函数的搜索音乐网站。后来，我抱着解决ifvod广告的想法，阅读了ifvod的网站源码，并且通过修改js代码，成功删除了ifvod的广告。受上述两个过程的启发，我想，通过提取ifvod上的视频m3u8链接来制作一个基于云函数的视频搜索网站。
+1：什么是m3u8m3u8文件是一种文本文件，其格式如下：
+1234567#EX...
       
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
-        <time>2021-07-10</time>
+        <time>2023-12-03</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
@@ -544,7 +546,7 @@
       </div>
       
         <div>
-            <a class='readmore' href='/2021/07/10/yuque/kdo456/'>
+            <a class='readmore' href='/2023/12/03/yuque/%E5%9C%A8ifvod%E4%B8%8A%E7%88%AC%E5%8F%96m3u8%E6%92%AD%E6%94%BE%E9%93%BE%E6%8E%A5/'>
             阅读全文
           </a>
         </div>
@@ -566,23 +568,24 @@
   
     
     <h2 class="article-title" >
-      <a href="/2021/02/21/yuque/rs5ytp/">
-        在ifvod上爬取m3u8播放链接
+      <a href="/2023/12/03/yuque/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8Selenium%E5%AE%9E%E7%8E%B0%E6%9B%B4%E5%8A%A0%E9%AB%98%E6%95%88%E7%9A%84%E7%88%AC%E8%99%AB/">
+        2023年12月3日
       </a>
     </h2>
   
   <div class='md'>
     
       
-        0：绪在上个月，我通过爬取 youtube 视频，提取 mp3，制作了一个基于云函数的搜索音乐网站。后来，我抱着解决 ifvod 广告的想法，阅读了 ifvod 的网站源码，并且通过修改 js 代码，成功删除了 ifvod 的广告。受上述两个过程的启发，我想，通过提取 ifvod 上的视频 m3u8 链接来制作一个基于云函数的视频搜索网站。
-1：什么是 m3u8m3u8 文件是一种文本文件，...
+        1. 导语Selenium作为浏览器自动化工具，由于其可以直接执行js代码的优越性，经常被用做爬虫工具。但是，毕竟需要控制浏览器，低效率高内存始终是其难以甩掉的标签。在我个人爬虫开发中，对如何高效利用selenium有了一套个人的理解。
+2. 用js注入代替selenium原生操作selenium库提供的execute_script方法使js注入成为可能。下面是一个js注入的例子
+12js&...
       
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
-        <time>2021-02-21</time>
+        <time>2023-12-03</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
@@ -590,7 +593,7 @@
       </div>
       
         <div>
-            <a class='readmore' href='/2021/02/21/yuque/rs5ytp/'>
+            <a class='readmore' href='/2023/12/03/yuque/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8Selenium%E5%AE%9E%E7%8E%B0%E6%9B%B4%E5%8A%A0%E9%AB%98%E6%95%88%E7%9A%84%E7%88%AC%E8%99%AB/'>
             阅读全文
           </a>
         </div>

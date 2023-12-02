@@ -464,6 +464,12 @@
         
           
         
+          
+        
+          
+        
+          
+        
       
     
     
@@ -477,32 +483,23 @@
   
     
     <h2 class="article-title" >
-      <a href="/2023/12/02/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/">
-        Hexo博客页面引入足迹地图
+      <a href="/2023/12/03/yuque/hexo%E5%8D%9A%E5%AE%A2/">
+        2023年12月3日
       </a>
     </h2>
   
   <div class='md'>
     
-      
-        0. 先看效果
-
-这个地图是基于jvectormap.com制作的。地图制作，需要在hexo博客目录source路径下新建footprint文件夹。
-1. 依赖下载将jvectormap的依赖js代码和css代码下载到文件根目录。
-文件路径结构形如：
-123456789- source  - _post  - _data  - footprint    - index.html    - j...
-      
-    
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
-        <time>2023-12-02</time>
+        <time>2023-12-03</time>
         
       </div>
       
         <div>
-            <a class='readmore' href='/2023/12/02/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/'>
+            <a class='readmore' href='/2023/12/03/yuque/hexo%E5%8D%9A%E5%AE%A2/'>
             阅读全文
           </a>
         </div>
@@ -524,22 +521,24 @@
   
     
     <h2 class="article-title" >
-      <a href="/2023/11/19/yuque/dg4x1y8qy3sv2kud/">
-        利用国内服务器加速v2ray访问速度和规避检查
+      <a href="/2023/12/03/yuque/%E5%AE%89%E5%8D%93ToyVPN%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%AF%BB/">
+        2023年12月3日
       </a>
     </h2>
   
   <div class='md'>
     
       
-        简介为什么用国内服务器？国内连接外网时，本地的营运商和网络服务会极大影响我们连接外网的能力。此时外网服务器的路由配置就及其重要，通常我们会选在路由较好的机房，比如使用了 CN2 之类线路的机房。但是，这种机房的成本通常是比较高的。利用国内的服务器，可以适当的提高我们连接外网的速度，同时也能规避掉流量审查。国内服务器在企业网络下，一方面被监控流量的可能性比较小，另一方面延迟也会相对比较低。这样...
+        0：导读这个程序是基于c++实现的一个简单VPN服务器，搭配ToyVPN安卓客户端食用。为了从零开始了解VPN的原理，我决定花时间来解读服务端的代码，并在此记录。
+代码原址：ToyVPNServer.cpp
+1：库说明1234567891011121314151617#include &lt;stdio.h&gt;			&#x2F;&#x2F;标准输入输出库，例如printf和scanf函数...
       
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
-        <time>2023-11-19</time>
+        <time>2023-12-03</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/Linux/">Linux</a>
@@ -547,7 +546,7 @@
       </div>
       
         <div>
-            <a class='readmore' href='/2023/11/19/yuque/dg4x1y8qy3sv2kud/'>
+            <a class='readmore' href='/2023/12/03/yuque/%E5%AE%89%E5%8D%93ToyVPN%E6%9C%8D%E5%8A%A1%E7%AB%AF%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E8%AF%BB/'>
             阅读全文
           </a>
         </div>
@@ -569,23 +568,115 @@
   
     
     <h2 class="article-title" >
-      <a href="/2023/10/24/yuque/bycwx191g5l09r4h/">
-        机器学习和scikit-learn库基础学习笔记
+      <a href="/2023/12/03/yuque/%E8%AF%AD%E9%9B%80+%E6%9C%AC%E5%9C%B0hexo%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99/">
+        2023年12月3日
       </a>
     </h2>
   
   <div class='md'>
     
       
-        数据分析和可视化在做数据模型的选择之前，通常需要对数据进行可视化，以寻找数据之间的可见关系，比如两个数据是否存在线性关系。这里列举方便快捷的可视化操作，来帮助我们快速找到数据之间的关系。
-单变量箱图123# dataset为dataframedataset.plot(kind=&#x27;box&#x27;, subplots=True, layout=(2,2), sharex=False...
+        我一直在寻找一种替代Typora，能够实现在线书写个人博客的方法。一次偶然的阅读，我了解了语雀。在网上检索后发现，已经有不少教程讲解如何通过语雀的钩子+Github Action+云函数的方法，在线同步语雀文章到github博客。在这片文章里，我总结了，今天搭建语雀过程中遇到的坑，和解决过程。看这篇文章之前，你应该已经在搭建语雀博客同步过程中遇到了不少阻碍吧。
+我本人按照《Hexo+GitH...
       
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
-        <time>2023-10-24</time>
+        <time>2023-12-03</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
+        
+      </div>
+      
+        <div>
+            <a class='readmore' href='/2023/12/03/yuque/%E8%AF%AD%E9%9B%80+%E6%9C%AC%E5%9C%B0hexo%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2023/12/03/yuque/%E7%A0%B4%E8%A7%A3%E5%9B%BE%E7%89%87%E7%AD%89%E8%B5%84%E6%BA%90%E8%B7%A8%E5%9F%9F%E5%92%8C%E9%98%B2%E7%9B%97%E9%93%BE%E9%98%BB%E6%8B%A6/">
+        2023年12月3日
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        如果A站点想将B站点的img等资源放到A站点，通常会受到对方站点防盗链的阻拦。这里是我提供的一个思路，利用腾讯云函数的免费资源，完美绕开防盗链。因为图片不会受到浏览器的跨域阻拦，其他资源的跨域问题也能通过这个方法解决。
+1：什么是防盗链？防盗链是由对方站点设置的，防止未受许可的站点直接引用对方站点的资源。比如这里有一个 ​https://www.baidu.com/abc.jpg​ 图片链接...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        <time>2023-12-03</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
+        
+      </div>
+      
+        <div>
+            <a class='readmore' href='/2023/12/03/yuque/%E7%A0%B4%E8%A7%A3%E5%9B%BE%E7%89%87%E7%AD%89%E8%B5%84%E6%BA%90%E8%B7%A8%E5%9F%9F%E5%92%8C%E9%98%B2%E7%9B%97%E9%93%BE%E9%98%BB%E6%8B%A6/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2023/12/03/yuque/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%92%8Cscikit-learn%E5%BA%93%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+        2023年12月3日
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        1. 数据分析和可视化在做数据模型的选择之前，通常需要对数据进行可视化，以寻找数据之间的可见关系，比如两个数据是否存在线性关系。这里列举方便快捷的可视化操作，来帮助我们快速找到数据之间的关系。
+1.1. 单变量1.1.1.  箱图123# dataset为dataframedataset.plot(kind&#x3D;&#39;box&#39;, subplots&#x3D;True, la...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        <time>2023-12-03</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/Machine-Learning/">Machine Learning</a>
@@ -593,7 +684,7 @@
       </div>
       
         <div>
-            <a class='readmore' href='/2023/10/24/yuque/bycwx191g5l09r4h/'>
+            <a class='readmore' href='/2023/12/03/yuque/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%92%8Cscikit-learn%E5%BA%93%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/'>
             阅读全文
           </a>
         </div>
@@ -615,23 +706,74 @@
   
     
     <h2 class="article-title" >
-      <a href="/2023/02/16/yuque/aha72bh3a4clcgmn/">
-        Matplotlib Bar3d绘制彩色带颜色标尺的3D柱形图
+      <a href="/2023/12/03/yuque/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8Selenium%E5%AE%9E%E7%8E%B0%E6%9B%B4%E5%8A%A0%E9%AB%98%E6%95%88%E7%9A%84%E7%88%AC%E8%99%AB/">
+        2023年12月3日
       </a>
     </h2>
   
   <div class='md'>
     
       
-        Bar3d 的官方示例并不好看，因为它不能根据柱的高度来显示不同的颜色。虽然 bar3d 函数可以设置每个柱子的颜色，但如何设置呢？右侧的颜色标尺又如何添加？本文将详细介绍代码和必要的解释。
-Matplotlib 是一个流行的 Python 可视化库，它可以用来创建各种图表，包括 3D 柱形图。bar3d 函数可以用来创建 3D 柱形图，其中每个柱子由其长度、宽度和高度定义。下面是使用 Ma...
+        1. 导语Selenium作为浏览器自动化工具，由于其可以直接执行js代码的优越性，经常被用做爬虫工具。但是，毕竟需要控制浏览器，低效率高内存始终是其难以甩掉的标签。在我个人爬虫开发中，对如何高效利用selenium有了一套个人的理解。
+2. 用js注入代替selenium原生操作selenium库提供的execute_script方法使js注入成为可能。下面是一个js注入的例子
+12js&...
       
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
-        <time>2023-02-16</time>
+        <time>2023-12-03</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
+        
+      </div>
+      
+        <div>
+            <a class='readmore' href='/2023/12/03/yuque/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8Selenium%E5%AE%9E%E7%8E%B0%E6%9B%B4%E5%8A%A0%E9%AB%98%E6%95%88%E7%9A%84%E7%88%AC%E8%99%AB/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2023/12/03/yuque/%E5%9F%BA%E4%BA%8EServerless%E7%9A%84%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/">
+        2023年12月3日
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        1：使用手册一个基于python，搭建在Serverless云函数上的免费音乐下载程序。可剥离云函数本地运行。
+通过构造形如&lt;https://m.sci.ci/&gt;音乐相关信息这样的网址，就可在浏览器上下载喜欢的音乐了。
+demo简单的例子，想听爱的供养？
+尝试在浏览器地址栏输入m.sci.ci/爱的供养
+现在试试👉m.sci.ci/爱的供养
+返回的音乐文件是杨幂版本的，不喜欢？...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        <time>2023-12-03</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/Python/">Python</a>
@@ -639,7 +781,7 @@ Matplotlib 是一个流行的 Python 可视化库，它可以用来创建各种�
       </div>
       
         <div>
-            <a class='readmore' href='/2023/02/16/yuque/aha72bh3a4clcgmn/'>
+            <a class='readmore' href='/2023/12/03/yuque/%E5%9F%BA%E4%BA%8EServerless%E7%9A%84%E9%9F%B3%E4%B9%90%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/'>
             阅读全文
           </a>
         </div>
@@ -661,33 +803,31 @@ Matplotlib 是一个流行的 Python 可视化库，它可以用来创建各种�
   
     
     <h2 class="article-title" >
-      <a href="/2023/02/12/yuque/se6yw51mvmka3c85/">
-        Linux后台运行nostr虚荣公钥的挖掘
+      <a href="/2023/12/03/yuque/%E5%9C%A8%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B8%AD%E7%94%A8JS%E9%AA%8C%E8%AF%81CSS_Selector%E5%92%8CXpath/">
+        2023年12月3日
       </a>
     </h2>
   
   <div class='md'>
     
       
-        挖掘 6 位以上的 npub1 公钥连号需要耗费很长的时间。在主力电脑上执行挖掘程序，对正常工作影响很大。为了能够更快的挖掘公钥，并且不影响我的工作，我在谷歌云上开了一台虚拟机，专门用来挖公钥。在 Linux 终端上执行程序，终端一旦关闭，在此终端上的程序也会随之被终止。为此，可以使用 nohup 指令来使其后台继续执行。cmd1:
-1nohup rana -n=8888888&amp;
-
-...
+        0：引言使用Beautifulsoup和Selenuim等网页分析工具时，经常需要自己构造一个选择器，最常用的是CSS选择器和Xpath。如何验证选择器构造是否正确呢？我们可以直接在网页的开发者工具Console栏里使用JS代码来验证选择器的正确性。
+1：CSS Selector验证12css_selector &#x3D; &#39;#bs_form_main input[value&#x...
       
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
-        <time>2023-02-12</time>
+        <time>2023-12-03</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
+          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
         
       </div>
       
         <div>
-            <a class='readmore' href='/2023/02/12/yuque/se6yw51mvmka3c85/'>
+            <a class='readmore' href='/2023/12/03/yuque/%E5%9C%A8%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B8%AD%E7%94%A8JS%E9%AA%8C%E8%AF%81CSS_Selector%E5%92%8CXpath/'>
             阅读全文
           </a>
         </div>
@@ -709,33 +849,32 @@ Matplotlib 是一个流行的 Python 可视化库，它可以用来创建各种�
   
     
     <h2 class="article-title" >
-      <a href="/2023/02/06/yuque/yws2f9r5gek9mpxe/">
-        Hexo博客添加Nostr NIP-05认证
+      <a href="/2023/12/03/yuque/%E5%9C%A8ifvod%E4%B8%8A%E7%88%AC%E5%8F%96m3u8%E6%92%AD%E6%94%BE%E9%93%BE%E6%8E%A5/">
+        2023年12月3日
       </a>
     </h2>
   
   <div class='md'>
     
       
-        Hexo 博客部署之后可以生成一个静态网站，Nostr NIP-05 认证，要求我们在网站根目录下创建一个路径为/.well-known/nostr.json 的文件，并将认证信息放入其中。为了在 Hexo 博客 public 目录（静态网站根目录）下在生成认证路径，我们可以按照以下步骤设置，
-
-在 hexo 根目录下的 sources 文件夹中新建文件夹**.well-known**
-在文...
+        0：绪在上个月，我通过爬取youtube视频，提取mp3，制作了一个基于云函数的搜索音乐网站。后来，我抱着解决ifvod广告的想法，阅读了ifvod的网站源码，并且通过修改js代码，成功删除了ifvod的广告。受上述两个过程的启发，我想，通过提取ifvod上的视频m3u8链接来制作一个基于云函数的视频搜索网站。
+1：什么是m3u8m3u8文件是一种文本文件，其格式如下：
+1234567#EX...
       
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
-        <time>2023-02-06</time>
+        <time>2023-12-03</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Nostr/">Nostr</a>
+          <a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
         
       </div>
       
         <div>
-            <a class='readmore' href='/2023/02/06/yuque/yws2f9r5gek9mpxe/'>
+            <a class='readmore' href='/2023/12/03/yuque/%E5%9C%A8ifvod%E4%B8%8A%E7%88%AC%E5%8F%96m3u8%E6%92%AD%E6%94%BE%E9%93%BE%E6%8E%A5/'>
             阅读全文
           </a>
         </div>
@@ -757,30 +896,31 @@ Matplotlib 是一个流行的 Python 可视化库，它可以用来创建各种�
   
     
     <h2 class="article-title" >
-      <a href="/2023/02/06/yuque/glm9gga3y0gu8wdr/">
-        Nostr NIP-05认证服务简介和配置
+      <a href="/2023/12/03/yuque/%E5%8F%8D%E7%88%AC%E8%99%AB-%E5%A6%82%E4%BD%95%E6%A3%80%E6%B5%8B%E6%9C%89%E6%B2%A1%E6%9C%89%E4%BD%BF%E7%94%A8Puppeteer/">
+        2023年12月3日
       </a>
     </h2>
   
   <div class='md'>
     
       
-        1. NIP-05 简介NIP-05 认证服务，通过验证域名的持有身份，就可以在支持 NIP-05 的客户端里展示一个和微博 Twitter 认证类似的 V 的小图标。其基本原理是，域名持有者，在域名路径下返回一个 json 格式的数据内容，域名路径类似于：https://sci.ci/.well-known/nostr.json?name=qifei，点击此链接，你能看到返回的 json ...
+        现在检测Puppeteer越来越难了，用户可以通过js对无头浏览器进行各种伪装，webdriver、webgl、plugins都很难检测到爬虫，在这里有一个新思路。
+许多网页都有检测控制台是否开启的功能，其中大多数网页会直接禁用F12和右键，但这似乎并没有什么用处，因为浏览器也有其他办法开启控制台，偶然的机会，我看到这篇文章《判断控制台是否开启(chrome)》。其中提供了一个思路来检测控制...
       
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
-        <time>2023-02-06</time>
+        <time>2023-12-03</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Nostr/">Nostr</a>
+          <a class="category-link" href="/categories/%E7%88%AC%E8%99%AB/">爬虫</a>
         
       </div>
       
         <div>
-            <a class='readmore' href='/2023/02/06/yuque/glm9gga3y0gu8wdr/'>
+            <a class='readmore' href='/2023/12/03/yuque/%E5%8F%8D%E7%88%AC%E8%99%AB-%E5%A6%82%E4%BD%95%E6%A3%80%E6%B5%8B%E6%9C%89%E6%B2%A1%E6%9C%89%E4%BD%BF%E7%94%A8Puppeteer/'>
             阅读全文
           </a>
         </div>
@@ -796,6 +936,21 @@ Matplotlib 是一个流行的 Python 可视化库，它可以用来创建各种�
     
   </section>
   
+    
+      <br>
+      <div class="prev-next">
+        
+        <p class="current">
+          1 / 3
+        </p>
+        
+          <a class="next" rel="next" href="/archives/2023/page/2/">
+            <section class="post next white-box shadow">
+              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </section>
+          </a>
+        
+      </div>
     
   
 
