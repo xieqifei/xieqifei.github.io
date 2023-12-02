@@ -16,9 +16,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>人工智能——激活函数 - 🛫Qifei&#39;s Blog</title>
-  
-    <meta name="keywords" content="人工智能,AI">
+  <title>机器学习——激活函数 - 🛫Qifei&#39;s Blog</title>
   
 
   
@@ -414,7 +412,7 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">人工智能——激活函数</div>
+  <div id="pjax-pageTitle">机器学习——激活函数</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -456,7 +454,7 @@
       
         <h1 class="title">
           <a href="/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/">
-            人工智能——激活函数
+            机器学习——激活函数
           </a>
         </h1>
       
@@ -475,13 +473,6 @@
         
           
             
-  <div class='new-meta-item category'>
-    <a class='notlink'>
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>
-    </a>
-  </div>
-
 
           
         
@@ -500,7 +491,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="人工智能——激活函数" data-path="/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/">
+      <div id="lc-pv" data-title="机器学习——激活函数" data-path="/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -545,8 +536,12 @@
 <p>$out_{o1}=Sigmoid(net_{o1})$</p>
 <p>误差函数为$E_{o1}=\frac{target-out_{o1}}{2}$</p>
 <p>获得$w_5$更新所需的梯度就是求$E_{o1}$对$w_5$求导。</p>
-<p>根据链式法则，<br>$$<br>\frac{\partial E_{o1}}{\part w_5} = \frac{\part E_{o1}}{\part out_{o1}}* \frac{\part out_{o1}}{\part net_{o1}}* \frac{\part net_{o1}}{\part w_5}<br>$$<br>其中$\frac{\part out_{o1}}{\part net_{o1}}$就是Sigmoid函数求导。</p>
-<p>根据Sigmoid函数求导公式，<br>$$<br>\frac{\part g(z)}{\part z} = g(z)(1-g(z))<br>$$<br><img src="https://i.loli.net/2020/11/15/Y6AES1lOiv5CX7d.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/Y6AES1lOiv5CX7d.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>根据链式法则，</p>
+<p>$$<br>\frac{\partial E_{o1}}{\part w_5} = \frac{\part E_{o1}}{\part out_{o1}}* \frac{\part out_{o1}}{\part net_{o1}}* \frac{\part net_{o1}}{\part w_5}<br>$$</p>
+<p>其中$\frac{\part out_{o1}}{\part net_{o1}}$就是Sigmoid函数求导。</p>
+<p>根据Sigmoid函数求导公式，</p>
+<p>$$<br>\frac{\part g(z)}{\part z} = g(z)(1-g(z))<br>$$</p>
+<p><img src="https://i.loli.net/2020/11/15/Y6AES1lOiv5CX7d.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/Y6AES1lOiv5CX7d.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <p>上式，$g(z)$为Sigmoid函数，其导数最大值为0.25.</p>
 <p>当神经元个数逐渐增多，前向w梯度，是后向w梯度做链式法则的结果，那么会有许多个$g’(z)$相乘。则，前向w的梯度会逐渐趋近于0。</p>
 <ul>
@@ -577,7 +572,7 @@
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="/2020/11/12/北大人工智能实践——TensorFlow2/" title="北大人工智能实践——TensorFlow2" rel="bookmark "><img src="https://i.loli.net/2020/11/15/47flBkU6oI5KuGM.png" class="lazyload" data-srcset="https://i.loli.net/2020/11/15/47flBkU6oI5KuGM.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">北大人工智能实践——TensorFlow2</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="/2020/02/01/收集一些优秀的安卓开源库/" title="个人推荐的一些优秀的安卓开源库" rel="bookmark "><img src="https://github.com/kongzue/Res/raw/master/app/src/main/res/mipmap-xxxhdpi/img_dialog_v3_messagedialog.png" class="lazyload" data-srcset="https://github.com/kongzue/Res/raw/master/app/src/main/res/mipmap-xxxhdpi/img_dialog_v3_messagedialog.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">个人推荐的一些优秀的安卓开源库</span></a></div></section></div>
         
         
           <div class='copyright'>
@@ -607,7 +602,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-12-02T23:49:41+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-12-02T23:50:57+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2023年12月2日</p>
@@ -618,9 +613,6 @@
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>人工智能</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/AI/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>AI</p></a></div>
-
 
         
       
@@ -632,7 +624,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/&title=人工智能——激活函数 - 🛫Qifei's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/&title=机器学习——激活函数 - 🛫Qifei's Blog&summary="
           
           >
           
@@ -644,7 +636,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/&title=人工智能——激活函数 - 🛫Qifei's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/&title=机器学习——激活函数 - 🛫Qifei's Blog&summary="
           
           >
           
@@ -656,7 +648,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/&title=人工智能——激活函数 - 🛫Qifei's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/11/15/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E2%80%94%E2%80%94%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/&title=机器学习——激活函数 - 🛫Qifei's Blog&summary="
           
           >
           
