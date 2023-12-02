@@ -525,7 +525,7 @@
 <p>偶然的机会，我发现当用户使用Puppeteer访问网页时，即便控制台没有被开启，这个方法的this.opened也会被置为true，也就是说，我们用这个方法不仅可以检测到用户是否打开了控制台，用户在使用Puppeteer没有开启控制台的情况下也会被检测到。</p>
 <p>这里的一个简单小实验是，别人提供的一个<a target="_blank" rel="noopener" href="https://blog.aepkill.com/demos/devtools-detector">检测控制台开启Demo</a>，通过Puppeteer测试开启并截图后，看到控制台是开启状态。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">await this.page.goto(&#39;https:&#x2F;&#x2F;blog.aepkill.com&#x2F;demos&#x2F;devtools-detector&#x2F;&#39;)</span><br><span class="line">await this.page.screenshot(&#123;path:&quot;aaa.png&quot;&#125;)</span><br></pre></td></tr></table></figure>
-<p><img src="./attachments/%E5%8F%8D%E7%88%AC%E8%99%AB-%E5%A6%82%E4%BD%95%E6%A3%80%E6%B5%8B%E6%9C%89%E6%B2%A1%E6%9C%89%E4%BD%BF%E7%94%A8Puppeteer_001.png" class="lazyload" data-srcset="./attachments/%E5%8F%8D%E7%88%AC%E8%99%AB-%E5%A6%82%E4%BD%95%E6%A3%80%E6%B5%8B%E6%9C%89%E6%B2%A1%E6%9C%89%E4%BD%BF%E7%94%A8Puppeteer_001.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p><img src="https://s2.loli.net/2023/12/03/Klfp5qyWX8U4NhO.png" class="lazyload" data-srcset="https://s2.loli.net/2023/12/03/Klfp5qyWX8U4NhO.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="反爬虫-如何检测有没有使用Puppeteer_001.png"></p>
 <p>刚才提到的那篇文章的作者，提供了一个开源的检测控制台模块，<a target="_blank" rel="noopener" href="https://github.com/AEPKILL/devtools-detector#devtools-detector-">devtools-detector</a>，可以用做Puppeteer检测。</p>
 
     
@@ -569,7 +569,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-12-03T02:10:23+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-12-03T02:16:22+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2023年12月3日</p>
