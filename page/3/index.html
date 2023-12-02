@@ -460,78 +460,31 @@
   
     
     <h2 class="article-title" >
-      <a href="/2023/12/03/yuque/Selenium-Webdriver%E6%8E%A5%E5%8F%A3/">
-        2023年12月3日
+      <a href="/2021/02/26/yuque/%E7%A0%B4%E8%A7%A3%E5%9B%BE%E7%89%87%E7%AD%89%E8%B5%84%E6%BA%90%E8%B7%A8%E5%9F%9F%E5%92%8C%E9%98%B2%E7%9B%97%E9%93%BE%E9%98%BB%E6%8B%A6/">
+        破解图片等资源跨域和防盗链阻拦
       </a>
     </h2>
   
   <div class='md'>
     
       
-        越来越多的人开始使用Serverless构架搭建自己的应用，而Serverless的缺点显而易见，很难自定义运行时。当我尝试在云函数搭建一个基于Webdriver的爬虫程序时，我了解到，基于python的Selenium应用还无法在云函数上运行，这是由于云函数并没有安装chrome浏览器。
-如果想在云函数上运行Selenium，则必须使用node.js 8.10版本+puppeteer插件。...
+        如果A站点想将B站点的img等资源放到A站点，通常会受到对方站点防盗链的阻拦。这里是我提供的一个思路，利用腾讯云函数的免费资源，完美绕开防盗链。因为图片不会受到浏览器的跨域阻拦，其他资源的跨域问题也能通过这个方法解决。
+1：什么是防盗链？防盗链是由对方站点设置的，防止未受许可的站点直接引用对方站点的资源。比如这里有一个 ​https://www.baidu.com/abc.jpg​ 图片链接...
       
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
-        <time>2023-12-03</time>
+        <time>2021-02-26</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%9E%84%E6%83%B3/">构想</a>
+          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
         
       </div>
       
         <div>
-            <a class='readmore' href='/2023/12/03/yuque/Selenium-Webdriver%E6%8E%A5%E5%8F%A3/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2023/12/02/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/">
-        Hexo博客页面引入足迹地图
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        0. 先看效果
-
-这个地图是基于jvectormap.com制作的。地图制作，需要在hexo博客目录source路径下新建footprint文件夹。
-1. 依赖下载将jvectormap的依赖js代码和css代码下载到文件根目录。
-文件路径结构形如：
-123456789- source  - _post  - _data  - footprint    - index.html    - j...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2023-12-02</time>
-        
-      </div>
-      
-        <div>
-            <a class='readmore' href='/2023/12/02/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E5%BC%95%E5%85%A5%E8%B6%B3%E8%BF%B9%E5%9C%B0%E5%9B%BE/'>
+            <a class='readmore' href='/2021/02/26/yuque/%E7%A0%B4%E8%A7%A3%E5%9B%BE%E7%89%87%E7%AD%89%E8%B5%84%E6%BA%90%E8%B7%A8%E5%9F%9F%E5%92%8C%E9%98%B2%E7%9B%97%E9%93%BE%E9%98%BB%E6%8B%A6/'>
             阅读全文
           </a>
         </div>
@@ -574,6 +527,52 @@
       
         <div>
             <a class='readmore' href='/2021/02/21/yuque/fo0ngh/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2021/02/21/yuque/%E8%AF%AD%E9%9B%80+%E6%9C%AC%E5%9C%B0hexo%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99/">
+        语雀+本地hexo博客书写
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        我一直在寻找一种替代Typora，能够实现在线书写个人博客的方法。一次偶然的阅读，我了解了语雀。在网上检索后发现，已经有不少教程讲解如何通过语雀的钩子+Github Action+云函数的方法，在线同步语雀文章到github博客。在这片文章里，我总结了，今天搭建语雀过程中遇到的坑，和解决过程。看这篇文章之前，你应该已经在搭建语雀博客同步过程中遇到了不少阻碍吧。
+我本人按照《Hexo+GitH...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        <time>2021-02-21</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E7%BD%91%E7%AB%99%E7%BC%96%E7%A8%8B/">网站编程</a>
+        
+      </div>
+      
+        <div>
+            <a class='readmore' href='/2021/02/21/yuque/%E8%AF%AD%E9%9B%80+%E6%9C%AC%E5%9C%B0hexo%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99/'>
             阅读全文
           </a>
         </div>
