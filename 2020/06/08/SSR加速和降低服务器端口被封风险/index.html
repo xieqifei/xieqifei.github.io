@@ -528,11 +528,11 @@
 <h2 id="1-2-降低端口被封的风险原理"><a href="#1-2-降低端口被封的风险原理" class="headerlink" title="1.2 降低端口被封的风险原理"></a>1.2 降低端口被封的风险原理</h2><p>stunnel是一个将流量利用ssl证书加密的软件，加密后的流量，出国时将会被识别为tls协议，因此不再具有ssr流量特点，我们常使用的https请求便基于ssl证书，此时国外服务器端口被封锁的几率将大大减小。出国后，stunnel将流量解密，再传递给ssr服务端。</p>
 <p>通过抓取ssr流量，可以看到，ssr流量在传输过程中，由于协议加密，它不具备任何常见的网络请求特征，而你在使用ssr与海外服务器进行数据往来时，长时间的使用不具有网络请求特征的流量进行连接，很容易被防火墙识别为翻墙软件。因此被封。使用tls协议，就能够伪装为https请求，https(http协议+tls协议)。当然为了更有迷惑性，在ssr服务器端口加一个能被访问的网站是最好的。因为虽然tls协议作为https的一部分，但在实际使用中，由于没有http协议的流量，那么是能被推断出使用stunnel这类加密隧道的。如果长时间大流量访问，也有被封锁的风险。</p>
 <p>而使用中转服务器，所付出的代价，仅仅是国内月租几块钱的服务器(阿里云、腾讯云等有学生服务器，一年一百块左右)，和相当低的stunnel加解密过程所导致的延迟，此延迟几乎不可见。</p>
-<h1 id="2：stunnel和ssr安装"><a href="#2：stunnel和ssr安装" class="headerlink" title="2：stunnel和ssr安装"></a>2：stunnel和ssr安装</h1><h2 id="2-1-stunnel安装和配置"><a href="#2-1-stunnel安装和配置" class="headerlink" title="2.1 stunnel安装和配置"></a>2.1 stunnel安装和配置</h2><p>stunnel安装，请参见我之间的文章《<a href="https://sci.ci/2020/05/28/stunnel-squid-dai-li-jia-su-ya-chen-jiao-xue-shi-pin-jia-su/">利用Stunnel+squid代理实现国内无客户端访问外网</a>》。</p>
+<h1 id="2：stunnel和ssr安装"><a href="#2：stunnel和ssr安装" class="headerlink" title="2：stunnel和ssr安装"></a>2：stunnel和ssr安装</h1><h2 id="2-1-stunnel安装和配置"><a href="#2-1-stunnel安装和配置" class="headerlink" title="2.1 stunnel安装和配置"></a>2.1 stunnel安装和配置</h2><p>stunnel安装，请参见我之间的文章《<a target="_blank" rel="noopener" href="https://sci.ci/2020/05/28/stunnel-squid-dai-li-jia-su-ya-chen-jiao-xue-shi-pin-jia-su/">利用Stunnel+squid代理实现国内无客户端访问外网</a>》。</p>
 <blockquote>
 <p>3.2节是在国外服务器上安装stunnel服务端。第四章，在国内服务器上安装stunnel客户端。</p>
 </blockquote>
-<p>将ssr的流量通过stunnel加密，你需要修改配置文件。在《<a href="https://sci.ci/2020/05/28/stunnel-squid-dai-li-jia-su-ya-chen-jiao-xue-shi-pin-jia-su/">利用Stunnel+squid代理实现国内无客户端访问外网</a>》安装后的stunnel基础上修改。</p>
+<p>将ssr的流量通过stunnel加密，你需要修改配置文件。在《<a target="_blank" rel="noopener" href="https://sci.ci/2020/05/28/stunnel-squid-dai-li-jia-su-ya-chen-jiao-xue-shi-pin-jia-su/">利用Stunnel+squid代理实现国内无客户端访问外网</a>》安装后的stunnel基础上修改。</p>
 <p>修改国外服务器上的stunnel服务端配置文件，在<code>/etc/stunnel/stunnel.conf</code>文件里，</p>
 <p>删除</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[squid-proxy]</span><br><span class="line">; 服务监听的端口，client要连接这个端口与server通信</span><br><span class="line">accept &#x3D; 3129</span><br><span class="line">; 服务要连接的端口，连接到squid的3128端口，将数据发给squid</span><br><span class="line">connect &#x3D; localhost:3128</span><br></pre></td></tr></table></figure>
@@ -554,7 +554,7 @@
 <p>ssr客户端配置，客户端地址，应该填写为国内服务器ip，服务端口，应填写为stunnel客户端的<code>accept</code>端口(国内服务器上配置的accept = your accept port 2)，例子中给的34567端口。</p>
 <p>配置完成后，就可以连接上网了。</p>
 <p>即便使用移动网络，也能产生非常好的连接效果，而且应该在非常久得时间里，端口都不会被封。</p>
-<h1 id="3：可能出现的问题"><a href="#3：可能出现的问题" class="headerlink" title="3：可能出现的问题"></a>3：可能出现的问题</h1><p>如果配置后无法上网，请检查你设置得端口，通过 <a target="_blank" rel="noopener" href="https://port.ping.pe/">https://port.ping.pe</a> 网址检测你的端口是否开启，如果测试未开启，请修改防火墙配置，在《<a href="https://sci.ci/2020/05/28/stunnel-squid-dai-li-jia-su-ya-chen-jiao-xue-shi-pin-jia-su/">利用Stunnel+squid代理实现国内无客户端访问外网</a>》中第4章有介绍。若任然没有导通，请检查云服务商的安全组是否开启了端口。</p>
+<h1 id="3：可能出现的问题"><a href="#3：可能出现的问题" class="headerlink" title="3：可能出现的问题"></a>3：可能出现的问题</h1><p>如果配置后无法上网，请检查你设置得端口，通过 <a target="_blank" rel="noopener" href="https://port.ping.pe/">https://port.ping.pe</a> 网址检测你的端口是否开启，如果测试未开启，请修改防火墙配置，在《<a target="_blank" rel="noopener" href="https://sci.ci/2020/05/28/stunnel-squid-dai-li-jia-su-ya-chen-jiao-xue-shi-pin-jia-su/">利用Stunnel+squid代理实现国内无客户端访问外网</a>》中第4章有介绍。若任然没有导通，请检查云服务商的安全组是否开启了端口。</p>
 <p>如果端口开放，而无法连接，请尝试，终止stunnel进程并重新启用。</p>
 <p>方法1：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">servicer stunnel restart</span><br></pre></td></tr></table></figure>
@@ -595,7 +595,7 @@
                 
               
                 
-                  <p>本文永久链接是：<a href=https://sci.ci/2020/06/08/SSR%E5%8A%A0%E9%80%9F%E5%92%8C%E9%99%8D%E4%BD%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%B0%81%E9%A3%8E%E9%99%A9/>https://sci.ci/2020/06/08/SSR%E5%8A%A0%E9%80%9F%E5%92%8C%E9%99%8D%E4%BD%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%B0%81%E9%A3%8E%E9%99%A9/</a></p>
+                  <p>本文永久链接是：<a href=https://blog.sci.ci/2020/06/08/SSR%E5%8A%A0%E9%80%9F%E5%92%8C%E9%99%8D%E4%BD%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%B0%81%E9%A3%8E%E9%99%A9/>https://blog.sci.ci/2020/06/08/SSR%E5%8A%A0%E9%80%9F%E5%92%8C%E9%99%8D%E4%BD%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%B0%81%E9%A3%8E%E9%99%A9/</a></p>
                 
               
             </blockquote>
@@ -613,10 +613,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-12-03T03:02:02+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2023-12-31T04:23:21+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年12月3日</p>
+    <p>更新于：2023年12月31日</p>
   </a>
 </div>
 
@@ -638,7 +638,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sci.ci/2020/06/08/SSR%E5%8A%A0%E9%80%9F%E5%92%8C%E9%99%8D%E4%BD%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%B0%81%E9%A3%8E%E9%99%A9/&title=SSR加速和降低服务器端口被封风险 - 🛫Qifei's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.sci.ci/2020/06/08/SSR%E5%8A%A0%E9%80%9F%E5%92%8C%E9%99%8D%E4%BD%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%B0%81%E9%A3%8E%E9%99%A9/&title=SSR加速和降低服务器端口被封风险 - 🛫Qifei's Blog&summary="
           
           >
           
@@ -650,7 +650,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sci.ci/2020/06/08/SSR%E5%8A%A0%E9%80%9F%E5%92%8C%E9%99%8D%E4%BD%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%B0%81%E9%A3%8E%E9%99%A9/&title=SSR加速和降低服务器端口被封风险 - 🛫Qifei's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.sci.ci/2020/06/08/SSR%E5%8A%A0%E9%80%9F%E5%92%8C%E9%99%8D%E4%BD%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%B0%81%E9%A3%8E%E9%99%A9/&title=SSR加速和降低服务器端口被封风险 - 🛫Qifei's Blog&summary="
           
           >
           
@@ -662,7 +662,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sci.ci/2020/06/08/SSR%E5%8A%A0%E9%80%9F%E5%92%8C%E9%99%8D%E4%BD%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%B0%81%E9%A3%8E%E9%99%A9/&title=SSR加速和降低服务器端口被封风险 - 🛫Qifei's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.sci.ci/2020/06/08/SSR%E5%8A%A0%E9%80%9F%E5%92%8C%E9%99%8D%E4%BD%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%B0%81%E9%A3%8E%E9%99%A9/&title=SSR加速和降低服务器端口被封风险 - 🛫Qifei's Blog&summary="
           
           >
           
@@ -764,7 +764,7 @@
     
       
         
-          <div><p><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://hexo.io/"><img src="https://img.shields.io/badge/Powered-Hexo-red" class="lazyload" data-srcset="https://img.shields.io/badge/Powered-Hexo-red" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://volantis.js.org/"><img src="https://img.shields.io/badge/Theme-Volantis-blue" class="lazyload" data-srcset="https://img.shields.io/badge/Theme-Volantis-blue" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-success" class="lazyload" data-srcset="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-success" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" href="https://sci.ci"><img src="https://img.shields.io/badge/Copyright-2019--2023%20QF-orange" class="lazyload" data-srcset="https://img.shields.io/badge/Copyright-2019--2023%20QF-orange" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a></p>
+          <div><p><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://hexo.io/"><img src="https://img.shields.io/badge/Powered-Hexo-red" class="lazyload" data-srcset="https://img.shields.io/badge/Powered-Hexo-red" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://volantis.js.org/"><img src="https://img.shields.io/badge/Theme-Volantis-blue" class="lazyload" data-srcset="https://img.shields.io/badge/Theme-Volantis-blue" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"><img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-success" class="lazyload" data-srcset="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-success" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a><a style="padding-right: 1%;" target="_blank" rel="noopener" href="https://sci.ci"><img src="https://img.shields.io/badge/Copyright-2019--2023%20QF-orange" class="lazyload" data-srcset="https://img.shields.io/badge/Copyright-2019--2023%20QF-orange" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></a></p>
 </div>
         
       
@@ -1174,7 +1174,7 @@
       // 请求 PV 并自增
       var pvCtn = document.querySelector('#lc-sv');
       if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'https://sci.ci' + '/#lc-sv', 'Visits').then((record) => {
+        var pvGetter = this.getRecord(Counter, 'https://blog.sci.ci' + '/#lc-sv', 'Visits').then((record) => {
           incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-sv #number');
           if (eles.length > 0) {
@@ -1192,7 +1192,7 @@
       // 请求 UV 并自增
       var uvCtn = document.querySelector('#lc-uv');
       if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'https://sci.ci' + '/#lc-uv', 'Visitors').then((record) => {
+        var uvGetter = this.getRecord(Counter, 'https://blog.sci.ci' + '/#lc-uv', 'Visitors').then((record) => {
           var vuv = this.validUV();
           vuv && incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-uv #number');
@@ -1214,7 +1214,7 @@
         for (i = 0; i < allPV.length; i++) {
           let pv = allPV[i];
           let title = pv.getAttribute('data-title');
-          var url = 'https://sci.ci' + pv.getAttribute('data-path');
+          var url = 'https://blog.sci.ci' + pv.getAttribute('data-path');
           if (url) {
             var viewGetter = this.getRecord(Counter, url, title).then((record) => {
               // 是当前页面就自增
